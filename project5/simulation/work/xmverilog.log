@@ -1,0 +1,50 @@
+xmverilog(64): 17.10-s001: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
+TOOL:	xmverilog	17.10-s001: Started on Feb 28, 2025 at 18:09:17 EST
+xmverilog
+	../testbench/pipe_div_tb.v
+	+gui
+	+access+r
+	-timescale
+	1ns/1ps
+Recompiling... reason: file '../testbench/pipe_div_syn_tb.v' is newer than expected.
+	expected: Fri Feb 28 18:05:53 2025
+	actual:   Fri Feb 28 18:08:03 2025
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.pipe_div:v <0x3e372a92>
+			streams:   4, words:  8252
+		worklib.pipe_div_tb:v <0x01dcd315>
+			streams:   9, words: 25004
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                  2       2
+		Registers:               29      29
+		Scalar wires:             4       -
+		Vectored wires:           4       -
+		Always blocks:            3       3
+		Initial blocks:           1       1
+		Pseudo assignments:       3       3
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.pipe_div_tb:v
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /apps/vlsi_2018/cadence/XCELIUM1710/tools/xcelium/files/xmsimrc
+xcelium> run
+Time               215000: dividend =     13, divisor =    2, quotient =      6, remainder =    1, ERROR = 0
+Time               415000: dividend =   1789, divisor =  122, quotient =     14, remainder =   81, ERROR = 0
+Time               615000: dividend =    -13, divisor =    2, quotient =     -6, remainder =   -1, ERROR = 0
+Time               815000: dividend =   1917, divisor =  -37, quotient =    -51, remainder =   30, ERROR = 0
+Time              1015000: dividend =  -1905, divisor =  -33, quotient =     57, remainder =  -24, ERROR = 0
+Time              1045000: dividend =     13, divisor =    0, quotient =      0, remainder =    0, ERROR = 1
+Simulation complete via $finish(1) at time 10600 NS + 0
+../testbench/pipe_div_tb.v:103         $finish; // End simulation
+xcelium> ^C
+xcelium> exit
+TOOL:	xmverilog	17.10-s001: Exiting on Feb 28, 2025 at 18:14:05 EST  (total: 00:04:48)

@@ -1,0 +1,493 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -max_paths 5
+        -sort_by group
+Design : pipe_div
+Version: O-2018.06-SP1
+Date   : Fri Feb 28 18:03:01 2025
+****************************************
+
+Operating Conditions: slow   Library: IBM_CMOS8HP_SS125
+Wire Load Model Mode: enclosed
+
+  Startpoint: sreg_reg[15]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: en_reg (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipe_div           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  pipe_div_DW01_sub_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            1.000      1.000
+  sreg_reg[15]/CLK (DFFR_K)                              0.000      1.000 r
+  sreg_reg[15]/Q (DFFR_K)                                0.175      1.175 f
+  U297/Z (INVERT_H)                                      0.038      1.213 r
+  U298/Z (INVERT_H)                                      0.036      1.249 f
+  U171/Z (INVERT_I)                                      0.050      1.299 r
+  U923/Z (INVERT_F)                                      0.053      1.352 f
+  sub_141_S2/A[0] (pipe_div_DW01_sub_0)                  0.000      1.352 f
+  sub_141_S2/U3/Z (NOR2_C)                               0.089      1.440 r
+  sub_141_S2/U1/Z (INVERT_E)                             0.058      1.498 f
+  sub_141_S2/U2_1/COUT (ADDF_B)                          0.351      1.849 f
+  sub_141_S2/U2_2/COUT (ADDF_B)                          0.396      2.245 f
+  sub_141_S2/U2_3/COUT (ADDF_B)                          0.396      2.640 f
+  sub_141_S2/U2_4/COUT (ADDF_B)                          0.396      3.036 f
+  sub_141_S2/U2_5/COUT (ADDF_B)                          0.396      3.432 f
+  sub_141_S2/U2_6/COUT (ADDF_B)                          0.380      3.812 f
+  sub_141_S2/U2_7/Z (XOR3_D)                             0.176      3.988 f
+  sub_141_S2/DIFF[7] (pipe_div_DW01_sub_0)               0.000      3.988 f
+  U315/Z (AND2_H)                                        0.082      4.070 f
+  U316/Z (INVERT_D)                                      0.052      4.122 r
+  U745/Z (NAND2_D)                                       0.054      4.176 f
+  U749/Z (DELAY4_F)                                      0.237      4.413 f
+  U748/Z (BUFFER_F)                                      0.072      4.485 f
+  U483/Z (INVERT_D)                                      0.057      4.542 r
+  U482/Z (INVERT_E)                                      0.055      4.597 f
+  U564/Z (BUFFER_I)                                      0.075      4.672 f
+  U687/Z (NOR2_C)                                        0.078      4.750 r
+  U484/Z (INVERT_E)                                      0.065      4.815 f
+  U485/Z (INVERT_H)                                      0.042      4.857 r
+  U686/Z (OAI21_C)                                       0.036      4.894 f
+  U440/Z (AO222_F)                                       0.112      5.005 f
+  en_reg/D (DFFR_K)                                      0.000      5.005 f
+  data arrival time                                                 5.005
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            1.000     11.000
+  clock uncertainty                                     -0.700     10.300
+  en_reg/CLK (DFFR_K)                                    0.000     10.300 r
+  library setup time                                    -0.225     10.075
+  data required time                                               10.075
+  --------------------------------------------------------------------------
+  data required time                                               10.075
+  data arrival time                                                -5.005
+  --------------------------------------------------------------------------
+  slack (MET)                                                       5.070
+
+
+  Startpoint: divisor_p_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: en_reg (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipe_div           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  pipe_div_DW01_sub_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            1.000      1.000
+  divisor_p_reg[0]/CLK (DFF_K)                           0.000      1.000 r
+  divisor_p_reg[0]/Q (DFF_K)                             0.221      1.221 r
+  U671/Z (INVERT_H)                                      0.031      1.253 f
+  U672/Z (INVERT_H)                                      0.048      1.301 r
+  sub_141_S2/B[0] (pipe_div_DW01_sub_0)                  0.000      1.301 r
+  sub_141_S2/U2/Z (INVERT_H)                             0.045      1.345 f
+  sub_141_S2/U3/Z (NOR2_C)                               0.079      1.424 r
+  sub_141_S2/U1/Z (INVERT_E)                             0.058      1.482 f
+  sub_141_S2/U2_1/COUT (ADDF_B)                          0.351      1.833 f
+  sub_141_S2/U2_2/COUT (ADDF_B)                          0.396      2.229 f
+  sub_141_S2/U2_3/COUT (ADDF_B)                          0.396      2.624 f
+  sub_141_S2/U2_4/COUT (ADDF_B)                          0.396      3.020 f
+  sub_141_S2/U2_5/COUT (ADDF_B)                          0.396      3.416 f
+  sub_141_S2/U2_6/COUT (ADDF_B)                          0.380      3.796 f
+  sub_141_S2/U2_7/Z (XOR3_D)                             0.176      3.972 f
+  sub_141_S2/DIFF[7] (pipe_div_DW01_sub_0)               0.000      3.972 f
+  U315/Z (AND2_H)                                        0.082      4.054 f
+  U316/Z (INVERT_D)                                      0.052      4.106 r
+  U745/Z (NAND2_D)                                       0.054      4.160 f
+  U749/Z (DELAY4_F)                                      0.237      4.397 f
+  U748/Z (BUFFER_F)                                      0.072      4.469 f
+  U483/Z (INVERT_D)                                      0.057      4.526 r
+  U482/Z (INVERT_E)                                      0.055      4.581 f
+  U564/Z (BUFFER_I)                                      0.075      4.656 f
+  U687/Z (NOR2_C)                                        0.078      4.734 r
+  U484/Z (INVERT_E)                                      0.065      4.799 f
+  U485/Z (INVERT_H)                                      0.042      4.841 r
+  U686/Z (OAI21_C)                                       0.036      4.878 f
+  U440/Z (AO222_F)                                       0.112      4.989 f
+  en_reg/D (DFFR_K)                                      0.000      4.989 f
+  data arrival time                                                 4.989
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            1.000     11.000
+  clock uncertainty                                     -0.700     10.300
+  en_reg/CLK (DFFR_K)                                    0.000     10.300 r
+  library setup time                                    -0.225     10.075
+  data required time                                               10.075
+  --------------------------------------------------------------------------
+  data required time                                               10.075
+  data arrival time                                                -4.989
+  --------------------------------------------------------------------------
+  slack (MET)                                                       5.086
+
+
+  Startpoint: sreg_reg[15]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: en_reg (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipe_div           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  pipe_div_DW01_sub_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            1.000      1.000
+  sreg_reg[15]/CLK (DFFR_K)                              0.000      1.000 r
+  sreg_reg[15]/Q (DFFR_K)                                0.175      1.175 f
+  U297/Z (INVERT_H)                                      0.038      1.213 r
+  U298/Z (INVERT_H)                                      0.036      1.249 f
+  U171/Z (INVERT_I)                                      0.050      1.299 r
+  U923/Z (INVERT_F)                                      0.053      1.352 f
+  sub_141_S2/A[0] (pipe_div_DW01_sub_0)                  0.000      1.352 f
+  sub_141_S2/U3/Z (NOR2_C)                               0.089      1.440 r
+  sub_141_S2/U1/Z (INVERT_E)                             0.058      1.498 f
+  sub_141_S2/U2_1/COUT (ADDF_B)                          0.351      1.849 f
+  sub_141_S2/U2_2/COUT (ADDF_B)                          0.396      2.245 f
+  sub_141_S2/U2_3/COUT (ADDF_B)                          0.396      2.640 f
+  sub_141_S2/U2_4/COUT (ADDF_B)                          0.396      3.036 f
+  sub_141_S2/U2_5/COUT (ADDF_B)                          0.396      3.432 f
+  sub_141_S2/U2_6/COUT (ADDF_B)                          0.380      3.812 f
+  sub_141_S2/U2_7/Z (XOR3_D)                             0.154      3.966 r
+  sub_141_S2/DIFF[7] (pipe_div_DW01_sub_0)               0.000      3.966 r
+  U315/Z (AND2_H)                                        0.075      4.041 r
+  U316/Z (INVERT_D)                                      0.047      4.088 f
+  U745/Z (NAND2_D)                                       0.066      4.153 r
+  U749/Z (DELAY4_F)                                      0.227      4.380 r
+  U748/Z (BUFFER_F)                                      0.064      4.444 r
+  U483/Z (INVERT_D)                                      0.050      4.495 f
+  U482/Z (INVERT_E)                                      0.056      4.551 r
+  U564/Z (BUFFER_I)                                      0.064      4.615 r
+  U687/Z (NOR2_C)                                        0.070      4.685 f
+  U484/Z (INVERT_E)                                      0.070      4.755 r
+  U485/Z (INVERT_H)                                      0.037      4.792 f
+  U686/Z (OAI21_C)                                       0.107      4.898 r
+  U440/Z (AO222_F)                                       0.139      5.037 r
+  en_reg/D (DFFR_K)                                      0.000      5.037 r
+  data arrival time                                                 5.037
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            1.000     11.000
+  clock uncertainty                                     -0.700     10.300
+  en_reg/CLK (DFFR_K)                                    0.000     10.300 r
+  library setup time                                    -0.159     10.141
+  data required time                                               10.141
+  --------------------------------------------------------------------------
+  data required time                                               10.141
+  data arrival time                                                -5.037
+  --------------------------------------------------------------------------
+  slack (MET)                                                       5.104
+
+
+  Startpoint: divisor_p_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: en_reg (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipe_div           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  pipe_div_DW01_sub_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            1.000      1.000
+  divisor_p_reg[0]/CLK (DFF_K)                           0.000      1.000 r
+  divisor_p_reg[0]/Q (DFF_K)                             0.221      1.221 r
+  U671/Z (INVERT_H)                                      0.031      1.253 f
+  U672/Z (INVERT_H)                                      0.048      1.301 r
+  sub_141_S2/B[0] (pipe_div_DW01_sub_0)                  0.000      1.301 r
+  sub_141_S2/U2/Z (INVERT_H)                             0.045      1.345 f
+  sub_141_S2/U3/Z (NOR2_C)                               0.079      1.424 r
+  sub_141_S2/U1/Z (INVERT_E)                             0.058      1.482 f
+  sub_141_S2/U2_1/COUT (ADDF_B)                          0.351      1.833 f
+  sub_141_S2/U2_2/COUT (ADDF_B)                          0.396      2.229 f
+  sub_141_S2/U2_3/COUT (ADDF_B)                          0.396      2.624 f
+  sub_141_S2/U2_4/COUT (ADDF_B)                          0.396      3.020 f
+  sub_141_S2/U2_5/COUT (ADDF_B)                          0.396      3.416 f
+  sub_141_S2/U2_6/COUT (ADDF_B)                          0.380      3.796 f
+  sub_141_S2/U2_7/Z (XOR3_D)                             0.154      3.950 r
+  sub_141_S2/DIFF[7] (pipe_div_DW01_sub_0)               0.000      3.950 r
+  U315/Z (AND2_H)                                        0.075      4.025 r
+  U316/Z (INVERT_D)                                      0.047      4.072 f
+  U745/Z (NAND2_D)                                       0.066      4.137 r
+  U749/Z (DELAY4_F)                                      0.227      4.364 r
+  U748/Z (BUFFER_F)                                      0.064      4.428 r
+  U483/Z (INVERT_D)                                      0.050      4.479 f
+  U482/Z (INVERT_E)                                      0.056      4.535 r
+  U564/Z (BUFFER_I)                                      0.064      4.599 r
+  U687/Z (NOR2_C)                                        0.070      4.669 f
+  U484/Z (INVERT_E)                                      0.070      4.739 r
+  U485/Z (INVERT_H)                                      0.037      4.776 f
+  U686/Z (OAI21_C)                                       0.107      4.882 r
+  U440/Z (AO222_F)                                       0.139      5.021 r
+  en_reg/D (DFFR_K)                                      0.000      5.021 r
+  data arrival time                                                 5.021
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            1.000     11.000
+  clock uncertainty                                     -0.700     10.300
+  en_reg/CLK (DFFR_K)                                    0.000     10.300 r
+  library setup time                                    -0.159     10.141
+  data required time                                               10.141
+  --------------------------------------------------------------------------
+  data required time                                               10.141
+  data arrival time                                                -5.021
+  --------------------------------------------------------------------------
+  slack (MET)                                                       5.120
+
+
+  Startpoint: divisor_p_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: en_reg (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipe_div           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  pipe_div_DW01_sub_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            1.000      1.000
+  divisor_p_reg[1]/CLK (DFF_K)                           0.000      1.000 r
+  divisor_p_reg[1]/Q (DFF_K)                             0.221      1.221 r
+  U632/Z (INVERT_H)                                      0.043      1.264 f
+  U633/Z (INVERT_H)                                      0.046      1.310 r
+  sub_141_S2/B[1] (pipe_div_DW01_sub_0)                  0.000      1.310 r
+  sub_141_S2/U11/Z (INVERT_D)                            0.053      1.363 f
+  sub_141_S2/U2_1/COUT (ADDF_B)                          0.359      1.722 f
+  sub_141_S2/U2_2/COUT (ADDF_B)                          0.396      2.118 f
+  sub_141_S2/U2_3/COUT (ADDF_B)                          0.396      2.514 f
+  sub_141_S2/U2_4/COUT (ADDF_B)                          0.396      2.909 f
+  sub_141_S2/U2_5/COUT (ADDF_B)                          0.396      3.305 f
+  sub_141_S2/U2_6/COUT (ADDF_B)                          0.380      3.685 f
+  sub_141_S2/U2_7/Z (XOR3_D)                             0.176      3.861 f
+  sub_141_S2/DIFF[7] (pipe_div_DW01_sub_0)               0.000      3.861 f
+  U315/Z (AND2_H)                                        0.082      3.943 f
+  U316/Z (INVERT_D)                                      0.052      3.996 r
+  U745/Z (NAND2_D)                                       0.054      4.049 f
+  U749/Z (DELAY4_F)                                      0.237      4.286 f
+  U748/Z (BUFFER_F)                                      0.072      4.358 f
+  U483/Z (INVERT_D)                                      0.057      4.415 r
+  U482/Z (INVERT_E)                                      0.055      4.470 f
+  U564/Z (BUFFER_I)                                      0.075      4.545 f
+  U687/Z (NOR2_C)                                        0.078      4.623 r
+  U484/Z (INVERT_E)                                      0.065      4.688 f
+  U485/Z (INVERT_H)                                      0.042      4.731 r
+  U686/Z (OAI21_C)                                       0.036      4.767 f
+  U440/Z (AO222_F)                                       0.112      4.879 f
+  en_reg/D (DFFR_K)                                      0.000      4.879 f
+  data arrival time                                                 4.879
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            1.000     11.000
+  clock uncertainty                                     -0.700     10.300
+  en_reg/CLK (DFFR_K)                                    0.000     10.300 r
+  library setup time                                    -0.225     10.075
+  data required time                                               10.075
+  --------------------------------------------------------------------------
+  data required time                                               10.075
+  data arrival time                                                -4.879
+  --------------------------------------------------------------------------
+  slack (MET)                                                       5.196
+
+
+  Startpoint: remainder_reg[5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: remainder[5]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipe_div           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             1.000      1.000
+  remainder_reg[5]/CLK (DFFR_K)           0.000      1.000 r
+  remainder_reg[5]/QBAR (DFFR_K)          0.332      1.332 f
+  U277/Z (INVERT_I)                       0.047      1.379 r
+  U276/Z (INVERT_J)                       0.044      1.423 f
+  U690/Z (INVERT_O)                       0.052      1.475 r
+  remainder[5] (out)                      0.002      1.477 r
+  data arrival time                                  1.477
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -1.000      9.000
+  data required time                                 9.000
+  -----------------------------------------------------------
+  data required time                                 9.000
+  data arrival time                                 -1.477
+  -----------------------------------------------------------
+  slack (MET)                                        7.523
+
+
+  Startpoint: remainder_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: remainder[3]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipe_div           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             1.000      1.000
+  remainder_reg[3]/CLK (DFFR_K)           0.000      1.000 r
+  remainder_reg[3]/QBAR (DFFR_K)          0.332      1.332 f
+  U279/Z (INVERT_I)                       0.047      1.379 r
+  U278/Z (INVERT_J)                       0.044      1.423 f
+  U692/Z (INVERT_O)                       0.052      1.475 r
+  remainder[3] (out)                      0.002      1.477 r
+  data arrival time                                  1.477
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -1.000      9.000
+  data required time                                 9.000
+  -----------------------------------------------------------
+  data required time                                 9.000
+  data arrival time                                 -1.477
+  -----------------------------------------------------------
+  slack (MET)                                        7.523
+
+
+  Startpoint: quotient_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: quotient[2]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipe_div           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             1.000      1.000
+  quotient_reg[2]/CLK (DFFR_K)            0.000      1.000 r
+  quotient_reg[2]/QBAR (DFFR_K)           0.332      1.332 f
+  U282/Z (INVERT_I)                       0.044      1.376 r
+  U281/Z (INVERT_J)                       0.044      1.420 f
+  U746/Z (INVERT_O)                       0.052      1.471 r
+  quotient[2] (out)                       0.002      1.474 r
+  data arrival time                                  1.474
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -1.000      9.000
+  data required time                                 9.000
+  -----------------------------------------------------------
+  data required time                                 9.000
+  data arrival time                                 -1.474
+  -----------------------------------------------------------
+  slack (MET)                                        7.526
+
+
+  Startpoint: quotient_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: quotient[1]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipe_div           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             1.000      1.000
+  quotient_reg[1]/CLK (DFFR_K)            0.000      1.000 r
+  quotient_reg[1]/QBAR (DFFR_K)           0.332      1.332 f
+  U284/Z (INVERT_I)                       0.044      1.376 r
+  U283/Z (INVERT_J)                       0.044      1.420 f
+  U747/Z (INVERT_O)                       0.052      1.471 r
+  quotient[1] (out)                       0.002      1.474 r
+  data arrival time                                  1.474
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -1.000      9.000
+  data required time                                 9.000
+  -----------------------------------------------------------
+  data required time                                 9.000
+  data arrival time                                 -1.474
+  -----------------------------------------------------------
+  slack (MET)                                        7.526
+
+
+  Startpoint: quotient_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: quotient[0]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  pipe_div           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             1.000      1.000
+  quotient_reg[0]/CLK (DFFR_K)            0.000      1.000 r
+  quotient_reg[0]/QBAR (DFFR_K)           0.332      1.332 f
+  U266/Z (INVERT_I)                       0.044      1.376 r
+  U265/Z (INVERT_J)                       0.044      1.420 f
+  U723/Z (INVERT_O)                       0.052      1.471 r
+  quotient[0] (out)                       0.002      1.474 r
+  data arrival time                                  1.474
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -1.000      9.000
+  data required time                                 9.000
+  -----------------------------------------------------------
+  data required time                                 9.000
+  data arrival time                                 -1.474
+  -----------------------------------------------------------
+  slack (MET)                                        7.526
+
+
+1
