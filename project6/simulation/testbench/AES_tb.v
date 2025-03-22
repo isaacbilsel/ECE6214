@@ -17,7 +17,7 @@ module AES_tb;
         .rst_n(rst_n),
         .plaintext_in(plaintext_in),
         .key_in(key_in),
-        .ciphertext_out(ciphertext_out)
+        .ciphertext_out(ciphertext_out),
         .encryption_done(encryption_done),
         .start_encryption(start_encryption)
     );
@@ -43,7 +43,7 @@ module AES_tb;
         $display("Starting Test 1: Apply given plaintext and key...");
         
         // Given Plaintext (128 bits)
-        plaintext_in = 128'h0004080c0105090d02060a0e0307070b0f;  // 4x4 matrix as provided
+        plaintext_in = 128'h04080c0105090d02060a0e0307070b0f;  // 4x4 matrix as provided
 
         // Given Key (128 bits)
         key = 128'h00020406080a0c0e10121416181a1c1e;  // 4x4 matrix as provided

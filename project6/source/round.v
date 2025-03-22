@@ -2,8 +2,8 @@
 
 module round(text, key, out);
   
-  input [127:0] text,key;
-  output [127:0] code;
+  input [127:0] text, key;
+  output [127:0] out;
   
   wire [127:0] A,B,C;
 
