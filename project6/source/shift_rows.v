@@ -1,4 +1,6 @@
-module S_Shift_Rows(S_Box_out,Shift_Rows);
+`timescale 10ns / 10ps
+
+module shift_rows(S_Box_out,Shift_Rows);
   input [127:0]S_Box_out;
   output [127:0]Shift_Rows;
   assign Shift_Rows[127:120] = S_Box_out[127:120];

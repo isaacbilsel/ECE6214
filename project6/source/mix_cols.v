@@ -1,4 +1,6 @@
-module S_mixcolumn_128bit(in, out);
+`timescale 10ns / 10ps
+
+module mix_cols(in, out);
 
     input [127:0] in;
     output[127:0] out;

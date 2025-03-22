@@ -13,11 +13,13 @@ module AES_tb;
 
     // Instantiate the AES Encryption Top Module
     AES uut (
-        .clk(Clk),
-        .rst(Rst),
-        .Plain_Test(Plain_Test),
-        .Key(Key),
-        .Cipher_Test(Cipher_Test)
+        .clk(clk),
+        .rst_n(rst_n),
+        .plaintext_in(plaintext_in),
+        .key_in(key_in),
+        .ciphertext_out(ciphertext_out)
+        .encryption_done(encryption_done),
+        .start_encryption(start_encryption)
     );
 
     // Clock Generation: Toggle clock every 5ns to create a 100 MHz clock
@@ -29,28 +31,28 @@ module AES_tb;
     initial begin
         // Initialize the clock and reset signals
         clk = 0;
-        rst = 0;
+        rst_n = 0;
 
         // Apply Reset to initialize the AES core
         $display("Applying reset...");
-        rst = 1;
+        rst_n = 1;
         #10; // Wait for a few clock cycles to apply reset
-        rst = 0;
+        rst_n = 0;
 
         // Test 1: Apply given plaintext and key
         $display("Starting Test 1: Apply given plaintext and key...");
         
         // Given Plaintext (128 bits)
-        Plain_Test = 128'h0004080c0105090d02060a0e0307070b0f;  // 4x4 matrix as provided
+        plaintext_in = 128'h0004080c0105090d02060a0e0307070b0f;  // 4x4 matrix as provided
 
         // Given Key (128 bits)
-        Key = 128'h00020406080a0c0e10121416181a1c1e;  // 4x4 matrix as provided
+        key = 128'h00020406080a0c0e10121416181a1c1e;  // 4x4 matrix as provided
         
         // Wait for the encryption process to complete
         #10;  
         
         // Display the resulting ciphertext
-        $display("Ciphertext: %h", Cipher_Test);
+        $display("Ciphertext: %h", ciphertext_out);
 
         // End simulation after the test
         $finish;
@@ -58,7 +60,7 @@ module AES_tb;
 
     // Monitor the output Cipher_Test at each time step
     initial begin
-        $monitor("At time %t, Cipher_Test = %h", $time, Cipher_Test);
+        $monitor("At time %t, cipher = %h", $time, ciphertext_out);
     end
 
 endmodule

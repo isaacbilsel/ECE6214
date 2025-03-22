@@ -1,31 +1,20 @@
-module S_Single_round_AES(Test,Key,Code);
+`timescale 10ns / 10ps
+
+module round(text, key, out);
   
-  input [127:0] Test,Key;
-  output [127:0] Code;
+  input [127:0] text,key;
+  output [127:0] code;
   
   wire [127:0] A,B,C;
-    
-  sub_bytes sub (
-                        .in(Test), 
-                        .out(A)
-                        );
 
-  S_Shift_Rows Shift_row (
-                          .S_Box_out(A), 
-                          .Shift_Rows(B)
-                          );
-  
+  sub_bytes sub ( .in(Test), .out(A));
 
-  S_Mixcolumn_128bit mixcolumn (
-                                .in(B), 
-                                .out(C)
-                              );
+  shift_rows shift (.S_Box_out(A), .Shift_Rows(B));
 
-  S_Add_round_key Add_round (
-                            .Data(C), 
-                            .key(Key), 
-                            .out(Code)
-                            );
+  mix_cols mixcolumn (.in(B), .out(C));
+
+  // Add round key
+  assign out = C ^ key;
 
 endmodule
 

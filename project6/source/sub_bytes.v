@@ -1,3 +1,5 @@
+`timescale 10ns / 10ps
+
 module sub_bytes(in,out);  
   input [7:0]in;  
   output [7:0]out;
@@ -6,7 +8,7 @@ module sub_bytes(in,out);
   
    always @(in)
     case (in)
-     8'h00:out=8'h63;
+       8'h00:out=8'h63;
 	   8'h01:out=8'h7c;
 	   8'h02:out=8'h77;
 	   8'h03:out=8'h7b;
