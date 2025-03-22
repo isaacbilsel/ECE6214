@@ -1,16 +1,18 @@
 `timescale 10ns / 10ps
 
-module Topmodule_AES_Encryption_tb; 
+module AES_tb; 
 
     // Testbench Signals
     reg clk;
-    reg rst;
-    reg [127:0] Plain_Test;
-    reg [127:0] Key;
-    wire [127:0] Cipher_Test;
+    reg rst_n;
+    reg start_encryption;
+    reg [127:0] plaintext_in;
+    reg [127:0] key_in;
+    wire [127:0] ciphertext_out;
+    wire encryption_done;
 
     // Instantiate the AES Encryption Top Module
-    Topmodule_AES_Encryption uut (
+    AES uut (
         .clk(Clk),
         .rst(Rst),
         .Plain_Test(Plain_Test),

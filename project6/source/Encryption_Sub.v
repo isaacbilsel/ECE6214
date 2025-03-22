@@ -1,13 +1,9 @@
-module S_Encryption_Sub(Plain_Test,Cipher_Test,Key,Round2key1,Round2key2,Round2key3,Round2key4,Round2key5,Round2key6,Round2key7,Round2key8,Round2key9,Round2key10);
+module Encryption_Sub(Plain_Test,Cipher_Test,Key,Round2key1,Round2key2,Round2key3,Round2key4,Round2key5,Round2key6,Round2key7,Round2key8,Round2key9,Round2key10);
 
   input [127:0]Plain_Test;
-  
   input [127:0]Key;
-  
   input [127:0]Round2key1, Round2key2, Round2key3, Round2key4, Round2key5, Round2key6, Round2key7 ,Round2key8, Round2key9, Round2key10;
-  
   output [127:0]Cipher_Test;
-  
   wire [127:0]A,B,C,D,E,F,G,H,I,J;
   
   S_Add_round_key  Add_round (
