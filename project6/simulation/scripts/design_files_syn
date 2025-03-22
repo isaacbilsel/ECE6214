@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# list of design files to be compiled
+
+
+ver_files=("../../synthesis/netlists/pipe_div.v"
+    "../testbench/pipe_div_tb.v"
+    
+)
