@@ -31,11 +31,9 @@ module AES_tb;
         // Initialize the clock and reset signals
         clk <= 0;
         rst_n <= 0;
-        /*
         plaintext_in <= 128'd0;
         key_in <= 128'd0;
         start_encryption <= 1'b0;
-		*/
 		// repeat(2)@(negedge clk);
 		#20
 		
@@ -46,8 +44,8 @@ module AES_tb;
 		
         // Test 1: Apply given plaintext and key
         $display("Starting Test 1: Apply given plaintext and key...");
-        plaintext_in <= 128'h04080c0105090d02060a0e0307070b0f;  // 4x4 matrix as provided
-        key_in <= 128'h00020406080a0c0e10121416181a1c1e;  // 4x4 matrix as provided
+        plaintext_in 	 <= 128'h000102030405060708090a0b0c0d0e0f; // 4x4 matrix as provided
+        key_in			 <= 128'h00081018020a121a040c141c060e161e;  // 4x4 matrix as provided
         start_encryption <= 1;
         
         // Wait for the encryption process to complete
