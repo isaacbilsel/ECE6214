@@ -1,19 +1,18 @@
 `timescale 10ns / 10ps
 
 module final_round(in,key,out);
-  
   input [127:0]in, key;
-  
   output [127:0] out;
-  
   wire [127:0] A,B,C;
-    
-  S_128bit_S_box S_Box (
+  
+  // Sub bytes
+  sub_bytes sub_final (
                         .in(in), 
                         .out(A)
                       );
 
-  S_Shift_Rows Shift_row (
+  // Shift rows
+  shift_rows shift_final (
                           .S_Box_out(A), 
                           .Shift_Rows(B)
                         );
