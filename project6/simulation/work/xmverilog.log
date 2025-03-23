@@ -1,6 +1,54 @@
 xmverilog(64): 17.10-s001: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	xmverilog	17.10-s001: Started on Mar 23, 2025 at 12:40:24 EDT
+TOOL:	xmverilog	17.10-s001: Started on Mar 23, 2025 at 13:35:15 EDT
 xmverilog
 	../testbench/AES_tb.v
-	-compile
-TOOL:	xmverilog	17.10-s001: Exiting on Mar 23, 2025 at 12:40:24 EDT  (total: 00:00:00)
+	+gui
+	+access+r
+	-timescale
+	1ns/1ps
+Recompiling... reason: file '../testbench/AES_tb.v' is newer than expected.
+	expected: Sun Mar 23 13:31:11 2025
+	actual:   Sun Mar 23 13:34:51 2025
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+                        .in(in), 
+                             |
+xmelab: *W,CUVMPW (/home/ead/isaacbilsel/ece6214/ECE6214/project6/source/final_round.v,10|29): port sizes differ in port connection (128/8).
+                        .out(A)
+                             |
+xmelab: *W,CUVMPW (/home/ead/isaacbilsel/ece6214/ECE6214/project6/source/final_round.v,11|29): port sizes differ in port connection (128/8).
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.AES_tb:v <0x39a2a60d>
+			streams:   8, words:  6976
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                218       9
+		Registers:              279      63
+		Scalar wires:             5       -
+		Expanded wires:        2760     330
+		Vectored wires:         380       -
+		Always blocks:          189       5
+		Initial blocks:           2       2
+		Cont. assignments:      186      44
+		Pseudo assignments:     185      73
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.AES_tb:v
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /apps/vlsi_2018/cadence/XCELIUM1710/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm AES_tb.DUT.A AES_tb.DUT.B AES_tb.DUT.C AES_tb.DUT.D AES_tb.DUT.E AES_tb.DUT.F AES_tb.DUT.G AES_tb.DUT.H AES_tb.DUT.I AES_tb.DUT.J AES_tb.DUT.ciphertext_out AES_tb.DUT.ciphertext_out_next AES_tb.DUT.ciphertext_out_wire AES_tb.DUT.clk AES_tb.DUT.encryption_done AES_tb.DUT.encryption_done_next AES_tb.DUT.key0 AES_tb.DUT.key1 AES_tb.DUT.key2 AES_tb.DUT.key3 AES_tb.DUT.key4 AES_tb.DUT.key5 AES_tb.DUT.key6 AES_tb.DUT.key7 AES_tb.DUT.key8 AES_tb.DUT.key9 AES_tb.DUT.key10 AES_tb.DUT.key_in AES_tb.DUT.key_in_q AES_tb.DUT.plaintext_in AES_tb.DUT.plaintext_in_q AES_tb.DUT.rst_n AES_tb.DUT.start_encryption AES_tb.DUT.start_encryption_q
+Created probe 1
+xcelium> run
+Simulation interrupted at 0 FS + 104479505
+xcelium> scope -set AES_tb.DUT
+xcelium> ^C
+xcelium> exit
+TOOL:	xmverilog	17.10-s001: Exiting on Mar 23, 2025 at 13:38:17 EDT  (total: 00:03:02)
