@@ -2,7 +2,7 @@
 // File created by:  xmverilog
 // Do not modify this file
 //
-../testbench/AES_tb.v
+../testbench/AES_tb_syn.v
 +gui
 +access+r
 -timescale

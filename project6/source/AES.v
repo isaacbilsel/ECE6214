@@ -20,12 +20,14 @@ module AES(clk,rst_n,plaintext_in,key_in,start_encryption,ciphertext_out, encryp
 	reg [3:0] round_counter;
   reg [127:0] B, C, D, E, F, G, H, I, J;
   wire [127:0] B_next, C_next, D_next, E_next, F_next, G_next, H_next, I_next, J_next;
-  wire [127:0] key0,key1,key2,key3,key4,key5,key6,key7,key8,key9,key10;
+  reg [127:0] key0,key1,key2,key3,key4,key5,key6,key7,key8,key9,key10;
+  wire [127:0] key0_next,key1_next,key2_next,key3_next,key4_next,key5_next,key6_next,key7_next,key8_next,key9_next,key10_next;
   wire [127:0] ciphertext_out_next;
   
 	// Instantiate modules
 	// Key expansion
-	key_expand k (clk, key_in_q, key0,key1,key2,key3,key4,key5,key6,key7,key8,key9,key10);
+	key_expand k(.clk(clk), .key(key_in_q), .key_s0(key0_next), .key_s1(key1_next), .key_s2(key2_next), .key_s3(key3_next), .key_s4(key4_next), 
+								.key_s5(key5_next), .key_s6(key6_next), .key_s7(key7_next), .key_s8(key8_next), .key_s9(key9_next), .key_s10(key10_next));
 	
 	// Initial add round key 
   wire [127:0] A = plaintext_in_q ^ key_in_q;
@@ -76,6 +78,17 @@ module AES(clk,rst_n,plaintext_in,key_in,start_encryption,ciphertext_out, encryp
         H <= H_next;
         I <= I_next;
         J <= J_next;
+        
+        key1 <= key1_next;
+        key2 <= key2_next;
+        key3 <= key3_next;
+        key4 <= key4_next;
+        key5 <= key5_next;
+        key6 <= key6_next;
+        key7 <= key7_next;
+        key8 <= key8_next;
+        key9 <= key9_next;
+        key10<= key10_next;
       end
 
       encryption_done     <= encryption_done_next;
@@ -86,9 +99,9 @@ module AES(clk,rst_n,plaintext_in,key_in,start_encryption,ciphertext_out, encryp
   always @(*) begin
     // Set outputs if done
     encryption_done_next  <= encryption_done;
-    if (round_counter >= 4'd9) begin
+    if (round_counter >= 4'd10) begin
       encryption_done_next <= 1'b1;
-      encrypting <= 0;
+      // encrypting <= 0;
     end
   end
     

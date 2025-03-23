@@ -1,0 +1,437 @@
+Warning: Design 'AES' has '3' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: Updating design information... (UID-85)
+Warning: Design 'AES' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -max_paths 5
+        -sort_by group
+Design : AES
+Version: O-2018.06-SP1
+Date   : Sun Mar 23 17:35:31 2025
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: slow   Library: IBM_CMOS8HP_SS125
+Wire Load Model Mode: enclosed
+
+  Startpoint: rst_n (input port clocked by v_clk)
+  Endpoint: B_reg[80] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES                500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock v_clk (rise edge)                 0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    1.000      1.000 f
+  rst_n (in)                              0.000      1.000 f
+  U3393/Z (INVERT_K)                      0.091      1.091 r
+  U3477/Z (INVERT_M)                      0.054      1.145 f
+  U1456/Z (INVERT_N)                      0.052      1.197 r
+  U3484/Z (INVERT_M)                      0.043      1.240 f
+  U1472/Z (INVERT_M)                      0.045      1.285 r
+  U3456/Z (INVERT_N)                      0.044      1.329 f
+  U2288/Z (NAND2_F)                       0.059      1.387 r
+  U3394/Z (INVERT_K)                      0.048      1.436 f
+  U2289/Z (INVERT_I)                      0.053      1.489 r
+  U2292/Z (INVERT_J)                      0.049      1.538 f
+  U3384/Z (INVERT_K)                      0.053      1.590 r
+  U3410/Z (INVERT_M)                      0.048      1.638 f
+  U3539/Z (INVERT_M)                      0.052      1.690 r
+  U3485/Z (INVERT_N)                      0.044      1.734 f
+  U3389/Z (INVERT_K)                      0.051      1.785 r
+  U3401/Z (INVERT_M)                      0.048      1.833 f
+  U3503/Z (INVERT_M)                      0.050      1.883 r
+  U1905/Z (INVERT_O)                      0.044      1.927 f
+  U2795/Z (AO22_F)                        0.110      2.037 f
+  B_reg[80]/D (DFF_E)                     0.000      2.037 f
+  data arrival time                                  2.037
+
+  clock clk (rise edge)                  10.000     10.000
+  clock network delay (ideal)             1.000     11.000
+  clock uncertainty                      -0.700     10.300
+  B_reg[80]/CLK (DFF_E)                   0.000     10.300 r
+  library setup time                     -0.222     10.078
+  data required time                                10.078
+  -----------------------------------------------------------
+  data required time                                10.078
+  data arrival time                                 -2.037
+  -----------------------------------------------------------
+  slack (MET)                                        8.041
+
+
+  Startpoint: rst_n (input port clocked by v_clk)
+  Endpoint: B_reg[79] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES                500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock v_clk (rise edge)                 0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    1.000      1.000 f
+  rst_n (in)                              0.000      1.000 f
+  U3393/Z (INVERT_K)                      0.091      1.091 r
+  U3477/Z (INVERT_M)                      0.054      1.145 f
+  U1456/Z (INVERT_N)                      0.052      1.197 r
+  U3484/Z (INVERT_M)                      0.043      1.240 f
+  U1472/Z (INVERT_M)                      0.045      1.285 r
+  U3456/Z (INVERT_N)                      0.044      1.329 f
+  U2288/Z (NAND2_F)                       0.059      1.387 r
+  U3394/Z (INVERT_K)                      0.048      1.436 f
+  U2289/Z (INVERT_I)                      0.053      1.489 r
+  U2292/Z (INVERT_J)                      0.049      1.538 f
+  U3384/Z (INVERT_K)                      0.053      1.590 r
+  U3410/Z (INVERT_M)                      0.048      1.638 f
+  U3539/Z (INVERT_M)                      0.052      1.690 r
+  U3485/Z (INVERT_N)                      0.044      1.734 f
+  U3389/Z (INVERT_K)                      0.051      1.785 r
+  U3401/Z (INVERT_M)                      0.048      1.833 f
+  U3503/Z (INVERT_M)                      0.050      1.883 r
+  U1905/Z (INVERT_O)                      0.044      1.927 f
+  U2794/Z (AO22_F)                        0.110      2.037 f
+  B_reg[79]/D (DFF_E)                     0.000      2.037 f
+  data arrival time                                  2.037
+
+  clock clk (rise edge)                  10.000     10.000
+  clock network delay (ideal)             1.000     11.000
+  clock uncertainty                      -0.700     10.300
+  B_reg[79]/CLK (DFF_E)                   0.000     10.300 r
+  library setup time                     -0.222     10.078
+  data required time                                10.078
+  -----------------------------------------------------------
+  data required time                                10.078
+  data arrival time                                 -2.037
+  -----------------------------------------------------------
+  slack (MET)                                        8.041
+
+
+  Startpoint: rst_n (input port clocked by v_clk)
+  Endpoint: B_reg[9] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES                500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock v_clk (rise edge)                 0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    1.000      1.000 f
+  rst_n (in)                              0.000      1.000 f
+  U3393/Z (INVERT_K)                      0.091      1.091 r
+  U3477/Z (INVERT_M)                      0.054      1.145 f
+  U1456/Z (INVERT_N)                      0.052      1.197 r
+  U3484/Z (INVERT_M)                      0.043      1.240 f
+  U1472/Z (INVERT_M)                      0.045      1.285 r
+  U3456/Z (INVERT_N)                      0.044      1.329 f
+  U2288/Z (NAND2_F)                       0.059      1.387 r
+  U3394/Z (INVERT_K)                      0.048      1.436 f
+  U2289/Z (INVERT_I)                      0.053      1.489 r
+  U2292/Z (INVERT_J)                      0.049      1.538 f
+  U3384/Z (INVERT_K)                      0.053      1.590 r
+  U3410/Z (INVERT_M)                      0.048      1.638 f
+  U3539/Z (INVERT_M)                      0.052      1.690 r
+  U3485/Z (INVERT_N)                      0.044      1.734 f
+  U3389/Z (INVERT_K)                      0.051      1.785 r
+  U3401/Z (INVERT_M)                      0.048      1.833 f
+  U3503/Z (INVERT_M)                      0.050      1.883 r
+  U1905/Z (INVERT_O)                      0.044      1.927 f
+  U2733/Z (AO22_F)                        0.110      2.037 f
+  B_reg[9]/D (DFF_E)                      0.000      2.037 f
+  data arrival time                                  2.037
+
+  clock clk (rise edge)                  10.000     10.000
+  clock network delay (ideal)             1.000     11.000
+  clock uncertainty                      -0.700     10.300
+  B_reg[9]/CLK (DFF_E)                    0.000     10.300 r
+  library setup time                     -0.222     10.078
+  data required time                                10.078
+  -----------------------------------------------------------
+  data required time                                10.078
+  data arrival time                                 -2.037
+  -----------------------------------------------------------
+  slack (MET)                                        8.041
+
+
+  Startpoint: rst_n (input port clocked by v_clk)
+  Endpoint: B_reg[8] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES                500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock v_clk (rise edge)                 0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    1.000      1.000 f
+  rst_n (in)                              0.000      1.000 f
+  U3393/Z (INVERT_K)                      0.091      1.091 r
+  U3477/Z (INVERT_M)                      0.054      1.145 f
+  U1456/Z (INVERT_N)                      0.052      1.197 r
+  U3484/Z (INVERT_M)                      0.043      1.240 f
+  U1472/Z (INVERT_M)                      0.045      1.285 r
+  U3456/Z (INVERT_N)                      0.044      1.329 f
+  U2288/Z (NAND2_F)                       0.059      1.387 r
+  U3394/Z (INVERT_K)                      0.048      1.436 f
+  U2289/Z (INVERT_I)                      0.053      1.489 r
+  U2292/Z (INVERT_J)                      0.049      1.538 f
+  U3384/Z (INVERT_K)                      0.053      1.590 r
+  U3410/Z (INVERT_M)                      0.048      1.638 f
+  U3539/Z (INVERT_M)                      0.052      1.690 r
+  U3485/Z (INVERT_N)                      0.044      1.734 f
+  U3389/Z (INVERT_K)                      0.051      1.785 r
+  U3401/Z (INVERT_M)                      0.048      1.833 f
+  U3503/Z (INVERT_M)                      0.050      1.883 r
+  U1906/Z (INVERT_O)                      0.044      1.927 f
+  U1985/Z (AO22_F)                        0.110      2.037 f
+  B_reg[8]/D (DFF_E)                      0.000      2.037 f
+  data arrival time                                  2.037
+
+  clock clk (rise edge)                  10.000     10.000
+  clock network delay (ideal)             1.000     11.000
+  clock uncertainty                      -0.700     10.300
+  B_reg[8]/CLK (DFF_E)                    0.000     10.300 r
+  library setup time                     -0.222     10.078
+  data required time                                10.078
+  -----------------------------------------------------------
+  data required time                                10.078
+  data arrival time                                 -2.037
+  -----------------------------------------------------------
+  slack (MET)                                        8.041
+
+
+  Startpoint: rst_n (input port clocked by v_clk)
+  Endpoint: B_reg[7] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES                500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock v_clk (rise edge)                 0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    1.000      1.000 f
+  rst_n (in)                              0.000      1.000 f
+  U3393/Z (INVERT_K)                      0.091      1.091 r
+  U3477/Z (INVERT_M)                      0.054      1.145 f
+  U1456/Z (INVERT_N)                      0.052      1.197 r
+  U3484/Z (INVERT_M)                      0.043      1.240 f
+  U1472/Z (INVERT_M)                      0.045      1.285 r
+  U3456/Z (INVERT_N)                      0.044      1.329 f
+  U2288/Z (NAND2_F)                       0.059      1.387 r
+  U3394/Z (INVERT_K)                      0.048      1.436 f
+  U2289/Z (INVERT_I)                      0.053      1.489 r
+  U2292/Z (INVERT_J)                      0.049      1.538 f
+  U3384/Z (INVERT_K)                      0.053      1.590 r
+  U3410/Z (INVERT_M)                      0.048      1.638 f
+  U3539/Z (INVERT_M)                      0.052      1.690 r
+  U3485/Z (INVERT_N)                      0.044      1.734 f
+  U3389/Z (INVERT_K)                      0.051      1.785 r
+  U3401/Z (INVERT_M)                      0.048      1.833 f
+  U3503/Z (INVERT_M)                      0.050      1.883 r
+  U1905/Z (INVERT_O)                      0.044      1.927 f
+  U2123/Z (AO22_F)                        0.110      2.037 f
+  B_reg[7]/D (DFF_E)                      0.000      2.037 f
+  data arrival time                                  2.037
+
+  clock clk (rise edge)                  10.000     10.000
+  clock network delay (ideal)             1.000     11.000
+  clock uncertainty                      -0.700     10.300
+  B_reg[7]/CLK (DFF_E)                    0.000     10.300 r
+  library setup time                     -0.222     10.078
+  data required time                                10.078
+  -----------------------------------------------------------
+  data required time                                10.078
+  data arrival time                                 -2.037
+  -----------------------------------------------------------
+  slack (MET)                                        8.041
+
+
+  Startpoint: ciphertext_out_reg[4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: ciphertext_out[4]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES                500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             1.000      1.000
+  ciphertext_out_reg[4]/CLK (DFFR_E)      0.000 #    1.000 r
+  ciphertext_out_reg[4]/Q (DFFR_E)        0.319      1.319 r
+  U1600/Z (INVERT_J)                      0.054      1.374 f
+  U1734/Z (INVERT_O)                      0.055      1.428 r
+  ciphertext_out[4] (out)                 0.002      1.431 r
+  data arrival time                                  1.431
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -1.000      9.000
+  data required time                                 9.000
+  -----------------------------------------------------------
+  data required time                                 9.000
+  data arrival time                                 -1.431
+  -----------------------------------------------------------
+  slack (MET)                                        7.569
+
+
+  Startpoint: ciphertext_out_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: ciphertext_out[3]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES                500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             1.000      1.000
+  ciphertext_out_reg[3]/CLK (DFFR_E)      0.000 #    1.000 r
+  ciphertext_out_reg[3]/Q (DFFR_E)        0.319      1.319 r
+  U1601/Z (INVERT_J)                      0.054      1.374 f
+  U1735/Z (INVERT_O)                      0.055      1.428 r
+  ciphertext_out[3] (out)                 0.002      1.431 r
+  data arrival time                                  1.431
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -1.000      9.000
+  data required time                                 9.000
+  -----------------------------------------------------------
+  data required time                                 9.000
+  data arrival time                                 -1.431
+  -----------------------------------------------------------
+  slack (MET)                                        7.569
+
+
+  Startpoint: ciphertext_out_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: ciphertext_out[2]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES                500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             1.000      1.000
+  ciphertext_out_reg[2]/CLK (DFFR_E)      0.000 #    1.000 r
+  ciphertext_out_reg[2]/Q (DFFR_E)        0.319      1.319 r
+  U1602/Z (INVERT_J)                      0.054      1.374 f
+  U1736/Z (INVERT_O)                      0.055      1.428 r
+  ciphertext_out[2] (out)                 0.002      1.431 r
+  data arrival time                                  1.431
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -1.000      9.000
+  data required time                                 9.000
+  -----------------------------------------------------------
+  data required time                                 9.000
+  data arrival time                                 -1.431
+  -----------------------------------------------------------
+  slack (MET)                                        7.569
+
+
+  Startpoint: ciphertext_out_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: ciphertext_out[1]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES                500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             1.000      1.000
+  ciphertext_out_reg[1]/CLK (DFFR_E)      0.000 #    1.000 r
+  ciphertext_out_reg[1]/Q (DFFR_E)        0.319      1.319 r
+  U1603/Z (INVERT_J)                      0.054      1.374 f
+  U1737/Z (INVERT_O)                      0.055      1.428 r
+  ciphertext_out[1] (out)                 0.002      1.431 r
+  data arrival time                                  1.431
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -1.000      9.000
+  data required time                                 9.000
+  -----------------------------------------------------------
+  data required time                                 9.000
+  data arrival time                                 -1.431
+  -----------------------------------------------------------
+  slack (MET)                                        7.569
+
+
+  Startpoint: ciphertext_out_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: ciphertext_out[0]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  AES                500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             1.000      1.000
+  ciphertext_out_reg[0]/CLK (DFFR_E)      0.000 #    1.000 r
+  ciphertext_out_reg[0]/Q (DFFR_E)        0.319      1.319 r
+  U1604/Z (INVERT_J)                      0.054      1.374 f
+  U1738/Z (INVERT_O)                      0.055      1.428 r
+  ciphertext_out[0] (out)                 0.002      1.431 r
+  data arrival time                                  1.431
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -1.000      9.000
+  data required time                                 9.000
+  -----------------------------------------------------------
+  data required time                                 9.000
+  data arrival time                                 -1.431
+  -----------------------------------------------------------
+  slack (MET)                                        7.569
+
+
+1
