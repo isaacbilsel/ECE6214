@@ -5,12 +5,12 @@ set acs_work_dir "."
 
 #############################
 # Update design name to match top-level module name
-set DESIGN "pipe_div"
+set DESIGN "AES"
 
 ##########################
 # Analyze design
 # for designs with multiple verilog files, add addition "analyze" lines for each verilog file
-analyze -format verilog { ../../source/pipe_div.v }
+analyze -format verilog { ../../source/AES.v }
 
 # elaborate design
 elaborate  ${DESIGN} -architecture verilog -library DEFAULT

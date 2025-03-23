@@ -22,6 +22,11 @@ module AES_tb;
         .start_encryption(start_encryption)
     );
 
+		// initial block for SDF back annotation
+		initial begin
+			$sdf_annotate("../../synthesis/netlists/AES_syn.sdf" , AES_tb.DUT, ,"back_annotate.log");
+   	end
+
     // Clock Generation: Toggle clock every 5ns to create a 100 MHz clock
     always #5 clk = ~clk;
  
@@ -63,7 +68,6 @@ module AES_tb;
     // Monitor the output Cipher_Test at each time step
     initial begin
         $monitor("At time %t, cipher = %h", $time, ciphertext_out);
-	// $monitor("At time %t, sub_bytes result  =%h", $time, 
     end
 
 endmodule

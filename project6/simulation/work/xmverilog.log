@@ -1,5 +1,5 @@
 xmverilog(64): 17.10-s001: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	xmverilog	17.10-s001: Started on Mar 23, 2025 at 15:05:21 EDT
+TOOL:	xmverilog	17.10-s001: Started on Mar 23, 2025 at 16:29:36 EDT
 xmverilog
 	../testbench/AES_tb.v
 	+gui
@@ -7,34 +7,30 @@ xmverilog
 	-timescale
 	1ns/1ps
 Recompiling... reason: file '../testbench/AES_tb.v' is newer than expected.
-	expected: Sun Mar 23 13:55:04 2025
-	actual:   Sun Mar 23 15:05:11 2025
+	expected: Sun Mar 23 15:31:32 2025
+	actual:   Sun Mar 23 16:26:48 2025
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 		Caching library 'worklib' ....... Done
-                        .in(in), 
-                             |
-xmelab: *W,CUVMPW (/home/ead/isaacbilsel/ece6214/ECE6214/project6/source/final_round.v,10|29): port sizes differ in port connection (128/8).
-                        .out(A)
-                             |
-xmelab: *W,CUVMPW (/home/ead/isaacbilsel/ece6214/ECE6214/project6/source/final_round.v,11|29): port sizes differ in port connection (128/8).
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.AES_tb:v <0x027ed5d2>
-			streams:   8, words:  6530
+		worklib.AES_tb:v <0x599c0567>
+			streams:   9, words:  7728
+		worklib.round:v <0x0ebb75c2>
+			streams:  20, words:  4843
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                  Instances  Unique
-		Modules:                218       9
-		Registers:              290      74
-		Scalar wires:             5       -
-		Expanded wires:        2760     330
-		Vectored wires:         389       -
-		Always blocks:          189       5
+		Modules:                233       9
+		Registers:              304      73
+		Scalar wires:             4       -
+		Expanded wires:        2752     344
+		Vectored wires:         406       -
+		Always blocks:          231       8
 		Initial blocks:           2       2
 		Cont. assignments:      186      44
-		Pseudo assignments:     193      65
+		Pseudo assignments:     211      83
 		Simulation timescale:  10ps
 	Writing initial simulation snapshot: worklib.AES_tb:v
 
@@ -44,15 +40,47 @@ xcelium>
 xcelium> source /apps/vlsi_2018/cadence/XCELIUM1710/tools/xcelium/files/xmsimrc
 xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
-xcelium> probe -create -shm AES_tb.DUT.A AES_tb.DUT.B AES_tb.DUT.B_next AES_tb.DUT.C AES_tb.DUT.C_next AES_tb.DUT.D AES_tb.DUT.D_next AES_tb.DUT.E AES_tb.DUT.E_next AES_tb.DUT.F AES_tb.DUT.F_next AES_tb.DUT.G AES_tb.DUT.G_next AES_tb.DUT.H AES_tb.DUT.H_next AES_tb.DUT.I AES_tb.DUT.I_next AES_tb.DUT.J AES_tb.DUT.J_next AES_tb.DUT.ciphertext_out AES_tb.DUT.ciphertext_out_next AES_tb.DUT.ciphertext_out_wire AES_tb.DUT.clk AES_tb.DUT.encrypting AES_tb.DUT.encryption_done AES_tb.DUT.encryption_done_next AES_tb.DUT.key0 AES_tb.DUT.key1 AES_tb.DUT.key2 AES_tb.DUT.key3 AES_tb.DUT.key4 AES_tb.DUT.key5 AES_tb.DUT.key6 AES_tb.DUT.key7 AES_tb.DUT.key8 AES_tb.DUT.key9 AES_tb.DUT.key10 AES_tb.DUT.key_in AES_tb.DUT.key_in_q AES_tb.DUT.plaintext_in AES_tb.DUT.plaintext_in_q AES_tb.DUT.round_counter AES_tb.DUT.rst_n AES_tb.DUT.start_encryption AES_tb.DUT.start_encryption_q
+xcelium> probe -create -shm AES_tb.DUT.A AES_tb.DUT.B AES_tb.DUT.B_next AES_tb.DUT.C AES_tb.DUT.C_next AES_tb.DUT.D AES_tb.DUT.D_next AES_tb.DUT.E AES_tb.DUT.E_next AES_tb.DUT.F AES_tb.DUT.F_next AES_tb.DUT.G AES_tb.DUT.G_next AES_tb.DUT.H AES_tb.DUT.H_next AES_tb.DUT.I AES_tb.DUT.I_next AES_tb.DUT.J AES_tb.DUT.J_next AES_tb.DUT.ciphertext_out AES_tb.DUT.ciphertext_out_next AES_tb.DUT.clk AES_tb.DUT.encrypting AES_tb.DUT.encryption_done AES_tb.DUT.encryption_done_next AES_tb.DUT.key0 AES_tb.DUT.key1 AES_tb.DUT.key2 AES_tb.DUT.key3 AES_tb.DUT.key4 AES_tb.DUT.key5 AES_tb.DUT.key6 AES_tb.DUT.key7 AES_tb.DUT.key8 AES_tb.DUT.key9 AES_tb.DUT.key10 AES_tb.DUT.key_in AES_tb.DUT.key_in_q AES_tb.DUT.plaintext_in AES_tb.DUT.plaintext_in_q AES_tb.DUT.round_counter AES_tb.DUT.rst_n AES_tb.DUT.start_encryption AES_tb.DUT.start_encryption_q
 Created probe 1
 xcelium> run
+sub_bytes result = 63636363636363636363636363636363
+shift_rows result = 63636363636363636363636363636363
+mix_cols result = 63636363636363636363636363636363
 At time                    0, cipher = 00000000000000000000000000000000
 Applying reset...
+At time                25000, cipher = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Starting Test 1: Apply given plaintext and key...
-Ciphertext: xxxxxx41xxxxxxxxxxxxxxxxxxxxxxxx
-Simulation complete via $finish(1) at time 1450 NS + 3
-../testbench/AES_tb.v:61         $finish;
+sub_bytes result = 6301c9af6f76faa4fe6b72f0677bad82
+shift_rows result = 637672826f6badaffe7bc9a46701faf0
+mix_cols result = ac9b6cbe61faaf3207ecfbf8c78082a9
+sub_bytes result = 6f48abdddd089ecf6206dba73cc68cb4
+shift_rows result = 6f08dbb4dd068cdd62c6abcf3c489ea7
+mix_cols result = a9bd0d11fa83a457f1dca34e99b2a1c7
+sub_bytes result = 3237c674bedd72f8549effa77542d7a8
+shift_rows result = 32ddffa8be9ed7745442c6f8753772a7
+mix_cols result = 4f21e93f7d8f097850799293662a548f
+sub_bytes result = 6a08f8ba7439eac7e9e4bba4215622d3
+shift_rows result = 6a39bbd374e422bae956f8c72108eaa4
+mix_cols result = f71d5081477b01350c91061b14b011d2
+sub_bytes result = 18127957c33d29cc2e4ecc17b4f28c45
+shift_rows result = 183dcc45c34e8c572ef279ccb4122917
+mix_cols result = fe68695394877732e496617a7bfccdd2
+sub_bytes result = e08daa7aae62c78b7c5e6fa2291ab330
+shift_rows result = e0626f30ae5eb37a7c1aaa8b298dc7a2
+mix_cols result = 22a50c566ca603f0f726af39bbd8cc6e
+sub_bytes result = 2027539304c9d4bc2feeb53e96619a4a
+shift_rows result = 20c9b54a04ee9a932f6153bc9627d43e
+mix_cols result = ff27468828e56b4512a43720b481402e
+sub_bytes result = ace712d9fdb4abe03a0715d87ea40a82
+shift_rows result = acb41582fd070ad93aa412e07ee7abd8
+mix_cols result = 1362af513b349eb871bf8123bd95a765
+sub_bytes result = ad6906191281a1132e4442fac704c33c
+shift_rows result = ad81423c1244c3192e040613c769a1fa
+mix_cols result = a74eec5732dde083453f13567517e275
+At time               145000, cipher = b66c53419d2ee111ddad151e29c98036
+Ciphertext: b66c53419d2ee111ddad151e29c98036
+Simulation complete via $finish(1) at time 1600 NS + 0
+../testbench/AES_tb.v:60         $finish;
 xcelium> ^C
 xcelium> exit
-TOOL:	xmverilog	17.10-s001: Exiting on Mar 23, 2025 at 15:25:54 EDT  (total: 00:20:33)
+TOOL:	xmverilog	17.10-s001: Exiting on Mar 23, 2025 at 16:57:03 EDT  (total: 00:27:27)

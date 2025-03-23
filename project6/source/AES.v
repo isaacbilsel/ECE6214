@@ -12,7 +12,7 @@ module AES(clk,rst_n,plaintext_in,key_in,start_encryption,ciphertext_out, encryp
   reg start_encryption_q;
   reg [127:0] plaintext_in_q;
   reg [127:0] key_in_q;
-  reg [127:0] ciphertext_out_next;
+  // reg [127:0] ciphertext_out_next;
   reg encryption_done_next;
   
   // Intermediate values
@@ -21,7 +21,7 @@ module AES(clk,rst_n,plaintext_in,key_in,start_encryption,ciphertext_out, encryp
   reg [127:0] B, C, D, E, F, G, H, I, J;
   wire [127:0] B_next, C_next, D_next, E_next, F_next, G_next, H_next, I_next, J_next;
   wire [127:0] key0,key1,key2,key3,key4,key5,key6,key7,key8,key9,key10;
-  wire [127:0] ciphertext_out_wire;
+  wire [127:0] ciphertext_out_next;
   
 	// Instantiate modules
 	// Key expansion
@@ -42,7 +42,7 @@ module AES(clk,rst_n,plaintext_in,key_in,start_encryption,ciphertext_out, encryp
   round round9 (.text(I), .key(key9), .out(J_next));
 
 	// Final round
-  final_round final10 (.in(J), .key(key10), .out(ciphertext_out_wire)); 
+  final_round final10 (.in(J), .key(key10), .out(ciphertext_out_next)); 
 
   always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
@@ -63,7 +63,7 @@ module AES(clk,rst_n,plaintext_in,key_in,start_encryption,ciphertext_out, encryp
         encryption_done <= 1'b0;
       end
 
-      if (encrypting) begin
+      else if (encrypting) begin
         round_counter <= round_counter + 1;
         
         // Register intermediate results
@@ -85,10 +85,8 @@ module AES(clk,rst_n,plaintext_in,key_in,start_encryption,ciphertext_out, encryp
 
   always @(*) begin
     // Set outputs if done
-    ciphertext_out_next   <= ciphertext_out;
     encryption_done_next  <= encryption_done;
     if (round_counter >= 4'd9) begin
-      ciphertext_out_next <= ciphertext_out_wire;
       encryption_done_next <= 1'b1;
       encrypting <= 0;
     end
