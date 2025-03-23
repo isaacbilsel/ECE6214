@@ -42,7 +42,7 @@ module AES(clk,rst_n,plaintext_in,key_in,start_encryption,ciphertext_out, encryp
   final_round final10 (.in(J), .key(key10), .out(ciphertext_out_wire)); 
 
   always @(posedge clk or negedge rst_n) begin
-    if (rst_n) begin
+    if (!rst_n) begin
       ciphertext_out      <= 128'd0;
       encryption_done     <= 1'b0;
       start_encryption_q  <= 1'b0;
@@ -50,12 +50,14 @@ module AES(clk,rst_n,plaintext_in,key_in,start_encryption,ciphertext_out, encryp
       key_in_q            <= 128'd0;
     end
     else begin
+    	start_encryption_q  <= start_encryption;
       // Register values
-			start_encryption_q  <= start_encryption;
-      plaintext_in_q      <= plaintext_in;
-      key_in_q            <= key_in;
-      encryption_done     <= encryption_done_next;
-      ciphertext_out      <= ciphertext_out_next;
+      if(start_encryption) begin
+		    plaintext_in_q      <= plaintext_in;
+		    key_in_q            <= key_in;
+		    encryption_done     <= encryption_done_next;
+		    ciphertext_out      <= ciphertext_out_next;
+      end
     end
   end
 

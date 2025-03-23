@@ -31,9 +31,11 @@ module AES_tb;
         // Initialize the clock and reset signals
         clk <= 0;
         rst_n <= 0;
+        /*
         plaintext_in <= 128'd0;
         key_in <= 128'd0;
         start_encryption <= 1'b0;
+		*/
 		// repeat(2)@(negedge clk);
 		#20
 		
@@ -41,8 +43,6 @@ module AES_tb;
         $display("Applying reset...");
         rst_n = 1;
         #20 // repeat(2)@(negedge clk); // Wait for a few clock cycles to apply reset
-        rst_n = 0;
-		#20 // repeat(2)@(negedge clk);
 		
         // Test 1: Apply given plaintext and key
         $display("Starting Test 1: Apply given plaintext and key...");
@@ -51,7 +51,8 @@ module AES_tb;
         start_encryption <= 1;
         
         // Wait for the encryption process to complete
-        #30 // repeat(15)@(negedge clk); 
+         // repeat(15)@(negedge clk); 
+        wait (encryption_done ==1);
         
         // Display the resulting ciphertext
         $display("Ciphertext: %h", ciphertext_out);
