@@ -14,10 +14,12 @@ module AES(clk,rst_n,plaintext_in,key_in,start_encryption,ciphertext_out, encryp
   reg [127:0] key_in_q;
   reg [127:0] ciphertext_out_next;
   reg encryption_done_next;
-
+  
+  // Intermediate values
+  reg encrpyting;
+  reg [127:0] A, B, C, D, E, F, G, H, I, J;
+  wire [127:0] B_next, C_next, D_next, E_next, F_next, G_next, H_next, I_next, J_next;
   wire [127:0] key0,key1,key2,key3,key4,key5,key6,key7,key8,key9,key10;
-  // wire [127:0] ciphertext_out;
-  wire [127:0] A,B,C,D,E,F,G,H,I,J;
   wire [127:0] ciphertext_out_wire;
   
 	// Instantiate modules
@@ -28,15 +30,15 @@ module AES(clk,rst_n,plaintext_in,key_in,start_encryption,ciphertext_out, encryp
   assign A = plaintext_in_q ^ key_in_q;
   
   // Rounds 1-9
-	round round1 (.text(A), .key(key1), .out(B));
-	round round2 (.text(B), .key(key2), .out(C));
-	round round3 (.text(C), .key(key3), .out(D));
-	round round4 (.text(D), .key(key4), .out(E));
-	round round5 (.text(E), .key(key5), .out(F));
-	round round6 (.text(F), .key(key6), .out(G));
-	round round7 (.text(G), .key(key7), .out(H));
-	round round8 (.text(H), .key(key8), .out(I));
-	round round9 (.text(I), .key(key9), .out(J));
+  round round1 (.text(A), .key(key1), .out(B_next));
+  round round2 (.text(B), .key(key2), .out(C_next));
+  round round3 (.text(C), .key(key3), .out(D_next));
+  round round4 (.text(D), .key(key4), .out(E_next));
+  round round5 (.text(E), .key(key5), .out(F_next));
+  round round6 (.text(F), .key(key6), .out(G_next));
+  round round7 (.text(G), .key(key7), .out(H_next));
+  round round8 (.text(H), .key(key8), .out(I_next));
+  round round9 (.text(I), .key(key9), .out(J_next));
 
 	// Final round
   final_round final10 (.in(J), .key(key10), .out(ciphertext_out_wire)); 
@@ -48,26 +50,47 @@ module AES(clk,rst_n,plaintext_in,key_in,start_encryption,ciphertext_out, encryp
       start_encryption_q  <= 1'b0;
       plaintext_in_q      <= 128'd0;
       key_in_q            <= 128'd0;
+      encrypting          <= 0;
+      round_counter       <= 4'd0;
     end
     else begin
-    	start_encryption_q  <= start_encryption;
-      // Register values
-      if(start_encryption) begin
-		    plaintext_in_q      <= plaintext_in;
-		    key_in_q            <= key_in;
-		    encryption_done     <= encryption_done_next;
-		    ciphertext_out      <= ciphertext_out_next;
+      if (start_encryption && !encrypting) begin
+        plaintext_in_q <= plaintext_in;
+        key_in_q <= key_in;
+        encrypting <= 1'b1;
+        round_counter <= 4'd0;
+        encryption_done <= 1'b0;
       end
+
+      if (encrypting) begin
+        round_counter <= round_counter + 1;
+        
+        // Register intermediate results
+        B <= B_next;
+        C <= C_next;
+        D <= D_next;
+        E <= E_next;
+        F <= F_next;
+        G <= G_next;
+        H <= H_next;
+        I <= I_next;
+        J <= J_next;
+      end
+
+      encryption_done     <= encryption_done_next;
+		  ciphertext_out      <= ciphertext_out_next;
     end
   end
 
   always @(*) begin
+    // Set outputs if done
     ciphertext_out_next   <= ciphertext_out;
     encryption_done_next  <= encryption_done;
-    
-    ciphertext_out_next = ciphertext_out_wire;
-    if (ciphertext_out_next != 128'd0)
-      encryption_done_next = 1'b1;
+    if (round_counter >= 4'd9) begin
+      ciphertext_out_next <= ciphertext_out_wire;
+      encryption_done_next <= 1'b1;
+      encrypting <= 0;
+    end
   end
     
 
