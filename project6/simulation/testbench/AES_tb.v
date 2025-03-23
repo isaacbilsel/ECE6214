@@ -46,7 +46,7 @@ module AES_tb;
         plaintext_in = 128'h04080c0105090d02060a0e0307070b0f;  // 4x4 matrix as provided
 
         // Given Key (128 bits)
-        key = 128'h00020406080a0c0e10121416181a1c1e;  // 4x4 matrix as provided
+        key_in = 128'h00020406080a0c0e10121416181a1c1e;  // 4x4 matrix as provided
         
         // Wait for the encryption process to complete
         #10;  

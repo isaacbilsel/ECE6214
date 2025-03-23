@@ -1,16 +1,6 @@
 xmverilog(64): 17.10-s001: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	xmverilog	17.10-s001: Started on Mar 22, 2025 at 19:18:01 EDT
+TOOL:	xmverilog	17.10-s001: Started on Mar 23, 2025 at 12:40:24 EDT
 xmverilog
 	../testbench/AES_tb.v
 	-compile
-file: ../testbench/AES_tb.v
-        key = 128'h00020406080a0c0e10121416181a1c1e;  // 4x4 matrix as provided
-          |
-xmvlog: *E,UNDIDN (../testbench/AES_tb.v,49|10): 'key': undeclared identifier [12.5(IEEE)].
-	module worklib.AES_tb:v
-		errors: 1, warnings: 0
-xmvlog: *W,NOTOPL: no top-level unit found, must have recursive instances.
-	Total errors/warnings found outside modules and primitives:
-		errors: 0, warnings: 1
-xmverilog: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
-TOOL:	xmverilog	17.10-s001: Exiting on Mar 22, 2025 at 19:18:02 EDT  (total: 00:00:01)
+TOOL:	xmverilog	17.10-s001: Exiting on Mar 23, 2025 at 12:40:24 EDT  (total: 00:00:00)

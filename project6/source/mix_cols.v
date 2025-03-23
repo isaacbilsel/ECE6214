@@ -27,17 +27,17 @@ module mix_cols(in, out);
         end 
     endfunction
 
-    integer i;
+    genvar i;
 
     // May need to register intermediate vales here to decrease critical path
-    always@(*) begin
+    generate
         for(i=0;i<4;i=i+1) begin
             assign out[(i*32 + 24)+:8]= mb2(in[(i*32 + 24)+:8]) ^ mb3(in[(i*32 + 16)+:8]) ^ in[(i*32 + 8)+:8] ^ in[i*32+:8];
             assign out[(i*32 + 16)+:8]= in[(i*32 + 24)+:8] ^ mb2(in[(i*32 + 16)+:8]) ^ mb3(in[(i*32 + 8)+:8]) ^ in[i*32+:8];
             assign out[(i*32 + 8)+:8]= in[(i*32 + 24)+:8] ^ in[(i*32 + 16)+:8] ^ mb2(in[(i*32 + 8)+:8]) ^ mb3(in[i*32+:8]);
             assign out[i*32+:8]= mb3(in[(i*32 + 24)+:8]) ^ in[(i*32 + 16)+:8] ^ in[(i*32 + 8)+:8] ^ mb2(in[i*32+:8]);
         end
-    end
+    endgenerate
     
     
     //    integer i;

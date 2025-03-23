@@ -3,7 +3,4 @@
 // Do not modify this file
 //
 ../testbench/pipe_div_tb.v
-+gui
-+access+r
--timescale
-1ns/1ps
+-compile

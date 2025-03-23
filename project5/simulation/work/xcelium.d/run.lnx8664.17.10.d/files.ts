@@ -364,3 +364,5 @@
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/XOR9_J.v
 1740783781 /home/ead/isaacbilsel/ece6214/project5/synthesis/netlists/pipe_div.v
 1740784083 /home/ead/isaacbilsel/ece6214/project5/simulation/testbench/pipe_div_syn_tb.v
+1740783705 /home/ead/isaacbilsel/ece6214/ECE6214/project5/source/pipe_div.v
+1740784118 /home/ead/isaacbilsel/ece6214/ECE6214/project5/simulation/testbench/pipe_div_tb.v
