@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 module TopModule(
     input clk,
-    input reset,
+    input rst_n,
     input [3:0] data_in,     // 4-bit input data from the symbol generator.
     input data_valid,        // Signal indicating when data_in contains valid data.
     output [11:0] data_out,  // 12-bit output data after FIR filtering.
@@ -9,18 +9,41 @@ module TopModule(
 );
 
     // Upsampler internal signals
-    reg [3:0] upsampled_data = 4'b0000;
+    wire [3:0] upsampled_data = 4'b0000;
     reg upsampled_data_valid = 0;
     reg [3:0] input_data_buffer = 4'b0000;
     reg [3:0] counter = 4'b0000; // To count up to 13 (input + 12 zeros)
 
+	// Filter internal signals
+	wire coeff_write_enable;
+	wire [6:0] coeff_addr;
+	wire [7:0] coeff_data;
+	wire [3:0] upsampled_data_wire;
+
+	// Upsampler Instatiation
+	upsampler u_upsampler(
+		.clk(clk),
+		.rst_n(rst_n),
+		.new_symbol(data_valid),
+		.input_data(input_data_buffer),
+		.output_data(upsampled_data)
+	);
+
+	// assign upsampled_data_wire = upsampled_data;
+
     // FIR Filter instantiation
-    FIRFilter fir_filter(
+    fir_filter u_fir_filter(
         .clk(clk),
-        .reset(reset),
-        .data_in(upsampled_data),
-        .data_out(data_out)
+		.sample_in(upsampled_data),
+        .coeff_write(data_valid), 	//coeff_write_enable?
+        .coeff_in(coeff_data),
+        .coeff_addr(coeff_addr),
+        .fir_out(data_out)
     );
+
+
+    
+/*
 
     // Upsampler logic
     always @(posedge clk or posedge reset) begin
@@ -50,5 +73,7 @@ module TopModule(
     always @(posedge clk) begin
         data_out_valid <= upsampled_data_valid;
     end
+*/
+	
 
 endmodule
