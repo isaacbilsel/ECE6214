@@ -4,6 +4,10 @@ module TopModule(
     input rst_n,
     input [3:0] data_in,     // 4-bit input data from the symbol generator.
     input data_valid,        // Signal indicating when data_in contains valid data.
+    input coeff_write enable,
+    input [6:0] coeff_addr,
+    input [7:0] coeff_data,
+
     output [11:0] data_out,  // 12-bit output data after FIR filtering.
     output reg data_out_valid    // Signal indicating when data_out contains valid data.
 );
@@ -14,11 +18,13 @@ module TopModule(
     reg [3:0] input_data_buffer = 4'b0000;
     reg [3:0] counter = 4'b0000; // To count up to 13 (input + 12 zeros)
 
+    /*
 	// Filter internal signals
 	wire coeff_write_enable;
 	wire [6:0] coeff_addr;
 	wire [7:0] coeff_data;
 	wire [3:0] upsampled_data_wire;
+    */
 
 	// Upsampler Instatiation
 	upsampler u_upsampler(

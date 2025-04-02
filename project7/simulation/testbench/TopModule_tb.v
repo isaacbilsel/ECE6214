@@ -1,55 +1,73 @@
-// TopModule_tb.v
 `timescale 1ns / 1ps
 
-module TopModule_tb();
-
+module TopModule_tb;
+    
+    // Testbench Signals
     reg clk;
     reg rst_n;
     reg [3:0] data_in;
     reg data_valid;
+    reg coeff_write_enable;
+    reg [6:0] coeff_addr;
+    reg [7:0] coeff_data;
     wire [11:0] data_out;
     wire data_out_valid;
-
-    TopModule uut (
+    
+    // Instantiate the DUT (Device Under Test)
+    TopModule dut (
         .clk(clk),
         .rst_n(rst_n),
         .data_in(data_in),
         .data_valid(data_valid),
+        .coeff_write_enable(coeff_write_enable),
+        .coeff_addr(coeff_addr),
+        .coeff_data(coeff_data),
         .data_out(data_out),
         .data_out_valid(data_out_valid)
     );
-
-    initial clk = 0;
-    always #5 clk = ~clk; // 100MHz clock
-
+    
+    // Clock Generation
+    always #5 clk = ~clk; // 10ns clock period
+    
+    // Testbench Procedure
     initial begin
-        rst_n = 1;
+        // Initialize Signals
+        clk = 0;
+        rst_n = 0;
         data_in = 0;
         data_valid = 0;
+        coeff_write_enable = 0;
+        coeff_addr = 0;
+        coeff_data = 0;
         
-        // Apply reset
-        #40; // Keep reset high for several clock cycles
-        rst_n = 0;
-        #20; // Wait for any internal resets
+        // Reset Pulse
+        #20 rst_n = 1;
         
-        // Start inputting valid data
+        // Load Coefficients
+        #10 coeff_write_enable = 1;
+        coeff_addr = 7'd0;
+        coeff_data = 8'd5;
+        #10 coeff_write_enable = 0;
+        
+        #10 coeff_write_enable = 1;
+        coeff_addr = 7'd1;
+        coeff_data = 8'd10;
+        #10 coeff_write_enable = 0;
+        
+        // Apply Input Data
+        #20 data_in = 4'b0011;
         data_valid = 1;
-        data_in = 4'b0010; // Example input
-        #10;
-	data_valid = 1;
-        //data_in = 4'b0101; // Next input
-        // Continue with the test vectors as needed.
-
-        // Optional: hold the simulation for a specific time
-        #1000;
+        #10 data_valid = 0;
         
-        // Finish the simulation
-        $finish;
+        #20 data_in = 4'b0101;
+        data_valid = 1;
+        #10 data_valid = 0;
+        
+        // Wait for Output Processing
+        #100;
+        
+        // Finish Simulation
+        $stop;
     end
-
-    // Optional: Monitor and display output signals
-    initial begin
-        $monitor("Time = %t, reset = %b, data_in = %b, data_out = %h, data_out_valid = %b",
-                 $time, rst_n, data_in, data_out, data_out_valid);
-    end
+    
 endmodule
