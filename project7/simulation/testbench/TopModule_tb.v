@@ -64,7 +64,7 @@ module TopModule_tb;
         #10 data_valid = 0;
         
         // Wait for Output Processing
-        #100;
+        #1000;
         
         // Finish Simulation
         $stop;

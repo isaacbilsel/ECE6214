@@ -4,19 +4,26 @@ module TopModule(
     input rst_n,
     input [3:0] data_in,     // 4-bit input data from the symbol generator.
     input data_valid,        // Signal indicating when data_in contains valid data.
-    input coeff_write enable,
+    input coeff_write_enable,
     input [6:0] coeff_addr,
     input [7:0] coeff_data,
 
-    output [11:0] data_out,  // 12-bit output data after FIR filtering.
+    output reg [11:0] data_out,  // 12-bit output data after FIR filtering.
     output reg data_out_valid    // Signal indicating when data_out contains valid data.
 );
-
+	
+	// Register necessary inputs
+	// reg data_valid_q; 
+	
     // Upsampler internal signals
     wire [3:0] upsampled_data = 4'b0000;
     reg upsampled_data_valid = 0;
+    reg [11:0] filter_out;
+    wire [11:0] filter_out_wire;
     reg [3:0] input_data_buffer = 4'b0000;
-    reg [3:0] counter = 4'b0000; // To count up to 13 (input + 12 zeros)
+    reg [6:0] counter = 6'b000000; // To count up to 13 (input + 12 zeros)
+
+	parameter LATENCY = 71;
 
     /*
 	// Filter internal signals
@@ -25,16 +32,19 @@ module TopModule(
 	wire [7:0] coeff_data;
 	wire [3:0] upsampled_data_wire;
     */
-
+    always @(posedge clk) begin
+   		filter_out = filter_out_wire;
+	end 
+	
 	// Upsampler Instatiation
 	upsampler u_upsampler(
 		.clk(clk),
 		.rst_n(rst_n),
 		.new_symbol(data_valid),
-		.input_data(input_data_buffer),
+		.input_data(input_data),
 		.output_data(upsampled_data)
 	);
-
+	
 	// assign upsampled_data_wire = upsampled_data;
 
     // FIR Filter instantiation
@@ -44,10 +54,27 @@ module TopModule(
         .coeff_write(data_valid), 	//coeff_write_enable?
         .coeff_in(coeff_data),
         .coeff_addr(coeff_addr),
-        .fir_out(data_out)
+        .fir_out(filter_out_wire)
     );
 
+	
+	always @(posedge clk or posedge rst_n) begin
+		if (!rst_n) begin
+			counter <= 0;
+			data_out <= 0;
+			// data_valid_q <= 0;
+		end
+		else if (counter < LATENCY) begin
+			counter <= counter + 1;
+			data_out <= 0;
+			data_out_valid <= 0;
+		end
+		else begin
+			data_out <= filter_out;
+			data_out_valid <= 1;
+		end
 
+	end
     
 /*
 
