@@ -18,7 +18,7 @@ module key_expand (clk, key, key_s0,key_s1,key_s2,key_s3,key_s4,key_s5,key_s6,ke
       w2 =  key[063:032];
       w3 =  key[031:000];
 
-      w4 =  key[127:096]^subword^{8'h01,24'b0};
+      w4 =  key[127:096]^subword^{8'h01,24'b0}; 
       w5 =  key[095:064]^key[127:096]^subword^{8'h01,24'b0};
       w6 =  key[063:032]^key[095:064]^key[127:096]^subword^{8'h01,24'b0}; 
       w7 =  key[127:096]^key[095:064]^key[063:032]^key[031:000]^subword^{8'h01,24'b0};
@@ -68,6 +68,8 @@ module key_expand (clk, key, key_s0,key_s1,key_s2,key_s3,key_s4,key_s5,key_s6,ke
       w42  =  w36^w37^w38^subword10^{rcon10,24'b0}; 
       w43  =  w36^w37^w38^w39^subword10^{rcon10,24'b0};
    end
+		always @(subword) $display("subword result = %h", subword);
+		always @(rcon2) $display("rcon2 = %h", rcon2);
 
    aes_rcon r1(clk,rcon,rcon2,rcon3,rcon4,rcon5,rcon6,rcon7,rcon8,rcon9,rcon10);
 

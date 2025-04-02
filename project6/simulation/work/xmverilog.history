@@ -780,3 +780,33 @@ s779(23Mar2025:18:43:26):  xmverilog ../testbench/AES_tb.v -compile
 s780(23Mar2025:18:43:32):  xmverilog ../../synthesis/netlists/AES.v -compile 
 s781(23Mar2025:18:43:32):  xmverilog ../testbench/AES_tb_syn.v -compile 
 s782(23Mar2025:18:43:39):  xmverilog ../testbench/AES_tb_syn.v +gui +access+r -timescale 1ns/1ps 
+s783(23Mar2025:19:42:50):  xmverilog ../../source/final_round.v -compile 
+s784(23Mar2025:19:42:51):  xmverilog ../../source/round.v -compile 
+s785(23Mar2025:19:42:51):  xmverilog ../../source/key_expand.v -compile 
+s786(23Mar2025:19:42:52):  xmverilog ../../source/mix_cols.v -compile 
+s787(23Mar2025:19:42:52):  xmverilog ../../source/shift_rows.v -compile 
+s788(23Mar2025:19:42:53):  xmverilog ../../source/sub_bytes.v -compile 
+s789(23Mar2025:19:42:53):  xmverilog ../../source/AES.v -compile 
+s790(23Mar2025:19:42:54):  xmverilog ../testbench/AES_tb.v -compile 
+s791(23Mar2025:19:42:56):  xmverilog ../../synthesis/netlists/AES.v -compile 
+s792(23Mar2025:19:42:57):  xmverilog ../testbench/AES_tb_syn.v -compile 
+s793(23Mar2025:19:43:01):  xmverilog ../testbench/AES_tb_syn.v +gui +access+r -timescale 1ns/1ps 
+s794(23Mar2025:19:51:47):  xmverilog ../testbench/AES_tb.v +gui +access+r -timescale 1ns/1ps 
+s795(23Mar2025:19:51:54):  xmverilog ../../source/final_round.v -compile 
+s796(23Mar2025:19:51:55):  xmverilog ../../source/round.v -compile 
+s797(23Mar2025:19:51:55):  xmverilog ../../source/key_expand.v -compile 
+s798(23Mar2025:19:51:56):  xmverilog ../../source/mix_cols.v -compile 
+s799(23Mar2025:19:51:56):  xmverilog ../../source/shift_rows.v -compile 
+s800(23Mar2025:19:51:57):  xmverilog ../../source/sub_bytes.v -compile 
+s801(23Mar2025:19:51:57):  xmverilog ../../source/AES.v -compile 
+s802(23Mar2025:19:51:58):  xmverilog ../testbench/AES_tb.v -compile 
+s803(23Mar2025:19:52:01):  xmverilog ../testbench/AES_tb.v +gui +access+r -timescale 1ns/1ps 
+s804(23Mar2025:19:56:47):  xmverilog ../../source/final_round.v -compile 
+s805(23Mar2025:19:56:48):  xmverilog ../../source/round.v -compile 
+s806(23Mar2025:19:56:49):  xmverilog ../../source/key_expand.v -compile 
+s807(23Mar2025:19:56:49):  xmverilog ../../source/mix_cols.v -compile 
+s808(23Mar2025:19:56:50):  xmverilog ../../source/shift_rows.v -compile 
+s809(23Mar2025:19:56:50):  xmverilog ../../source/sub_bytes.v -compile 
+s810(23Mar2025:19:56:51):  xmverilog ../../source/AES.v -compile 
+s811(23Mar2025:19:56:51):  xmverilog ../testbench/AES_tb.v -compile 
+s812(23Mar2025:19:56:53):  xmverilog ../testbench/AES_tb.v +gui +access+r -timescale 1ns/1ps 

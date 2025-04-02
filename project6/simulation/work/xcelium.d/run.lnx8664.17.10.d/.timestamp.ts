@@ -36,8 +36,8 @@
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/AND4_I.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/COMP2_E.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/BUFFER_L.v
+1742773353 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/mix_cols.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/COMP2_D.v
-1742747555 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/mix_cols.v
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/AND4_H.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/BUFFER_K.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OA21_K.v
@@ -67,8 +67,8 @@
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/NOR4_A.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/DFFR_E.v
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/AND4_C.v
+1742773353 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/shift_rows.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/NAND3_B.v
-1742683365 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/shift_rows.v
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/BUFFER_F.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OA21_F.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/NAND3_A.v
@@ -76,7 +76,7 @@
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/BUFFER_E.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OA21_E.v
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/AOI44_H.v
-1742760776 /home/ead/isaacbilsel/ece6214/ECE6214/project6/simulation/testbench/AES_tb_syn.v
+1742773353 /home/ead/isaacbilsel/ece6214/ECE6214/project6/simulation/testbench/AES_tb_syn.v
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/BUFFER_D.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OAI2222_H.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OA21_D.v
@@ -147,7 +147,7 @@
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OAI22_E.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/MUX21I_F.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/MUX21BAL_L.v
-1742683365 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/sub_bytes.v
+1742773353 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/sub_bytes.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/TERM_D.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/MUX21I_E.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OAI22_D.v
@@ -253,12 +253,12 @@
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/INVERT_A.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/CLKI_M.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OR3_K.v
-1742769787 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/AES.v
+1742773353 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/AES.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/XOR3_C.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OR3_J.v
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/AO21_E.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/TERM.v
-1742758934 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/final_round.v
+1742773353 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/final_round.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/XOR3_B.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/XNOR2_J.v
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/AO21_D.v
@@ -281,8 +281,8 @@
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OR3_F.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/NOR2_H.v
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/AO22_K.v
+1742773353 /home/ead/isaacbilsel/ece6214/ECE6214/project6/simulation/testbench/AES_tb.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/LATSR_K.v
-1742761608 /home/ead/isaacbilsel/ece6214/ECE6214/project6/simulation/testbench/AES_tb.v
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/AND2_J.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/XNOR2_F.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/SDFFS_H.v
@@ -311,8 +311,8 @@
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/SDFFS_E.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/XNOR2_B.v
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/AND2_F.v
+1742774184 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/key_expand.v
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/AOI222_F.v
-1742685210 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/key_expand.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/MUX41_D.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OR4_K.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OAI222_E.v
@@ -359,9 +359,9 @@
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/NAND2_H.v
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/AND3_I.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/XNOR3_E.v
+1742773353 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/round.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OR4_D.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/NOR3_F.v
-1742761757 /home/ead/isaacbilsel/ece6214/ECE6214/project6/source/round.v
 1307943764 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/AND3_H.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/XNOR3_D.v
 1307943765 /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/verilog/OR4_C.v
