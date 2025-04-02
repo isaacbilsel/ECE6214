@@ -2,4 +2,4 @@
 
 Project 5: Dividers\
 Project 6: AES Encryption Core\
-Project 7: Upsampling and Filtering\
+Project 7: Upsampling and Filtering
