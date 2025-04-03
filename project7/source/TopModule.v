@@ -1,47 +1,41 @@
 `timescale 1ns / 1ps
 module TopModule(
     input clk,
+    // input upsample_clk,
     input rst_n,
     input [3:0] data_in,     // 4-bit input data from the symbol generator.
-    input data_valid,        // Signal indicating when data_in contains valid data.
-    input coeff_write_enable,
+    // input data_valid,        // Signal indicating when data_in contains valid data.
+    input coeff_write,
+    input [7:0] coeff_in,
     input [6:0] coeff_addr,
-    input [7:0] coeff_data,
-
+    input wire new_symbol;
     output reg [11:0] data_out,  // 12-bit output data after FIR filtering.
     output reg data_out_valid    // Signal indicating when data_out contains valid data.
 );
 	
-	// Register necessary inputs
-	// reg data_valid_q; 
+
 	
     // Upsampler internal signals
     wire [3:0] upsampled_data = 4'b0000;
-    reg upsampled_data_valid = 0;
+    // reg upsampled_data_valid = 0;
     reg [11:0] filter_out;
     wire [11:0] filter_out_wire;
-    reg [3:0] input_data_buffer = 4'b0000;
-    reg [6:0] counter = 6'b000000; // To count up to 13 (input + 12 zeros)
+    // reg [3:0] input_data_buffer = 4'b0000;
+    reg [7:0] counter = 8'h00; // To count up to 13 (input + 12 zeros)
 
-	parameter LATENCY = 71;
+    parameter LATENCY = 142;
 
-    /*
-	// Filter internal signals
-	wire coeff_write_enable;
-	wire [6:0] coeff_addr;
-	wire [7:0] coeff_data;
-	wire [3:0] upsampled_data_wire;
-    */
+    
     always @(posedge clk) begin
-   		filter_out = filter_out_wire;
-	end 
+   	filter_out = filter_out_wire;
+    end 
 	
-	// Upsampler Instatiation
+	// Upsampler Instatiantion
 	upsampler u_upsampler(
 		.clk(clk),
 		.rst_n(rst_n),
-		.new_symbol(data_valid),
-		.input_data(input_data),
+		.new_symbol(new_symbol),
+		.input_data(data_in),
 		.output_data(upsampled_data)
 	);
 	
@@ -50,9 +44,9 @@ module TopModule(
     // FIR Filter instantiation
     fir_filter u_fir_filter(
         .clk(clk),
-		.sample_in(upsampled_data),
-        .coeff_write(data_valid), 	//coeff_write_enable?
-        .coeff_in(coeff_data),
+	.sample_in(upsampled_data),
+        .coeff_write(coeff_write), 	//coeff_write_enable?
+        .coeff_in(coeff_in),
         .coeff_addr(coeff_addr),
         .fir_out(filter_out_wire)
     );

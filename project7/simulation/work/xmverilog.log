@@ -1,5 +1,5 @@
 xmverilog(64): 17.10-s001: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	xmverilog	17.10-s001: Started on Apr 02, 2025 at 19:07:37 EDT
+TOOL:	xmverilog	17.10-s001: Started on Apr 02, 2025 at 21:20:24 EDT
 xmverilog
 	../testbench/TopModule_tb.v
 	+gui
@@ -9,19 +9,11 @@ xmverilog
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 		Caching library 'worklib' ....... Done
-		.input_data(input_data),
-		                     |
-xmelab: *W,CUVMPW (/home/ead/isaacbilsel/ece6214/ECE6214/project7/source/TopModule.v,44|23): port sizes differ in port connection (1/4).
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.upsampler:v <0x7ac56e9a>
-			streams:   4, words:  2160
-		worklib.TopModule:v <0x7be5061e>
-			streams:   9, words:  2735
+		worklib.TopModule_tb:v <0x48050680>
+			streams:   4, words:  5086
 	Building instance specific data structures.
-		.input_data(input_data),
-		                     |
-xmelab: *W,CSINFI (/home/ead/isaacbilsel/ece6214/ECE6214/project7/source/TopModule.v,44|23): implicit wire has no fanin (TopModule_tb.dut.input_data).
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
@@ -30,8 +22,8 @@ xmelab: *W,CSINFI (/home/ead/isaacbilsel/ece6214/ECE6214/project7/source/TopModu
 		Registers:             304      24
 		Scalar wires:            6       -
 		Vectored wires:        223       -
-		Always blocks:          77       7
-		Initial blocks:          4       4
+		Always blocks:          78       8
+		Initial blocks:          3       3
 		Cont. assignments:      75      77
 		Pseudo assignments:      1       1
 		Simulation timescale:  1ps
@@ -43,10 +35,10 @@ xcelium>
 xcelium> source /apps/vlsi_2018/cadence/XCELIUM1710/tools/xcelium/files/xmsimrc
 xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
-xcelium> probe -create -shm TopModule_tb.dut.clk TopModule_tb.dut.coeff_addr TopModule_tb.dut.coeff_data TopModule_tb.dut.coeff_write_enable TopModule_tb.dut.counter TopModule_tb.dut.data_in TopModule_tb.dut.data_out TopModule_tb.dut.data_out_valid TopModule_tb.dut.data_valid TopModule_tb.dut.filter_out TopModule_tb.dut.filter_out_wire TopModule_tb.dut.input_data TopModule_tb.dut.input_data_buffer TopModule_tb.dut.rst_n TopModule_tb.dut.upsampled_data TopModule_tb.dut.upsampled_data_valid
+xcelium> probe -create -shm TopModule_tb.dut.clk TopModule_tb.dut.coeff_addr TopModule_tb.dut.coeff_data TopModule_tb.dut.coeff_write_enable TopModule_tb.dut.counter TopModule_tb.dut.data_in TopModule_tb.dut.data_out TopModule_tb.dut.data_out_valid TopModule_tb.dut.data_valid TopModule_tb.dut.filter_out TopModule_tb.dut.filter_out_wire TopModule_tb.dut.rst_n TopModule_tb.dut.upsample_clk TopModule_tb.dut.upsampled_data TopModule_tb.dut.upsampled_data_valid
 Created probe 1
 xcelium> run
-Simulation stopped via $stop(1) at time 1120 NS + 0
+Simulation stopped via $stop(1) at time 11110 NS + 0
 xcelium> ^C
 xcelium> exit
-TOOL:	xmverilog	17.10-s001: Exiting on Apr 02, 2025 at 19:08:28 EDT  (total: 00:00:51)
+TOOL:	xmverilog	17.10-s001: Exiting on Apr 02, 2025 at 22:24:02 EDT  (total: 01:03:38)

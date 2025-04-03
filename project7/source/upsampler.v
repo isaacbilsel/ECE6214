@@ -8,6 +8,8 @@ module upsampler(
 		 output reg [3:0] output_data
 		 );
    
+   parameter SAMPLERATE = 10;
+
    //variables
    reg [3:0] output_data_next;
    reg [3:0] sample_count_next;
@@ -27,7 +29,7 @@ module upsampler(
      begin
 	if(rst_n == 1'b0)begin
 	   output_data <= 4'd0;
-	   sample_count_current <= 4'd12;
+	   sample_count_current <= SAMPLERATE-1;
 	   state_current <= S0_IDLE;
 	end else begin
 	   output_data <= output_data_next;
@@ -52,11 +54,11 @@ module upsampler(
 	  S1_SAMPLING: begin
 	     sample_count_next = sample_count_current - 1'b1;
 	     
-	     if(sample_count_current == 4'd12)begin
+	     if(sample_count_current == SAMPLERATE-1)begin
 		output_data_next = input_data;
 	     end else if(sample_count_current == 4'd0)begin
 		state_next = S0_IDLE;
-		sample_count_next = 4'd12;
+		sample_count_next = SAMPLERATE;
 	     end else begin
 		output_data_next = ZERO_PAD;
 	     end
