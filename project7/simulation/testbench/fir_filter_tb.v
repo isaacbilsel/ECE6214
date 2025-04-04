@@ -27,7 +27,8 @@ module fir_filter_tb(
 
 
    // Clock generation (40 to 130 MHz -> ~7.7 ns period)
-   always #3.85 clk = ~clk;
+   // always #3.85 clk = ~clk;
+   always #5 clk = ~clk;
 
    initial begin
       testcase = "Initializing";
