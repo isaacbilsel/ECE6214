@@ -1,9 +1,4 @@
 `timescale 1ns / 1ps
-/////////////////////////
-// ECE6214
-// Professor Matthew LaRue
-// FIR Filter Testbench
-////////////////////////
 
 module fir_filter_tb(
 		     );
@@ -31,8 +26,8 @@ module fir_filter_tb(
 		  );
 
 
-   // clock with 10ns period
-   always #5 clk = ~clk;
+   // Clock generation (40 to 130 MHz -> ~7.7 ns period)
+   always #3.85 clk = ~clk;
 
    initial begin
       testcase = "Initializing";
@@ -52,7 +47,7 @@ module fir_filter_tb(
       coeff_write = 1'b0;
 
       // flush the pipeline
-      repeat(100)
+      repeat(150)
 	@(posedge clk);
 
 
@@ -63,20 +58,21 @@ module fir_filter_tb(
       @(negedge clk);
       sample_in = 4'h0;
       @(negedge clk);
-      repeat(100)
+      repeat(150)
 	@(posedge clk);
       @(negedge clk);
 
       // simulate filter step response
       testcase = "Step";
       sample_in = 4'h1;
-      repeat(100)
+      repeat(150)
 	@(posedge clk);
 
       // flush the pipeline
       sample_in = 4'h0;
-      repeat(100)
+      repeat(150)
 	@(posedge clk);
+	// filter takes 112 clock cycles
 
       // simulate filter negativeimpulse response  
       testcase = "Neg_Impulse";
@@ -85,14 +81,14 @@ module fir_filter_tb(
       @(negedge clk);
       sample_in = 4'h0;
       @(negedge clk);
-      repeat(100)
+      repeat(150)
 	@(posedge clk);
       @(negedge clk);
 
       // simulate filter negative step response
       testcase = "Neg_Step";
       sample_in = 4'hF;
-      repeat(100)
+      repeat(150)
 	@(posedge clk);
 
 

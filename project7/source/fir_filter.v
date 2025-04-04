@@ -1,9 +1,4 @@
 `timescale 1ns /1ps
-///////////////////////////////
-// ECE 6214
-// Prof Matthew LaRue
-// 71-tap FIR Filter
-///////////////////////////////
 
 module fir_filter(
 		  input wire 		    clk,

@@ -1,33 +1,34 @@
 xmverilog(64): 17.10-s001: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	xmverilog	17.10-s001: Started on Apr 02, 2025 at 21:20:24 EDT
+TOOL:	xmverilog	17.10-s001: Started on Apr 03, 2025 at 20:41:30 EDT
 xmverilog
-	../testbench/TopModule_tb.v
+	../testbench/upsampler_tb.v
 	+gui
 	+access+r
 	-timescale
 	1ns/1ps
+Recompiling... reason: file '../testbench/upsampler_tb.v' is newer than expected.
+	expected: Thu Apr  3 20:26:25 2025
+	actual:   Thu Apr  3 20:40:31 2025
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 		Caching library 'worklib' ....... Done
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.TopModule_tb:v <0x48050680>
-			streams:   4, words:  5086
+		worklib.upsampler:v <0x04e57c8e>
+			streams:   4, words:  2200
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
-		Modules:                76       6
-		Resolved nets:           0       1
-		Registers:             304      24
-		Scalar wires:            6       -
-		Vectored wires:        223       -
-		Always blocks:          78       8
-		Initial blocks:          3       3
-		Cont. assignments:      75      77
+		Modules:                 2       2
+		Registers:              19      19
+		Scalar wires:            3       -
+		Vectored wires:          3       -
+		Always blocks:           3       3
+		Initial blocks:          5       5
 		Pseudo assignments:      1       1
 		Simulation timescale:  1ps
-	Writing initial simulation snapshot: worklib.TopModule_tb:v
+	Writing initial simulation snapshot: worklib.upsample_tb:v
 
 -------------------------------------
 Relinquished control to SimVision...
@@ -35,10 +36,22 @@ xcelium>
 xcelium> source /apps/vlsi_2018/cadence/XCELIUM1710/tools/xcelium/files/xmsimrc
 xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
-xcelium> probe -create -shm TopModule_tb.dut.clk TopModule_tb.dut.coeff_addr TopModule_tb.dut.coeff_data TopModule_tb.dut.coeff_write_enable TopModule_tb.dut.counter TopModule_tb.dut.data_in TopModule_tb.dut.data_out TopModule_tb.dut.data_out_valid TopModule_tb.dut.data_valid TopModule_tb.dut.filter_out TopModule_tb.dut.filter_out_wire TopModule_tb.dut.rst_n TopModule_tb.dut.upsample_clk TopModule_tb.dut.upsampled_data TopModule_tb.dut.upsampled_data_valid
+xcelium> probe -create -shm upsample_tb.DUT.clk upsample_tb.DUT.input_data upsample_tb.DUT.new_symbol upsample_tb.DUT.output_data upsample_tb.DUT.output_data_next upsample_tb.DUT.rst_n upsample_tb.DUT.sample_count_current upsample_tb.DUT.sample_count_next upsample_tb.DUT.sample_rate upsample_tb.DUT.sample_rate_q upsample_tb.DUT.state_current upsample_tb.DUT.state_next
 Created probe 1
 xcelium> run
-Simulation stopped via $stop(1) at time 11110 NS + 0
+PASS, Expected = 0000, Actual = 0000, Time =               181000
+PASS, Expected = 0100, Actual = 0100, Time =               204000
+PASS, Expected = 0000, Actual = 0000, Time =               289000
+PASS, Expected = 0001, Actual = 0001, Time =               312000
+PASS, Expected = 0000, Actual = 0000, Time =               397000
+PASS, Expected = 1001, Actual = 1001, Time =               420000
+PASS, Expected = 0000, Actual = 0000, Time =               504000
+PASS, Expected = 0011, Actual = 0011, Time =               527000
+PASS, Expected = 0000, Actual = 0000, Time =               612000
+PASS, Expected = 1101, Actual = 1101, Time =               635000
+PASS, Expected = 0000, Actual = 0000, Time =               720000
+Simulation complete via $finish(1) at time 796950 PS + 0
+../testbench/upsampler_tb.v:69       $finish;
 xcelium> ^C
 xcelium> exit
-TOOL:	xmverilog	17.10-s001: Exiting on Apr 02, 2025 at 22:24:02 EDT  (total: 01:03:38)
+TOOL:	xmverilog	17.10-s001: Exiting on Apr 03, 2025 at 20:42:32 EDT  (total: 00:01:02)

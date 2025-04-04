@@ -6,7 +6,7 @@ module TopModule(
     input [3:0] data_in,     // 4-bit input data from the symbol generator.
     // input data_valid,        // Signal indicating when data_in contains valid data.
     input coeff_write,
-    input [7:0] coeff_in,
+    input [7:0] coeff_in, // input [7:0] coeff_in [0:70]
     input [6:0] coeff_addr,
     input wire new_symbol;
     output reg [11:0] data_out,  // 12-bit output data after FIR filtering.

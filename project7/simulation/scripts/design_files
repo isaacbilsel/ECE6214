@@ -9,5 +9,6 @@ ver_files=("../../source/dsp_slice.v"
            "../../source/TopModule.v"
 	   "../testbench/TopModule_tb.v"
 	   "../testbench/fir_filter_tb.v"
-           )
+	   "../testbench/upsampler_tb.v"
+)
 	

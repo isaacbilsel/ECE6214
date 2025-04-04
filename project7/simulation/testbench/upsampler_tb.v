@@ -1,3 +1,4 @@
+
 `timescale 1ns / 1ps
 
 module upsample_tb(
@@ -7,32 +8,38 @@ module upsample_tb(
    reg rst_n = 1'b0;
    reg new_symbol = 1'b0;
    reg [3:0] input_data = 4'b0000;
+   reg [3:0] sample_rate;
    wire [3:0] output_data;
    reg [3:0] input_test_data[0:4];
    reg [3:0] error_count;
    
    integer i;
 
+// Instantiate the DUT (Device Under Test)
    upsampler DUT(
 		 .clk(clk),
 		 .rst_n(rst_n),
 		 .new_symbol(new_symbol),
 		 .input_data(input_data),
+		 .sample_rate(sample_rate),
 		 .output_data(output_data)
 		 );
 
-   always #4.615 clk = ~clk;
+// Clock generation (40 to 130 MHz -> ~7.7 ns period)
+   always #3.85 clk = ~clk;
 
    initial begin
+// Reset sequence
       repeat(10)
 	@(posedge clk);
       rst_n = 1'b1;
       
       //initialize test data
       for(i = 0; i <= 4; i = i +1)begin
-	input_test_data[i] = $random;
+	input_test_data[i] = $random; // Ensure 4-bit data
       end 
-      
+      sample_rate <= 4'd13;
+
       //testing input data without new symbol flag
       repeat(1)
 	@(posedge clk);
@@ -55,6 +62,7 @@ module upsample_tb(
 	new_symbol = 1'b0;
       end
       
+// Delay between tests
       repeat(10)
 	@(posedge clk);
 
@@ -77,6 +85,10 @@ module upsample_tb(
    endfunction
 
 endmodule // upsample_tb
+
+
+
+
 
 
    
