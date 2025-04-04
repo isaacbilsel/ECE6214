@@ -2,5 +2,8 @@
 // File created by:  xmverilog
 // Do not modify this file
 //
-../testbench/upsampler_tb.v
--compile
+../testbench/TopModule_tb.v
++gui
++access+r
+-timescale
+1ns/1ps
