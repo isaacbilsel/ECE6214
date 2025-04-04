@@ -87,6 +87,8 @@ module TopModule_tb;
 		repeat(150)
 		@(posedge clk);
 		$finish;
+		
+		// We need to write to the log file here
     end
     
 endmodule

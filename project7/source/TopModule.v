@@ -1,8 +1,12 @@
 `timescale 1ns / 1ps
 module TopModule(
     input clk,
-    // input upsample_clk,
-    input rst_n,
+    input rst_n,				
+    /*
+    We need to synchronize reset. Reset module should take in asynchronous reset input and clock 
+    and output a syncrhonized reset. The output of the asyncrhonous reset should be fed everywhere 
+    that I use rst_n here. 
+    */
     input wire [3:0] sample_rate,
     input [3:0] data_in,     	// 4-bit input data from the symbol generator.
     input coeff_write,
@@ -23,7 +27,7 @@ module TopModule(
     parameter LATENCY = 144;
     
     // Datapath reset variables
-    reg [7:0] counter; // To count up to 256
+    reg [7:0] counter;
     reg [7:0] counter_next;
     reg data_out_valid_next;
 	
@@ -41,7 +45,7 @@ module TopModule(
     fir_filter u_fir_filter(
         .clk(clk),
 		.sample_in(upsampler_out),
-        .coeff_write(coeff_write), 	//coeff_write_enable?
+        .coeff_write(coeff_write),
         .coeff_in(coeff_in),
         .coeff_addr(coeff_addr),
         .fir_out(filter_out)
