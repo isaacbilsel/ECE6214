@@ -1,33 +1,35 @@
 xmverilog(64): 17.10-s001: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	xmverilog	17.10-s001: Started on Apr 05, 2025 at 18:15:45 EDT
+TOOL:	xmverilog	17.10-s001: Started on Apr 09, 2025 at 15:43:41 EDT
 xmverilog
 	../testbench/tb_modulator_64qam_top.v
 	+gui
 	+access+r
 	-timescale
 	1ns/1ps
-file: ../testbench/tb_modulator_64qam_top.v
-	module worklib.modulator_64qam_top_tb:v
-		errors: 0, warnings: 0
+Recompiling... reason: file '/home/ead/isaacbilsel/ece6214/ECE6214/project8/source/modulator_64qam_top.v' is newer than expected.
+	expected: Wed Apr  9 15:33:10 2025
+	actual:   Wed Apr  9 15:41:47 2025
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 		Caching library 'worklib' ....... Done
+   reg				       reg_write_enable_next;
+      				           |
+xmelab: *W,CUVMPW (/home/ead/isaacbilsel/ece6214/ECE6214/project8/source/modulator_64qam_top.v,35|21): port sizes differ in port connection (10/8).
+   reg				       reg_read_enable_next;
+      				                       |
+xmelab: *W,CUVMPW (/home/ead/isaacbilsel/ece6214/ECE6214/project8/source/modulator_64qam_top.v,36|33): port sizes differ in port connection (8/16).
+   reg [15:0]			       MISO_buffer_next;
+             			               |
+xmelab: *W,CUVMPW (/home/ead/isaacbilsel/ece6214/ECE6214/project8/source/modulator_64qam_top.v,37|31): port sizes differ in port connection (8/16).
 	Building instance overlay tables: .................... Done
-	Generating native compiled code:
-		worklib.register:v <0x59b39f01>
-			streams:   5, words: 135309
-		worklib.spi_interface:v <0x7fa9a68d>
-			streams:  12, words:  8257
-		worklib.modulator_64qam_top_tb:v <0x7d71a2fd>
-			streams:   9, words: 19431
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 4       4
 		Registers:              50      50
-		Scalar wires:            8       -
-		Vectored wires:          3       -
+		Scalar wires:            9       -
+		Expanded wires:         34       3
 		Always blocks:           7       7
 		Initial blocks:          6       6
 		Simulation timescale:  1ps
@@ -39,267 +41,267 @@ xcelium>
 xcelium> source /apps/vlsi_2018/cadence/XCELIUM1710/tools/xcelium/files/xmsimrc
 xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
-xcelium> probe -create -shm modulator_64qam_top_tb.SPI_data_out modulator_64qam_top_tb.CSN modulator_64qam_top_tb.MISO modulator_64qam_top_tb.MISO_enable modulator_64qam_top_tb.MOSI modulator_64qam_top_tb.SCLK modulator_64qam_top_tb.error_count modulator_64qam_top_tb.i modulator_64qam_top_tb.rst_n modulator_64qam_top_tb.spi_data modulator_64qam_top_tb.tb_clk modulator_64qam_top_tb.testcase
+xcelium> probe -create -shm modulator_64qam_top_tb.DUT.CSN modulator_64qam_top_tb.DUT.MISO modulator_64qam_top_tb.DUT.MISO_enable modulator_64qam_top_tb.DUT.MOSI modulator_64qam_top_tb.DUT.SCLK modulator_64qam_top_tb.DUT.reg_addr modulator_64qam_top_tb.DUT.reg_read_data modulator_64qam_top_tb.DUT.reg_read_enable modulator_64qam_top_tb.DUT.reg_write_data modulator_64qam_top_tb.DUT.reg_write_enable modulator_64qam_top_tb.DUT.rst_n
 Created probe 1
 xcelium> run
-FAIL** = 00000000, Expected = 0011010100100100, Actual = zzzzzzzzzzzzzzzz, Time =          90245000000
-FAIL** = 00000001, Expected = 0101111010000001, Actual = zzzzzzzzzzzzzzzz, Time =          90595000000
-FAIL** = 00000010, Expected = 1101011000001001, Actual = zzzzzzzzzzzzzzzz, Time =          90945000000
-FAIL** = 00000011, Expected = 0101011001100011, Actual = zzzzzzzzzzzzzzzz, Time =          91295000000
-FAIL** = 00000100, Expected = 0111101100001101, Actual = zzzzzzzzzzzzzzzz, Time =          91645000000
-FAIL** = 00000101, Expected = 1001100110001101, Actual = zzzzzzzzzzzzzzzz, Time =          91995000000
-FAIL** = 00000110, Expected = 1000010001100101, Actual = zzzzzzzzzzzzzzzz, Time =          92345000000
-FAIL** = 00000111, Expected = 0101001000010010, Actual = zzzzzzzzzzzzzzzz, Time =          92695000000
-FAIL** = 00001000, Expected = 1110001100000001, Actual = zzzzzzzzzzzzzzzz, Time =          93045000000
-FAIL** = 00001001, Expected = 1100110100001101, Actual = zzzzzzzzzzzzzzzz, Time =          93395000000
-FAIL** = 00001010, Expected = 1111000101110110, Actual = zzzzzzzzzzzzzzzz, Time =          93745000000
-FAIL** = 00001011, Expected = 1100110100111101, Actual = zzzzzzzzzzzzzzzz, Time =          94095000000
-FAIL** = 00001100, Expected = 0101011111101101, Actual = zzzzzzzzzzzzzzzz, Time =          94445000000
-FAIL** = 00001101, Expected = 1111011110001100, Actual = zzzzzzzzzzzzzzzz, Time =          94795000000
-FAIL** = 00001110, Expected = 1110100111111001, Actual = zzzzzzzzzzzzzzzz, Time =          95145000000
-FAIL** = 00001111, Expected = 0010010011000110, Actual = zzzzzzzzzzzzzzzz, Time =          95495000000
-FAIL** = 00010000, Expected = 1000010011000101, Actual = zzzzzzzzzzzzzzzz, Time =          95845000000
-FAIL** = 00010001, Expected = 1101001010101010, Actual = zzzzzzzzzzzzzzzz, Time =          96195000000
-FAIL** = 00010010, Expected = 1111011111100101, Actual = zzzzzzzzzzzzzzzz, Time =          96545000000
-FAIL** = 00010011, Expected = 0111001001110111, Actual = zzzzzzzzzzzzzzzz, Time =          96895000000
-FAIL** = 00010100, Expected = 1101011000010010, Actual = zzzzzzzzzzzzzzzz, Time =          97245000000
-FAIL** = 00010101, Expected = 1101101110001111, Actual = zzzzzzzzzzzzzzzz, Time =          97595000000
-FAIL** = 00010110, Expected = 0110100111110010, Actual = zzzzzzzzzzzzzzzz, Time =          97945000000
-FAIL** = 00010111, Expected = 1001011011001110, Actual = zzzzzzzzzzzzzzzz, Time =          98295000000
-FAIL** = 00011000, Expected = 0111101011101000, Actual = zzzzzzzzzzzzzzzz, Time =          98645000000
-FAIL** = 00011001, Expected = 0100111011000101, Actual = zzzzzzzzzzzzzzzz, Time =          98995000000
-FAIL** = 00011010, Expected = 0100100101011100, Actual = zzzzzzzzzzzzzzzz, Time =          99345000000
-FAIL** = 00011011, Expected = 0010100010111101, Actual = zzzzzzzzzzzzzzzz, Time =          99695000000
-FAIL** = 00011100, Expected = 0101100000101101, Actual = zzzzzzzzzzzzzzzz, Time =         100045000000
-FAIL** = 00011101, Expected = 0010011001100101, Actual = zzzzzzzzzzzzzzzz, Time =         100395000000
-FAIL** = 00011110, Expected = 0110001001100011, Actual = zzzzzzzzzzzzzzzz, Time =         100745000000
-FAIL** = 00011111, Expected = 1000011100001010, Actual = zzzzzzzzzzzzzzzz, Time =         101095000000
-FAIL** = 00100000, Expected = 0010001010000000, Actual = zzzzzzzzzzzzzzzz, Time =         101445000000
-FAIL** = 00100001, Expected = 0010000100100000, Actual = zzzzzzzzzzzzzzzz, Time =         101795000000
-FAIL** = 00100010, Expected = 0100010110101010, Actual = zzzzzzzzzzzzzzzz, Time =         102145000000
-FAIL** = 00100011, Expected = 1100110010011101, Actual = zzzzzzzzzzzzzzzz, Time =         102495000000
-FAIL** = 00100100, Expected = 0011111010010110, Actual = zzzzzzzzzzzzzzzz, Time =         102845000000
-FAIL** = 00100101, Expected = 1011100000010011, Actual = zzzzzzzzzzzzzzzz, Time =         103195000000
-FAIL** = 00100110, Expected = 0011100000001101, Actual = zzzzzzzzzzzzzzzz, Time =         103545000000
-FAIL** = 00100111, Expected = 1101011001010011, Actual = zzzzzzzzzzzzzzzz, Time =         103895000000
-FAIL** = 00101000, Expected = 1101110101101011, Actual = zzzzzzzzzzzzzzzz, Time =         104245000000
-FAIL** = 00101001, Expected = 0010101011010101, Actual = zzzzzzzzzzzzzzzz, Time =         104595000000
-FAIL** = 00101010, Expected = 0100101000000010, Actual = zzzzzzzzzzzzzzzz, Time =         104945000000
-FAIL** = 00101011, Expected = 0011111010101110, Actual = zzzzzzzzzzzzzzzz, Time =         105295000000
-FAIL** = 00101100, Expected = 1110100100011101, Actual = zzzzzzzzzzzzzzzz, Time =         105645000000
-FAIL** = 00101101, Expected = 0111001011001111, Actual = zzzzzzzzzzzzzzzz, Time =         105995000000
-FAIL** = 00101110, Expected = 0100100100100011, Actual = zzzzzzzzzzzzzzzz, Time =         106345000000
-FAIL** = 00101111, Expected = 0110010100001010, Actual = zzzzzzzzzzzzzzzz, Time =         106695000000
-FAIL** = 00110000, Expected = 0000101011001010, Actual = zzzzzzzzzzzzzzzz, Time =         107045000000
-FAIL** = 00110001, Expected = 0100110000111100, Actual = zzzzzzzzzzzzzzzz, Time =         107395000000
-FAIL** = 00110010, Expected = 1011110111110010, Actual = zzzzzzzzzzzzzzzz, Time =         107745000000
-FAIL** = 00110011, Expected = 0110000110001010, Actual = zzzzzzzzzzzzzzzz, Time =         108095000000
-FAIL** = 00110100, Expected = 1011001101000001, Actual = zzzzzzzzzzzzzzzz, Time =         108445000000
-FAIL** = 00110101, Expected = 0011010011011000, Actual = zzzzzzzzzzzzzzzz, Time =         108795000000
-FAIL** = 00110110, Expected = 1111001101111000, Actual = zzzzzzzzzzzzzzzz, Time =         109145000000
-FAIL** = 00110111, Expected = 0001001010001001, Actual = zzzzzzzzzzzzzzzz, Time =         109495000000
-FAIL** = 00111000, Expected = 0000110111101011, Actual = zzzzzzzzzzzzzzzz, Time =         109845000000
-FAIL** = 00111001, Expected = 0110010110110110, Actual = zzzzzzzzzzzzzzzz, Time =         110195000000
-FAIL** = 00111010, Expected = 1111100111000110, Actual = zzzzzzzzzzzzzzzz, Time =         110545000000
-FAIL** = 00111011, Expected = 0001001110101110, Actual = zzzzzzzzzzzzzzzz, Time =         110895000000
-FAIL** = 00111100, Expected = 0000001010111100, Actual = zzzzzzzzzzzzzzzz, Time =         111245000000
-FAIL** = 00111101, Expected = 1101110100101010, Actual = zzzzzzzzzzzzzzzz, Time =         111595000000
-FAIL** = 00111110, Expected = 1001101000001011, Actual = zzzzzzzzzzzzzzzz, Time =         111945000000
-FAIL** = 00111111, Expected = 1011111001110001, Actual = zzzzzzzzzzzzzzzz, Time =         112295000000
-FAIL** = 01000000, Expected = 0100000110000101, Actual = zzzzzzzzzzzzzzzz, Time =         112645000000
-FAIL** = 01000001, Expected = 0101010101001111, Actual = zzzzzzzzzzzzzzzz, Time =         112995000000
-FAIL** = 01000010, Expected = 0110000000111011, Actual = zzzzzzzzzzzzzzzz, Time =         113345000000
-FAIL** = 01000011, Expected = 0011001100111010, Actual = zzzzzzzzzzzzzzzz, Time =         113695000000
-FAIL** = 01000100, Expected = 0011001001111110, Actual = zzzzzzzzzzzzzzzz, Time =         114045000000
-FAIL** = 01000101, Expected = 0100101100010101, Actual = zzzzzzzzzzzzzzzz, Time =         114395000000
-FAIL** = 01000110, Expected = 1001101111110001, Actual = zzzzzzzzzzzzzzzz, Time =         114745000000
-FAIL** = 01000111, Expected = 0100101111011001, Actual = zzzzzzzzzzzzzzzz, Time =         115095000000
-FAIL** = 01001000, Expected = 0000011101100010, Actual = zzzzzzzzzzzzzzzz, Time =         115445000000
-FAIL** = 01001001, Expected = 1111101101001100, Actual = zzzzzzzzzzzzzzzz, Time =         115795000000
-FAIL** = 01001010, Expected = 0101010110011111, Actual = zzzzzzzzzzzzzzzz, Time =         116145000000
-FAIL** = 01001011, Expected = 1010000110001111, Actual = zzzzzzzzzzzzzzzz, Time =         116495000000
-FAIL** = 01001100, Expected = 1010100111111000, Actual = zzzzzzzzzzzzzzzz, Time =         116845000000
-FAIL** = 01001101, Expected = 0110000010110111, Actual = zzzzzzzzzzzzzzzz, Time =         117195000000
-FAIL** = 01001110, Expected = 0101011010011111, Actual = zzzzzzzzzzzzzzzz, Time =         117545000000
-FAIL** = 01001111, Expected = 1001010001011100, Actual = zzzzzzzzzzzzzzzz, Time =         117895000000
-FAIL** = 01010000, Expected = 1100000001011011, Actual = zzzzzzzzzzzzzzzz, Time =         118245000000
-FAIL** = 01010001, Expected = 0011011110001001, Actual = zzzzzzzzzzzzzzzz, Time =         118595000000
-FAIL** = 01010010, Expected = 0011001001001001, Actual = zzzzzzzzzzzzzzzz, Time =         118945000000
-FAIL** = 01010011, Expected = 0011111011010000, Actual = zzzzzzzzzzzzzzzz, Time =         119295000000
-FAIL** = 01010100, Expected = 1100000011010111, Actual = zzzzzzzzzzzzzzzz, Time =         119645000000
-FAIL** = 01010101, Expected = 1111110001010001, Actual = zzzzzzzzzzzzzzzz, Time =         119995000000
-FAIL** = 01010110, Expected = 0010111110010110, Actual = zzzzzzzzzzzzzzzz, Time =         120345000000
-FAIL** = 01010111, Expected = 0111111100001100, Actual = zzzzzzzzzzzzzzzz, Time =         120695000000
-FAIL** = 01011000, Expected = 1100111011000010, Actual = zzzzzzzzzzzzzzzz, Time =         121045000000
-FAIL** = 01011001, Expected = 1110110111001000, Actual = zzzzzzzzzzzzzzzz, Time =         121395000000
-FAIL** = 01011010, Expected = 0101101001110111, Actual = zzzzzzzzzzzzzzzz, Time =         121745000000
-FAIL** = 01011011, Expected = 1110110100111101, Actual = zzzzzzzzzzzzzzzz, Time =         122095000000
-FAIL** = 01011100, Expected = 1101101100010010, Actual = zzzzzzzzzzzzzzzz, Time =         122445000000
-FAIL** = 01011101, Expected = 0000000001111110, Actual = zzzzzzzzzzzzzzzz, Time =         122795000000
-FAIL** = 01011110, Expected = 1000000101101101, Actual = zzzzzzzzzzzzzzzz, Time =         123145000000
-FAIL** = 01011111, Expected = 1110011100111001, Actual = zzzzzzzzzzzzzzzz, Time =         123495000000
-FAIL** = 01100000, Expected = 1000111100011111, Actual = zzzzzzzzzzzzzzzz, Time =         123845000000
-FAIL** = 01100001, Expected = 1111011011010011, Actual = zzzzzzzzzzzzzzzz, Time =         124195000000
-FAIL** = 01100010, Expected = 0010111110000101, Actual = zzzzzzzzzzzzzzzz, Time =         124545000000
-FAIL** = 01100011, Expected = 1000100001111000, Actual = zzzzzzzzzzzzzzzz, Time =         124895000000
-FAIL** = 01100100, Expected = 0101100101011011, Actual = zzzzzzzzzzzzzzzz, Time =         125245000000
-FAIL** = 01100101, Expected = 0100101101001001, Actual = zzzzzzzzzzzzzzzz, Time =         125595000000
-FAIL** = 01100110, Expected = 1010111000111111, Actual = zzzzzzzzzzzzzzzz, Time =         125945000000
-FAIL** = 01100111, Expected = 1010111100101010, Actual = zzzzzzzzzzzzzzzz, Time =         126295000000
-FAIL** = 01101000, Expected = 0110001101011000, Actual = zzzzzzzzzzzzzzzz, Time =         126645000000
-FAIL** = 01101001, Expected = 0011100010000110, Actual = zzzzzzzzzzzzzzzz, Time =         126995000000
-FAIL** = 01101010, Expected = 0000110010001110, Actual = zzzzzzzzzzzzzzzz, Time =         127345000000
-FAIL** = 01101011, Expected = 1111001010011100, Actual = zzzzzzzzzzzzzzzz, Time =         127695000000
-FAIL** = 01101100, Expected = 1001100111111010, Actual = zzzzzzzzzzzzzzzz, Time =         128045000000
-FAIL** = 01101101, Expected = 1011110000100110, Actual = zzzzzzzzzzzzzzzz, Time =         128395000000
-FAIL** = 01101110, Expected = 0001011101110011, Actual = zzzzzzzzzzzzzzzz, Time =         128745000000
-FAIL** = 01101111, Expected = 1011010010100011, Actual = zzzzzzzzzzzzzzzz, Time =         129095000000
-FAIL** = 01110000, Expected = 1010100000101111, Actual = zzzzzzzzzzzzzzzz, Time =         129445000000
-FAIL** = 01110001, Expected = 1001001010110011, Actual = zzzzzzzzzzzzzzzz, Time =         129795000000
-FAIL** = 01110010, Expected = 0101011001011111, Actual = zzzzzzzzzzzzzzzz, Time =         130145000000
-FAIL** = 01110011, Expected = 0000110101000100, Actual = zzzzzzzzzzzzzzzz, Time =         130495000000
-FAIL** = 01110100, Expected = 1111110111110111, Actual = zzzzzzzzzzzzzzzz, Time =         130845000000
-FAIL** = 01110101, Expected = 0011011011001011, Actual = zzzzzzzzzzzzzzzz, Time =         131195000000
-FAIL** = 01110110, Expected = 0001101011100110, Actual = zzzzzzzzzzzzzzzz, Time =         131545000000
-FAIL** = 01110111, Expected = 1101101101011010, Actual = zzzzzzzzzzzzzzzz, Time =         131895000000
-FAIL** = 01111000, Expected = 1100000100101001, Actual = zzzzzzzzzzzzzzzz, Time =         132245000000
-FAIL** = 01111001, Expected = 1110001011101101, Actual = zzzzzzzzzzzzzzzz, Time =         132595000000
-FAIL** = 01111010, Expected = 0110110011011010, Actual = zzzzzzzzzzzzzzzz, Time =         132945000000
-FAIL** = 01111011, Expected = 1011011001100101, Actual = zzzzzzzzzzzzzzzz, Time =         133295000000
-FAIL** = 01111100, Expected = 1110001010110101, Actual = zzzzzzzzzzzzzzzz, Time =         133645000000
-FAIL** = 01111101, Expected = 1001010011011111, Actual = zzzzzzzzzzzzzzzz, Time =         133995000000
-FAIL** = 01111110, Expected = 0001100101111001, Actual = zzzzzzzzzzzzzzzz, Time =         134345000000
-FAIL** = 01111111, Expected = 1111111101000100, Actual = zzzzzzzzzzzzzzzz, Time =         134695000000
-FAIL** = 10000000, Expected = 0000110011010000, Actual = zzzzzzzzzzzzzzzz, Time =         135045000000
-FAIL** = 10000001, Expected = 0000101100101010, Actual = zzzzzzzzzzzzzzzz, Time =         135395000000
-FAIL** = 10000010, Expected = 1010110110101011, Actual = zzzzzzzzzzzzzzzz, Time =         135745000000
-FAIL** = 10000011, Expected = 1100111100001110, Actual = zzzzzzzzzzzzzzzz, Time =         136095000000
-FAIL** = 10000100, Expected = 1010110111011100, Actual = zzzzzzzzzzzzzzzz, Time =         136445000000
-FAIL** = 10000101, Expected = 1011110010011010, Actual = zzzzzzzzzzzzzzzz, Time =         136795000000
-FAIL** = 10000110, Expected = 0111001011111101, Actual = zzzzzzzzzzzzzzzz, Time =         137145000000
-FAIL** = 10000111, Expected = 0000001011000011, Actual = zzzzzzzzzzzzzzzz, Time =         137495000000
-FAIL** = 10001000, Expected = 1110110101010110, Actual = zzzzzzzzzzzzzzzz, Time =         137845000000
-FAIL** = 10001001, Expected = 1110100101001110, Actual = zzzzzzzzzzzzzzzz, Time =         138195000000
-FAIL** = 10001010, Expected = 0111011001100111, Actual = zzzzzzzzzzzzzzzz, Time =         138545000000
-FAIL** = 10001011, Expected = 0011010000001010, Actual = zzzzzzzzzzzzzzzz, Time =         138895000000
-FAIL** = 10001100, Expected = 1011100110110110, Actual = zzzzzzzzzzzzzzzz, Time =         139245000000
-FAIL** = 10001101, Expected = 1000101000111000, Actual = zzzzzzzzzzzzzzzz, Time =         139595000000
-FAIL** = 10001110, Expected = 1000011101111001, Actual = zzzzzzzzzzzzzzzz, Time =         139945000000
-FAIL** = 10001111, Expected = 1100010010111000, Actual = zzzzzzzzzzzzzzzz, Time =         140295000000
-FAIL** = 10010000, Expected = 1011111110010100, Actual = zzzzzzzzzzzzzzzz, Time =         140645000000
-FAIL** = 10010001, Expected = 0101110110010011, Actual = zzzzzzzzzzzzzzzz, Time =         140995000000
-FAIL** = 10010010, Expected = 0010110000000100, Actual = zzzzzzzzzzzzzzzz, Time =         141345000000
-FAIL** = 10010011, Expected = 1100101001011001, Actual = zzzzzzzzzzzzzzzz, Time =         141695000000
-FAIL** = 10010100, Expected = 0110100111011011, Actual = zzzzzzzzzzzzzzzz, Time =         142045000000
-FAIL** = 10010101, Expected = 1101111001001101, Actual = zzzzzzzzzzzzzzzz, Time =         142395000000
-FAIL** = 10010110, Expected = 1011011111011001, Actual = zzzzzzzzzzzzzzzz, Time =         142745000000
-FAIL** = 10010111, Expected = 0010011001101101, Actual = zzzzzzzzzzzzzzzz, Time =         143095000000
-FAIL** = 10011000, Expected = 1110001001110110, Actual = zzzzzzzzzzzzzzzz, Time =         143445000000
-FAIL** = 10011001, Expected = 0100100111001010, Actual = zzzzzzzzzzzzzzzz, Time =         143795000000
-FAIL** = 10011010, Expected = 0010110110110110, Actual = zzzzzzzzzzzzzzzz, Time =         144145000000
-FAIL** = 10011011, Expected = 0111000110010101, Actual = zzzzzzzzzzzzzzzz, Time =         144495000000
-FAIL** = 10011100, Expected = 0001101001000110, Actual = zzzzzzzzzzzzzzzz, Time =         144845000000
-FAIL** = 10011101, Expected = 1001101100000100, Actual = zzzzzzzzzzzzzzzz, Time =         145195000000
-FAIL** = 10011110, Expected = 0110000111110111, Actual = zzzzzzzzzzzzzzzz, Time =         145545000000
-FAIL** = 10011111, Expected = 0000011101101001, Actual = zzzzzzzzzzzzzzzz, Time =         145895000000
-FAIL** = 10100000, Expected = 1011101010110100, Actual = zzzzzzzzzzzzzzzz, Time =         146245000000
-FAIL** = 10100001, Expected = 1000110110001000, Actual = zzzzzzzzzzzzzzzz, Time =         146595000000
-FAIL** = 10100010, Expected = 1101100100101000, Actual = zzzzzzzzzzzzzzzz, Time =         146945000000
-FAIL** = 10100011, Expected = 0000010000101101, Actual = zzzzzzzzzzzzzzzz, Time =         147295000000
-FAIL** = 10100100, Expected = 0011000011000111, Actual = zzzzzzzzzzzzzzzz, Time =         147645000000
-FAIL** = 10100101, Expected = 1001110000101110, Actual = zzzzzzzzzzzzzzzz, Time =         147995000000
-FAIL** = 10100110, Expected = 1110010000001000, Actual = zzzzzzzzzzzzzzzz, Time =         148345000000
-FAIL** = 10100111, Expected = 0100010100011100, Actual = zzzzzzzzzzzzzzzz, Time =         148695000000
-FAIL** = 10101000, Expected = 1010011011111101, Actual = zzzzzzzzzzzzzzzz, Time =         149045000000
-FAIL** = 10101001, Expected = 0000011100101001, Actual = zzzzzzzzzzzzzzzz, Time =         149395000000
-FAIL** = 10101010, Expected = 1001000000011100, Actual = zzzzzzzzzzzzzzzz, Time =         149745000000
-FAIL** = 10101011, Expected = 0110011110000110, Actual = zzzzzzzzzzzzzzzz, Time =         150095000000
-FAIL** = 10101100, Expected = 0000100011011010, Actual = zzzzzzzzzzzzzzzz, Time =         150445000000
-FAIL** = 10101101, Expected = 1100011000111101, Actual = zzzzzzzzzzzzzzzz, Time =         150795000000
-FAIL** = 10101110, Expected = 1010011101100110, Actual = zzzzzzzzzzzzzzzz, Time =         151145000000
-FAIL** = 10101111, Expected = 1100010001110000, Actual = zzzzzzzzzzzzzzzz, Time =         151495000000
-FAIL** = 10110000, Expected = 0000010001110011, Actual = zzzzzzzzzzzzzzzz, Time =         151845000000
-FAIL** = 10110001, Expected = 1001100110111010, Actual = zzzzzzzzzzzzzzzz, Time =         152195000000
-FAIL** = 10110010, Expected = 1011001101011110, Actual = zzzzzzzzzzzzzzzz, Time =         152545000000
-FAIL** = 10110011, Expected = 0111100111111010, Actual = zzzzzzzzzzzzzzzz, Time =         152895000000
-FAIL** = 10110100, Expected = 0000010111010101, Actual = zzzzzzzzzzzzzzzz, Time =         153245000000
-FAIL** = 10110101, Expected = 1111011000011010, Actual = zzzzzzzzzzzzzzzz, Time =         153595000000
-FAIL** = 10110110, Expected = 0000000010111001, Actual = zzzzzzzzzzzzzzzz, Time =         153945000000
-FAIL** = 10110111, Expected = 0110000100110111, Actual = zzzzzzzzzzzzzzzz, Time =         154295000000
-FAIL** = 10111000, Expected = 0011011110010110, Actual = zzzzzzzzzzzzzzzz, Time =         154645000000
-FAIL** = 10111001, Expected = 0010000111000000, Actual = zzzzzzzzzzzzzzzz, Time =         154995000000
-FAIL** = 10111010, Expected = 1001111100100110, Actual = zzzzzzzzzzzzzzzz, Time =         155345000000
-FAIL** = 10111011, Expected = 0001101010110110, Actual = zzzzzzzzzzzzzzzz, Time =         155695000000
-FAIL** = 10111100, Expected = 1000001101111101, Actual = zzzzzzzzzzzzzzzz, Time =         156045000000
-FAIL** = 10111101, Expected = 0000111111011100, Actual = zzzzzzzzzzzzzzzz, Time =         156395000000
-FAIL** = 10111110, Expected = 0101011110000110, Actual = zzzzzzzzzzzzzzzz, Time =         156745000000
-FAIL** = 10111111, Expected = 1111111101111000, Actual = zzzzzzzzzzzzzzzz, Time =         157095000000
-FAIL** = 11000000, Expected = 1001101101111110, Actual = zzzzzzzzzzzzzzzz, Time =         157445000000
-FAIL** = 11000001, Expected = 1000000011011011, Actual = zzzzzzzzzzzzzzzz, Time =         157795000000
-FAIL** = 11000010, Expected = 1011011011001111, Actual = zzzzzzzzzzzzzzzz, Time =         158145000000
-FAIL** = 11000011, Expected = 0010101101111001, Actual = zzzzzzzzzzzzzzzz, Time =         158495000000
-FAIL** = 11000100, Expected = 1110010011111010, Actual = zzzzzzzzzzzzzzzz, Time =         158845000000
-FAIL** = 11000101, Expected = 1110111001100001, Actual = zzzzzzzzzzzzzzzz, Time =         159195000000
-FAIL** = 11000110, Expected = 0000100100010111, Actual = zzzzzzzzzzzzzzzz, Time =         159545000000
-FAIL** = 11000111, Expected = 0111100010100001, Actual = zzzzzzzzzzzzzzzz, Time =         159895000000
-FAIL** = 11001000, Expected = 1001000110000110, Actual = zzzzzzzzzzzzzzzz, Time =         160245000000
-FAIL** = 11001001, Expected = 1001011001010000, Actual = zzzzzzzzzzzzzzzz, Time =         160595000000
-FAIL** = 11001010, Expected = 0101100111110101, Actual = zzzzzzzzzzzzzzzz, Time =         160945000000
-FAIL** = 11001011, Expected = 1000100000110101, Actual = zzzzzzzzzzzzzzzz, Time =         161295000000
-FAIL** = 11001100, Expected = 1000101000101001, Actual = zzzzzzzzzzzzzzzz, Time =         161645000000
-FAIL** = 11001101, Expected = 0111010111000001, Actual = zzzzzzzzzzzzzzzz, Time =         161995000000
-FAIL** = 11001110, Expected = 0111010011000101, Actual = zzzzzzzzzzzzzzzz, Time =         162345000000
-FAIL** = 11001111, Expected = 1011010010011000, Actual = zzzzzzzzzzzzzzzz, Time =         162695000000
-FAIL** = 11010000, Expected = 0111101101001011, Actual = zzzzzzzzzzzzzzzz, Time =         163045000000
-FAIL** = 11010001, Expected = 0100001001110011, Actual = zzzzzzzzzzzzzzzz, Time =         163395000000
-FAIL** = 11010010, Expected = 1110011011101100, Actual = zzzzzzzzzzzzzzzz, Time =         163745000000
-FAIL** = 11010011, Expected = 0001011010001010, Actual = zzzzzzzzzzzzzzzz, Time =         164095000000
-FAIL** = 11010100, Expected = 1101000101001110, Actual = zzzzzzzzzzzzzzzz, Time =         164445000000
-FAIL** = 11010101, Expected = 1000000010101000, Actual = zzzzzzzzzzzzzzzz, Time =         164795000000
-FAIL** = 11010110, Expected = 1111110110101001, Actual = zzzzzzzzzzzzzzzz, Time =         165145000000
-FAIL** = 11010111, Expected = 1000110010100001, Actual = zzzzzzzzzzzzzzzz, Time =         165495000000
-FAIL** = 11011000, Expected = 1011100100001110, Actual = zzzzzzzzzzzzzzzz, Time =         165845000000
-FAIL** = 11011001, Expected = 0110011011100110, Actual = zzzzzzzzzzzzzzzz, Time =         166195000000
-FAIL** = 11011010, Expected = 1100000010011111, Actual = zzzzzzzzzzzzzzzz, Time =         166545000000
-FAIL** = 11011011, Expected = 1011010100101010, Actual = zzzzzzzzzzzzzzzz, Time =         166895000000
-FAIL** = 11011100, Expected = 0001110100101010, Actual = zzzzzzzzzzzzzzzz, Time =         167245000000
-FAIL** = 11011101, Expected = 1111010010001101, Actual = zzzzzzzzzzzzzzzz, Time =         167595000000
-FAIL** = 11011110, Expected = 1111111110011110, Actual = zzzzzzzzzzzzzzzz, Time =         167945000000
-FAIL** = 11011111, Expected = 1110011000111000, Actual = zzzzzzzzzzzzzzzz, Time =         168295000000
-FAIL** = 11100000, Expected = 1010100001111001, Actual = zzzzzzzzzzzzzzzz, Time =         168645000000
-FAIL** = 11100001, Expected = 1110001111001000, Actual = zzzzzzzzzzzzzzzz, Time =         168995000000
-FAIL** = 11100010, Expected = 0100010111001010, Actual = zzzzzzzzzzzzzzzz, Time =         169345000000
-FAIL** = 11100011, Expected = 0100000100010011, Actual = zzzzzzzzzzzzzzzz, Time =         169695000000
-FAIL** = 11100100, Expected = 1100100101101011, Actual = zzzzzzzzzzzzzzzz, Time =         170045000000
-FAIL** = 11100101, Expected = 1010111011000111, Actual = zzzzzzzzzzzzzzzz, Time =         170395000000
-FAIL** = 11100110, Expected = 1101110110110110, Actual = zzzzzzzzzzzzzzzz, Time =         170745000000
-FAIL** = 11100111, Expected = 1001110110111010, Actual = zzzzzzzzzzzzzzzz, Time =         171095000000
-FAIL** = 11101000, Expected = 1010101111000100, Actual = zzzzzzzzzzzzzzzz, Time =         171445000000
-FAIL** = 11101001, Expected = 1001010110111001, Actual = zzzzzzzzzzzzzzzz, Time =         171795000000
-FAIL** = 11101010, Expected = 1101001110010010, Actual = zzzzzzzzzzzzzzzz, Time =         172145000000
-FAIL** = 11101011, Expected = 1001101010110100, Actual = zzzzzzzzzzzzzzzz, Time =         172495000000
-FAIL** = 11101100, Expected = 0011101101111111, Actual = zzzzzzzzzzzzzzzz, Time =         172845000000
-FAIL** = 11101101, Expected = 1001000010000110, Actual = zzzzzzzzzzzzzzzz, Time =         173195000000
-FAIL** = 11101110, Expected = 1111010111111010, Actual = zzzzzzzzzzzzzzzz, Time =         173545000000
-FAIL** = 11101111, Expected = 1001010011110010, Actual = zzzzzzzzzzzzzzzz, Time =         173895000000
-FAIL** = 11110000, Expected = 0010000100110010, Actual = zzzzzzzzzzzzzzzz, Time =         174245000000
-FAIL** = 11110001, Expected = 0101111010111101, Actual = zzzzzzzzzzzzzzzz, Time =         174595000000
-FAIL** = 11110010, Expected = 1100110110000100, Actual = zzzzzzzzzzzzzzzz, Time =         174945000000
-FAIL** = 11110011, Expected = 1010010011100100, Actual = zzzzzzzzzzzzzzzz, Time =         175295000000
-FAIL** = 11110100, Expected = 1100111111001010, Actual = zzzzzzzzzzzzzzzz, Time =         175645000000
-FAIL** = 11110101, Expected = 0111100110101001, Actual = zzzzzzzzzzzzzzzz, Time =         175995000000
-FAIL** = 11110110, Expected = 1010100010100001, Actual = zzzzzzzzzzzzzzzz, Time =         176345000000
-FAIL** = 11110111, Expected = 1010100110001110, Actual = zzzzzzzzzzzzzzzz, Time =         176695000000
-FAIL** = 11111000, Expected = 0110101011111011, Actual = zzzzzzzzzzzzzzzz, Time =         177045000000
-FAIL** = 11111001, Expected = 0001111000001011, Actual = zzzzzzzzzzzzzzzz, Time =         177395000000
-FAIL** = 11111010, Expected = 1001000011101111, Actual = zzzzzzzzzzzzzzzz, Time =         177745000000
-FAIL** = 11111011, Expected = 0011110111001001, Actual = zzzzzzzzzzzzzzzz, Time =         178095000000
-FAIL** = 11111100, Expected = 1110010100110110, Actual = zzzzzzzzzzzzzzzz, Time =         178445000000
-FAIL** = 11111101, Expected = 0100100001110101, Actual = zzzzzzzzzzzzzzzz, Time =         178795000000
-FAIL** = 11111110, Expected = 0101011010001111, Actual = zzzzzzzzzzzzzzzz, Time =         179145000000
-FAIL** = 11111111, Expected = 1011111101101011, Actual = zzzzzzzzzzzzzzzz, Time =         179495000000
-Simulation complete via $finish(1) at time 179695 US + 0
-../testbench/tb_modulator_64qam_top.v:90  $finish; 
+FAIL** = 0000000000, Expected = 00100100, Actual = zzzzzzzz, Time =          87675000000
+FAIL** = 0000000001, Expected = 10000001, Actual = zzzzzzzz, Time =          88015000000
+FAIL** = 0000000010, Expected = 00001001, Actual = zzzzzzzz, Time =          88355000000
+FAIL** = 0000000011, Expected = 01100011, Actual = zzzzzzzz, Time =          88695000000
+FAIL** = 0000000100, Expected = 00001101, Actual = zzzzzzzz, Time =          89035000000
+FAIL** = 0000000101, Expected = 10001101, Actual = zzzzzzzz, Time =          89375000000
+FAIL** = 0000000110, Expected = 01100101, Actual = zzzzzzzz, Time =          89715000000
+FAIL** = 0000000111, Expected = 00010010, Actual = zzzzzzzz, Time =          90055000000
+FAIL** = 0000001000, Expected = 00000001, Actual = zzzzzzzz, Time =          90395000000
+FAIL** = 0000001001, Expected = 00001101, Actual = zzzzzzzz, Time =          90735000000
+FAIL** = 0000001010, Expected = 01110110, Actual = zzzzzzzz, Time =          91075000000
+FAIL** = 0000001011, Expected = 00111101, Actual = zzzzzzzz, Time =          91415000000
+FAIL** = 0000001100, Expected = 11101101, Actual = zzzzzzzz, Time =          91755000000
+FAIL** = 0000001101, Expected = 10001100, Actual = zzzzzzzz, Time =          92095000000
+FAIL** = 0000001110, Expected = 11111001, Actual = zzzzzzzz, Time =          92435000000
+FAIL** = 0000001111, Expected = 11000110, Actual = zzzzzzzz, Time =          92775000000
+FAIL** = 0000010000, Expected = 11000101, Actual = zzzzzzzz, Time =          93115000000
+FAIL** = 0000010001, Expected = 10101010, Actual = zzzzzzzz, Time =          93455000000
+FAIL** = 0000010010, Expected = 11100101, Actual = zzzzzzzz, Time =          93795000000
+FAIL** = 0000010011, Expected = 01110111, Actual = zzzzzzzz, Time =          94135000000
+FAIL** = 0000010100, Expected = 00010010, Actual = zzzzzzzz, Time =          94475000000
+FAIL** = 0000010101, Expected = 10001111, Actual = zzzzzzzz, Time =          94815000000
+FAIL** = 0000010110, Expected = 11110010, Actual = zzzzz000, Time =          95155000000
+FAIL** = 0000010111, Expected = 11001110, Actual = zzzzzzzz, Time =          95495000000
+FAIL** = 0000011000, Expected = 11101000, Actual = zzzzzzzz, Time =          95835000000
+FAIL** = 0000011001, Expected = 11000101, Actual = zzzzzzzz, Time =          96175000000
+FAIL** = 0000011010, Expected = 01011100, Actual = zzzzzzzz, Time =          96515000000
+FAIL** = 0000011011, Expected = 10111101, Actual = zzzzzzzz, Time =          96855000000
+FAIL** = 0000011100, Expected = 00101101, Actual = zzzzzzzz, Time =          97195000000
+FAIL** = 0000011101, Expected = 01100101, Actual = zzzzzzzz, Time =          97535000000
+FAIL** = 0000011110, Expected = 01100011, Actual = zzzzzzzz, Time =          97875000000
+FAIL** = 0000011111, Expected = 00001010, Actual = zzzzzzzz, Time =          98215000000
+FAIL** = 0000100000, Expected = 10000000, Actual = zzzzzzzz, Time =          98555000000
+FAIL** = 0000100001, Expected = 00100000, Actual = zzzzzzzz, Time =          98895000000
+FAIL** = 0000100010, Expected = 10101010, Actual = zzzzzzzz, Time =          99235000000
+FAIL** = 0000100011, Expected = 10011101, Actual = zzzzzzzz, Time =          99575000000
+FAIL** = 0000100100, Expected = 10010110, Actual = zzzzzzzz, Time =          99915000000
+FAIL** = 0000100101, Expected = 00010011, Actual = zzzzzzzz, Time =         100255000000
+FAIL** = 0000100110, Expected = 00001101, Actual = zzzzzzzz, Time =         100595000000
+FAIL** = 0000100111, Expected = 01010011, Actual = zzzzzzzz, Time =         100935000000
+FAIL** = 0000101000, Expected = 01101011, Actual = zzzzzzzz, Time =         101275000000
+FAIL** = 0000101001, Expected = 11010101, Actual = zzzzzzzz, Time =         101615000000
+FAIL** = 0000101010, Expected = 00000010, Actual = zzzzzzzz, Time =         101955000000
+FAIL** = 0000101011, Expected = 10101110, Actual = zzzzzzzz, Time =         102295000000
+FAIL** = 0000101100, Expected = 00011101, Actual = zzzzzzzz, Time =         102635000000
+FAIL** = 0000101101, Expected = 11001111, Actual = zzzzzzzz, Time =         102975000000
+FAIL** = 0000101110, Expected = 00100011, Actual = zzzzzzzz, Time =         103315000000
+FAIL** = 0000101111, Expected = 00001010, Actual = zzzzzzzz, Time =         103655000000
+FAIL** = 0000110000, Expected = 11001010, Actual = zzzzzzzz, Time =         103995000000
+FAIL** = 0000110001, Expected = 00111100, Actual = zzzzzzzz, Time =         104335000000
+FAIL** = 0000110010, Expected = 11110010, Actual = zzzzzzzz, Time =         104675000000
+FAIL** = 0000110011, Expected = 10001010, Actual = zzzzzzzz, Time =         105015000000
+FAIL** = 0000110100, Expected = 01000001, Actual = zzzzzzzz, Time =         105355000000
+FAIL** = 0000110101, Expected = 11011000, Actual = zzzzzzzz, Time =         105695000000
+FAIL** = 0000110110, Expected = 01111000, Actual = zzzzzzzz, Time =         106035000000
+FAIL** = 0000110111, Expected = 10001001, Actual = zzzz0000, Time =         106375000000
+FAIL** = 0000111000, Expected = 11101011, Actual = zzzzz000, Time =         106715000000
+FAIL** = 0000111001, Expected = 10110110, Actual = zzzzzz00, Time =         107055000000
+FAIL** = 0000111010, Expected = 11000110, Actual = zzzzzzzz, Time =         107395000000
+FAIL** = 0000111011, Expected = 10101110, Actual = zzzzzzzz, Time =         107735000000
+FAIL** = 0000111100, Expected = 10111100, Actual = zzzzzzzz, Time =         108075000000
+FAIL** = 0000111101, Expected = 00101010, Actual = zzzzzzzz, Time =         108415000000
+FAIL** = 0000111110, Expected = 00001011, Actual = zzzzzzzz, Time =         108755000000
+FAIL** = 0000111111, Expected = 01110001, Actual = zzzzzzzz, Time =         109095000000
+FAIL** = 0001000000, Expected = 10000101, Actual = zzzzzzzz, Time =         109435000000
+FAIL** = 0001000001, Expected = 01001111, Actual = zzzzzzzz, Time =         109775000000
+FAIL** = 0001000010, Expected = 00111011, Actual = zzzzzzzz, Time =         110115000000
+FAIL** = 0001000011, Expected = 00111010, Actual = zzzzzzzz, Time =         110455000000
+FAIL** = 0001000100, Expected = 01111110, Actual = zzzzzzzz, Time =         110795000000
+FAIL** = 0001000101, Expected = 00010101, Actual = zzzzzzzz, Time =         111135000000
+FAIL** = 0001000110, Expected = 11110001, Actual = zzzzzzzz, Time =         111475000000
+FAIL** = 0001000111, Expected = 11011001, Actual = zzzzzzzz, Time =         111815000000
+FAIL** = 0001001000, Expected = 01100010, Actual = zzzzzzzz, Time =         112155000000
+FAIL** = 0001001001, Expected = 01001100, Actual = zzzzzzzz, Time =         112495000000
+FAIL** = 0001001010, Expected = 10011111, Actual = zzzzzzzz, Time =         112835000000
+FAIL** = 0001001011, Expected = 10001111, Actual = zzzzzzzz, Time =         113175000000
+FAIL** = 0001001100, Expected = 11111000, Actual = zzzzzzzz, Time =         113515000000
+FAIL** = 0001001101, Expected = 10110111, Actual = zzzzzzzz, Time =         113855000000
+FAIL** = 0001001110, Expected = 10011111, Actual = zzzzzzzz, Time =         114195000000
+FAIL** = 0001001111, Expected = 01011100, Actual = zzzzzzzz, Time =         114535000000
+FAIL** = 0001010000, Expected = 01011011, Actual = zzzzzzzz, Time =         114875000000
+FAIL** = 0001010001, Expected = 10001001, Actual = zzzzzzzz, Time =         115215000000
+FAIL** = 0001010010, Expected = 01001001, Actual = zzzzzzzz, Time =         115555000000
+FAIL** = 0001010011, Expected = 11010000, Actual = zzzzzzzz, Time =         115895000000
+FAIL** = 0001010100, Expected = 11010111, Actual = zzzzzzzz, Time =         116235000000
+FAIL** = 0001010101, Expected = 01010001, Actual = zzzzzzzz, Time =         116575000000
+FAIL** = 0001010110, Expected = 10010110, Actual = zzzzzzzz, Time =         116915000000
+FAIL** = 0001010111, Expected = 00001100, Actual = zzzzzzzz, Time =         117255000000
+FAIL** = 0001011000, Expected = 11000010, Actual = zzz00000, Time =         117595000000
+FAIL** = 0001011001, Expected = 11001000, Actual = zzzzzzzz, Time =         117935000000
+FAIL** = 0001011010, Expected = 01110111, Actual = zzzzz000, Time =         118275000000
+FAIL** = 0001011011, Expected = 00111101, Actual = zzzzzz00, Time =         118615000000
+FAIL** = 0001011100, Expected = 00010010, Actual = zzzzzzz0, Time =         118955000000
+FAIL** = 0001011101, Expected = 01111110, Actual = zzzzzzzz, Time =         119295000000
+FAIL** = 0001011110, Expected = 01101101, Actual = zzzzzzzz, Time =         119635000000
+FAIL** = 0001011111, Expected = 00111001, Actual = zzzzzzzz, Time =         119975000000
+FAIL** = 0001100000, Expected = 00011111, Actual = zzzzzzzz, Time =         120315000000
+FAIL** = 0001100001, Expected = 11010011, Actual = zzzzzzzz, Time =         120655000000
+FAIL** = 0001100010, Expected = 10000101, Actual = zzzzzzzz, Time =         120995000000
+FAIL** = 0001100011, Expected = 01111000, Actual = zzzzzzzz, Time =         121335000000
+FAIL** = 0001100100, Expected = 01011011, Actual = zzzzzzzz, Time =         121675000000
+FAIL** = 0001100101, Expected = 01001001, Actual = zzzzzzzz, Time =         122015000000
+FAIL** = 0001100110, Expected = 00111111, Actual = zzzzzzzz, Time =         122355000000
+FAIL** = 0001100111, Expected = 00101010, Actual = zzzzzzzz, Time =         122695000000
+FAIL** = 0001101000, Expected = 01011000, Actual = zzzzzzzz, Time =         123035000000
+FAIL** = 0001101001, Expected = 10000110, Actual = zzzzzzzz, Time =         123375000000
+FAIL** = 0001101010, Expected = 10001110, Actual = zzzzzzzz, Time =         123715000000
+FAIL** = 0001101011, Expected = 10011100, Actual = zzzzzzzz, Time =         124055000000
+FAIL** = 0001101100, Expected = 11111010, Actual = zzzzzzzz, Time =         124395000000
+FAIL** = 0001101101, Expected = 00100110, Actual = zzzzzzzz, Time =         124735000000
+FAIL** = 0001101110, Expected = 01110011, Actual = zzzzzzzz, Time =         125075000000
+FAIL** = 0001101111, Expected = 10100011, Actual = zzzzzzzz, Time =         125415000000
+FAIL** = 0001110000, Expected = 00101111, Actual = zzzzzzzz, Time =         125755000000
+FAIL** = 0001110001, Expected = 10110011, Actual = zzzzzzzz, Time =         126095000000
+FAIL** = 0001110010, Expected = 01011111, Actual = zzzzzzzz, Time =         126435000000
+FAIL** = 0001110011, Expected = 01000100, Actual = zzzzzzzz, Time =         126775000000
+FAIL** = 0001110100, Expected = 11110111, Actual = zzzzzzzz, Time =         127115000000
+FAIL** = 0001110101, Expected = 11001011, Actual = zzzzzzzz, Time =         127455000000
+FAIL** = 0001110110, Expected = 11100110, Actual = zzzzzzzz, Time =         127795000000
+FAIL** = 0001110111, Expected = 01011010, Actual = zzzzzzzz, Time =         128135000000
+FAIL** = 0001111000, Expected = 00101001, Actual = zzzzzzzz, Time =         128475000000
+FAIL** = 0001111001, Expected = 11101101, Actual = zzzzzzzz, Time =         128815000000
+FAIL** = 0001111010, Expected = 11011010, Actual = zzz00000, Time =         129155000000
+FAIL** = 0001111011, Expected = 01100101, Actual = zzzz0000, Time =         129495000000
+FAIL** = 0001111100, Expected = 10110101, Actual = zzzzz000, Time =         129835000000
+FAIL** = 0001111101, Expected = 11011111, Actual = zzzzzz00, Time =         130175000000
+FAIL** = 0001111110, Expected = 01111001, Actual = zzzzzzz0, Time =         130515000000
+FAIL** = 0001111111, Expected = 01000100, Actual = zzzzzzzz, Time =         130855000000
+FAIL** = 0010000000, Expected = 11010000, Actual = zzzzzzzz, Time =         131195000000
+FAIL** = 0010000001, Expected = 00101010, Actual = zzzzzzzz, Time =         131535000000
+FAIL** = 0010000010, Expected = 10101011, Actual = zzzzzzzz, Time =         131875000000
+FAIL** = 0010000011, Expected = 00001110, Actual = zzzzzzzz, Time =         132215000000
+FAIL** = 0010000100, Expected = 11011100, Actual = zzzzzzzz, Time =         132555000000
+FAIL** = 0010000101, Expected = 10011010, Actual = zzzzzzzz, Time =         132895000000
+FAIL** = 0010000110, Expected = 11111101, Actual = zzzzzzzz, Time =         133235000000
+FAIL** = 0010000111, Expected = 11000011, Actual = zzzzzzzz, Time =         133575000000
+FAIL** = 0010001000, Expected = 01010110, Actual = zzzzzzzz, Time =         133915000000
+FAIL** = 0010001001, Expected = 01001110, Actual = zzzzzzzz, Time =         134255000000
+FAIL** = 0010001010, Expected = 01100111, Actual = zzzzzzzz, Time =         134595000000
+FAIL** = 0010001011, Expected = 00001010, Actual = zzzzzzzz, Time =         134935000000
+FAIL** = 0010001100, Expected = 10110110, Actual = zzzzzzzz, Time =         135275000000
+FAIL** = 0010001101, Expected = 00111000, Actual = zzzzzzzz, Time =         135615000000
+FAIL** = 0010001110, Expected = 01111001, Actual = zzzzzzzz, Time =         135955000000
+FAIL** = 0010001111, Expected = 10111000, Actual = zzzzzzzz, Time =         136295000000
+FAIL** = 0010010000, Expected = 10010100, Actual = zzzzzzzz, Time =         136635000000
+FAIL** = 0010010001, Expected = 10010011, Actual = zzzzzzzz, Time =         136975000000
+FAIL** = 0010010010, Expected = 00000100, Actual = zzzzzzzz, Time =         137315000000
+FAIL** = 0010010011, Expected = 01011001, Actual = zzzzzzzz, Time =         137655000000
+FAIL** = 0010010100, Expected = 11011011, Actual = zzzzzzzz, Time =         137995000000
+FAIL** = 0010010101, Expected = 01001101, Actual = zzzzzzzz, Time =         138335000000
+FAIL** = 0010010110, Expected = 11011001, Actual = zzzzzzzz, Time =         138675000000
+FAIL** = 0010010111, Expected = 01101101, Actual = zzzzzzzz, Time =         139015000000
+FAIL** = 0010011000, Expected = 01110110, Actual = zzzzzzzz, Time =         139355000000
+FAIL** = 0010011001, Expected = 11001010, Actual = zzzzzzzz, Time =         139695000000
+FAIL** = 0010011010, Expected = 10110110, Actual = zzzzzzzz, Time =         140035000000
+FAIL** = 0010011011, Expected = 10010101, Actual = zz000000, Time =         140375000000
+FAIL** = 0010011100, Expected = 01000110, Actual = zzzzzzzz, Time =         140715000000
+FAIL** = 0010011101, Expected = 00000100, Actual = zzzzzzzz, Time =         141055000000
+FAIL** = 0010011110, Expected = 11110111, Actual = zzzzz000, Time =         141395000000
+FAIL** = 0010011111, Expected = 01101001, Actual = zzzzzz00, Time =         141735000000
+FAIL** = 0010100000, Expected = 10110100, Actual = zzzzzzzz, Time =         142075000000
+FAIL** = 0010100001, Expected = 10001000, Actual = zzzzzzzz, Time =         142415000000
+FAIL** = 0010100010, Expected = 00101000, Actual = zzzzzzzz, Time =         142755000000
+FAIL** = 0010100011, Expected = 00101101, Actual = zzzzzzzz, Time =         143095000000
+FAIL** = 0010100100, Expected = 11000111, Actual = zzzzzzzz, Time =         143435000000
+FAIL** = 0010100101, Expected = 00101110, Actual = zzzzzzzz, Time =         143775000000
+FAIL** = 0010100110, Expected = 00001000, Actual = zzzzzzzz, Time =         144115000000
+FAIL** = 0010100111, Expected = 00011100, Actual = zzzzzzzz, Time =         144455000000
+FAIL** = 0010101000, Expected = 11111101, Actual = zzzzzzzz, Time =         144795000000
+FAIL** = 0010101001, Expected = 00101001, Actual = zzzzzzzz, Time =         145135000000
+FAIL** = 0010101010, Expected = 00011100, Actual = zzzzzzzz, Time =         145475000000
+FAIL** = 0010101011, Expected = 10000110, Actual = zzzzzzzz, Time =         145815000000
+FAIL** = 0010101100, Expected = 11011010, Actual = zzzzzzzz, Time =         146155000000
+FAIL** = 0010101101, Expected = 00111101, Actual = zzzzzzzz, Time =         146495000000
+FAIL** = 0010101110, Expected = 01100110, Actual = zzzzzzzz, Time =         146835000000
+FAIL** = 0010101111, Expected = 01110000, Actual = zzzzzzzz, Time =         147175000000
+FAIL** = 0010110000, Expected = 01110011, Actual = zzzzzzzz, Time =         147515000000
+FAIL** = 0010110001, Expected = 10111010, Actual = zzzzzzzz, Time =         147855000000
+FAIL** = 0010110010, Expected = 01011110, Actual = zzzzzzzz, Time =         148195000000
+FAIL** = 0010110011, Expected = 11111010, Actual = zzzzzzzz, Time =         148535000000
+FAIL** = 0010110100, Expected = 11010101, Actual = zzzzzzzz, Time =         148875000000
+FAIL** = 0010110101, Expected = 00011010, Actual = zzzzzzzz, Time =         149215000000
+FAIL** = 0010110110, Expected = 10111001, Actual = zzzzzzzz, Time =         149555000000
+FAIL** = 0010110111, Expected = 00110111, Actual = zzzzzzzz, Time =         149895000000
+FAIL** = 0010111000, Expected = 10010110, Actual = zzzzzzzz, Time =         150235000000
+FAIL** = 0010111001, Expected = 11000000, Actual = zzzzzzzz, Time =         150575000000
+FAIL** = 0010111010, Expected = 00100110, Actual = zzzzzzzz, Time =         150915000000
+FAIL** = 0010111011, Expected = 10110110, Actual = zzzzzzzz, Time =         151255000000
+FAIL** = 0010111100, Expected = 01111101, Actual = zzzzzzzz, Time =         151595000000
+FAIL** = 0010111101, Expected = 11011100, Actual = zz000000, Time =         151935000000
+FAIL** = 0010111110, Expected = 10000110, Actual = zzzzzzzz, Time =         152275000000
+FAIL** = 0010111111, Expected = 01111000, Actual = zzzz0000, Time =         152615000000
+FAIL** = 0011000000, Expected = 01111110, Actual = zzzzzzzz, Time =         152955000000
+FAIL** = 0011000001, Expected = 11011011, Actual = zzzzzzzz, Time =         153295000000
+FAIL** = 0011000010, Expected = 11001111, Actual = zzzzzzzz, Time =         153635000000
+FAIL** = 0011000011, Expected = 01111001, Actual = zzzzzzzz, Time =         153975000000
+FAIL** = 0011000100, Expected = 11111010, Actual = zzzzzzzz, Time =         154315000000
+FAIL** = 0011000101, Expected = 01100001, Actual = zzzzzzzz, Time =         154655000000
+FAIL** = 0011000110, Expected = 00010111, Actual = zzzzzzzz, Time =         154995000000
+FAIL** = 0011000111, Expected = 10100001, Actual = zzzzzzzz, Time =         155335000000
+FAIL** = 0011001000, Expected = 10000110, Actual = zzzzzzzz, Time =         155675000000
+FAIL** = 0011001001, Expected = 01010000, Actual = zzzzzzzz, Time =         156015000000
+FAIL** = 0011001010, Expected = 11110101, Actual = zzzzzzzz, Time =         156355000000
+FAIL** = 0011001011, Expected = 00110101, Actual = zzzzzzzz, Time =         156695000000
+FAIL** = 0011001100, Expected = 00101001, Actual = zzzzzzzz, Time =         157035000000
+FAIL** = 0011001101, Expected = 11000001, Actual = zzzzzzzz, Time =         157375000000
+FAIL** = 0011001110, Expected = 11000101, Actual = zzzzzzzz, Time =         157715000000
+FAIL** = 0011001111, Expected = 10011000, Actual = zzzzzzzz, Time =         158055000000
+FAIL** = 0011010000, Expected = 01001011, Actual = zzzzzzzz, Time =         158395000000
+FAIL** = 0011010001, Expected = 01110011, Actual = zzzzzzzz, Time =         158735000000
+FAIL** = 0011010010, Expected = 11101100, Actual = zzzzzzzz, Time =         159075000000
+FAIL** = 0011010011, Expected = 10001010, Actual = zzzzzzzz, Time =         159415000000
+FAIL** = 0011010100, Expected = 01001110, Actual = zzzzzzzz, Time =         159755000000
+FAIL** = 0011010101, Expected = 10101000, Actual = zzzzzzzz, Time =         160095000000
+FAIL** = 0011010110, Expected = 10101001, Actual = zzzzzzzz, Time =         160435000000
+FAIL** = 0011010111, Expected = 10100001, Actual = zzzzzzzz, Time =         160775000000
+FAIL** = 0011011000, Expected = 00001110, Actual = zzzzzzzz, Time =         161115000000
+FAIL** = 0011011001, Expected = 11100110, Actual = zzzzzzzz, Time =         161455000000
+FAIL** = 0011011010, Expected = 10011111, Actual = zzzzzzzz, Time =         161795000000
+FAIL** = 0011011011, Expected = 00101010, Actual = zzzzzzzz, Time =         162135000000
+FAIL** = 0011011100, Expected = 00101010, Actual = zzzzzzzz, Time =         162475000000
+FAIL** = 0011011101, Expected = 10001101, Actual = zzzzzzzz, Time =         162815000000
+FAIL** = 0011011110, Expected = 10011110, Actual = zzzzzzzz, Time =         163155000000
+FAIL** = 0011011111, Expected = 00111000, Actual = zz000000, Time =         163495000000
+FAIL** = 0011100000, Expected = 01111001, Actual = zzz00000, Time =         163835000000
+FAIL** = 0011100001, Expected = 11001000, Actual = zzzz0000, Time =         164175000000
+FAIL** = 0011100010, Expected = 11001010, Actual = zzzzzzzz, Time =         164515000000
+FAIL** = 0011100011, Expected = 00010011, Actual = zzzzzzzz, Time =         164855000000
+FAIL** = 0011100100, Expected = 01101011, Actual = zzzzzzz0, Time =         165195000000
+FAIL** = 0011100101, Expected = 11000111, Actual = zzzzzzzz, Time =         165535000000
+FAIL** = 0011100110, Expected = 10110110, Actual = zzzzzzzz, Time =         165875000000
+FAIL** = 0011100111, Expected = 10111010, Actual = zzzzzzzz, Time =         166215000000
+FAIL** = 0011101000, Expected = 11000100, Actual = zzzzzzzz, Time =         166555000000
+FAIL** = 0011101001, Expected = 10111001, Actual = zzzzzzzz, Time =         166895000000
+FAIL** = 0011101010, Expected = 10010010, Actual = zzzzzzzz, Time =         167235000000
+FAIL** = 0011101011, Expected = 10110100, Actual = zzzzzzzz, Time =         167575000000
+FAIL** = 0011101100, Expected = 01111111, Actual = zzzzzzzz, Time =         167915000000
+FAIL** = 0011101101, Expected = 10000110, Actual = zzzzzzzz, Time =         168255000000
+FAIL** = 0011101110, Expected = 11111010, Actual = zzzzzzzz, Time =         168595000000
+FAIL** = 0011101111, Expected = 11110010, Actual = zzzzzzzz, Time =         168935000000
+FAIL** = 0011110000, Expected = 00110010, Actual = zzzzzzzz, Time =         169275000000
+FAIL** = 0011110001, Expected = 10111101, Actual = zzzzzzzz, Time =         169615000000
+FAIL** = 0011110010, Expected = 10000100, Actual = zzzzzzzz, Time =         169955000000
+FAIL** = 0011110011, Expected = 11100100, Actual = zzzzzzzz, Time =         170295000000
+FAIL** = 0011110100, Expected = 11001010, Actual = zzzzzzzz, Time =         170635000000
+FAIL** = 0011110101, Expected = 10101001, Actual = zzzzzzzz, Time =         170975000000
+FAIL** = 0011110110, Expected = 10100001, Actual = zzzzzzzz, Time =         171315000000
+FAIL** = 0011110111, Expected = 10001110, Actual = zzzzzzzz, Time =         171655000000
+FAIL** = 0011111000, Expected = 11111011, Actual = zzzzzzzz, Time =         171995000000
+FAIL** = 0011111001, Expected = 00001011, Actual = zzzzzzzz, Time =         172335000000
+FAIL** = 0011111010, Expected = 11101111, Actual = zzzzzzzz, Time =         172675000000
+FAIL** = 0011111011, Expected = 11001001, Actual = zzzzzzzz, Time =         173015000000
+FAIL** = 0011111100, Expected = 00110110, Actual = zzzzzzzz, Time =         173355000000
+FAIL** = 0011111101, Expected = 01110101, Actual = zzzzzzzz, Time =         173695000000
+FAIL** = 0011111110, Expected = 10001111, Actual = zzzzzzzz, Time =         174035000000
+FAIL** = 0011111111, Expected = 01101011, Actual = zzzzzzzz, Time =         174375000000
+Simulation complete via $finish(1) at time 174575 US + 0
+../testbench/tb_modulator_64qam_top.v:74  $finish; 
 xcelium> ^C
 xcelium> exit
-TOOL:	xmverilog	17.10-s001: Exiting on Apr 05, 2025 at 18:18:39 EDT  (total: 00:02:54)
+TOOL:	xmverilog	17.10-s001: Exiting on Apr 09, 2025 at 15:45:22 EDT  (total: 00:01:41)

@@ -374,3 +374,5 @@
 1743791284 /home/ead/G44895755/ece6214/project5/simulation/testbench/TopModule_tb.v
 1743890935 /home/ead/G44895755/ece6214/project5/source/modulator_64qam_top.v
 1743891051 /home/ead/G44895755/ece6214/project5/simulation/testbench/tb_modulator_64qam_top.v
+1744227707 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/modulator_64qam_top.v
+1744225867 /home/ead/isaacbilsel/ece6214/ECE6214/project8/simulation/testbench/tb_modulator_64qam_top.v

@@ -3,4 +3,4 @@
 # list of design files to be compiled
 
 ver_files=("../../source/modulator_64qam_top.v"
-	   "../testbench/tb_modulator_64qam_topv")	
+	   "../testbench/tb_modulator_64qam_top.v")	
