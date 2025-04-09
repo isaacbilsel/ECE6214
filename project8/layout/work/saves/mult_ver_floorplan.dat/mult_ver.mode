@@ -1,0 +1,9 @@
+catch { setAnalysisMode -analysisType bcwc }
+setExtractRCMode  -engine preRoute
+catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepFlatten true }
+catch { setDelayCalMode -engine aae }
+catch { setEndCapMode -cells NWSX }
+catch { setEndCapMode -leftEdge NWSX }
+catch { setEndCapMode -rightEdge NWSX }
+catch { setFPlanMode -maxIoHeight false }
+catch { setFPlanMode -powerRailLayer {} }

@@ -1,0 +1,42 @@
+catch { setDesignMode -process 130 }
+catch { setAnalysisMode -analysisType onChipVariation }
+catch { setAnalysisMode -checkType setup }
+catch { setAnalysisMode -clkSrcPath true }
+catch { setAnalysisMode -clockPropagation sdcControl }
+catch { setAnalysisMode -skew true }
+catch { setAnalysisMode -virtualIPO false }
+catch { setOptMode -activeHoldViews { VIEW_ff_-55 } }
+catch { setOptMode -activeSetupViews { VIEW_ss_125 } }
+catch { setOptMode -autoHoldViews { VIEW_ff_-55 } }
+catch { setOptMode -autoSetupViews { VIEW_ss_125} }
+catch { setOptMode -autoTDGRSetupViews { VIEW_ss_125} }
+catch { setOptMode -autoViewHoldTargetSlack 0 }
+catch { setOptMode -drcMargin 0 }
+catch { setOptMode -effort high }
+catch { setOptMode -fixDrc true }
+catch { setOptMode -fixFanoutLoad true }
+catch { setOptMode -holdTargetSlack 0 }
+catch { setOptMode -maxDensity 0.95 }
+catch { setOptMode -optimizeFF true }
+catch { setOptMode -preserveAllSequential false }
+catch { setOptMode -setupTargetSlack 0 }
+catch { setOptMode -simplifyNetlist false }
+catch { setOptMode -usefulSkew false }
+catch { setOptMode -yieldEffort none }
+setExtractRCMode  -engine preRoute -total_c_th 0 -relative_c_th 1 -coupling_c_th 0.4
+catch {setNanoRouteMode -quiet -grouteExpTdStdDelay 21.500000}
+
+catch { setPlaceMode -place_global_cong_effort auto }
+catch { setPlaceMode -place_global_ignore_scan true }
+catch { setPlaceMode -timingDriven true }
+catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepFlatten true }
+catch { setDelayCalMode -enable_high_fanout true }
+catch { setDelayCalMode -eng_copyNetPropToNewNet true }
+catch { setDelayCalMode -engine aae }
+catch { setDelayCalMode -ignoreNetLoad false }
+catch { setSIMode -separate_delta_delay_on_data true }
+catch { setEndCapMode -cells NWSX }
+catch { setEndCapMode -leftEdge NWSX }
+catch { setEndCapMode -rightEdge NWSX }
+catch { setFPlanMode -maxIoHeight false }
+catch { setFPlanMode -powerRailLayer {} }

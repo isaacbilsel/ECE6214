@@ -1,0 +1,508 @@
+[02/17 22:24:38      0s] 
+[02/17 22:24:38      0s] Cadence Innovus(TM) Implementation System.
+[02/17 22:24:38      0s] Copyright 2018 Cadence Design Systems, Inc. All rights reserved worldwide.
+[02/17 22:24:38      0s] 
+[02/17 22:24:38      0s] Version:	v18.10-p002_1, built Tue May 29 19:19:55 PDT 2018
+[02/17 22:24:38      0s] Options:	
+[02/17 22:24:38      0s] Date:		Mon Feb 17 22:24:38 2025
+[02/17 22:24:38      0s] Host:		shell (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (20cores*80cpus*Intel(R) Xeon(R) Gold 6138 CPU @ 2.00GHz 28160KB)
+[02/17 22:24:38      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[02/17 22:24:38      0s] 
+[02/17 22:24:38      0s] License:
+[02/17 22:24:39      0s] 		invs	Innovus Implementation System	18.1	checkout succeeded
+[02/17 22:24:39      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[02/17 22:24:53     12s] @(#)CDS: Innovus v18.10-p002_1 (64bit) 05/29/2018 19:19 (Linux 2.6.18-194.el5)
+[02/17 22:24:53     12s] @(#)CDS: NanoRoute 18.10-p002_1 NR180522-1057/18_10-UB (database version 2.30, 418.7.1) {superthreading v1.46}
+[02/17 22:24:53     12s] @(#)CDS: AAE 18.10-p004 (64bit) 05/29/2018 (Linux 2.6.18-194.el5)
+[02/17 22:24:53     12s] @(#)CDS: CTE 18.10-p003_1 () May 15 2018 10:23:07 ( )
+[02/17 22:24:53     12s] @(#)CDS: SYNTECH 18.10-a012_1 () Apr 19 2018 01:27:21 ( )
+[02/17 22:24:53     12s] @(#)CDS: CPE v18.10-p005
+[02/17 22:24:53     12s] @(#)CDS: IQRC/TQRC 18.1.1-s118 (64bit) Fri Mar 23 17:23:45 PDT 2018 (Linux 2.6.18-194.el5)
+[02/17 22:24:53     12s] @(#)CDS: OA 22.50-p083 Tue Jan  2 17:02:41 2018
+[02/17 22:24:53     12s] @(#)CDS: SGN 10.10-p124 (19-Aug-2014) (64 bit executable)
+[02/17 22:24:53     12s] @(#)CDS: RCDB 11.13
+[02/17 22:24:53     12s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_215952_shell_G44895755_wQjXCa.
+
+[02/17 22:24:53     12s] Change the soft stacksize limit to 0.2%RAM (514 mbytes). Set global soft_stack_size_limit to change the value.
+[02/17 22:24:53     12s] 
+[02/17 22:24:53     12s] **INFO:  MMMC transition support version v31-84 
+[02/17 22:24:53     12s] 
+[02/17 22:24:53     12s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[02/17 22:24:53     12s] <CMD> suppressMessage ENCEXT-2799
+[02/17 22:24:54     12s] <CMD> win
+[02/17 22:26:37     26s] <CMD> set init_verilog ../../synthesis/netlists/mult_ver.v
+[02/17 22:26:39     26s] <CMD> set init_top_cell mult_ver
+[02/17 22:27:06     30s] <CMD> set init_pwr_net VDD
+[02/17 22:27:07     30s] <CMD> set init_gnd_net GND
+[02/17 22:27:38     34s] <CMD> create_constraint_mode \
+    -name syn_constraints \
+    -sdc_files {../../synthesis/netlist/mult_ver.sdc}
+[02/17 22:28:04     37s] <CMD> set init_mmmc_file ../scripts/mmmc.tcl
+[02/17 22:28:20     39s] <CMD> set init_lef_file { /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/lef/cmos8hp_7AM_tech.lef  /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/lef/ibm_cmos8hp_sc.lef  }
+[02/17 22:28:37     41s] <CMD> init_design -setup VIEW_ss_125 -hold VIEW_ff_-55
+[02/17 22:28:37     41s] #% Begin Load MMMC data ... (date=02/17 22:28:37, mem=468.9M)
+[02/17 22:28:37     42s] #% End Load MMMC data ... (date=02/17 22:28:37, total cpu=0:00:00.0, real=0:00:00.0, peak res=469.0M, current mem=469.0M)
+[02/17 22:28:37     42s] 
+[02/17 22:28:37     42s] Loading LEF file /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/lef/cmos8hp_7AM_tech.lef ...
+[02/17 22:28:37     42s] 
+[02/17 22:28:37     42s] Loading LEF file /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/lef/ibm_cmos8hp_sc.lef ...
+[02/17 22:28:37     42s] Set DBUPerIGU to M2 pitch 400.
+[02/17 22:28:37     42s] **WARN: (IMPLF-200):	Pin 'AP' in macro 'FGTIE_G_A' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[02/17 22:28:37     42s] Type 'man IMPLF-200' for more detail.
+[02/17 22:28:37     42s] **WARN: (IMPLF-200):	Pin 'AN' in macro 'FGTIE_G_A' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[02/17 22:28:37     42s] Type 'man IMPLF-200' for more detail.
+[02/17 22:28:37     42s] 
+[02/17 22:28:37     42s] viaInitial starts at Mon Feb 17 22:28:37 2025
+viaInitial ends at Mon Feb 17 22:28:37 2025
+Loading view definition file from ../scripts/mmmc.tcl
+[02/17 22:28:37     42s] Reading LIB_ss_125 timing library '/apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib' ...
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'COUT' of cell 'ADDF_B' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'SUM' of cell 'ADDF_B' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'COUT' of cell 'ADDF_C' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'SUM' of cell 'ADDF_C' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'COUT' of cell 'ADDF_D' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'SUM' of cell 'ADDF_D' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'COUT' of cell 'ADDF_E' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'SUM' of cell 'ADDF_E' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'COUT' of cell 'ADDF_F' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'SUM' of cell 'ADDF_F' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AND2_B' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AND2_C' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AND2_D' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AND2_E' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AND2_F' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AND2_H' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AND2_I' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AND2_J' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AND2_K' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Z' of cell 'AND3_B' is not defined in the library. (File /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.lib)
+[02/17 22:28:37     42s] Message <TECHLIB-436> has exceeded the message display limit of '20'. Use 'set_message -no_limit -id list_of_msgIDs' to reset the message limit.
+[02/17 22:28:38     42s] Read 358 cells in library 'IBM_CMOS8HP_SS125' 
+[02/17 22:28:38     42s] Reading LIB_ff_-55 timing library '/apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ff_-55/IBM_CMOS8HP_FF55.lib' ...
+[02/17 22:28:38     42s] Read 358 cells in library 'IBM_CMOS8HP_FF55' 
+[02/17 22:28:38     42s] *** End library_loading (cpu=0.01min, real=0.02min, mem=29.0M, fe_cpu=0.71min, fe_real=4.00min, fe_mem=594.8M) ***
+[02/17 22:28:38     42s] **ERROR: (IMPSYT-16038):	The specified file '../../synthesis/netlists/mult_ver.v' could not be found. Check your file system, correct the file name.
+[02/17 22:28:38     42s] **ERROR: (IMPIMEX-7008):	No netlist files are found.
+[02/17 22:28:38     42s] 
+[02/17 22:29:29     49s] <CMD> set init_verilog ../../synthesis/netlist/mult_ver.v
+[02/17 22:29:56     52s] <CMD> set init_top_cell mult_ver
+[02/17 22:29:56     52s] <CMD> set init_pwr_net VDD
+[02/17 22:29:57     53s] <CMD> set init_gnd_net GND
+[02/17 22:30:39     58s] <CMD> create_constraint_mode \
+    -name syn_constraints \
+    -sdc_files {../../synthesis/netlist/mult_ver.sdc}
+[02/17 22:30:39     58s] <CMD> set init_mmmc_file ../scripts/mmmc.tcl
+[02/17 22:30:40     58s] <CMD> set init_lef_file { /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/lef/cmos8hp_7AM_tech.lef  /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/lef/ibm_cmos8hp_sc.lef  }
+[02/17 22:30:59     60s] <CMD> init_design -setup VIEW_ss_125 -hold VIEW_ff_-55
+[02/17 22:30:59     60s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[02/17 22:30:59     60s] #% Begin Load MMMC data ... (date=02/17 22:30:59, mem=487.8M)
+[02/17 22:30:59     60s] Extraction setup Started 
+[02/17 22:30:59     60s] Innovus terminated by internal (SEGV) error/signal...
+[02/17 22:30:59     60s] *** Stack trace:
+*** Stack trace:
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus[0xfc83a5b]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(syStackTrace+0x7c)[0xfc83e73]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus[0x40836c5]
+/lib64/libpthread.so.0(+0xf630)[0x7fb96df3e630]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_ZN12peLayerPitch17computeLayerPitchEv+0x2c6)[0xaaac886]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_ZN14peEngineClient12getLayerInfoERSt6vectorI11eeLayerInfoSaIS1_EE+0x82e)[0xaaa767e]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_ZN21eeExtEngineDesignData12setLayerInfoEv+0x3e)[0x453e74e]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus[0xa9d3f35]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_Z10dbMCRCInitv+0xb)[0xa9dabcb]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_Z28peiInitializeExtractionSetUpb+0x2b)[0xa9db1bb]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus[0xcd2fbee]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_ZN6TAMmmc14updateRcCornerEP14TAMmmcRcCornerPKcf9tabooleanR18TAMmmcTripleFactorS4_fS4_S6_S4_S6_S4_fS4_fS4_S6_S4_S6_S4_S3_S3_S3_fS4_+0x40b)[0xfe9d6fb]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_Z30TaCmd_createOrUpdate_rc_cornerPvP10Tcl_InterpiPPc9tabooleanP6tcmCmd+0x84b)[0x10c9a65b]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_ZN10tcmBaseCmd7executeEP10Tcl_InterpiPPc+0x15e)[0x11a9b3de]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_ZN6tcmMgr9cmdParserEPvP10Tcl_InterpiPPc+0x6a4)[0x11a847b4]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(TclInvokeStringCommand+0x80)[0x14bfa100]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(TclNRRunCallbacks+0x47)[0x14bfe9b7]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus[0x14c00aa1]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(Tcl_EvalEx+0x16)[0x14c014a6]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(TclNREvalObjEx+0x6f)[0x14c0154f]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus[0x14cb585b]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus[0x14c141c1]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(TclNRRunCallbacks+0x47)[0x14bfe9b7]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(Tcl_RecordAndEvalObj+0xf4)[0x14c9b8a4]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(Tcl_RecordAndEval+0x38)[0x14c9ba08]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_Z17rdaEditCmdLineEndPc+0x186)[0x4153ff6]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_ZN9seConsole7sesMode9DoExecuteERKSsPv+0xc7)[0xcdc4437]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_ZN7Redline9EmacsMode10AcceptLineEv+0x3e)[0xdbb1a4e]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_ZN7Redline11ModeCommandINS_9EmacsModeEE15CommandFnNoKeysERKN5boost8functionIFvRS1_EEERNS_6EditorE+0x61)[0xdbbbb91]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_ZN5boost6detail8function26void_function_obj_invoker2INS_3_bi6bind_tINS3_11unspecifiedENS_8functionIFvRN7Redline6EditorEEEENS3_5list1INS_3argILi1EEEEEEEvS9_RKNS7_14KeyCombinationEE6invokeERNS1_15function_bufferES9_SJ_+0x1b)[0xdbcab1b]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_ZNK7Redline7Command3RunERNS_6EditorERKNS_14KeyCombinationE+0x1c)[0xdbc970c]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_ZN7Redline6Editor9Internals3RunEb+0xd5)[0xdbb1195]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus[0x14cffea7]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(Tcl_ServiceEvent+0x87)[0x14cc1957]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(Tcl_DoOneEvent+0x129)[0x14cc1c59]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/lib/64bit/libtq.so(_ZN17TqEventDispatcher13processEventsE6QFlagsIN10QEventLoop17ProcessEventsFlagEE+0x68)[0x7fb973572438]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4(_ZN10QEventLoop13processEventsE6QFlagsINS_17ProcessEventsFlagEE+0x2f)[0x7fb9718d502f]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4(_ZN10QEventLoop4execE6QFlagsINS_17ProcessEventsFlagEE+0x17d)[0x7fb9718d532d]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4(_ZN16QCoreApplication4execEv+0x89)[0x7fb9718dc5a9]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/lib/64bit/libtq.so(_ZN13TqApplication4execEv+0xd4)[0x7fb973571f84]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(_Z12edi_app_initP10Tcl_Interp+0x279)[0x4127869]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(Tcl_MainEx+0x177)[0x14cbc497]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus(main+0x1de)[0x39cee4e]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fb96d062555]
+/apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/innovus/bin/64bit/innovus[0x407ffd1]
+========================================
+               pstack
+========================================
+Thread 9 (Thread 0x7fb96a8c7700 (LWP 216021)):
+#0  0x00007fb96d135b43 in select () from /lib64/libc.so.6
+#1  0x0000000014cffb88 in NotifierThreadProc ()
+#2  0x0000000004312c09 in create_head(void*) ()
+#3  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+Thread 8 (Thread 0x7fb9634bf700 (LWP 216022)):
+#0  0x00007fb96df3d9dd in accept () from /lib64/libpthread.so.0
+#1  0x000000001399c3a5 in ProcessInfo::handleConnection(void*) ()
+#2  0x0000000004312c09 in create_head(void*) ()
+#3  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+Thread 7 (Thread 0x7fb962cbe700 (LWP 216023)):
+#0  0x00007fb96d135b43 in select () from /lib64/libc.so.6
+#1  0x00000000139957db in ProcessInfo::sampleUsage(void*) ()
+#2  0x0000000004312c09 in create_head(void*) ()
+#3  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+Thread 6 (Thread 0x7fb9624bd700 (LWP 216027)):
+#0  0x00007fb96d1059fd in nanosleep () from /lib64/libc.so.6
+#1  0x00007fb96d105894 in sleep () from /lib64/libc.so.6
+#2  0x000000000fc9db7b in syiPeakMem(void*) ()
+#3  0x0000000004312c09 in create_head(void*) ()
+#4  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+Thread 5 (Thread 0x7fb961cbc700 (LWP 216028)):
+#0  0x00007fb96df3de9d in nanosleep () from /lib64/libpthread.so.0
+#1  0x0000000005267d66 in rdaiLicRecheck(void*) ()
+#2  0x0000000004312c09 in create_head(void*) ()
+#3  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+Thread 4 (Thread 0x7fb95c49f700 (LWP 216030)):
+#0  0x00007fb96df3e3c1 in sigwait () from /lib64/libpthread.so.0
+#1  0x000000000408039d in ctrlCHandle(void*) ()
+#2  0x0000000004312c09 in create_head(void*) ()
+#3  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+Thread 3 (Thread 0x7fb9474bb700 (LWP 216215)):
+#0  0x00007fb96df3aa35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007fb9717ad9f6 in QWaitCondition::wait(QMutex*, unsigned long) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#2  0x00007fb9724b9dde in QFileInfoGatherer::run() () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtGui.so.4
+#3  0x00007fb9717acf4b in QThreadPrivate::start(void*) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#4  0x0000000004312c09 in create_head(void*) ()
+#5  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#6  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+Thread 2 (Thread 0x7fb946cba700 (LWP 216216)):
+#0  0x00007fb96d135b43 in select () from /lib64/libc.so.6
+#1  0x00007fb97190859b in qt_safe_select(int, fd_set*, fd_set*, fd_set*, timeval const*) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#2  0x00007fb97190cd73 in QEventDispatcherUNIXPrivate::doSelect(QFlags<QEventLoop::ProcessEventsFlag>, timeval*) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#3  0x00007fb97190d472 in QEventDispatcherUNIX::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#4  0x00007fb9718d502f in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#5  0x00007fb9718d532d in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#6  0x00007fb9717aa39f in QThread::exec() () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#7  0x00007fb9718b2d93 in QInotifyFileSystemWatcherEngine::run() () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#8  0x00007fb9717acf4b in QThreadPrivate::start(void*) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#9  0x0000000004312c09 in create_head(void*) ()
+#10 0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#11 0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+Thread 1 (Thread 0x7fb97673e480 (LWP 215952)):
+#0  0x00007fb96d105659 in waitpid () from /lib64/libc.so.6
+#1  0x00007fb96d082f62 in do_system () from /lib64/libc.so.6
+#2  0x00007fb96d083311 in system () from /lib64/libc.so.6
+#3  0x000000000fc83aaa in syStackTraceDump(_IO_FILE*, bool) ()
+#4  0x000000000fc83e73 in syStackTrace ()
+#5  0x00000000040836c5 in rdaiErrorHandler(int, siginfo*, void*) ()
+#6  <signal handler called>
+#7  0x000000000aaac886 in peLayerPitch::computeLayerPitch() ()
+#8  0x000000000aaa767e in peEngineClient::getLayerInfo(std::vector<eeLayerInfo, std::allocator<eeLayerInfo> >&) ()
+#9  0x000000000453e74e in eeExtEngineDesignData::setLayerInfo() ()
+#10 0x000000000a9d3f35 in eeExtEngineDesignData::resetDesignData() [clone .constprop.548] ()
+#11 0x000000000a9dabcb in dbMCRCInit() ()
+#12 0x000000000a9db1bb in peiInitializeExtractionSetUp(bool) ()
+#13 0x000000000cd2fbee in toiCteUpdateRcCornerPostCallback(TAMmmcRcCorner*, TAMmmcUpdateRcCornerCbkInfo*) ()
+#14 0x000000000fe9d6fb in TAMmmc::updateRcCorner(TAMmmcRcCorner*, char const*, float, taboolean, TAMmmcTripleFactor&, taboolean, float, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, float, taboolean, float, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, char const*, char const*, char const*, float, taboolean) ()
+#15 0x0000000010c9a65b in TaCmd_createOrUpdate_rc_corner(void*, Tcl_Interp*, int, char**, taboolean, tcmCmd*) ()
+#16 0x0000000011a9b3de in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#17 0x0000000011a847b4 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#18 0x0000000014bfa100 in TclInvokeStringCommand ()
+#19 0x0000000014bfe9b7 in TclNRRunCallbacks ()
+#20 0x0000000014c00aa1 in TclEvalEx ()
+#21 0x0000000014c014a6 in Tcl_EvalEx ()
+#22 0x0000000014c0154f in TclNREvalObjEx ()
+#23 0x0000000014cb585b in TclNREvalFile ()
+#24 0x0000000014c141c1 in TclNRSourceObjCmd ()
+#25 0x0000000014bfe9b7 in TclNRRunCallbacks ()
+#26 0x0000000014c9b8a4 in Tcl_RecordAndEvalObj ()
+#27 0x0000000014c9ba08 in Tcl_RecordAndEval ()
+#28 0x0000000004153ff6 in rdaEditCmdLineEnd(char*) ()
+#29 0x000000000cdc4437 in seConsole::sesMode::DoExecute(std::string const&, void*) ()
+#30 0x000000000dbb1a4e in Redline::EmacsMode::AcceptLine() ()
+#31 0x000000000dbbbb91 in Redline::ModeCommand<Redline::EmacsMode>::CommandFnNoKeys(boost::function<void (Redline::EmacsMode&)> const&, Redline::Editor&) ()
+#32 0x000000000dbcab1b in boost::detail::function::void_function_obj_invoker2<boost::_bi::bind_t<boost::_bi::unspecified, boost::function<void (Redline::Editor&)>, boost::_bi::list1<boost::arg<1> > >, void, Redline::Editor&, Redline::KeyCombination const&>::invoke(boost::detail::function::function_buffer&, Redline::Editor&, Redline::KeyCombination const&) ()
+#33 0x000000000dbc970c in Redline::Command::Run(Redline::Editor&, Redline::KeyCombination const&) const ()
+#34 0x000000000dbb1195 in Redline::Editor::Internals::Run(bool) ()
+#35 0x0000000014cffea7 in FileHandlerEventProc ()
+#36 0x0000000014cc1957 in Tcl_ServiceEvent ()
+#37 0x0000000014cc1c59 in Tcl_DoOneEvent ()
+#38 0x00007fb973572438 in TqEventDispatcher::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/lib/64bit/libtq.so
+#39 0x00007fb9718d502f in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#40 0x00007fb9718d532d in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#41 0x00007fb9718dc5a9 in QCoreApplication::exec() () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#42 0x00007fb973571f84 in TqApplication::exec() () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/lib/64bit/libtq.so
+#43 0x0000000004127869 in edi_app_init(Tcl_Interp*) ()
+#44 0x0000000014cbc497 in Tcl_MainEx ()
+#45 0x00000000039cee4e in main ()
+========================================
+                gdb
+========================================
+Using: gdb
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+[New LWP 216216]
+[New LWP 216215]
+[New LWP 216030]
+[New LWP 216028]
+[New LWP 216027]
+[New LWP 216023]
+[New LWP 216022]
+[New LWP 216021]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffe9edba000
+0x00007fb96d105659 in waitpid () from /lib64/libc.so.6
+
+Thread 9 (Thread 0x7fb96a8c7700 (LWP 216021)):
+#0  0x00007fb96d135b43 in select () from /lib64/libc.so.6
+#1  0x0000000014cffb88 in NotifierThreadProc ()
+#2  0x0000000004312c09 in create_head(void*) ()
+#3  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+
+Thread 8 (Thread 0x7fb9634bf700 (LWP 216022)):
+#0  0x00007fb96df3d9dd in accept () from /lib64/libpthread.so.0
+#1  0x000000001399c3a5 in ProcessInfo::handleConnection(void*) ()
+#2  0x0000000004312c09 in create_head(void*) ()
+#3  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+
+Thread 7 (Thread 0x7fb962cbe700 (LWP 216023)):
+#0  0x00007fb96d135b43 in select () from /lib64/libc.so.6
+#1  0x00000000139957db in ProcessInfo::sampleUsage(void*) ()
+#2  0x0000000004312c09 in create_head(void*) ()
+#3  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+
+Thread 6 (Thread 0x7fb9624bd700 (LWP 216027)):
+#0  0x00007fb96d1059fd in nanosleep () from /lib64/libc.so.6
+#1  0x00007fb96d105894 in sleep () from /lib64/libc.so.6
+#2  0x000000000fc9db7b in syiPeakMem(void*) ()
+#3  0x0000000004312c09 in create_head(void*) ()
+#4  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+
+Thread 5 (Thread 0x7fb961cbc700 (LWP 216028)):
+#0  0x00007fb96df3de9d in nanosleep () from /lib64/libpthread.so.0
+#1  0x0000000005267d66 in rdaiLicRecheck(void*) ()
+#2  0x0000000004312c09 in create_head(void*) ()
+#3  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+
+Thread 4 (Thread 0x7fb95c49f700 (LWP 216030)):
+#0  0x00007fb96df3e3c1 in sigwait () from /lib64/libpthread.so.0
+#1  0x000000000408039d in ctrlCHandle(void*) ()
+#2  0x0000000004312c09 in create_head(void*) ()
+#3  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#4  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+
+Thread 3 (Thread 0x7fb9474bb700 (LWP 216215)):
+#0  0x00007fb96df3aa35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007fb9717ad9f6 in QWaitCondition::wait(QMutex*, unsigned long) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#2  0x00007fb9724b9dde in QFileInfoGatherer::run() () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtGui.so.4
+#3  0x00007fb9717acf4b in QThreadPrivate::start(void*) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#4  0x0000000004312c09 in create_head(void*) ()
+#5  0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#6  0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+
+Thread 2 (Thread 0x7fb946cba700 (LWP 216216)):
+#0  0x00007fb96d135b43 in select () from /lib64/libc.so.6
+#1  0x00007fb97190859b in qt_safe_select(int, fd_set*, fd_set*, fd_set*, timeval const*) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#2  0x00007fb97190cd73 in QEventDispatcherUNIXPrivate::doSelect(QFlags<QEventLoop::ProcessEventsFlag>, timeval*) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#3  0x00007fb97190d472 in QEventDispatcherUNIX::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#4  0x00007fb9718d502f in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#5  0x00007fb9718d532d in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#6  0x00007fb9717aa39f in QThread::exec() () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#7  0x00007fb9718b2d93 in QInotifyFileSystemWatcherEngine::run() () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#8  0x00007fb9717acf4b in QThreadPrivate::start(void*) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#9  0x0000000004312c09 in create_head(void*) ()
+#10 0x00007fb96df36ea5 in start_thread () from /lib64/libpthread.so.0
+#11 0x00007fb96d13eb0d in clone () from /lib64/libc.so.6
+
+Thread 1 (Thread 0x7fb97673e480 (LWP 215952)):
+#0  0x00007fb96d105659 in waitpid () from /lib64/libc.so.6
+#1  0x00007fb96d082f62 in do_system () from /lib64/libc.so.6
+#2  0x00007fb96d083311 in system () from /lib64/libc.so.6
+#3  0x000000000fc83aaa in syStackTraceDump(_IO_FILE*, bool) ()
+#4  0x000000000fc83e73 in syStackTrace ()
+#5  0x00000000040836c5 in rdaiErrorHandler(int, siginfo*, void*) ()
+#6  <signal handler called>
+#7  0x000000000aaac886 in peLayerPitch::computeLayerPitch() ()
+#8  0x000000000aaa767e in peEngineClient::getLayerInfo(std::vector<eeLayerInfo, std::allocator<eeLayerInfo> >&) ()
+#9  0x000000000453e74e in eeExtEngineDesignData::setLayerInfo() ()
+#10 0x000000000a9d3f35 in eeExtEngineDesignData::resetDesignData() [clone .constprop.548] ()
+#11 0x000000000a9dabcb in dbMCRCInit() ()
+#12 0x000000000a9db1bb in peiInitializeExtractionSetUp(bool) ()
+#13 0x000000000cd2fbee in toiCteUpdateRcCornerPostCallback(TAMmmcRcCorner*, TAMmmcUpdateRcCornerCbkInfo*) ()
+#14 0x000000000fe9d6fb in TAMmmc::updateRcCorner(TAMmmcRcCorner*, char const*, float, taboolean, TAMmmcTripleFactor&, taboolean, float, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, float, taboolean, float, taboolean, TAMmmcTripleFactor&, taboolean, TAMmmcTripleFactor&, taboolean, char const*, char const*, char const*, float, taboolean) ()
+#15 0x0000000010c9a65b in TaCmd_createOrUpdate_rc_corner(void*, Tcl_Interp*, int, char**, taboolean, tcmCmd*) ()
+#16 0x0000000011a9b3de in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#17 0x0000000011a847b4 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#18 0x0000000014bfa100 in TclInvokeStringCommand ()
+#19 0x0000000014bfe9b7 in TclNRRunCallbacks ()
+#20 0x0000000014c00aa1 in TclEvalEx ()
+#21 0x0000000014c014a6 in Tcl_EvalEx ()
+#22 0x0000000014c0154f in TclNREvalObjEx ()
+#23 0x0000000014cb585b in TclNREvalFile ()
+#24 0x0000000014c141c1 in TclNRSourceObjCmd ()
+#25 0x0000000014bfe9b7 in TclNRRunCallbacks ()
+#26 0x0000000014c9b8a4 in Tcl_RecordAndEvalObj ()
+#27 0x0000000014c9ba08 in Tcl_RecordAndEval ()
+#28 0x0000000004153ff6 in rdaEditCmdLineEnd(char*) ()
+#29 0x000000000cdc4437 in seConsole::sesMode::DoExecute(std::string const&, void*) ()
+#30 0x000000000dbb1a4e in Redline::EmacsMode::AcceptLine() ()
+#31 0x000000000dbbbb91 in Redline::ModeCommand<Redline::EmacsMode>::CommandFnNoKeys(boost::function<void (Redline::EmacsMode&)> const&, Redline::Editor&) ()
+#32 0x000000000dbcab1b in boost::detail::function::void_function_obj_invoker2<boost::_bi::bind_t<boost::_bi::unspecified, boost::function<void (Redline::Editor&)>, boost::_bi::list1<boost::arg<1> > >, void, Redline::Editor&, Redline::KeyCombination const&>::invoke(boost::detail::function::function_buffer&, Redline::Editor&, Redline::KeyCombination const&) ()
+#33 0x000000000dbc970c in Redline::Command::Run(Redline::Editor&, Redline::KeyCombination const&) const ()
+#34 0x000000000dbb1195 in Redline::Editor::Internals::Run(bool) ()
+#35 0x0000000014cffea7 in FileHandlerEventProc ()
+#36 0x0000000014cc1957 in Tcl_ServiceEvent ()
+#37 0x0000000014cc1c59 in Tcl_DoOneEvent ()
+#38 0x00007fb973572438 in TqEventDispatcher::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/lib/64bit/libtq.so
+#39 0x00007fb9718d502f in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#40 0x00007fb9718d532d in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#41 0x00007fb9718dc5a9 in QCoreApplication::exec() () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/Qt/64bit/lib/libcdsQtCore.so.4
+#42 0x00007fb973571f84 in TqApplication::exec() () from /apps/vlsi_2018/cadence/INNOVUS181/tools.lnx86/lib/64bit/libtq.so
+#43 0x0000000004127869 in edi_app_init(Tcl_Interp*) ()
+#44 0x0000000014cbc497 in Tcl_MainEx ()
+#45 0x00000000039cee4e in main ()
+A debugging session is active.
+
+	Inferior 1 [process 215952] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[02/17 22:31:30     61s] 
+--------------------------------------------------------------------------------
+Exiting Innovus on Mon Feb 17 22:31:30 2025
+  Total CPU time:     0:01:16
+  Total real time:    0:06:54
+  Peak memory (main): 488.33MB
+
+[02/17 22:31:30     61s] 
+[02/17 22:31:30     61s] *** Memory Usage v#1 (Current mem = 595.844M, initial mem = 251.676M) ***
+[02/17 22:31:30     61s] 
+[02/17 22:31:30     61s] *** Summary of all messages that are not suppressed in this session:
+[02/17 22:31:30     61s] Severity  ID               Count  Summary                                  
+[02/17 22:31:30     61s] WARNING   IMPLF-200            2  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[02/17 22:31:30     61s] ERROR     IMPSYT-16038         1  The specified file '%s' could not be fou...
+[02/17 22:31:30     61s] ERROR     IMPIMEX-7008         1  No netlist files are found.              
+[02/17 22:31:30     61s] WARNING   TECHLIB-436         20  Attribute '%s' on '%s' pin '%s' of cell ...
+[02/17 22:31:30     61s] *** Message Summary: 22 warning(s), 2 error(s)
+[02/17 22:31:30     61s] 
+[02/17 22:31:30     61s] --- Ending "Innovus" (totcpu=0:01:01, real=0:06:52, mem=595.8M) ---

@@ -1,0 +1,44 @@
+csi-xmsim - CSI: Command line:
+xmsim
+    -f /home/ead/G44895755/ece6214/project4/simulation/work/xcelium.d/run.lnx8664.17.10.d/shell_234540/xmsim.args
+        +gui
+        +access+r
+        -gui
+        -MESSAGES
+        +EMGRLOG xmverilog.log
+        -XLSTIME 1740013308
+        -XLKEEP
+        -XLMODE ./xcelium.d/run.lnx8664.17.10.d
+        -RUNMODE
+        -CDSLIB ./xcelium.d/run.lnx8664.17.10.d/cds.lib
+        -HDLVAR ./xcelium.d/run.lnx8664.17.10.d/hdl.var
+        -XLNAME xmverilog
+        -XLVERSION TOOL:	xmverilog	17.10-s001
+        -XLNAME ./xcelium.d/run.lnx8664.17.10.d/shell_234540
+    -CHECK_VERSION TOOL:	xmverilog	17.10-s001
+    -LOG_FD 4
+    -LOG_FD_NAME xmverilog.log
+    -cmdnopsim
+    -runlock /home/ead/G44895755/ece6214/project4/simulation/work/xcelium.d/run.lnx8664.17.10.d/.xmlib.lock
+    -runscratch /home/ead/G44895755/ece6214/project4/simulation/work/xcelium.d/run.lnx8664.17.10.d/shell_234540
+
+csi-xmsim - CSI: *F,INTERR: INTERNAL EXCEPTION
+Observed simulation time : 20 NS + 0
+-----------------------------------------------------------------
+The tool has encountered an unexpected condition and must exit.
+Contact Cadence Design Systems customer support about this
+problem and provide enough information to help us reproduce it,
+including the logfile that contains this error message.
+  TOOL:	xmsim(64)	17.10-s001
+  HOSTNAME: shell
+  OPERATING SYSTEM: Linux 3.10.0-1160.119.1.el7.x86_64 #1 SMP Tue Jun 4 14:43:51 UTC 2024 x86_64
+  MESSAGE: sv_seghandler - trapno -1 addr(0x1f)
+-----------------------------------------------------------------
+
+csi-xmsim - CSI: Cadence Support Investigation, recording details
+External Code in function: <unavailable> offset -65515
+External Code in function: <unavailable> offset -65536
+External Code in function: <unavailable> offset -65535
+User Code in function: <unavailable> offset 24139281
+User Code in function: <unavailable> offset 23911166
+csi-xmsim - CSI: investigation complete took 0.018 secs, send this file to Cadence Support

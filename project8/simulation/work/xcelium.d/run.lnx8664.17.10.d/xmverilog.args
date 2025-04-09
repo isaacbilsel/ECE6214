@@ -1,0 +1,9 @@
+//
+// File created by:  xmverilog
+// Do not modify this file
+//
+../testbench/tb_modulator_64qam_top.v
++gui
++access+r
+-timescale
+1ns/1ps

@@ -1,0 +1,1153 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -max_paths 5
+        -sort_by group
+Design : divider
+Version: O-2018.06-SP1
+Date   : Wed Feb 26 17:47:01 2025
+****************************************
+
+Operating Conditions: slow   Library: IBM_CMOS8HP_SS125
+Wire Load Model Mode: enclosed
+
+  Startpoint: b[1] (input port clocked by v_clk)
+  Endpoint: remainder_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  divider            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  divider_DW_div_uns_2
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 r
+  b[1] (in)                                              0.000      3.000 r
+  U43/Z (INVERT_O)                                       0.042      3.042 f
+  U3/Z (INVERT_N)                                        0.036      3.078 r
+  rem_20/b[1] (divider_DW_div_uns_2)                     0.000      3.078 r
+  rem_20/U17/Z (NOR2_J)                                  0.040      3.119 f
+  rem_20/U326/Z (OAI21_H)                                0.079      3.198 r
+  rem_20/U15/Z (NOR2_I)                                  0.064      3.262 f
+  rem_20/U189/Z (NAND2_F)                                0.070      3.333 r
+  rem_20/U9/Z (NAND2_I)                                  0.034      3.366 f
+  rem_20/u_div/u_fa_PartRem_0_14_1/COUT (ADDF_F)         0.155      3.521 f
+  rem_20/U301/Z (NAND2_H)                                0.068      3.590 r
+  rem_20/U5/Z (INVERT_M)                                 0.035      3.625 f
+  rem_20/U12/Z (MUX21I_F)                                0.104      3.729 f
+  rem_20/u_div/u_fa_PartRem_0_13_1/COUT (ADDF_F)         0.151      3.880 f
+  rem_20/u_div/u_fa_PartRem_0_13_2/COUT (ADDF_F)         0.150      4.030 f
+  rem_20/U296/Z (NAND2_E)                                0.069      4.099 r
+  rem_20/U297/Z (INVERT_I)                               0.052      4.150 f
+  rem_20/U141/Z (INVERT_K)                               0.038      4.189 r
+  rem_20/U331/Z (NAND2_H)                                0.033      4.222 f
+  rem_20/U410/Z (NAND2_H)                                0.037      4.259 r
+  rem_20/u_div/u_fa_PartRem_0_12_1/COUT (ADDF_F)         0.159      4.418 r
+  rem_20/u_div/u_fa_PartRem_0_12_2/COUT (ADDF_F)         0.165      4.583 r
+  rem_20/u_div/u_fa_PartRem_0_12_3/COUT (ADDF_F)         0.188      4.771 r
+  rem_20/U607/Z (NAND2_I)                                0.061      4.832 f
+  rem_20/U234/Z (INVERT_J)                               0.042      4.874 r
+  rem_20/U661/Z (MUX21_H)                                0.125      4.999 f
+  rem_20/U233/Z (BUFFER_J)                               0.069      5.068 f
+  rem_20/u_div/u_fa_PartRem_0_11_2/COUT (ADDF_F)         0.154      5.222 f
+  rem_20/u_div/u_fa_PartRem_0_11_3/COUT (ADDF_F)         0.183      5.405 f
+  rem_20/U636/COUT (ADDF_F)                              0.160      5.565 f
+  rem_20/U596/Z (AND2_J)                                 0.080      5.645 f
+  rem_20/U282/Z (BUFFER_M)                               0.065      5.711 f
+  rem_20/U176/Z (MUX21I_F)                               0.121      5.831 f
+  rem_20/U173/Z (NAND2_H)                                0.063      5.894 r
+  rem_20/U275/Z (NAND3_I)                                0.053      5.947 f
+  rem_20/U170/Z (NAND2_F)                                0.058      6.005 r
+  rem_20/U399/Z (NAND3_H)                                0.039      6.044 f
+  rem_20/u_div/u_fa_PartRem_0_10_3/COUT (ADDF_F)         0.147      6.191 f
+  rem_20/u_div/u_fa_PartRem_0_10_4/COUT (ADDF_F)         0.154      6.344 f
+  rem_20/u_div/u_fa_PartRem_0_10_5/COUT (ADDF_F)         0.152      6.497 f
+  rem_20/U230/Z (AND2_J)                                 0.080      6.577 f
+  rem_20/U229/Z (BUFFER_M)                               0.063      6.640 f
+  rem_20/U645/Z (MUX21_H)                                0.127      6.767 r
+  rem_20/U196/Z (BUFFER_L)                               0.062      6.829 r
+  rem_20/U195/Z (NAND2_J)                                0.033      6.862 f
+  rem_20/U41/Z (NAND3_K)                                 0.062      6.925 r
+  rem_20/U44/Z (NAND2_J)                                 0.041      6.966 f
+  rem_20/U37/Z (NAND3_K)                                 0.065      7.031 r
+  rem_20/U612/Z (NAND2_J)                                0.040      7.071 f
+  rem_20/U43/Z (NAND3_J)                                 0.064      7.135 r
+  rem_20/U614/Z (NAND2_I)                                0.037      7.172 f
+  rem_20/U620/Z (NAND3_H)                                0.050      7.222 r
+  rem_20/u_div/u_fa_PartRem_0_9_5/COUT (ADDF_F)          0.161      7.384 r
+  rem_20/u_div/u_fa_PartRem_0_9_6/COUT (ADDF_F)          0.177      7.561 r
+  rem_20/U698/Z (INVERT_J)                               0.056      7.617 f
+  rem_20/U314/Z (NOR2_J)                                 0.060      7.677 r
+  rem_20/U637/Z (MUX21I_F)                               0.122      7.799 r
+  rem_20/U621/Z (NAND2_H)                                0.048      7.847 f
+  rem_20/U622/Z (NAND3_H)                                0.044      7.891 r
+  rem_20/u_div/u_fa_PartRem_0_8_2/COUT (ADDF_F)          0.162      8.053 r
+  rem_20/u_div/u_fa_PartRem_0_8_3/COUT (ADDF_F)          0.165      8.218 r
+  rem_20/u_div/u_fa_PartRem_0_8_4/COUT (ADDF_F)          0.165      8.383 r
+  rem_20/u_div/u_fa_PartRem_0_8_5/COUT (ADDF_F)          0.165      8.548 r
+  rem_20/u_div/u_fa_PartRem_0_8_6/COUT (ADDF_F)          0.195      8.743 r
+  rem_20/u_div/u_fa_PartRem_0_8_7/COUT (ADDF_F)          0.188      8.931 r
+  rem_20/U182/Z (MUX21I_F)                               0.110      9.040 r
+  rem_20/U155/Z (INVERT_J)                               0.056      9.097 f
+  rem_20/U181/Z (NAND2_H)                                0.056      9.153 r
+  rem_20/U55/Z (NAND3_I)                                 0.060      9.212 f
+  rem_20/U49/Z (NAND2_F)                                 0.054      9.267 r
+  rem_20/U45/Z (NAND3_F)                                 0.041      9.308 f
+  rem_20/u_div/u_fa_PartRem_0_7_3/COUT (ADDF_F)          0.147      9.456 f
+  rem_20/u_div/u_fa_PartRem_0_7_4/COUT (ADDF_F)          0.154      9.609 f
+  rem_20/u_div/u_fa_PartRem_0_7_5/COUT (ADDF_F)          0.154      9.763 f
+  rem_20/u_div/u_fa_PartRem_0_7_6/COUT (ADDF_F)          0.154      9.916 f
+  rem_20/u_div/u_fa_PartRem_0_7_7/COUT (ADDF_F)          0.157     10.073 f
+  rem_20/U393/Z (OR2_K)                                  0.091     10.164 f
+  rem_20/U300/Z (INVERT_K)                               0.039     10.203 r
+  rem_20/U158/Z (MUX21I_F)                               0.092     10.295 r
+  rem_20/u_div/u_fa_PartRem_0_6_1/COUT (ADDF_F)          0.166     10.461 r
+  rem_20/u_div/u_fa_PartRem_0_6_2/COUT (ADDF_F)          0.165     10.626 r
+  rem_20/u_div/u_fa_PartRem_0_6_3/COUT (ADDF_F)          0.165     10.791 r
+  rem_20/u_div/u_fa_PartRem_0_6_4/COUT (ADDF_F)          0.165     10.956 r
+  rem_20/u_div/u_fa_PartRem_0_6_5/COUT (ADDF_F)          0.165     11.121 r
+  rem_20/u_div/u_fa_PartRem_0_6_6/COUT (ADDF_F)          0.165     11.286 r
+  rem_20/u_div/u_fa_PartRem_0_6_7/COUT (ADDF_F)          0.191     11.477 r
+  rem_20/U357/Z (OR2_K)                                  0.091     11.568 r
+  rem_20/U266/Z (MUX21_E)                                0.124     11.693 r
+  rem_20/U267/Z (INVERT_E)                               0.059     11.751 f
+  rem_20/U150/Z (INVERT_H)                               0.058     11.809 r
+  rem_20/u_div/u_fa_PartRem_0_5_2/COUT (ADDF_F)          0.180     11.989 r
+  rem_20/u_div/u_fa_PartRem_0_5_3/COUT (ADDF_F)          0.165     12.154 r
+  rem_20/u_div/u_fa_PartRem_0_5_4/COUT (ADDF_F)          0.165     12.319 r
+  rem_20/u_div/u_fa_PartRem_0_5_5/COUT (ADDF_F)          0.165     12.484 r
+  rem_20/u_div/u_fa_PartRem_0_5_6/COUT (ADDF_F)          0.165     12.649 r
+  rem_20/u_div/u_fa_PartRem_0_5_7/COUT (ADDF_F)          0.168     12.817 r
+  rem_20/U365/Z (OR2_K)                                  0.085     12.902 r
+  rem_20/U262/Z (MUX21_F)                                0.136     13.038 f
+  rem_20/U228/Z (BUFFER_J)                               0.071     13.109 f
+  rem_20/u_div/u_fa_PartRem_0_4_1/COUT (ADDF_F)          0.145     13.254 f
+  rem_20/u_div/u_fa_PartRem_0_4_2/COUT (ADDF_F)          0.154     13.407 f
+  rem_20/u_div/u_fa_PartRem_0_4_3/COUT (ADDF_F)          0.154     13.561 f
+  rem_20/u_div/u_fa_PartRem_0_4_4/COUT (ADDF_F)          0.154     13.714 f
+  rem_20/u_div/u_fa_PartRem_0_4_5/COUT (ADDF_F)          0.154     13.868 f
+  rem_20/u_div/u_fa_PartRem_0_4_6/COUT (ADDF_F)          0.154     14.022 f
+  rem_20/u_div/u_fa_PartRem_0_4_7/COUT (ADDF_F)          0.160     14.182 f
+  rem_20/U286/Z (BUFFER_L)                               0.076     14.258 f
+  rem_20/U358/Z (NOR2_J)                                 0.069     14.326 r
+  rem_20/U175/Z (MUX21I_F)                               0.119     14.446 r
+  rem_20/U412/Z (NAND2_F)                                0.053     14.499 f
+  rem_20/U615/Z (NAND3_H)                                0.047     14.547 r
+  rem_20/u_div/u_fa_PartRem_0_3_2/COUT (ADDF_F)          0.162     14.708 r
+  rem_20/u_div/u_fa_PartRem_0_3_3/COUT (ADDF_F)          0.165     14.873 r
+  rem_20/u_div/u_fa_PartRem_0_3_4/COUT (ADDF_F)          0.165     15.038 r
+  rem_20/u_div/u_fa_PartRem_0_3_5/COUT (ADDF_F)          0.165     15.203 r
+  rem_20/u_div/u_fa_PartRem_0_3_6/COUT (ADDF_F)          0.195     15.398 r
+  rem_20/u_div/u_fa_PartRem_0_3_7/COUT (ADDF_F)          0.176     15.574 r
+  rem_20/U344/Z (OR2_K)                                  0.082     15.656 r
+  rem_20/U658/Z (MUX21I_F)                               0.091     15.747 r
+  rem_20/u_div/u_fa_PartRem_0_2_1/COUT (ADDF_F)          0.166     15.914 r
+  rem_20/u_div/u_fa_PartRem_0_2_2/COUT (ADDF_F)          0.165     16.079 r
+  rem_20/u_div/u_fa_PartRem_0_2_3/COUT (ADDF_F)          0.165     16.244 r
+  rem_20/u_div/u_fa_PartRem_0_2_4/COUT (ADDF_F)          0.165     16.409 r
+  rem_20/u_div/u_fa_PartRem_0_2_5/COUT (ADDF_F)          0.165     16.574 r
+  rem_20/u_div/u_fa_PartRem_0_2_6/COUT (ADDF_F)          0.165     16.739 r
+  rem_20/u_div/u_fa_PartRem_0_2_7/COUT (ADDF_F)          0.195     16.934 r
+  rem_20/U53/Z (NOR2_F)                                  0.062     16.996 f
+  rem_20/U303/Z (INVERT_J)                               0.050     17.046 r
+  rem_20/U662/Z (MUX21I_F)                               0.054     17.100 f
+  rem_20/U657/Z (INVERT_L)                               0.060     17.159 r
+  rem_20/U616/Z (NAND2_J)                                0.038     17.197 f
+  rem_20/U238/Z (NAND3_K)                                0.064     17.261 r
+  rem_20/U48/Z (NAND2_J)                                 0.041     17.302 f
+  rem_20/U51/Z (NAND3_K)                                 0.060     17.362 r
+  rem_20/U413/Z (NAND2_I)                                0.037     17.399 f
+  rem_20/U600/Z (NAND3_H)                                0.050     17.449 r
+  rem_20/u_div/u_fa_PartRem_0_1_4/COUT (ADDF_F)          0.161     17.610 r
+  rem_20/u_div/u_fa_PartRem_0_1_5/COUT (ADDF_F)          0.165     17.775 r
+  rem_20/u_div/u_fa_PartRem_0_1_6/COUT (ADDF_F)          0.165     17.940 r
+  rem_20/u_div/u_fa_PartRem_0_1_7/COUT (ADDF_F)          0.168     18.108 r
+  rem_20/U364/Z (OR2_K)                                  0.082     18.190 r
+  rem_20/U302/Z (BUFFER_M)                               0.053     18.243 r
+  rem_20/U663/Z (MUX21I_F)                               0.110     18.353 r
+  rem_20/U218/Z (INVERT_L)                               0.056     18.409 f
+  rem_20/U370/Z (NAND2_J)                                0.048     18.458 r
+  rem_20/U226/Z (NAND3_K)                                0.060     18.517 f
+  rem_20/U227/Z (NAND2_J)                                0.050     18.567 r
+  rem_20/U179/Z (NAND3_K)                                0.060     18.627 f
+  rem_20/U610/Z (NAND2_J)                                0.050     18.677 r
+  rem_20/U58/Z (NAND3_K)                                 0.060     18.737 f
+  rem_20/U57/Z (NAND2_J)                                 0.048     18.785 r
+  rem_20/U164/Z (NAND3_J)                                0.056     18.841 f
+  rem_20/U402/Z (NAND2_H)                                0.055     18.896 r
+  rem_20/U401/Z (NAND3_I)                                0.053     18.949 f
+  rem_20/U397/Z (NAND2_F)                                0.054     19.004 r
+  rem_20/U209/Z (NAND3_F)                                0.041     19.045 f
+  rem_20/u_div/u_fa_PartRem_0_0_7/COUT (ADDF_F)          0.176     19.221 f
+  rem_20/U223/Z (NOR2_I)                                 0.078     19.299 r
+  rem_20/U25/Z (INVERT_N)                                0.045     19.344 f
+  rem_20/U713/Z (MUX21I_C)                               0.114     19.458 f
+  rem_20/remainder[4] (divider_DW_div_uns_2)             0.000     19.458 f
+  remainder_reg[4]/D (DFFR_E)                            0.000     19.458 f
+  data arrival time                                                19.458
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  remainder_reg[4]/CLK (DFFR_E)                          0.000     10.000 r
+  library setup time                                    -0.241      9.759
+  data required time                                                9.759
+  --------------------------------------------------------------------------
+  data required time                                                9.759
+  data arrival time                                               -19.458
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -9.699
+
+
+  Startpoint: b[2] (input port clocked by v_clk)
+  Endpoint: remainder_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  divider            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  divider_DW_div_uns_2
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 r
+  b[2] (in)                                              0.000      3.000 r
+  U45/Z (INVERT_O)                                       0.041      3.041 f
+  U41/Z (INVERT_M)                                       0.043      3.084 r
+  rem_20/b[2] (divider_DW_div_uns_2)                     0.000      3.084 r
+  rem_20/U17/Z (NOR2_J)                                  0.035      3.119 f
+  rem_20/U326/Z (OAI21_H)                                0.079      3.198 r
+  rem_20/U15/Z (NOR2_I)                                  0.064      3.262 f
+  rem_20/U189/Z (NAND2_F)                                0.070      3.333 r
+  rem_20/U9/Z (NAND2_I)                                  0.034      3.366 f
+  rem_20/u_div/u_fa_PartRem_0_14_1/COUT (ADDF_F)         0.155      3.521 f
+  rem_20/U301/Z (NAND2_H)                                0.068      3.590 r
+  rem_20/U5/Z (INVERT_M)                                 0.035      3.625 f
+  rem_20/U12/Z (MUX21I_F)                                0.104      3.729 f
+  rem_20/u_div/u_fa_PartRem_0_13_1/COUT (ADDF_F)         0.151      3.880 f
+  rem_20/u_div/u_fa_PartRem_0_13_2/COUT (ADDF_F)         0.150      4.030 f
+  rem_20/U296/Z (NAND2_E)                                0.069      4.099 r
+  rem_20/U297/Z (INVERT_I)                               0.052      4.150 f
+  rem_20/U141/Z (INVERT_K)                               0.038      4.188 r
+  rem_20/U331/Z (NAND2_H)                                0.033      4.222 f
+  rem_20/U410/Z (NAND2_H)                                0.037      4.259 r
+  rem_20/u_div/u_fa_PartRem_0_12_1/COUT (ADDF_F)         0.159      4.417 r
+  rem_20/u_div/u_fa_PartRem_0_12_2/COUT (ADDF_F)         0.165      4.583 r
+  rem_20/u_div/u_fa_PartRem_0_12_3/COUT (ADDF_F)         0.188      4.771 r
+  rem_20/U607/Z (NAND2_I)                                0.061      4.832 f
+  rem_20/U234/Z (INVERT_J)                               0.042      4.873 r
+  rem_20/U661/Z (MUX21_H)                                0.125      4.999 f
+  rem_20/U233/Z (BUFFER_J)                               0.069      5.068 f
+  rem_20/u_div/u_fa_PartRem_0_11_2/COUT (ADDF_F)         0.154      5.222 f
+  rem_20/u_div/u_fa_PartRem_0_11_3/COUT (ADDF_F)         0.183      5.405 f
+  rem_20/U636/COUT (ADDF_F)                              0.160      5.565 f
+  rem_20/U596/Z (AND2_J)                                 0.080      5.645 f
+  rem_20/U282/Z (BUFFER_M)                               0.065      5.711 f
+  rem_20/U176/Z (MUX21I_F)                               0.121      5.831 f
+  rem_20/U173/Z (NAND2_H)                                0.063      5.894 r
+  rem_20/U275/Z (NAND3_I)                                0.053      5.947 f
+  rem_20/U170/Z (NAND2_F)                                0.058      6.005 r
+  rem_20/U399/Z (NAND3_H)                                0.039      6.044 f
+  rem_20/u_div/u_fa_PartRem_0_10_3/COUT (ADDF_F)         0.147      6.191 f
+  rem_20/u_div/u_fa_PartRem_0_10_4/COUT (ADDF_F)         0.154      6.344 f
+  rem_20/u_div/u_fa_PartRem_0_10_5/COUT (ADDF_F)         0.152      6.497 f
+  rem_20/U230/Z (AND2_J)                                 0.080      6.577 f
+  rem_20/U229/Z (BUFFER_M)                               0.063      6.640 f
+  rem_20/U645/Z (MUX21_H)                                0.127      6.767 r
+  rem_20/U196/Z (BUFFER_L)                               0.062      6.829 r
+  rem_20/U195/Z (NAND2_J)                                0.033      6.862 f
+  rem_20/U41/Z (NAND3_K)                                 0.062      6.925 r
+  rem_20/U44/Z (NAND2_J)                                 0.041      6.966 f
+  rem_20/U37/Z (NAND3_K)                                 0.065      7.031 r
+  rem_20/U612/Z (NAND2_J)                                0.040      7.071 f
+  rem_20/U43/Z (NAND3_J)                                 0.064      7.135 r
+  rem_20/U614/Z (NAND2_I)                                0.037      7.172 f
+  rem_20/U620/Z (NAND3_H)                                0.050      7.222 r
+  rem_20/u_div/u_fa_PartRem_0_9_5/COUT (ADDF_F)          0.161      7.384 r
+  rem_20/u_div/u_fa_PartRem_0_9_6/COUT (ADDF_F)          0.177      7.561 r
+  rem_20/U698/Z (INVERT_J)                               0.056      7.617 f
+  rem_20/U314/Z (NOR2_J)                                 0.060      7.677 r
+  rem_20/U637/Z (MUX21I_F)                               0.122      7.799 r
+  rem_20/U621/Z (NAND2_H)                                0.048      7.847 f
+  rem_20/U622/Z (NAND3_H)                                0.044      7.891 r
+  rem_20/u_div/u_fa_PartRem_0_8_2/COUT (ADDF_F)          0.162      8.052 r
+  rem_20/u_div/u_fa_PartRem_0_8_3/COUT (ADDF_F)          0.165      8.218 r
+  rem_20/u_div/u_fa_PartRem_0_8_4/COUT (ADDF_F)          0.165      8.383 r
+  rem_20/u_div/u_fa_PartRem_0_8_5/COUT (ADDF_F)          0.165      8.548 r
+  rem_20/u_div/u_fa_PartRem_0_8_6/COUT (ADDF_F)          0.195      8.743 r
+  rem_20/u_div/u_fa_PartRem_0_8_7/COUT (ADDF_F)          0.188      8.931 r
+  rem_20/U182/Z (MUX21I_F)                               0.110      9.040 r
+  rem_20/U155/Z (INVERT_J)                               0.056      9.097 f
+  rem_20/U181/Z (NAND2_H)                                0.056      9.153 r
+  rem_20/U55/Z (NAND3_I)                                 0.060      9.212 f
+  rem_20/U49/Z (NAND2_F)                                 0.054      9.267 r
+  rem_20/U45/Z (NAND3_F)                                 0.041      9.308 f
+  rem_20/u_div/u_fa_PartRem_0_7_3/COUT (ADDF_F)          0.147      9.455 f
+  rem_20/u_div/u_fa_PartRem_0_7_4/COUT (ADDF_F)          0.154      9.609 f
+  rem_20/u_div/u_fa_PartRem_0_7_5/COUT (ADDF_F)          0.154      9.763 f
+  rem_20/u_div/u_fa_PartRem_0_7_6/COUT (ADDF_F)          0.154      9.916 f
+  rem_20/u_div/u_fa_PartRem_0_7_7/COUT (ADDF_F)          0.157     10.073 f
+  rem_20/U393/Z (OR2_K)                                  0.091     10.164 f
+  rem_20/U300/Z (INVERT_K)                               0.039     10.203 r
+  rem_20/U158/Z (MUX21I_F)                               0.092     10.295 r
+  rem_20/u_div/u_fa_PartRem_0_6_1/COUT (ADDF_F)          0.166     10.461 r
+  rem_20/u_div/u_fa_PartRem_0_6_2/COUT (ADDF_F)          0.165     10.626 r
+  rem_20/u_div/u_fa_PartRem_0_6_3/COUT (ADDF_F)          0.165     10.791 r
+  rem_20/u_div/u_fa_PartRem_0_6_4/COUT (ADDF_F)          0.165     10.956 r
+  rem_20/u_div/u_fa_PartRem_0_6_5/COUT (ADDF_F)          0.165     11.121 r
+  rem_20/u_div/u_fa_PartRem_0_6_6/COUT (ADDF_F)          0.165     11.286 r
+  rem_20/u_div/u_fa_PartRem_0_6_7/COUT (ADDF_F)          0.191     11.477 r
+  rem_20/U357/Z (OR2_K)                                  0.091     11.568 r
+  rem_20/U266/Z (MUX21_E)                                0.124     11.693 r
+  rem_20/U267/Z (INVERT_E)                               0.059     11.751 f
+  rem_20/U150/Z (INVERT_H)                               0.058     11.809 r
+  rem_20/u_div/u_fa_PartRem_0_5_2/COUT (ADDF_F)          0.180     11.989 r
+  rem_20/u_div/u_fa_PartRem_0_5_3/COUT (ADDF_F)          0.165     12.154 r
+  rem_20/u_div/u_fa_PartRem_0_5_4/COUT (ADDF_F)          0.165     12.319 r
+  rem_20/u_div/u_fa_PartRem_0_5_5/COUT (ADDF_F)          0.165     12.484 r
+  rem_20/u_div/u_fa_PartRem_0_5_6/COUT (ADDF_F)          0.165     12.649 r
+  rem_20/u_div/u_fa_PartRem_0_5_7/COUT (ADDF_F)          0.168     12.817 r
+  rem_20/U365/Z (OR2_K)                                  0.085     12.902 r
+  rem_20/U262/Z (MUX21_F)                                0.136     13.038 f
+  rem_20/U228/Z (BUFFER_J)                               0.071     13.109 f
+  rem_20/u_div/u_fa_PartRem_0_4_1/COUT (ADDF_F)          0.145     13.254 f
+  rem_20/u_div/u_fa_PartRem_0_4_2/COUT (ADDF_F)          0.154     13.407 f
+  rem_20/u_div/u_fa_PartRem_0_4_3/COUT (ADDF_F)          0.154     13.561 f
+  rem_20/u_div/u_fa_PartRem_0_4_4/COUT (ADDF_F)          0.154     13.714 f
+  rem_20/u_div/u_fa_PartRem_0_4_5/COUT (ADDF_F)          0.154     13.868 f
+  rem_20/u_div/u_fa_PartRem_0_4_6/COUT (ADDF_F)          0.154     14.021 f
+  rem_20/u_div/u_fa_PartRem_0_4_7/COUT (ADDF_F)          0.160     14.182 f
+  rem_20/U286/Z (BUFFER_L)                               0.076     14.258 f
+  rem_20/U358/Z (NOR2_J)                                 0.069     14.326 r
+  rem_20/U175/Z (MUX21I_F)                               0.119     14.446 r
+  rem_20/U412/Z (NAND2_F)                                0.053     14.499 f
+  rem_20/U615/Z (NAND3_H)                                0.047     14.547 r
+  rem_20/u_div/u_fa_PartRem_0_3_2/COUT (ADDF_F)          0.162     14.708 r
+  rem_20/u_div/u_fa_PartRem_0_3_3/COUT (ADDF_F)          0.165     14.873 r
+  rem_20/u_div/u_fa_PartRem_0_3_4/COUT (ADDF_F)          0.165     15.038 r
+  rem_20/u_div/u_fa_PartRem_0_3_5/COUT (ADDF_F)          0.165     15.203 r
+  rem_20/u_div/u_fa_PartRem_0_3_6/COUT (ADDF_F)          0.195     15.398 r
+  rem_20/u_div/u_fa_PartRem_0_3_7/COUT (ADDF_F)          0.176     15.574 r
+  rem_20/U344/Z (OR2_K)                                  0.082     15.656 r
+  rem_20/U658/Z (MUX21I_F)                               0.091     15.747 r
+  rem_20/u_div/u_fa_PartRem_0_2_1/COUT (ADDF_F)          0.166     15.914 r
+  rem_20/u_div/u_fa_PartRem_0_2_2/COUT (ADDF_F)          0.165     16.079 r
+  rem_20/u_div/u_fa_PartRem_0_2_3/COUT (ADDF_F)          0.165     16.244 r
+  rem_20/u_div/u_fa_PartRem_0_2_4/COUT (ADDF_F)          0.165     16.409 r
+  rem_20/u_div/u_fa_PartRem_0_2_5/COUT (ADDF_F)          0.165     16.574 r
+  rem_20/u_div/u_fa_PartRem_0_2_6/COUT (ADDF_F)          0.165     16.739 r
+  rem_20/u_div/u_fa_PartRem_0_2_7/COUT (ADDF_F)          0.195     16.934 r
+  rem_20/U53/Z (NOR2_F)                                  0.062     16.996 f
+  rem_20/U303/Z (INVERT_J)                               0.050     17.046 r
+  rem_20/U662/Z (MUX21I_F)                               0.054     17.100 f
+  rem_20/U657/Z (INVERT_L)                               0.060     17.159 r
+  rem_20/U616/Z (NAND2_J)                                0.038     17.197 f
+  rem_20/U238/Z (NAND3_K)                                0.064     17.261 r
+  rem_20/U48/Z (NAND2_J)                                 0.041     17.302 f
+  rem_20/U51/Z (NAND3_K)                                 0.060     17.362 r
+  rem_20/U413/Z (NAND2_I)                                0.037     17.399 f
+  rem_20/U600/Z (NAND3_H)                                0.050     17.448 r
+  rem_20/u_div/u_fa_PartRem_0_1_4/COUT (ADDF_F)          0.161     17.610 r
+  rem_20/u_div/u_fa_PartRem_0_1_5/COUT (ADDF_F)          0.165     17.775 r
+  rem_20/u_div/u_fa_PartRem_0_1_6/COUT (ADDF_F)          0.165     17.940 r
+  rem_20/u_div/u_fa_PartRem_0_1_7/COUT (ADDF_F)          0.168     18.108 r
+  rem_20/U364/Z (OR2_K)                                  0.082     18.190 r
+  rem_20/U302/Z (BUFFER_M)                               0.053     18.243 r
+  rem_20/U663/Z (MUX21I_F)                               0.110     18.353 r
+  rem_20/U218/Z (INVERT_L)                               0.056     18.409 f
+  rem_20/U370/Z (NAND2_J)                                0.048     18.457 r
+  rem_20/U226/Z (NAND3_K)                                0.060     18.517 f
+  rem_20/U227/Z (NAND2_J)                                0.050     18.567 r
+  rem_20/U179/Z (NAND3_K)                                0.060     18.627 f
+  rem_20/U610/Z (NAND2_J)                                0.050     18.677 r
+  rem_20/U58/Z (NAND3_K)                                 0.060     18.737 f
+  rem_20/U57/Z (NAND2_J)                                 0.048     18.785 r
+  rem_20/U164/Z (NAND3_J)                                0.056     18.841 f
+  rem_20/U402/Z (NAND2_H)                                0.055     18.896 r
+  rem_20/U401/Z (NAND3_I)                                0.053     18.949 f
+  rem_20/U397/Z (NAND2_F)                                0.054     19.004 r
+  rem_20/U209/Z (NAND3_F)                                0.041     19.045 f
+  rem_20/u_div/u_fa_PartRem_0_0_7/COUT (ADDF_F)          0.176     19.221 f
+  rem_20/U223/Z (NOR2_I)                                 0.078     19.299 r
+  rem_20/U25/Z (INVERT_N)                                0.045     19.344 f
+  rem_20/U713/Z (MUX21I_C)                               0.114     19.458 f
+  rem_20/remainder[4] (divider_DW_div_uns_2)             0.000     19.458 f
+  remainder_reg[4]/D (DFFR_E)                            0.000     19.458 f
+  data arrival time                                                19.458
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  remainder_reg[4]/CLK (DFFR_E)                          0.000     10.000 r
+  library setup time                                    -0.241      9.759
+  data required time                                                9.759
+  --------------------------------------------------------------------------
+  data required time                                                9.759
+  data arrival time                                               -19.458
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -9.699
+
+
+  Startpoint: b[1] (input port clocked by v_clk)
+  Endpoint: remainder_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  divider            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  divider_DW_div_uns_2
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 r
+  b[1] (in)                                              0.000      3.000 r
+  U43/Z (INVERT_O)                                       0.042      3.042 f
+  U3/Z (INVERT_N)                                        0.036      3.078 r
+  rem_20/b[1] (divider_DW_div_uns_2)                     0.000      3.078 r
+  rem_20/U17/Z (NOR2_J)                                  0.040      3.119 f
+  rem_20/U326/Z (OAI21_H)                                0.079      3.198 r
+  rem_20/U15/Z (NOR2_I)                                  0.064      3.262 f
+  rem_20/U189/Z (NAND2_F)                                0.070      3.333 r
+  rem_20/U9/Z (NAND2_I)                                  0.034      3.366 f
+  rem_20/u_div/u_fa_PartRem_0_14_1/COUT (ADDF_F)         0.155      3.521 f
+  rem_20/U301/Z (NAND2_H)                                0.068      3.590 r
+  rem_20/U5/Z (INVERT_M)                                 0.035      3.625 f
+  rem_20/U12/Z (MUX21I_F)                                0.104      3.729 f
+  rem_20/u_div/u_fa_PartRem_0_13_1/COUT (ADDF_F)         0.151      3.880 f
+  rem_20/u_div/u_fa_PartRem_0_13_2/COUT (ADDF_F)         0.150      4.030 f
+  rem_20/U296/Z (NAND2_E)                                0.069      4.099 r
+  rem_20/U297/Z (INVERT_I)                               0.052      4.150 f
+  rem_20/U141/Z (INVERT_K)                               0.038      4.189 r
+  rem_20/U331/Z (NAND2_H)                                0.033      4.222 f
+  rem_20/U410/Z (NAND2_H)                                0.037      4.259 r
+  rem_20/u_div/u_fa_PartRem_0_12_1/COUT (ADDF_F)         0.159      4.418 r
+  rem_20/u_div/u_fa_PartRem_0_12_2/COUT (ADDF_F)         0.165      4.583 r
+  rem_20/u_div/u_fa_PartRem_0_12_3/COUT (ADDF_F)         0.188      4.771 r
+  rem_20/U607/Z (NAND2_I)                                0.061      4.832 f
+  rem_20/U234/Z (INVERT_J)                               0.042      4.874 r
+  rem_20/U661/Z (MUX21_H)                                0.125      4.999 f
+  rem_20/U233/Z (BUFFER_J)                               0.069      5.068 f
+  rem_20/u_div/u_fa_PartRem_0_11_2/COUT (ADDF_F)         0.154      5.222 f
+  rem_20/u_div/u_fa_PartRem_0_11_3/COUT (ADDF_F)         0.183      5.405 f
+  rem_20/U636/COUT (ADDF_F)                              0.160      5.565 f
+  rem_20/U596/Z (AND2_J)                                 0.080      5.645 f
+  rem_20/U282/Z (BUFFER_M)                               0.065      5.711 f
+  rem_20/U176/Z (MUX21I_F)                               0.121      5.831 f
+  rem_20/U173/Z (NAND2_H)                                0.063      5.894 r
+  rem_20/U275/Z (NAND3_I)                                0.053      5.947 f
+  rem_20/U170/Z (NAND2_F)                                0.058      6.005 r
+  rem_20/U399/Z (NAND3_H)                                0.039      6.044 f
+  rem_20/u_div/u_fa_PartRem_0_10_3/COUT (ADDF_F)         0.147      6.191 f
+  rem_20/u_div/u_fa_PartRem_0_10_4/COUT (ADDF_F)         0.154      6.344 f
+  rem_20/u_div/u_fa_PartRem_0_10_5/COUT (ADDF_F)         0.152      6.497 f
+  rem_20/U230/Z (AND2_J)                                 0.080      6.577 f
+  rem_20/U229/Z (BUFFER_M)                               0.063      6.640 f
+  rem_20/U645/Z (MUX21_H)                                0.127      6.767 r
+  rem_20/U196/Z (BUFFER_L)                               0.062      6.829 r
+  rem_20/U195/Z (NAND2_J)                                0.033      6.862 f
+  rem_20/U41/Z (NAND3_K)                                 0.062      6.925 r
+  rem_20/U44/Z (NAND2_J)                                 0.041      6.966 f
+  rem_20/U37/Z (NAND3_K)                                 0.065      7.031 r
+  rem_20/U612/Z (NAND2_J)                                0.040      7.071 f
+  rem_20/U43/Z (NAND3_J)                                 0.064      7.135 r
+  rem_20/U614/Z (NAND2_I)                                0.037      7.172 f
+  rem_20/U620/Z (NAND3_H)                                0.050      7.222 r
+  rem_20/u_div/u_fa_PartRem_0_9_5/COUT (ADDF_F)          0.161      7.384 r
+  rem_20/u_div/u_fa_PartRem_0_9_6/COUT (ADDF_F)          0.177      7.561 r
+  rem_20/U698/Z (INVERT_J)                               0.056      7.617 f
+  rem_20/U314/Z (NOR2_J)                                 0.060      7.677 r
+  rem_20/U637/Z (MUX21I_F)                               0.122      7.799 r
+  rem_20/U621/Z (NAND2_H)                                0.048      7.847 f
+  rem_20/U622/Z (NAND3_H)                                0.044      7.891 r
+  rem_20/u_div/u_fa_PartRem_0_8_2/COUT (ADDF_F)          0.162      8.053 r
+  rem_20/u_div/u_fa_PartRem_0_8_3/COUT (ADDF_F)          0.165      8.218 r
+  rem_20/u_div/u_fa_PartRem_0_8_4/COUT (ADDF_F)          0.165      8.383 r
+  rem_20/u_div/u_fa_PartRem_0_8_5/COUT (ADDF_F)          0.165      8.548 r
+  rem_20/u_div/u_fa_PartRem_0_8_6/COUT (ADDF_F)          0.195      8.743 r
+  rem_20/u_div/u_fa_PartRem_0_8_7/COUT (ADDF_F)          0.188      8.931 r
+  rem_20/U182/Z (MUX21I_F)                               0.110      9.040 r
+  rem_20/U155/Z (INVERT_J)                               0.056      9.097 f
+  rem_20/U181/Z (NAND2_H)                                0.056      9.153 r
+  rem_20/U55/Z (NAND3_I)                                 0.060      9.212 f
+  rem_20/U49/Z (NAND2_F)                                 0.054      9.267 r
+  rem_20/U45/Z (NAND3_F)                                 0.041      9.308 f
+  rem_20/u_div/u_fa_PartRem_0_7_3/COUT (ADDF_F)          0.147      9.456 f
+  rem_20/u_div/u_fa_PartRem_0_7_4/COUT (ADDF_F)          0.154      9.609 f
+  rem_20/u_div/u_fa_PartRem_0_7_5/COUT (ADDF_F)          0.154      9.763 f
+  rem_20/u_div/u_fa_PartRem_0_7_6/COUT (ADDF_F)          0.154      9.916 f
+  rem_20/u_div/u_fa_PartRem_0_7_7/COUT (ADDF_F)          0.157     10.073 f
+  rem_20/U393/Z (OR2_K)                                  0.091     10.164 f
+  rem_20/U300/Z (INVERT_K)                               0.039     10.203 r
+  rem_20/U158/Z (MUX21I_F)                               0.092     10.295 r
+  rem_20/u_div/u_fa_PartRem_0_6_1/COUT (ADDF_F)          0.166     10.461 r
+  rem_20/u_div/u_fa_PartRem_0_6_2/COUT (ADDF_F)          0.165     10.626 r
+  rem_20/u_div/u_fa_PartRem_0_6_3/COUT (ADDF_F)          0.165     10.791 r
+  rem_20/u_div/u_fa_PartRem_0_6_4/COUT (ADDF_F)          0.165     10.956 r
+  rem_20/u_div/u_fa_PartRem_0_6_5/COUT (ADDF_F)          0.165     11.121 r
+  rem_20/u_div/u_fa_PartRem_0_6_6/COUT (ADDF_F)          0.165     11.286 r
+  rem_20/u_div/u_fa_PartRem_0_6_7/COUT (ADDF_F)          0.191     11.477 r
+  rem_20/U357/Z (OR2_K)                                  0.091     11.568 r
+  rem_20/U266/Z (MUX21_E)                                0.124     11.693 r
+  rem_20/U267/Z (INVERT_E)                               0.059     11.751 f
+  rem_20/U150/Z (INVERT_H)                               0.058     11.809 r
+  rem_20/u_div/u_fa_PartRem_0_5_2/COUT (ADDF_F)          0.180     11.989 r
+  rem_20/u_div/u_fa_PartRem_0_5_3/COUT (ADDF_F)          0.165     12.154 r
+  rem_20/u_div/u_fa_PartRem_0_5_4/COUT (ADDF_F)          0.165     12.319 r
+  rem_20/u_div/u_fa_PartRem_0_5_5/COUT (ADDF_F)          0.165     12.484 r
+  rem_20/u_div/u_fa_PartRem_0_5_6/COUT (ADDF_F)          0.165     12.649 r
+  rem_20/u_div/u_fa_PartRem_0_5_7/COUT (ADDF_F)          0.168     12.817 r
+  rem_20/U365/Z (OR2_K)                                  0.085     12.902 r
+  rem_20/U262/Z (MUX21_F)                                0.136     13.038 f
+  rem_20/U228/Z (BUFFER_J)                               0.071     13.109 f
+  rem_20/u_div/u_fa_PartRem_0_4_1/COUT (ADDF_F)          0.145     13.254 f
+  rem_20/u_div/u_fa_PartRem_0_4_2/COUT (ADDF_F)          0.154     13.407 f
+  rem_20/u_div/u_fa_PartRem_0_4_3/COUT (ADDF_F)          0.154     13.561 f
+  rem_20/u_div/u_fa_PartRem_0_4_4/COUT (ADDF_F)          0.154     13.714 f
+  rem_20/u_div/u_fa_PartRem_0_4_5/COUT (ADDF_F)          0.154     13.868 f
+  rem_20/u_div/u_fa_PartRem_0_4_6/COUT (ADDF_F)          0.154     14.022 f
+  rem_20/u_div/u_fa_PartRem_0_4_7/COUT (ADDF_F)          0.160     14.182 f
+  rem_20/U286/Z (BUFFER_L)                               0.076     14.258 f
+  rem_20/U358/Z (NOR2_J)                                 0.069     14.326 r
+  rem_20/U175/Z (MUX21I_F)                               0.119     14.446 r
+  rem_20/U412/Z (NAND2_F)                                0.053     14.499 f
+  rem_20/U615/Z (NAND3_H)                                0.047     14.547 r
+  rem_20/u_div/u_fa_PartRem_0_3_2/COUT (ADDF_F)          0.162     14.708 r
+  rem_20/u_div/u_fa_PartRem_0_3_3/COUT (ADDF_F)          0.165     14.873 r
+  rem_20/u_div/u_fa_PartRem_0_3_4/COUT (ADDF_F)          0.165     15.038 r
+  rem_20/u_div/u_fa_PartRem_0_3_5/COUT (ADDF_F)          0.165     15.203 r
+  rem_20/u_div/u_fa_PartRem_0_3_6/COUT (ADDF_F)          0.195     15.398 r
+  rem_20/u_div/u_fa_PartRem_0_3_7/COUT (ADDF_F)          0.176     15.574 r
+  rem_20/U344/Z (OR2_K)                                  0.082     15.656 r
+  rem_20/U658/Z (MUX21I_F)                               0.091     15.747 r
+  rem_20/u_div/u_fa_PartRem_0_2_1/COUT (ADDF_F)          0.166     15.914 r
+  rem_20/u_div/u_fa_PartRem_0_2_2/COUT (ADDF_F)          0.165     16.079 r
+  rem_20/u_div/u_fa_PartRem_0_2_3/COUT (ADDF_F)          0.165     16.244 r
+  rem_20/u_div/u_fa_PartRem_0_2_4/COUT (ADDF_F)          0.165     16.409 r
+  rem_20/u_div/u_fa_PartRem_0_2_5/COUT (ADDF_F)          0.165     16.574 r
+  rem_20/u_div/u_fa_PartRem_0_2_6/COUT (ADDF_F)          0.165     16.739 r
+  rem_20/u_div/u_fa_PartRem_0_2_7/COUT (ADDF_F)          0.195     16.934 r
+  rem_20/U53/Z (NOR2_F)                                  0.062     16.996 f
+  rem_20/U303/Z (INVERT_J)                               0.050     17.046 r
+  rem_20/U662/Z (MUX21I_F)                               0.054     17.100 f
+  rem_20/U657/Z (INVERT_L)                               0.060     17.159 r
+  rem_20/U616/Z (NAND2_J)                                0.038     17.197 f
+  rem_20/U238/Z (NAND3_K)                                0.064     17.261 r
+  rem_20/U48/Z (NAND2_J)                                 0.041     17.302 f
+  rem_20/U51/Z (NAND3_K)                                 0.060     17.362 r
+  rem_20/U413/Z (NAND2_I)                                0.037     17.399 f
+  rem_20/U600/Z (NAND3_H)                                0.050     17.449 r
+  rem_20/u_div/u_fa_PartRem_0_1_4/COUT (ADDF_F)          0.161     17.610 r
+  rem_20/u_div/u_fa_PartRem_0_1_5/COUT (ADDF_F)          0.165     17.775 r
+  rem_20/u_div/u_fa_PartRem_0_1_6/COUT (ADDF_F)          0.165     17.940 r
+  rem_20/u_div/u_fa_PartRem_0_1_7/COUT (ADDF_F)          0.168     18.108 r
+  rem_20/U364/Z (OR2_K)                                  0.082     18.190 r
+  rem_20/U302/Z (BUFFER_M)                               0.053     18.243 r
+  rem_20/U663/Z (MUX21I_F)                               0.110     18.353 r
+  rem_20/U218/Z (INVERT_L)                               0.056     18.409 f
+  rem_20/U370/Z (NAND2_J)                                0.048     18.458 r
+  rem_20/U226/Z (NAND3_K)                                0.060     18.517 f
+  rem_20/U227/Z (NAND2_J)                                0.050     18.567 r
+  rem_20/U179/Z (NAND3_K)                                0.060     18.627 f
+  rem_20/U610/Z (NAND2_J)                                0.050     18.677 r
+  rem_20/U58/Z (NAND3_K)                                 0.060     18.737 f
+  rem_20/U57/Z (NAND2_J)                                 0.048     18.785 r
+  rem_20/U164/Z (NAND3_J)                                0.056     18.841 f
+  rem_20/U402/Z (NAND2_H)                                0.055     18.896 r
+  rem_20/U401/Z (NAND3_I)                                0.053     18.949 f
+  rem_20/U397/Z (NAND2_F)                                0.054     19.004 r
+  rem_20/U209/Z (NAND3_F)                                0.041     19.045 f
+  rem_20/u_div/u_fa_PartRem_0_0_7/COUT (ADDF_F)          0.176     19.221 f
+  rem_20/U223/Z (NOR2_I)                                 0.078     19.299 r
+  rem_20/U25/Z (INVERT_N)                                0.045     19.344 f
+  rem_20/U442/Z (MUX21I_C)                               0.114     19.458 f
+  rem_20/remainder[1] (divider_DW_div_uns_2)             0.000     19.458 f
+  remainder_reg[1]/D (DFFR_E)                            0.000     19.458 f
+  data arrival time                                                19.458
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  remainder_reg[1]/CLK (DFFR_E)                          0.000     10.000 r
+  library setup time                                    -0.241      9.759
+  data required time                                                9.759
+  --------------------------------------------------------------------------
+  data required time                                                9.759
+  data arrival time                                               -19.458
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -9.699
+
+
+  Startpoint: b[1] (input port clocked by v_clk)
+  Endpoint: remainder_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  divider            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  divider_DW_div_uns_2
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 r
+  b[1] (in)                                              0.000      3.000 r
+  U43/Z (INVERT_O)                                       0.042      3.042 f
+  U3/Z (INVERT_N)                                        0.036      3.078 r
+  rem_20/b[1] (divider_DW_div_uns_2)                     0.000      3.078 r
+  rem_20/U17/Z (NOR2_J)                                  0.040      3.119 f
+  rem_20/U326/Z (OAI21_H)                                0.079      3.198 r
+  rem_20/U15/Z (NOR2_I)                                  0.064      3.262 f
+  rem_20/U189/Z (NAND2_F)                                0.070      3.333 r
+  rem_20/U9/Z (NAND2_I)                                  0.034      3.366 f
+  rem_20/u_div/u_fa_PartRem_0_14_1/COUT (ADDF_F)         0.155      3.521 f
+  rem_20/U301/Z (NAND2_H)                                0.068      3.590 r
+  rem_20/U5/Z (INVERT_M)                                 0.035      3.625 f
+  rem_20/U12/Z (MUX21I_F)                                0.104      3.729 f
+  rem_20/u_div/u_fa_PartRem_0_13_1/COUT (ADDF_F)         0.151      3.880 f
+  rem_20/u_div/u_fa_PartRem_0_13_2/COUT (ADDF_F)         0.150      4.030 f
+  rem_20/U296/Z (NAND2_E)                                0.069      4.099 r
+  rem_20/U297/Z (INVERT_I)                               0.052      4.150 f
+  rem_20/U141/Z (INVERT_K)                               0.038      4.189 r
+  rem_20/U331/Z (NAND2_H)                                0.033      4.222 f
+  rem_20/U410/Z (NAND2_H)                                0.037      4.259 r
+  rem_20/u_div/u_fa_PartRem_0_12_1/COUT (ADDF_F)         0.159      4.418 r
+  rem_20/u_div/u_fa_PartRem_0_12_2/COUT (ADDF_F)         0.165      4.583 r
+  rem_20/u_div/u_fa_PartRem_0_12_3/COUT (ADDF_F)         0.188      4.771 r
+  rem_20/U607/Z (NAND2_I)                                0.061      4.832 f
+  rem_20/U234/Z (INVERT_J)                               0.042      4.874 r
+  rem_20/U661/Z (MUX21_H)                                0.125      4.999 f
+  rem_20/U233/Z (BUFFER_J)                               0.069      5.068 f
+  rem_20/u_div/u_fa_PartRem_0_11_2/COUT (ADDF_F)         0.154      5.222 f
+  rem_20/u_div/u_fa_PartRem_0_11_3/COUT (ADDF_F)         0.183      5.405 f
+  rem_20/U636/COUT (ADDF_F)                              0.160      5.565 f
+  rem_20/U596/Z (AND2_J)                                 0.080      5.645 f
+  rem_20/U282/Z (BUFFER_M)                               0.065      5.711 f
+  rem_20/U176/Z (MUX21I_F)                               0.121      5.831 f
+  rem_20/U173/Z (NAND2_H)                                0.063      5.894 r
+  rem_20/U275/Z (NAND3_I)                                0.053      5.947 f
+  rem_20/U170/Z (NAND2_F)                                0.058      6.005 r
+  rem_20/U399/Z (NAND3_H)                                0.039      6.044 f
+  rem_20/u_div/u_fa_PartRem_0_10_3/COUT (ADDF_F)         0.147      6.191 f
+  rem_20/u_div/u_fa_PartRem_0_10_4/COUT (ADDF_F)         0.154      6.344 f
+  rem_20/u_div/u_fa_PartRem_0_10_5/COUT (ADDF_F)         0.152      6.497 f
+  rem_20/U230/Z (AND2_J)                                 0.080      6.577 f
+  rem_20/U229/Z (BUFFER_M)                               0.063      6.640 f
+  rem_20/U645/Z (MUX21_H)                                0.127      6.767 r
+  rem_20/U196/Z (BUFFER_L)                               0.062      6.829 r
+  rem_20/U195/Z (NAND2_J)                                0.033      6.862 f
+  rem_20/U41/Z (NAND3_K)                                 0.062      6.925 r
+  rem_20/U44/Z (NAND2_J)                                 0.041      6.966 f
+  rem_20/U37/Z (NAND3_K)                                 0.065      7.031 r
+  rem_20/U612/Z (NAND2_J)                                0.040      7.071 f
+  rem_20/U43/Z (NAND3_J)                                 0.064      7.135 r
+  rem_20/U614/Z (NAND2_I)                                0.037      7.172 f
+  rem_20/U620/Z (NAND3_H)                                0.050      7.222 r
+  rem_20/u_div/u_fa_PartRem_0_9_5/COUT (ADDF_F)          0.161      7.384 r
+  rem_20/u_div/u_fa_PartRem_0_9_6/COUT (ADDF_F)          0.177      7.561 r
+  rem_20/U698/Z (INVERT_J)                               0.056      7.617 f
+  rem_20/U314/Z (NOR2_J)                                 0.060      7.677 r
+  rem_20/U637/Z (MUX21I_F)                               0.122      7.799 r
+  rem_20/U621/Z (NAND2_H)                                0.048      7.847 f
+  rem_20/U622/Z (NAND3_H)                                0.044      7.891 r
+  rem_20/u_div/u_fa_PartRem_0_8_2/COUT (ADDF_F)          0.162      8.053 r
+  rem_20/u_div/u_fa_PartRem_0_8_3/COUT (ADDF_F)          0.165      8.218 r
+  rem_20/u_div/u_fa_PartRem_0_8_4/COUT (ADDF_F)          0.165      8.383 r
+  rem_20/u_div/u_fa_PartRem_0_8_5/COUT (ADDF_F)          0.165      8.548 r
+  rem_20/u_div/u_fa_PartRem_0_8_6/COUT (ADDF_F)          0.195      8.743 r
+  rem_20/u_div/u_fa_PartRem_0_8_7/COUT (ADDF_F)          0.188      8.931 r
+  rem_20/U182/Z (MUX21I_F)                               0.110      9.040 r
+  rem_20/U155/Z (INVERT_J)                               0.056      9.097 f
+  rem_20/U181/Z (NAND2_H)                                0.056      9.153 r
+  rem_20/U55/Z (NAND3_I)                                 0.060      9.212 f
+  rem_20/U49/Z (NAND2_F)                                 0.054      9.267 r
+  rem_20/U45/Z (NAND3_F)                                 0.041      9.308 f
+  rem_20/u_div/u_fa_PartRem_0_7_3/COUT (ADDF_F)          0.147      9.456 f
+  rem_20/u_div/u_fa_PartRem_0_7_4/COUT (ADDF_F)          0.154      9.609 f
+  rem_20/u_div/u_fa_PartRem_0_7_5/COUT (ADDF_F)          0.154      9.763 f
+  rem_20/u_div/u_fa_PartRem_0_7_6/COUT (ADDF_F)          0.154      9.916 f
+  rem_20/u_div/u_fa_PartRem_0_7_7/COUT (ADDF_F)          0.157     10.073 f
+  rem_20/U393/Z (OR2_K)                                  0.091     10.164 f
+  rem_20/U300/Z (INVERT_K)                               0.039     10.203 r
+  rem_20/U158/Z (MUX21I_F)                               0.092     10.295 r
+  rem_20/u_div/u_fa_PartRem_0_6_1/COUT (ADDF_F)          0.166     10.461 r
+  rem_20/u_div/u_fa_PartRem_0_6_2/COUT (ADDF_F)          0.165     10.626 r
+  rem_20/u_div/u_fa_PartRem_0_6_3/COUT (ADDF_F)          0.165     10.791 r
+  rem_20/u_div/u_fa_PartRem_0_6_4/COUT (ADDF_F)          0.165     10.956 r
+  rem_20/u_div/u_fa_PartRem_0_6_5/COUT (ADDF_F)          0.165     11.121 r
+  rem_20/u_div/u_fa_PartRem_0_6_6/COUT (ADDF_F)          0.165     11.286 r
+  rem_20/u_div/u_fa_PartRem_0_6_7/COUT (ADDF_F)          0.191     11.477 r
+  rem_20/U357/Z (OR2_K)                                  0.091     11.568 r
+  rem_20/U266/Z (MUX21_E)                                0.124     11.693 r
+  rem_20/U267/Z (INVERT_E)                               0.059     11.751 f
+  rem_20/U150/Z (INVERT_H)                               0.058     11.809 r
+  rem_20/u_div/u_fa_PartRem_0_5_2/COUT (ADDF_F)          0.180     11.989 r
+  rem_20/u_div/u_fa_PartRem_0_5_3/COUT (ADDF_F)          0.165     12.154 r
+  rem_20/u_div/u_fa_PartRem_0_5_4/COUT (ADDF_F)          0.165     12.319 r
+  rem_20/u_div/u_fa_PartRem_0_5_5/COUT (ADDF_F)          0.165     12.484 r
+  rem_20/u_div/u_fa_PartRem_0_5_6/COUT (ADDF_F)          0.165     12.649 r
+  rem_20/u_div/u_fa_PartRem_0_5_7/COUT (ADDF_F)          0.168     12.817 r
+  rem_20/U365/Z (OR2_K)                                  0.085     12.902 r
+  rem_20/U262/Z (MUX21_F)                                0.136     13.038 f
+  rem_20/U228/Z (BUFFER_J)                               0.071     13.109 f
+  rem_20/u_div/u_fa_PartRem_0_4_1/COUT (ADDF_F)          0.145     13.254 f
+  rem_20/u_div/u_fa_PartRem_0_4_2/COUT (ADDF_F)          0.154     13.407 f
+  rem_20/u_div/u_fa_PartRem_0_4_3/COUT (ADDF_F)          0.154     13.561 f
+  rem_20/u_div/u_fa_PartRem_0_4_4/COUT (ADDF_F)          0.154     13.714 f
+  rem_20/u_div/u_fa_PartRem_0_4_5/COUT (ADDF_F)          0.154     13.868 f
+  rem_20/u_div/u_fa_PartRem_0_4_6/COUT (ADDF_F)          0.154     14.022 f
+  rem_20/u_div/u_fa_PartRem_0_4_7/COUT (ADDF_F)          0.160     14.182 f
+  rem_20/U286/Z (BUFFER_L)                               0.076     14.258 f
+  rem_20/U358/Z (NOR2_J)                                 0.069     14.326 r
+  rem_20/U175/Z (MUX21I_F)                               0.119     14.446 r
+  rem_20/U412/Z (NAND2_F)                                0.053     14.499 f
+  rem_20/U615/Z (NAND3_H)                                0.047     14.547 r
+  rem_20/u_div/u_fa_PartRem_0_3_2/COUT (ADDF_F)          0.162     14.708 r
+  rem_20/u_div/u_fa_PartRem_0_3_3/COUT (ADDF_F)          0.165     14.873 r
+  rem_20/u_div/u_fa_PartRem_0_3_4/COUT (ADDF_F)          0.165     15.038 r
+  rem_20/u_div/u_fa_PartRem_0_3_5/COUT (ADDF_F)          0.165     15.203 r
+  rem_20/u_div/u_fa_PartRem_0_3_6/COUT (ADDF_F)          0.195     15.398 r
+  rem_20/u_div/u_fa_PartRem_0_3_7/COUT (ADDF_F)          0.176     15.574 r
+  rem_20/U344/Z (OR2_K)                                  0.082     15.656 r
+  rem_20/U658/Z (MUX21I_F)                               0.091     15.747 r
+  rem_20/u_div/u_fa_PartRem_0_2_1/COUT (ADDF_F)          0.166     15.914 r
+  rem_20/u_div/u_fa_PartRem_0_2_2/COUT (ADDF_F)          0.165     16.079 r
+  rem_20/u_div/u_fa_PartRem_0_2_3/COUT (ADDF_F)          0.165     16.244 r
+  rem_20/u_div/u_fa_PartRem_0_2_4/COUT (ADDF_F)          0.165     16.409 r
+  rem_20/u_div/u_fa_PartRem_0_2_5/COUT (ADDF_F)          0.165     16.574 r
+  rem_20/u_div/u_fa_PartRem_0_2_6/COUT (ADDF_F)          0.165     16.739 r
+  rem_20/u_div/u_fa_PartRem_0_2_7/COUT (ADDF_F)          0.195     16.934 r
+  rem_20/U53/Z (NOR2_F)                                  0.062     16.996 f
+  rem_20/U303/Z (INVERT_J)                               0.050     17.046 r
+  rem_20/U662/Z (MUX21I_F)                               0.054     17.100 f
+  rem_20/U657/Z (INVERT_L)                               0.060     17.159 r
+  rem_20/U616/Z (NAND2_J)                                0.038     17.197 f
+  rem_20/U238/Z (NAND3_K)                                0.064     17.261 r
+  rem_20/U48/Z (NAND2_J)                                 0.041     17.302 f
+  rem_20/U51/Z (NAND3_K)                                 0.060     17.362 r
+  rem_20/U413/Z (NAND2_I)                                0.037     17.399 f
+  rem_20/U600/Z (NAND3_H)                                0.050     17.449 r
+  rem_20/u_div/u_fa_PartRem_0_1_4/COUT (ADDF_F)          0.161     17.610 r
+  rem_20/u_div/u_fa_PartRem_0_1_5/COUT (ADDF_F)          0.165     17.775 r
+  rem_20/u_div/u_fa_PartRem_0_1_6/COUT (ADDF_F)          0.165     17.940 r
+  rem_20/u_div/u_fa_PartRem_0_1_7/COUT (ADDF_F)          0.168     18.108 r
+  rem_20/U364/Z (OR2_K)                                  0.082     18.190 r
+  rem_20/U302/Z (BUFFER_M)                               0.053     18.243 r
+  rem_20/U663/Z (MUX21I_F)                               0.110     18.353 r
+  rem_20/U218/Z (INVERT_L)                               0.056     18.409 f
+  rem_20/U370/Z (NAND2_J)                                0.048     18.458 r
+  rem_20/U226/Z (NAND3_K)                                0.060     18.517 f
+  rem_20/U227/Z (NAND2_J)                                0.050     18.567 r
+  rem_20/U179/Z (NAND3_K)                                0.060     18.627 f
+  rem_20/U610/Z (NAND2_J)                                0.050     18.677 r
+  rem_20/U58/Z (NAND3_K)                                 0.060     18.737 f
+  rem_20/U57/Z (NAND2_J)                                 0.048     18.785 r
+  rem_20/U164/Z (NAND3_J)                                0.056     18.841 f
+  rem_20/U402/Z (NAND2_H)                                0.055     18.896 r
+  rem_20/U401/Z (NAND3_I)                                0.053     18.949 f
+  rem_20/U397/Z (NAND2_F)                                0.054     19.004 r
+  rem_20/U209/Z (NAND3_F)                                0.041     19.045 f
+  rem_20/u_div/u_fa_PartRem_0_0_7/COUT (ADDF_F)          0.176     19.221 f
+  rem_20/U223/Z (NOR2_I)                                 0.078     19.299 r
+  rem_20/U25/Z (INVERT_N)                                0.045     19.344 f
+  rem_20/U711/Z (MUX21I_C)                               0.114     19.458 f
+  rem_20/remainder[2] (divider_DW_div_uns_2)             0.000     19.458 f
+  remainder_reg[2]/D (DFFR_E)                            0.000     19.458 f
+  data arrival time                                                19.458
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  remainder_reg[2]/CLK (DFFR_E)                          0.000     10.000 r
+  library setup time                                    -0.241      9.759
+  data required time                                                9.759
+  --------------------------------------------------------------------------
+  data required time                                                9.759
+  data arrival time                                               -19.458
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -9.699
+
+
+  Startpoint: b[1] (input port clocked by v_clk)
+  Endpoint: remainder_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  divider            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  divider_DW_div_uns_2
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 r
+  b[1] (in)                                              0.000      3.000 r
+  U43/Z (INVERT_O)                                       0.042      3.042 f
+  U3/Z (INVERT_N)                                        0.036      3.078 r
+  rem_20/b[1] (divider_DW_div_uns_2)                     0.000      3.078 r
+  rem_20/U17/Z (NOR2_J)                                  0.040      3.119 f
+  rem_20/U326/Z (OAI21_H)                                0.079      3.198 r
+  rem_20/U15/Z (NOR2_I)                                  0.064      3.262 f
+  rem_20/U189/Z (NAND2_F)                                0.070      3.333 r
+  rem_20/U9/Z (NAND2_I)                                  0.034      3.366 f
+  rem_20/u_div/u_fa_PartRem_0_14_1/COUT (ADDF_F)         0.155      3.521 f
+  rem_20/U301/Z (NAND2_H)                                0.068      3.590 r
+  rem_20/U5/Z (INVERT_M)                                 0.035      3.625 f
+  rem_20/U12/Z (MUX21I_F)                                0.104      3.729 f
+  rem_20/u_div/u_fa_PartRem_0_13_1/COUT (ADDF_F)         0.151      3.880 f
+  rem_20/u_div/u_fa_PartRem_0_13_2/COUT (ADDF_F)         0.150      4.030 f
+  rem_20/U296/Z (NAND2_E)                                0.069      4.099 r
+  rem_20/U297/Z (INVERT_I)                               0.052      4.150 f
+  rem_20/U141/Z (INVERT_K)                               0.038      4.189 r
+  rem_20/U331/Z (NAND2_H)                                0.033      4.222 f
+  rem_20/U410/Z (NAND2_H)                                0.037      4.259 r
+  rem_20/u_div/u_fa_PartRem_0_12_1/COUT (ADDF_F)         0.159      4.418 r
+  rem_20/u_div/u_fa_PartRem_0_12_2/COUT (ADDF_F)         0.165      4.583 r
+  rem_20/u_div/u_fa_PartRem_0_12_3/COUT (ADDF_F)         0.188      4.771 r
+  rem_20/U607/Z (NAND2_I)                                0.061      4.832 f
+  rem_20/U234/Z (INVERT_J)                               0.042      4.874 r
+  rem_20/U661/Z (MUX21_H)                                0.125      4.999 f
+  rem_20/U233/Z (BUFFER_J)                               0.069      5.068 f
+  rem_20/u_div/u_fa_PartRem_0_11_2/COUT (ADDF_F)         0.154      5.222 f
+  rem_20/u_div/u_fa_PartRem_0_11_3/COUT (ADDF_F)         0.183      5.405 f
+  rem_20/U636/COUT (ADDF_F)                              0.160      5.565 f
+  rem_20/U596/Z (AND2_J)                                 0.080      5.645 f
+  rem_20/U282/Z (BUFFER_M)                               0.065      5.711 f
+  rem_20/U176/Z (MUX21I_F)                               0.121      5.831 f
+  rem_20/U173/Z (NAND2_H)                                0.063      5.894 r
+  rem_20/U275/Z (NAND3_I)                                0.053      5.947 f
+  rem_20/U170/Z (NAND2_F)                                0.058      6.005 r
+  rem_20/U399/Z (NAND3_H)                                0.039      6.044 f
+  rem_20/u_div/u_fa_PartRem_0_10_3/COUT (ADDF_F)         0.147      6.191 f
+  rem_20/u_div/u_fa_PartRem_0_10_4/COUT (ADDF_F)         0.154      6.344 f
+  rem_20/u_div/u_fa_PartRem_0_10_5/COUT (ADDF_F)         0.152      6.497 f
+  rem_20/U230/Z (AND2_J)                                 0.080      6.577 f
+  rem_20/U229/Z (BUFFER_M)                               0.063      6.640 f
+  rem_20/U645/Z (MUX21_H)                                0.127      6.767 r
+  rem_20/U196/Z (BUFFER_L)                               0.062      6.829 r
+  rem_20/U195/Z (NAND2_J)                                0.033      6.862 f
+  rem_20/U41/Z (NAND3_K)                                 0.062      6.925 r
+  rem_20/U44/Z (NAND2_J)                                 0.041      6.966 f
+  rem_20/U37/Z (NAND3_K)                                 0.065      7.031 r
+  rem_20/U612/Z (NAND2_J)                                0.040      7.071 f
+  rem_20/U43/Z (NAND3_J)                                 0.064      7.135 r
+  rem_20/U614/Z (NAND2_I)                                0.037      7.172 f
+  rem_20/U620/Z (NAND3_H)                                0.050      7.222 r
+  rem_20/u_div/u_fa_PartRem_0_9_5/COUT (ADDF_F)          0.161      7.384 r
+  rem_20/u_div/u_fa_PartRem_0_9_6/COUT (ADDF_F)          0.177      7.561 r
+  rem_20/U698/Z (INVERT_J)                               0.056      7.617 f
+  rem_20/U314/Z (NOR2_J)                                 0.060      7.677 r
+  rem_20/U637/Z (MUX21I_F)                               0.122      7.799 r
+  rem_20/U621/Z (NAND2_H)                                0.048      7.847 f
+  rem_20/U622/Z (NAND3_H)                                0.044      7.891 r
+  rem_20/u_div/u_fa_PartRem_0_8_2/COUT (ADDF_F)          0.162      8.053 r
+  rem_20/u_div/u_fa_PartRem_0_8_3/COUT (ADDF_F)          0.165      8.218 r
+  rem_20/u_div/u_fa_PartRem_0_8_4/COUT (ADDF_F)          0.165      8.383 r
+  rem_20/u_div/u_fa_PartRem_0_8_5/COUT (ADDF_F)          0.165      8.548 r
+  rem_20/u_div/u_fa_PartRem_0_8_6/COUT (ADDF_F)          0.195      8.743 r
+  rem_20/u_div/u_fa_PartRem_0_8_7/COUT (ADDF_F)          0.188      8.931 r
+  rem_20/U182/Z (MUX21I_F)                               0.110      9.040 r
+  rem_20/U155/Z (INVERT_J)                               0.056      9.097 f
+  rem_20/U181/Z (NAND2_H)                                0.056      9.153 r
+  rem_20/U55/Z (NAND3_I)                                 0.060      9.212 f
+  rem_20/U49/Z (NAND2_F)                                 0.054      9.267 r
+  rem_20/U45/Z (NAND3_F)                                 0.041      9.308 f
+  rem_20/u_div/u_fa_PartRem_0_7_3/COUT (ADDF_F)          0.147      9.456 f
+  rem_20/u_div/u_fa_PartRem_0_7_4/COUT (ADDF_F)          0.154      9.609 f
+  rem_20/u_div/u_fa_PartRem_0_7_5/COUT (ADDF_F)          0.154      9.763 f
+  rem_20/u_div/u_fa_PartRem_0_7_6/COUT (ADDF_F)          0.154      9.916 f
+  rem_20/u_div/u_fa_PartRem_0_7_7/COUT (ADDF_F)          0.157     10.073 f
+  rem_20/U393/Z (OR2_K)                                  0.091     10.164 f
+  rem_20/U300/Z (INVERT_K)                               0.039     10.203 r
+  rem_20/U158/Z (MUX21I_F)                               0.092     10.295 r
+  rem_20/u_div/u_fa_PartRem_0_6_1/COUT (ADDF_F)          0.166     10.461 r
+  rem_20/u_div/u_fa_PartRem_0_6_2/COUT (ADDF_F)          0.165     10.626 r
+  rem_20/u_div/u_fa_PartRem_0_6_3/COUT (ADDF_F)          0.165     10.791 r
+  rem_20/u_div/u_fa_PartRem_0_6_4/COUT (ADDF_F)          0.165     10.956 r
+  rem_20/u_div/u_fa_PartRem_0_6_5/COUT (ADDF_F)          0.165     11.121 r
+  rem_20/u_div/u_fa_PartRem_0_6_6/COUT (ADDF_F)          0.165     11.286 r
+  rem_20/u_div/u_fa_PartRem_0_6_7/COUT (ADDF_F)          0.191     11.477 r
+  rem_20/U357/Z (OR2_K)                                  0.091     11.568 r
+  rem_20/U266/Z (MUX21_E)                                0.124     11.693 r
+  rem_20/U267/Z (INVERT_E)                               0.059     11.751 f
+  rem_20/U150/Z (INVERT_H)                               0.058     11.809 r
+  rem_20/u_div/u_fa_PartRem_0_5_2/COUT (ADDF_F)          0.180     11.989 r
+  rem_20/u_div/u_fa_PartRem_0_5_3/COUT (ADDF_F)          0.165     12.154 r
+  rem_20/u_div/u_fa_PartRem_0_5_4/COUT (ADDF_F)          0.165     12.319 r
+  rem_20/u_div/u_fa_PartRem_0_5_5/COUT (ADDF_F)          0.165     12.484 r
+  rem_20/u_div/u_fa_PartRem_0_5_6/COUT (ADDF_F)          0.165     12.649 r
+  rem_20/u_div/u_fa_PartRem_0_5_7/COUT (ADDF_F)          0.168     12.817 r
+  rem_20/U365/Z (OR2_K)                                  0.085     12.902 r
+  rem_20/U262/Z (MUX21_F)                                0.136     13.038 f
+  rem_20/U228/Z (BUFFER_J)                               0.071     13.109 f
+  rem_20/u_div/u_fa_PartRem_0_4_1/COUT (ADDF_F)          0.145     13.254 f
+  rem_20/u_div/u_fa_PartRem_0_4_2/COUT (ADDF_F)          0.154     13.407 f
+  rem_20/u_div/u_fa_PartRem_0_4_3/COUT (ADDF_F)          0.154     13.561 f
+  rem_20/u_div/u_fa_PartRem_0_4_4/COUT (ADDF_F)          0.154     13.714 f
+  rem_20/u_div/u_fa_PartRem_0_4_5/COUT (ADDF_F)          0.154     13.868 f
+  rem_20/u_div/u_fa_PartRem_0_4_6/COUT (ADDF_F)          0.154     14.022 f
+  rem_20/u_div/u_fa_PartRem_0_4_7/COUT (ADDF_F)          0.160     14.182 f
+  rem_20/U286/Z (BUFFER_L)                               0.076     14.258 f
+  rem_20/U358/Z (NOR2_J)                                 0.069     14.326 r
+  rem_20/U175/Z (MUX21I_F)                               0.119     14.446 r
+  rem_20/U412/Z (NAND2_F)                                0.053     14.499 f
+  rem_20/U615/Z (NAND3_H)                                0.047     14.547 r
+  rem_20/u_div/u_fa_PartRem_0_3_2/COUT (ADDF_F)          0.162     14.708 r
+  rem_20/u_div/u_fa_PartRem_0_3_3/COUT (ADDF_F)          0.165     14.873 r
+  rem_20/u_div/u_fa_PartRem_0_3_4/COUT (ADDF_F)          0.165     15.038 r
+  rem_20/u_div/u_fa_PartRem_0_3_5/COUT (ADDF_F)          0.165     15.203 r
+  rem_20/u_div/u_fa_PartRem_0_3_6/COUT (ADDF_F)          0.195     15.398 r
+  rem_20/u_div/u_fa_PartRem_0_3_7/COUT (ADDF_F)          0.176     15.574 r
+  rem_20/U344/Z (OR2_K)                                  0.082     15.656 r
+  rem_20/U658/Z (MUX21I_F)                               0.091     15.747 r
+  rem_20/u_div/u_fa_PartRem_0_2_1/COUT (ADDF_F)          0.166     15.914 r
+  rem_20/u_div/u_fa_PartRem_0_2_2/COUT (ADDF_F)          0.165     16.079 r
+  rem_20/u_div/u_fa_PartRem_0_2_3/COUT (ADDF_F)          0.165     16.244 r
+  rem_20/u_div/u_fa_PartRem_0_2_4/COUT (ADDF_F)          0.165     16.409 r
+  rem_20/u_div/u_fa_PartRem_0_2_5/COUT (ADDF_F)          0.165     16.574 r
+  rem_20/u_div/u_fa_PartRem_0_2_6/COUT (ADDF_F)          0.165     16.739 r
+  rem_20/u_div/u_fa_PartRem_0_2_7/COUT (ADDF_F)          0.195     16.934 r
+  rem_20/U53/Z (NOR2_F)                                  0.062     16.996 f
+  rem_20/U303/Z (INVERT_J)                               0.050     17.046 r
+  rem_20/U662/Z (MUX21I_F)                               0.054     17.100 f
+  rem_20/U657/Z (INVERT_L)                               0.060     17.159 r
+  rem_20/U616/Z (NAND2_J)                                0.038     17.197 f
+  rem_20/U238/Z (NAND3_K)                                0.064     17.261 r
+  rem_20/U48/Z (NAND2_J)                                 0.041     17.302 f
+  rem_20/U51/Z (NAND3_K)                                 0.060     17.362 r
+  rem_20/U413/Z (NAND2_I)                                0.037     17.399 f
+  rem_20/U600/Z (NAND3_H)                                0.050     17.449 r
+  rem_20/u_div/u_fa_PartRem_0_1_4/COUT (ADDF_F)          0.161     17.610 r
+  rem_20/u_div/u_fa_PartRem_0_1_5/COUT (ADDF_F)          0.165     17.775 r
+  rem_20/u_div/u_fa_PartRem_0_1_6/COUT (ADDF_F)          0.165     17.940 r
+  rem_20/u_div/u_fa_PartRem_0_1_7/COUT (ADDF_F)          0.168     18.108 r
+  rem_20/U364/Z (OR2_K)                                  0.082     18.190 r
+  rem_20/U302/Z (BUFFER_M)                               0.053     18.243 r
+  rem_20/U663/Z (MUX21I_F)                               0.110     18.353 r
+  rem_20/U218/Z (INVERT_L)                               0.056     18.409 f
+  rem_20/U370/Z (NAND2_J)                                0.048     18.458 r
+  rem_20/U226/Z (NAND3_K)                                0.060     18.517 f
+  rem_20/U227/Z (NAND2_J)                                0.050     18.567 r
+  rem_20/U179/Z (NAND3_K)                                0.060     18.627 f
+  rem_20/U610/Z (NAND2_J)                                0.050     18.677 r
+  rem_20/U58/Z (NAND3_K)                                 0.060     18.737 f
+  rem_20/U57/Z (NAND2_J)                                 0.048     18.785 r
+  rem_20/U164/Z (NAND3_J)                                0.056     18.841 f
+  rem_20/U402/Z (NAND2_H)                                0.055     18.896 r
+  rem_20/U401/Z (NAND3_I)                                0.053     18.949 f
+  rem_20/U397/Z (NAND2_F)                                0.054     19.004 r
+  rem_20/U209/Z (NAND3_F)                                0.041     19.045 f
+  rem_20/u_div/u_fa_PartRem_0_0_7/COUT (ADDF_F)          0.176     19.221 f
+  rem_20/U223/Z (NOR2_I)                                 0.078     19.299 r
+  rem_20/U25/Z (INVERT_N)                                0.045     19.344 f
+  rem_20/U712/Z (MUX21I_C)                               0.114     19.458 f
+  rem_20/remainder[3] (divider_DW_div_uns_2)             0.000     19.458 f
+  remainder_reg[3]/D (DFFR_E)                            0.000     19.458 f
+  data arrival time                                                19.458
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  remainder_reg[3]/CLK (DFFR_E)                          0.000     10.000 r
+  library setup time                                    -0.241      9.759
+  data required time                                                9.759
+  --------------------------------------------------------------------------
+  data required time                                                9.759
+  data arrival time                                               -19.458
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -9.699
+
+
+  Startpoint: quotient_reg[12]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: quotient[12]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  divider            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  quotient_reg[12]/CLK (DFFR_E)           0.000      0.500 r
+  quotient_reg[12]/Q (DFFR_E)             0.319      0.819 r
+  U33/Z (INVERT_J)                        0.054      0.874 f
+  U101/Z (INVERT_O)                       0.055      0.928 r
+  quotient[12] (out)                      0.002      0.931 r
+  data arrival time                                  0.931
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.931
+  -----------------------------------------------------------
+  slack (MET)                                        6.069
+
+
+  Startpoint: quotient_reg[11]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: quotient[11]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  divider            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  quotient_reg[11]/CLK (DFFR_E)           0.000      0.500 r
+  quotient_reg[11]/Q (DFFR_E)             0.319      0.819 r
+  U89/Z (INVERT_J)                        0.054      0.874 f
+  U90/Z (INVERT_O)                        0.055      0.928 r
+  quotient[11] (out)                      0.002      0.931 r
+  data arrival time                                  0.931
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.931
+  -----------------------------------------------------------
+  slack (MET)                                        6.069
+
+
+  Startpoint: quotient_reg[10]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: quotient[10]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  divider            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  quotient_reg[10]/CLK (DFFR_E)           0.000      0.500 r
+  quotient_reg[10]/Q (DFFR_E)             0.319      0.819 r
+  U102/Z (INVERT_J)                       0.054      0.874 f
+  U103/Z (INVERT_O)                       0.055      0.928 r
+  quotient[10] (out)                      0.002      0.931 r
+  data arrival time                                  0.931
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.931
+  -----------------------------------------------------------
+  slack (MET)                                        6.069
+
+
+  Startpoint: quotient_reg[9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: quotient[9]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  divider            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  quotient_reg[9]/CLK (DFFR_E)            0.000      0.500 r
+  quotient_reg[9]/Q (DFFR_E)              0.319      0.819 r
+  U104/Z (INVERT_J)                       0.054      0.874 f
+  U105/Z (INVERT_O)                       0.055      0.928 r
+  quotient[9] (out)                       0.002      0.931 r
+  data arrival time                                  0.931
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.931
+  -----------------------------------------------------------
+  slack (MET)                                        6.069
+
+
+  Startpoint: quotient_reg[8]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: quotient[8]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  divider            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  quotient_reg[8]/CLK (DFFR_E)            0.000      0.500 r
+  quotient_reg[8]/Q (DFFR_E)              0.319      0.819 r
+  U87/Z (INVERT_J)                        0.054      0.874 f
+  U88/Z (INVERT_O)                        0.055      0.928 r
+  quotient[8] (out)                       0.002      0.931 r
+  data arrival time                                  0.931
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.931
+  -----------------------------------------------------------
+  slack (MET)                                        6.069
+
+
+1

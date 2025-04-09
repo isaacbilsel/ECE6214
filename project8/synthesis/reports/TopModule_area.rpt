@@ -1,0 +1,615 @@
+ 
+****************************************
+Report : area
+Design : TopModule
+Version: O-2018.06-SP1
+Date   : Fri Apr  4 16:30:13 2025
+****************************************
+
+Library(s) Used:
+
+    IBM_CMOS8HP_SS125 (File: /apps/design_kits/ibm_kits/IBM_IP/ibm_cmos8hp/std_cell/sc/v.20110613/synopsys/ss_125/IBM_CMOS8HP_SS125.db)
+
+Number of ports:                        10332
+Number of nets:                         32463
+Number of cells:                        20369
+Number of combinational cells:          16930
+Number of sequential cells:              3151
+Number of macros/black boxes:               0
+Number of buf/inv:                       7534
+Number of references:                      28
+
+Combinational area:             245852.161498
+Buf/Inv area:                    67211.521808
+Noncombinational area:           82753.917824
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                328606.079321
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area              Local cell area
+                                  --------------------  ------------------------------- 
+Hierarchical cell                 Absolute     Percent  Combi-       Noncombi-   Black-
+                                  Total        Total    national     national    boxes   Design
+--------------------------------  -----------  -------  -----------  ----------  ------  ------------------------
+TopModule                         328606.0793    100.0     885.1200    362.8800  0.0000  TopModule
+rst                                  120.9600      0.0       0.0000    120.9600  0.0000  reset_synchronization
+u_fir_filter                      325891.1993     99.2       0.0000      0.0000  0.0000  fir_filter
+u_fir_filter/GEN_SLICE[0].u_fir_slice
+                                    3968.6400      1.2      55.6800    921.6000  0.0000  dsp_slice_70
+u_fir_filter/GEN_SLICE[0].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_70_DW01_add_0
+u_fir_filter/GEN_SLICE[0].u_fir_slice/mult_391
+                                    2515.2000      0.8    1850.8800      0.0000  0.0000  dsp_slice_70_DW02_mult_0
+u_fir_filter/GEN_SLICE[0].u_fir_slice/mult_391/FS_1
+                                     664.3200      0.2     664.3200      0.0000  0.0000  dsp_slice_70_DW01_add_1
+u_fir_filter/GEN_SLICE[10].u_fir_slice
+                                    3968.6400      1.2      55.6800    921.6000  0.0000  dsp_slice_60
+u_fir_filter/GEN_SLICE[10].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_60_DW01_add_0
+u_fir_filter/GEN_SLICE[10].u_fir_slice/mult_391
+                                    2515.2000      0.8    1850.8800      0.0000  0.0000  dsp_slice_60_DW02_mult_0
+u_fir_filter/GEN_SLICE[10].u_fir_slice/mult_391/FS_1
+                                     664.3200      0.2     664.3200      0.0000  0.0000  dsp_slice_60_DW01_add_1
+u_fir_filter/GEN_SLICE[11].u_fir_slice
+                                    3970.5600      1.2      63.3600    921.6000  0.0000  dsp_slice_59
+u_fir_filter/GEN_SLICE[11].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_59_DW01_add_0
+u_fir_filter/GEN_SLICE[11].u_fir_slice/mult_391
+                                    2509.4400      0.8    1812.4800      0.0000  0.0000  dsp_slice_59_DW02_mult_0
+u_fir_filter/GEN_SLICE[11].u_fir_slice/mult_391/FS_1
+                                     696.9600      0.2     696.9600      0.0000  0.0000  dsp_slice_59_DW01_add_1
+u_fir_filter/GEN_SLICE[12].u_fir_slice
+                                    3968.6400      1.2      55.6800    921.6000  0.0000  dsp_slice_58
+u_fir_filter/GEN_SLICE[12].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_58_DW01_add_0
+u_fir_filter/GEN_SLICE[12].u_fir_slice/mult_391
+                                    2515.2000      0.8    1850.8800      0.0000  0.0000  dsp_slice_58_DW02_mult_0
+u_fir_filter/GEN_SLICE[12].u_fir_slice/mult_391/FS_1
+                                     664.3200      0.2     664.3200      0.0000  0.0000  dsp_slice_58_DW01_add_1
+u_fir_filter/GEN_SLICE[13].u_fir_slice
+                                    3970.5600      1.2      63.3600    921.6000  0.0000  dsp_slice_57
+u_fir_filter/GEN_SLICE[13].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_57_DW01_add_0
+u_fir_filter/GEN_SLICE[13].u_fir_slice/mult_391
+                                    2509.4400      0.8    1812.4800      0.0000  0.0000  dsp_slice_57_DW02_mult_0
+u_fir_filter/GEN_SLICE[13].u_fir_slice/mult_391/FS_1
+                                     696.9600      0.2     696.9600      0.0000  0.0000  dsp_slice_57_DW01_add_1
+u_fir_filter/GEN_SLICE[14].u_fir_slice
+                                    3968.6400      1.2      55.6800    921.6000  0.0000  dsp_slice_56
+u_fir_filter/GEN_SLICE[14].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_56_DW01_add_0
+u_fir_filter/GEN_SLICE[14].u_fir_slice/mult_391
+                                    2515.2000      0.8    1850.8800      0.0000  0.0000  dsp_slice_56_DW02_mult_0
+u_fir_filter/GEN_SLICE[14].u_fir_slice/mult_391/FS_1
+                                     664.3200      0.2     664.3200      0.0000  0.0000  dsp_slice_56_DW01_add_1
+u_fir_filter/GEN_SLICE[15].u_fir_slice
+                                    4085.7600      1.2      61.4400    921.6000  0.0000  dsp_slice_55
+u_fir_filter/GEN_SLICE[15].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_55_DW01_add_0
+u_fir_filter/GEN_SLICE[15].u_fir_slice/mult_391
+                                    2626.5600      0.8    1925.7600      0.0000  0.0000  dsp_slice_55_DW02_mult_0
+u_fir_filter/GEN_SLICE[15].u_fir_slice/mult_391/FS_1
+                                     700.8000      0.2     700.8000      0.0000  0.0000  dsp_slice_55_DW01_add_1
+u_fir_filter/GEN_SLICE[16].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_54
+u_fir_filter/GEN_SLICE[16].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_54_DW01_add_0
+u_fir_filter/GEN_SLICE[16].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_54_DW02_mult_0
+u_fir_filter/GEN_SLICE[16].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_54_DW01_add_1
+u_fir_filter/GEN_SLICE[17].u_fir_slice
+                                    4041.6000      1.2      61.4400    921.6000  0.0000  dsp_slice_53
+u_fir_filter/GEN_SLICE[17].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_53_DW01_add_0
+u_fir_filter/GEN_SLICE[17].u_fir_slice/mult_391
+                                    2582.4000      0.8    1910.4000      0.0000  0.0000  dsp_slice_53_DW02_mult_0
+u_fir_filter/GEN_SLICE[17].u_fir_slice/mult_391/FS_1
+                                     672.0000      0.2     672.0000      0.0000  0.0000  dsp_slice_53_DW01_add_1
+u_fir_filter/GEN_SLICE[18].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_52
+u_fir_filter/GEN_SLICE[18].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_52_DW01_add_0
+u_fir_filter/GEN_SLICE[18].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_52_DW02_mult_0
+u_fir_filter/GEN_SLICE[18].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_52_DW01_add_1
+u_fir_filter/GEN_SLICE[19].u_fir_slice
+                                    4041.6000      1.2      61.4400    921.6000  0.0000  dsp_slice_51
+u_fir_filter/GEN_SLICE[19].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_51_DW01_add_0
+u_fir_filter/GEN_SLICE[19].u_fir_slice/mult_391
+                                    2582.4000      0.8    1910.4000      0.0000  0.0000  dsp_slice_51_DW02_mult_0
+u_fir_filter/GEN_SLICE[19].u_fir_slice/mult_391/FS_1
+                                     672.0000      0.2     672.0000      0.0000  0.0000  dsp_slice_51_DW01_add_1
+u_fir_filter/GEN_SLICE[1].u_fir_slice
+                                    3970.5600      1.2      63.3600    921.6000  0.0000  dsp_slice_69
+u_fir_filter/GEN_SLICE[1].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_69_DW01_add_0
+u_fir_filter/GEN_SLICE[1].u_fir_slice/mult_391
+                                    2509.4400      0.8    1812.4800      0.0000  0.0000  dsp_slice_69_DW02_mult_0
+u_fir_filter/GEN_SLICE[1].u_fir_slice/mult_391/FS_1
+                                     696.9600      0.2     696.9600      0.0000  0.0000  dsp_slice_69_DW01_add_1
+u_fir_filter/GEN_SLICE[20].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_50
+u_fir_filter/GEN_SLICE[20].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_50_DW01_add_0
+u_fir_filter/GEN_SLICE[20].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_50_DW02_mult_0
+u_fir_filter/GEN_SLICE[20].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_50_DW01_add_1
+u_fir_filter/GEN_SLICE[21].u_fir_slice
+                                    4041.6000      1.2      61.4400    921.6000  0.0000  dsp_slice_49
+u_fir_filter/GEN_SLICE[21].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_49_DW01_add_0
+u_fir_filter/GEN_SLICE[21].u_fir_slice/mult_391
+                                    2582.4000      0.8    1910.4000      0.0000  0.0000  dsp_slice_49_DW02_mult_0
+u_fir_filter/GEN_SLICE[21].u_fir_slice/mult_391/FS_1
+                                     672.0000      0.2     672.0000      0.0000  0.0000  dsp_slice_49_DW01_add_1
+u_fir_filter/GEN_SLICE[22].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_48
+u_fir_filter/GEN_SLICE[22].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_48_DW01_add_0
+u_fir_filter/GEN_SLICE[22].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_48_DW02_mult_0
+u_fir_filter/GEN_SLICE[22].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_48_DW01_add_1
+u_fir_filter/GEN_SLICE[23].u_fir_slice
+                                    4041.6000      1.2      61.4400    921.6000  0.0000  dsp_slice_47
+u_fir_filter/GEN_SLICE[23].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_47_DW01_add_0
+u_fir_filter/GEN_SLICE[23].u_fir_slice/mult_391
+                                    2582.4000      0.8    1910.4000      0.0000  0.0000  dsp_slice_47_DW02_mult_0
+u_fir_filter/GEN_SLICE[23].u_fir_slice/mult_391/FS_1
+                                     672.0000      0.2     672.0000      0.0000  0.0000  dsp_slice_47_DW01_add_1
+u_fir_filter/GEN_SLICE[24].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_46
+u_fir_filter/GEN_SLICE[24].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_46_DW01_add_0
+u_fir_filter/GEN_SLICE[24].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_46_DW02_mult_0
+u_fir_filter/GEN_SLICE[24].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_46_DW01_add_1
+u_fir_filter/GEN_SLICE[25].u_fir_slice
+                                    4076.1600      1.2      49.9200    921.6000  0.0000  dsp_slice_45
+u_fir_filter/GEN_SLICE[25].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_45_DW01_add_0
+u_fir_filter/GEN_SLICE[25].u_fir_slice/mult_391
+                                    2628.4800      0.8    1956.4800      0.0000  0.0000  dsp_slice_45_DW02_mult_0
+u_fir_filter/GEN_SLICE[25].u_fir_slice/mult_391/FS_1
+                                     672.0000      0.2     672.0000      0.0000  0.0000  dsp_slice_45_DW01_add_1
+u_fir_filter/GEN_SLICE[26].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_44
+u_fir_filter/GEN_SLICE[26].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_44_DW01_add_0
+u_fir_filter/GEN_SLICE[26].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_44_DW02_mult_0
+u_fir_filter/GEN_SLICE[26].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_44_DW01_add_1
+u_fir_filter/GEN_SLICE[27].u_fir_slice
+                                    4041.6000      1.2      61.4400    921.6000  0.0000  dsp_slice_43
+u_fir_filter/GEN_SLICE[27].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_43_DW01_add_0
+u_fir_filter/GEN_SLICE[27].u_fir_slice/mult_391
+                                    2582.4000      0.8    1910.4000      0.0000  0.0000  dsp_slice_43_DW02_mult_0
+u_fir_filter/GEN_SLICE[27].u_fir_slice/mult_391/FS_1
+                                     672.0000      0.2     672.0000      0.0000  0.0000  dsp_slice_43_DW01_add_1
+u_fir_filter/GEN_SLICE[28].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_42
+u_fir_filter/GEN_SLICE[28].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_42_DW01_add_0
+u_fir_filter/GEN_SLICE[28].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_42_DW02_mult_0
+u_fir_filter/GEN_SLICE[28].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_42_DW01_add_1
+u_fir_filter/GEN_SLICE[29].u_fir_slice
+                                    4041.6000      1.2      61.4400    921.6000  0.0000  dsp_slice_41
+u_fir_filter/GEN_SLICE[29].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_41_DW01_add_0
+u_fir_filter/GEN_SLICE[29].u_fir_slice/mult_391
+                                    2582.4000      0.8    1910.4000      0.0000  0.0000  dsp_slice_41_DW02_mult_0
+u_fir_filter/GEN_SLICE[29].u_fir_slice/mult_391/FS_1
+                                     672.0000      0.2     672.0000      0.0000  0.0000  dsp_slice_41_DW01_add_1
+u_fir_filter/GEN_SLICE[2].u_fir_slice
+                                    3968.6400      1.2      55.6800    921.6000  0.0000  dsp_slice_68
+u_fir_filter/GEN_SLICE[2].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_68_DW01_add_0
+u_fir_filter/GEN_SLICE[2].u_fir_slice/mult_391
+                                    2515.2000      0.8    1850.8800      0.0000  0.0000  dsp_slice_68_DW02_mult_0
+u_fir_filter/GEN_SLICE[2].u_fir_slice/mult_391/FS_1
+                                     664.3200      0.2     664.3200      0.0000  0.0000  dsp_slice_68_DW01_add_1
+u_fir_filter/GEN_SLICE[30].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_40
+u_fir_filter/GEN_SLICE[30].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_40_DW01_add_0
+u_fir_filter/GEN_SLICE[30].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_40_DW02_mult_0
+u_fir_filter/GEN_SLICE[30].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_40_DW01_add_1
+u_fir_filter/GEN_SLICE[31].u_fir_slice
+                                    4085.7600      1.2      69.1200    921.6000  0.0000  dsp_slice_39
+u_fir_filter/GEN_SLICE[31].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_39_DW01_add_0
+u_fir_filter/GEN_SLICE[31].u_fir_slice/mult_391
+                                    2618.8800      0.8    1918.0800      0.0000  0.0000  dsp_slice_39_DW02_mult_0
+u_fir_filter/GEN_SLICE[31].u_fir_slice/mult_391/FS_1
+                                     700.8000      0.2     700.8000      0.0000  0.0000  dsp_slice_39_DW01_add_1
+u_fir_filter/GEN_SLICE[32].u_fir_slice
+                                    3987.8400      1.2      69.1200    921.6000  0.0000  dsp_slice_38
+u_fir_filter/GEN_SLICE[32].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_38_DW01_add_0
+u_fir_filter/GEN_SLICE[32].u_fir_slice/mult_391
+                                    2520.9600      0.8    1843.2000      0.0000  0.0000  dsp_slice_38_DW02_mult_0
+u_fir_filter/GEN_SLICE[32].u_fir_slice/mult_391/FS_1
+                                     677.7600      0.2     677.7600      0.0000  0.0000  dsp_slice_38_DW01_add_1
+u_fir_filter/GEN_SLICE[33].u_fir_slice
+                                    3984.0000      1.2      59.5200    921.6000  0.0000  dsp_slice_37
+u_fir_filter/GEN_SLICE[33].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_37_DW01_add_0
+u_fir_filter/GEN_SLICE[33].u_fir_slice/mult_391
+                                    2526.7200      0.8    1825.9200      0.0000  0.0000  dsp_slice_37_DW02_mult_0
+u_fir_filter/GEN_SLICE[33].u_fir_slice/mult_391/FS_1
+                                     700.8000      0.2     700.8000      0.0000  0.0000  dsp_slice_37_DW01_add_1
+u_fir_filter/GEN_SLICE[34].u_fir_slice
+                                    3987.8400      1.2      69.1200    921.6000  0.0000  dsp_slice_36
+u_fir_filter/GEN_SLICE[34].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_36_DW01_add_0
+u_fir_filter/GEN_SLICE[34].u_fir_slice/mult_391
+                                    2520.9600      0.8    1843.2000      0.0000  0.0000  dsp_slice_36_DW02_mult_0
+u_fir_filter/GEN_SLICE[34].u_fir_slice/mult_391/FS_1
+                                     677.7600      0.2     677.7600      0.0000  0.0000  dsp_slice_36_DW01_add_1
+u_fir_filter/GEN_SLICE[35].u_fir_slice
+                                    3984.0000      1.2      59.5200    921.6000  0.0000  dsp_slice_35
+u_fir_filter/GEN_SLICE[35].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_35_DW01_add_0
+u_fir_filter/GEN_SLICE[35].u_fir_slice/mult_391
+                                    2526.7200      0.8    1825.9200      0.0000  0.0000  dsp_slice_35_DW02_mult_0
+u_fir_filter/GEN_SLICE[35].u_fir_slice/mult_391/FS_1
+                                     700.8000      0.2     700.8000      0.0000  0.0000  dsp_slice_35_DW01_add_1
+u_fir_filter/GEN_SLICE[36].u_fir_slice
+                                    3987.8400      1.2      69.1200    921.6000  0.0000  dsp_slice_34
+u_fir_filter/GEN_SLICE[36].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_34_DW01_add_0
+u_fir_filter/GEN_SLICE[36].u_fir_slice/mult_391
+                                    2520.9600      0.8    1843.2000      0.0000  0.0000  dsp_slice_34_DW02_mult_0
+u_fir_filter/GEN_SLICE[36].u_fir_slice/mult_391/FS_1
+                                     677.7600      0.2     677.7600      0.0000  0.0000  dsp_slice_34_DW01_add_1
+u_fir_filter/GEN_SLICE[37].u_fir_slice
+                                    3984.0000      1.2      59.5200    921.6000  0.0000  dsp_slice_33
+u_fir_filter/GEN_SLICE[37].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_33_DW01_add_0
+u_fir_filter/GEN_SLICE[37].u_fir_slice/mult_391
+                                    2526.7200      0.8    1825.9200      0.0000  0.0000  dsp_slice_33_DW02_mult_0
+u_fir_filter/GEN_SLICE[37].u_fir_slice/mult_391/FS_1
+                                     700.8000      0.2     700.8000      0.0000  0.0000  dsp_slice_33_DW01_add_1
+u_fir_filter/GEN_SLICE[38].u_fir_slice
+                                    3987.8400      1.2      69.1200    921.6000  0.0000  dsp_slice_32
+u_fir_filter/GEN_SLICE[38].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_32_DW01_add_0
+u_fir_filter/GEN_SLICE[38].u_fir_slice/mult_391
+                                    2520.9600      0.8    1843.2000      0.0000  0.0000  dsp_slice_32_DW02_mult_0
+u_fir_filter/GEN_SLICE[38].u_fir_slice/mult_391/FS_1
+                                     677.7600      0.2     677.7600      0.0000  0.0000  dsp_slice_32_DW01_add_1
+u_fir_filter/GEN_SLICE[39].u_fir_slice
+                                    3984.0000      1.2      59.5200    921.6000  0.0000  dsp_slice_31
+u_fir_filter/GEN_SLICE[39].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_31_DW01_add_0
+u_fir_filter/GEN_SLICE[39].u_fir_slice/mult_391
+                                    2526.7200      0.8    1825.9200      0.0000  0.0000  dsp_slice_31_DW02_mult_0
+u_fir_filter/GEN_SLICE[39].u_fir_slice/mult_391/FS_1
+                                     700.8000      0.2     700.8000      0.0000  0.0000  dsp_slice_31_DW01_add_1
+u_fir_filter/GEN_SLICE[3].u_fir_slice
+                                    3970.5600      1.2      63.3600    921.6000  0.0000  dsp_slice_67
+u_fir_filter/GEN_SLICE[3].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_67_DW01_add_0
+u_fir_filter/GEN_SLICE[3].u_fir_slice/mult_391
+                                    2509.4400      0.8    1812.4800      0.0000  0.0000  dsp_slice_67_DW02_mult_0
+u_fir_filter/GEN_SLICE[3].u_fir_slice/mult_391/FS_1
+                                     696.9600      0.2     696.9600      0.0000  0.0000  dsp_slice_67_DW01_add_1
+u_fir_filter/GEN_SLICE[40].u_fir_slice
+                                    3987.8400      1.2      69.1200    921.6000  0.0000  dsp_slice_30
+u_fir_filter/GEN_SLICE[40].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_30_DW01_add_0
+u_fir_filter/GEN_SLICE[40].u_fir_slice/mult_391
+                                    2520.9600      0.8    1843.2000      0.0000  0.0000  dsp_slice_30_DW02_mult_0
+u_fir_filter/GEN_SLICE[40].u_fir_slice/mult_391/FS_1
+                                     677.7600      0.2     677.7600      0.0000  0.0000  dsp_slice_30_DW01_add_1
+u_fir_filter/GEN_SLICE[41].u_fir_slice
+                                    3984.0000      1.2      59.5200    921.6000  0.0000  dsp_slice_29
+u_fir_filter/GEN_SLICE[41].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_29_DW01_add_0
+u_fir_filter/GEN_SLICE[41].u_fir_slice/mult_391
+                                    2526.7200      0.8    1825.9200      0.0000  0.0000  dsp_slice_29_DW02_mult_0
+u_fir_filter/GEN_SLICE[41].u_fir_slice/mult_391/FS_1
+                                     700.8000      0.2     700.8000      0.0000  0.0000  dsp_slice_29_DW01_add_1
+u_fir_filter/GEN_SLICE[42].u_fir_slice
+                                    3987.8400      1.2      69.1200    921.6000  0.0000  dsp_slice_28
+u_fir_filter/GEN_SLICE[42].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_28_DW01_add_0
+u_fir_filter/GEN_SLICE[42].u_fir_slice/mult_391
+                                    2520.9600      0.8    1843.2000      0.0000  0.0000  dsp_slice_28_DW02_mult_0
+u_fir_filter/GEN_SLICE[42].u_fir_slice/mult_391/FS_1
+                                     677.7600      0.2     677.7600      0.0000  0.0000  dsp_slice_28_DW01_add_1
+u_fir_filter/GEN_SLICE[43].u_fir_slice
+                                    3984.0000      1.2      59.5200    921.6000  0.0000  dsp_slice_27
+u_fir_filter/GEN_SLICE[43].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_27_DW01_add_0
+u_fir_filter/GEN_SLICE[43].u_fir_slice/mult_391
+                                    2526.7200      0.8    1825.9200      0.0000  0.0000  dsp_slice_27_DW02_mult_0
+u_fir_filter/GEN_SLICE[43].u_fir_slice/mult_391/FS_1
+                                     700.8000      0.2     700.8000      0.0000  0.0000  dsp_slice_27_DW01_add_1
+u_fir_filter/GEN_SLICE[44].u_fir_slice
+                                    4028.1600      1.2      69.1200    921.6000  0.0000  dsp_slice_26
+u_fir_filter/GEN_SLICE[44].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_26_DW01_add_0
+u_fir_filter/GEN_SLICE[44].u_fir_slice/mult_391
+                                    2561.2800      0.8    1860.4800      0.0000  0.0000  dsp_slice_26_DW02_mult_0
+u_fir_filter/GEN_SLICE[44].u_fir_slice/mult_391/FS_1
+                                     700.8000      0.2     700.8000      0.0000  0.0000  dsp_slice_26_DW01_add_1
+u_fir_filter/GEN_SLICE[45].u_fir_slice
+                                    4016.6400      1.2      61.4400    921.6000  0.0000  dsp_slice_25
+u_fir_filter/GEN_SLICE[45].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_25_DW01_add_0
+u_fir_filter/GEN_SLICE[45].u_fir_slice/mult_391
+                                    2557.4400      0.8    1843.2000      0.0000  0.0000  dsp_slice_25_DW02_mult_0
+u_fir_filter/GEN_SLICE[45].u_fir_slice/mult_391/FS_1
+                                     714.2400      0.2     714.2400      0.0000  0.0000  dsp_slice_25_DW01_add_1
+u_fir_filter/GEN_SLICE[46].u_fir_slice
+                                    3968.6400      1.2      55.6800    921.6000  0.0000  dsp_slice_24
+u_fir_filter/GEN_SLICE[46].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_24_DW01_add_0
+u_fir_filter/GEN_SLICE[46].u_fir_slice/mult_391
+                                    2515.2000      0.8    1850.8800      0.0000  0.0000  dsp_slice_24_DW02_mult_0
+u_fir_filter/GEN_SLICE[46].u_fir_slice/mult_391/FS_1
+                                     664.3200      0.2     664.3200      0.0000  0.0000  dsp_slice_24_DW01_add_1
+u_fir_filter/GEN_SLICE[47].u_fir_slice
+                                    3970.5600      1.2      63.3600    921.6000  0.0000  dsp_slice_23
+u_fir_filter/GEN_SLICE[47].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_23_DW01_add_0
+u_fir_filter/GEN_SLICE[47].u_fir_slice/mult_391
+                                    2509.4400      0.8    1812.4800      0.0000  0.0000  dsp_slice_23_DW02_mult_0
+u_fir_filter/GEN_SLICE[47].u_fir_slice/mult_391/FS_1
+                                     696.9600      0.2     696.9600      0.0000  0.0000  dsp_slice_23_DW01_add_1
+u_fir_filter/GEN_SLICE[48].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_22
+u_fir_filter/GEN_SLICE[48].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_22_DW01_add_0
+u_fir_filter/GEN_SLICE[48].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_22_DW02_mult_0
+u_fir_filter/GEN_SLICE[48].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_22_DW01_add_1
+u_fir_filter/GEN_SLICE[49].u_fir_slice
+                                    4043.5200      1.2      61.4400    921.6000  0.0000  dsp_slice_21
+u_fir_filter/GEN_SLICE[49].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_21_DW01_add_0
+u_fir_filter/GEN_SLICE[49].u_fir_slice/mult_391
+                                    2584.3200      0.8    1914.2400      0.0000  0.0000  dsp_slice_21_DW02_mult_0
+u_fir_filter/GEN_SLICE[49].u_fir_slice/mult_391/FS_1
+                                     670.0800      0.2     670.0800      0.0000  0.0000  dsp_slice_21_DW01_add_1
+u_fir_filter/GEN_SLICE[4].u_fir_slice
+                                    3968.6400      1.2      55.6800    921.6000  0.0000  dsp_slice_66
+u_fir_filter/GEN_SLICE[4].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_66_DW01_add_0
+u_fir_filter/GEN_SLICE[4].u_fir_slice/mult_391
+                                    2515.2000      0.8    1850.8800      0.0000  0.0000  dsp_slice_66_DW02_mult_0
+u_fir_filter/GEN_SLICE[4].u_fir_slice/mult_391/FS_1
+                                     664.3200      0.2     664.3200      0.0000  0.0000  dsp_slice_66_DW01_add_1
+u_fir_filter/GEN_SLICE[50].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_20
+u_fir_filter/GEN_SLICE[50].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_20_DW01_add_0
+u_fir_filter/GEN_SLICE[50].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_20_DW02_mult_0
+u_fir_filter/GEN_SLICE[50].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_20_DW01_add_1
+u_fir_filter/GEN_SLICE[51].u_fir_slice
+                                    4043.5200      1.2      61.4400    921.6000  0.0000  dsp_slice_19
+u_fir_filter/GEN_SLICE[51].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_19_DW01_add_0
+u_fir_filter/GEN_SLICE[51].u_fir_slice/mult_391
+                                    2584.3200      0.8    1914.2400      0.0000  0.0000  dsp_slice_19_DW02_mult_0
+u_fir_filter/GEN_SLICE[51].u_fir_slice/mult_391/FS_1
+                                     670.0800      0.2     670.0800      0.0000  0.0000  dsp_slice_19_DW01_add_1
+u_fir_filter/GEN_SLICE[52].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_18
+u_fir_filter/GEN_SLICE[52].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_18_DW01_add_0
+u_fir_filter/GEN_SLICE[52].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_18_DW02_mult_0
+u_fir_filter/GEN_SLICE[52].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_18_DW01_add_1
+u_fir_filter/GEN_SLICE[53].u_fir_slice
+                                    4043.5200      1.2      61.4400    921.6000  0.0000  dsp_slice_17
+u_fir_filter/GEN_SLICE[53].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_17_DW01_add_0
+u_fir_filter/GEN_SLICE[53].u_fir_slice/mult_391
+                                    2584.3200      0.8    1914.2400      0.0000  0.0000  dsp_slice_17_DW02_mult_0
+u_fir_filter/GEN_SLICE[53].u_fir_slice/mult_391/FS_1
+                                     670.0800      0.2     670.0800      0.0000  0.0000  dsp_slice_17_DW01_add_1
+u_fir_filter/GEN_SLICE[54].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_16
+u_fir_filter/GEN_SLICE[54].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_16_DW01_add_0
+u_fir_filter/GEN_SLICE[54].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_16_DW02_mult_0
+u_fir_filter/GEN_SLICE[54].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_16_DW01_add_1
+u_fir_filter/GEN_SLICE[55].u_fir_slice
+                                    4043.5200      1.2      61.4400    921.6000  0.0000  dsp_slice_15
+u_fir_filter/GEN_SLICE[55].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_15_DW01_add_0
+u_fir_filter/GEN_SLICE[55].u_fir_slice/mult_391
+                                    2584.3200      0.8    1914.2400      0.0000  0.0000  dsp_slice_15_DW02_mult_0
+u_fir_filter/GEN_SLICE[55].u_fir_slice/mult_391/FS_1
+                                     670.0800      0.2     670.0800      0.0000  0.0000  dsp_slice_15_DW01_add_1
+u_fir_filter/GEN_SLICE[56].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_14
+u_fir_filter/GEN_SLICE[56].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_14_DW01_add_0
+u_fir_filter/GEN_SLICE[56].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_14_DW02_mult_0
+u_fir_filter/GEN_SLICE[56].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_14_DW01_add_1
+u_fir_filter/GEN_SLICE[57].u_fir_slice
+                                    4043.5200      1.2      61.4400    921.6000  0.0000  dsp_slice_13
+u_fir_filter/GEN_SLICE[57].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_13_DW01_add_0
+u_fir_filter/GEN_SLICE[57].u_fir_slice/mult_391
+                                    2584.3200      0.8    1914.2400      0.0000  0.0000  dsp_slice_13_DW02_mult_0
+u_fir_filter/GEN_SLICE[57].u_fir_slice/mult_391/FS_1
+                                     670.0800      0.2     670.0800      0.0000  0.0000  dsp_slice_13_DW01_add_1
+u_fir_filter/GEN_SLICE[58].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_12
+u_fir_filter/GEN_SLICE[58].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_12_DW01_add_0
+u_fir_filter/GEN_SLICE[58].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_12_DW02_mult_0
+u_fir_filter/GEN_SLICE[58].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_12_DW01_add_1
+u_fir_filter/GEN_SLICE[59].u_fir_slice
+                                    4043.5200      1.2      61.4400    921.6000  0.0000  dsp_slice_11
+u_fir_filter/GEN_SLICE[59].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_11_DW01_add_0
+u_fir_filter/GEN_SLICE[59].u_fir_slice/mult_391
+                                    2584.3200      0.8    1914.2400      0.0000  0.0000  dsp_slice_11_DW02_mult_0
+u_fir_filter/GEN_SLICE[59].u_fir_slice/mult_391/FS_1
+                                     670.0800      0.2     670.0800      0.0000  0.0000  dsp_slice_11_DW01_add_1
+u_fir_filter/GEN_SLICE[5].u_fir_slice
+                                    3970.5600      1.2      63.3600    921.6000  0.0000  dsp_slice_65
+u_fir_filter/GEN_SLICE[5].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_65_DW01_add_0
+u_fir_filter/GEN_SLICE[5].u_fir_slice/mult_391
+                                    2509.4400      0.8    1812.4800      0.0000  0.0000  dsp_slice_65_DW02_mult_0
+u_fir_filter/GEN_SLICE[5].u_fir_slice/mult_391/FS_1
+                                     696.9600      0.2     696.9600      0.0000  0.0000  dsp_slice_65_DW01_add_1
+u_fir_filter/GEN_SLICE[60].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_10
+u_fir_filter/GEN_SLICE[60].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_10_DW01_add_0
+u_fir_filter/GEN_SLICE[60].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_10_DW02_mult_0
+u_fir_filter/GEN_SLICE[60].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_10_DW01_add_1
+u_fir_filter/GEN_SLICE[61].u_fir_slice
+                                    4043.5200      1.2      61.4400    921.6000  0.0000  dsp_slice_9
+u_fir_filter/GEN_SLICE[61].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_9_DW01_add_0
+u_fir_filter/GEN_SLICE[61].u_fir_slice/mult_391
+                                    2584.3200      0.8    1914.2400      0.0000  0.0000  dsp_slice_9_DW02_mult_0
+u_fir_filter/GEN_SLICE[61].u_fir_slice/mult_391/FS_1
+                                     670.0800      0.2     670.0800      0.0000  0.0000  dsp_slice_9_DW01_add_1
+u_fir_filter/GEN_SLICE[62].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_8
+u_fir_filter/GEN_SLICE[62].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_8_DW01_add_0
+u_fir_filter/GEN_SLICE[62].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_8_DW02_mult_0
+u_fir_filter/GEN_SLICE[62].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_8_DW01_add_1
+u_fir_filter/GEN_SLICE[63].u_fir_slice
+                                    4076.1600      1.2      63.3600    921.6000  0.0000  dsp_slice_7
+u_fir_filter/GEN_SLICE[63].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_7_DW01_add_0
+u_fir_filter/GEN_SLICE[63].u_fir_slice/mult_391
+                                    2615.0400      0.8    1914.2400      0.0000  0.0000  dsp_slice_7_DW02_mult_0
+u_fir_filter/GEN_SLICE[63].u_fir_slice/mult_391/FS_1
+                                     700.8000      0.2     700.8000      0.0000  0.0000  dsp_slice_7_DW01_add_1
+u_fir_filter/GEN_SLICE[64].u_fir_slice
+                                    3995.5200      1.2      59.5200    921.6000  0.0000  dsp_slice_6
+u_fir_filter/GEN_SLICE[64].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_6_DW01_add_0
+u_fir_filter/GEN_SLICE[64].u_fir_slice/mult_391
+                                    2538.2400      0.8    1854.7200      0.0000  0.0000  dsp_slice_6_DW02_mult_0
+u_fir_filter/GEN_SLICE[64].u_fir_slice/mult_391/FS_1
+                                     683.5200      0.2     683.5200      0.0000  0.0000  dsp_slice_6_DW01_add_1
+u_fir_filter/GEN_SLICE[65].u_fir_slice
+                                    4206.7200      1.3      63.3600    921.6000  0.0000  dsp_slice_5
+u_fir_filter/GEN_SLICE[65].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_5_DW01_add_0
+u_fir_filter/GEN_SLICE[65].u_fir_slice/mult_391
+                                    2745.6000      0.8    2056.3200      0.0000  0.0000  dsp_slice_5_DW02_mult_0
+u_fir_filter/GEN_SLICE[65].u_fir_slice/mult_391/FS_1
+                                     689.2800      0.2     689.2800      0.0000  0.0000  dsp_slice_5_DW01_add_1
+u_fir_filter/GEN_SLICE[66].u_fir_slice
+                                    4233.6000      1.3      61.4400    921.6000  0.0000  dsp_slice_4
+u_fir_filter/GEN_SLICE[66].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_4_DW01_add_0
+u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391
+                                    2774.4000      0.8    2056.3200      0.0000  0.0000  dsp_slice_4_DW02_mult_0
+u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1
+                                     718.0800      0.2     718.0800      0.0000  0.0000  dsp_slice_4_DW01_add_1
+u_fir_filter/GEN_SLICE[67].u_fir_slice
+                                    4206.7200      1.3      63.3600    921.6000  0.0000  dsp_slice_3
+u_fir_filter/GEN_SLICE[67].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_3_DW01_add_0
+u_fir_filter/GEN_SLICE[67].u_fir_slice/mult_391
+                                    2745.6000      0.8    2056.3200      0.0000  0.0000  dsp_slice_3_DW02_mult_0
+u_fir_filter/GEN_SLICE[67].u_fir_slice/mult_391/FS_1
+                                     689.2800      0.2     689.2800      0.0000  0.0000  dsp_slice_3_DW01_add_1
+u_fir_filter/GEN_SLICE[68].u_fir_slice
+                                    4141.4400      1.3      61.4400    921.6000  0.0000  dsp_slice_2
+u_fir_filter/GEN_SLICE[68].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_2_DW01_add_0
+u_fir_filter/GEN_SLICE[68].u_fir_slice/mult_391
+                                    2682.2400      0.8    1964.1600      0.0000  0.0000  dsp_slice_2_DW02_mult_0
+u_fir_filter/GEN_SLICE[68].u_fir_slice/mult_391/FS_1
+                                     718.0800      0.2     718.0800      0.0000  0.0000  dsp_slice_2_DW01_add_1
+u_fir_filter/GEN_SLICE[69].u_fir_slice
+                                    4099.2000      1.2      61.4400    921.6000  0.0000  dsp_slice_1
+u_fir_filter/GEN_SLICE[69].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_1_DW01_add_0
+u_fir_filter/GEN_SLICE[69].u_fir_slice/mult_391
+                                    2640.0000      0.8    1950.7200      0.0000  0.0000  dsp_slice_1_DW02_mult_0
+u_fir_filter/GEN_SLICE[69].u_fir_slice/mult_391/FS_1
+                                     689.2800      0.2     689.2800      0.0000  0.0000  dsp_slice_1_DW01_add_1
+u_fir_filter/GEN_SLICE[6].u_fir_slice
+                                    3968.6400      1.2      55.6800    921.6000  0.0000  dsp_slice_64
+u_fir_filter/GEN_SLICE[6].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_64_DW01_add_0
+u_fir_filter/GEN_SLICE[6].u_fir_slice/mult_391
+                                    2515.2000      0.8    1850.8800      0.0000  0.0000  dsp_slice_64_DW02_mult_0
+u_fir_filter/GEN_SLICE[6].u_fir_slice/mult_391/FS_1
+                                     664.3200      0.2     664.3200      0.0000  0.0000  dsp_slice_64_DW01_add_1
+u_fir_filter/GEN_SLICE[70].u_fir_slice
+                                    4625.2800      1.4     610.5600    921.6000  0.0000  dsp_slice_0
+u_fir_filter/GEN_SLICE[70].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_0_DW01_add_0
+u_fir_filter/GEN_SLICE[70].u_fir_slice/mult_391
+                                    2616.9600      0.8    1910.4000      0.0000  0.0000  dsp_slice_0_DW02_mult_0
+u_fir_filter/GEN_SLICE[70].u_fir_slice/mult_391/FS_1
+                                     706.5600      0.2     706.5600      0.0000  0.0000  dsp_slice_0_DW01_add_1
+u_fir_filter/GEN_SLICE[7].u_fir_slice
+                                    3970.5600      1.2      63.3600    921.6000  0.0000  dsp_slice_63
+u_fir_filter/GEN_SLICE[7].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_63_DW01_add_0
+u_fir_filter/GEN_SLICE[7].u_fir_slice/mult_391
+                                    2509.4400      0.8    1812.4800      0.0000  0.0000  dsp_slice_63_DW02_mult_0
+u_fir_filter/GEN_SLICE[7].u_fir_slice/mult_391/FS_1
+                                     696.9600      0.2     696.9600      0.0000  0.0000  dsp_slice_63_DW01_add_1
+u_fir_filter/GEN_SLICE[8].u_fir_slice
+                                    3968.6400      1.2      55.6800    921.6000  0.0000  dsp_slice_62
+u_fir_filter/GEN_SLICE[8].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_62_DW01_add_0
+u_fir_filter/GEN_SLICE[8].u_fir_slice/mult_391
+                                    2515.2000      0.8    1850.8800      0.0000  0.0000  dsp_slice_62_DW02_mult_0
+u_fir_filter/GEN_SLICE[8].u_fir_slice/mult_391/FS_1
+                                     664.3200      0.2     664.3200      0.0000  0.0000  dsp_slice_62_DW01_add_1
+u_fir_filter/GEN_SLICE[9].u_fir_slice
+                                    3970.5600      1.2      63.3600    921.6000  0.0000  dsp_slice_61
+u_fir_filter/GEN_SLICE[9].u_fir_slice/add_392
+                                     476.1600      0.1     476.1600      0.0000  0.0000  dsp_slice_61_DW01_add_0
+u_fir_filter/GEN_SLICE[9].u_fir_slice/mult_391
+                                    2509.4400      0.8    1812.4800      0.0000  0.0000  dsp_slice_61_DW02_mult_0
+u_fir_filter/GEN_SLICE[9].u_fir_slice/mult_391/FS_1
+                                     696.9600      0.2     696.9600      0.0000  0.0000  dsp_slice_61_DW01_add_1
+u_fir_filter/u_coeff_memory        40218.2397     12.2   23859.8401  16358.3996  0.0000  coeff_memory
+u_upsampler                         1345.9200      0.4     867.8400    478.0800  0.0000  upsampler
+--------------------------------  -----------  -------  -----------  ----------  ------  ------------------------
+Total                                                   245852.1615  82753.9178  0.0000
+
+1

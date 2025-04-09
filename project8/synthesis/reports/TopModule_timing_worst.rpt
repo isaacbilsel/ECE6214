@@ -1,0 +1,909 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'TopModule' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -max_paths 5
+        -sort_by group
+Design : TopModule
+Version: O-2018.06-SP1
+Date   : Fri Apr  4 16:30:13 2025
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: slow   Library: IBM_CMOS8HP_SS125
+Wire Load Model Mode: enclosed
+
+  Startpoint: u_fir_filter/u_coeff_memory/coeff_internal_reg[66][4]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  TopModule          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  coeff_memory       500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  fir_filter         500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4        500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            0.500      0.500
+  u_fir_filter/u_coeff_memory/coeff_internal_reg[66][4]/CLK (DFF_E)
+                                                         0.000 #    0.500 r
+  u_fir_filter/u_coeff_memory/coeff_internal_reg[66][4]/QBAR (DFF_E)
+                                                         0.194      0.694 f
+  u_fir_filter/u_coeff_memory/U822/Z (INVERT_H)          0.061      0.755 r
+  u_fir_filter/u_coeff_memory/coeff_out66[4] (coeff_memory)
+                                                         0.000      0.755 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/coeff_in[4] (dsp_slice_4)
+                                                         0.000      0.755 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/B[4] (dsp_slice_4_DW02_mult_0)
+                                                         0.000      0.755 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U27/Z (INVERT_F)
+                                                         0.040      0.795 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U88/Z (INVERT_F)
+                                                         0.048      0.843 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U89/Z (INVERT_I)
+                                                         0.043      0.886 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U102/Z (NOR2_C)
+                                                         0.087      0.973 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U52/Z (INVERT_E)
+                                                         0.065      1.038 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U53/Z (INVERT_H)
+                                                         0.054      1.092 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U40/Z (AND2_H)
+                                                         0.072      1.164 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U100/Z (BUFFER_H)
+                                                         0.054      1.218 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/S2_2_3/SUM (ADDF_B)
+                                                         0.471      1.689 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/S4_2/SUM (ADDF_F)
+                                                         0.341      2.030 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U49/Z (XOR2_B)
+                                                         0.149      2.179 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U47/Z (CLKI_K)
+                                                         0.135      2.314 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U48/Z (INVERT_H)
+                                                         0.049      2.364 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/A[3] (dsp_slice_4_DW01_add_1)
+                                                         0.000      2.364 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U12/Z (AND2_H)
+                                                         0.072      2.436 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U13/Z (INVERT_D)
+                                                         0.050      2.485 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U4/Z (INVERT_E)
+                                                         0.053      2.539 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U24/Z (INVERT_E)
+                                                         0.052      2.591 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U54/Z (INVERT_F)
+                                                         0.059      2.650 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U6/Z (AO21_F)
+                                                         0.170      2.820 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U40/Z (INVERT_H)
+                                                         0.047      2.867 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U49/Z (OA21_F)
+                                                         0.108      2.975 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U47/Z (INVERT_D)
+                                                         0.060      3.036 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U20/Z (INVERT_E)
+                                                         0.058      3.093 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U21/Z (INVERT_H)
+                                                         0.041      3.134 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U48/Z (INVERT_F)
+                                                         0.045      3.179 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U43/Z (OA21_F)
+                                                         0.109      3.288 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U44/Z (INVERT_D)
+                                                         0.060      3.348 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U17/Z (INVERT_E)
+                                                         0.056      3.404 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U42/Z (INVERT_F)
+                                                         0.056      3.460 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U5/Z (AO21_F)
+                                                         0.115      3.574 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U41/Z (INVERT_H)
+                                                         0.046      3.620 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U55/Z (OA21_F)
+                                                         0.108      3.728 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U56/Z (INVERT_D)
+                                                         0.060      3.789 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U2/Z (INVERT_E)
+                                                         0.060      3.848 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U39/Z (CLKI_O)
+                                                         0.101      3.950 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U10/Z (OA21_H)
+                                                         0.086      4.036 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U34/Z (AO21_E)
+                                                         0.167      4.203 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U32/Z (INVERT_D)
+                                                         0.059      4.262 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U33/Z (INVERT_E)
+                                                         0.053      4.315 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U35/Z (XOR2_C)
+                                                         0.066      4.381 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/SUM[9] (dsp_slice_4_DW01_add_1)
+                                                         0.000      4.381 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/PRODUCT[11] (dsp_slice_4_DW02_mult_0)
+                                                         0.000      4.381 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]/D (DFF_E)
+                                                         0.000      4.382 f
+  data arrival time                                                 4.382
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]/CLK (DFF_E)
+                                                         0.000     10.000 r
+  library setup time                                    -0.246      9.754
+  data required time                                                9.754
+  --------------------------------------------------------------------------
+  data required time                                                9.754
+  data arrival time                                                -4.382
+  --------------------------------------------------------------------------
+  slack (MET)                                                       5.372
+
+
+  Startpoint: u_fir_filter/u_coeff_memory/coeff_internal_reg[66][3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  TopModule          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  coeff_memory       500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  fir_filter         500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4        500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            0.500      0.500
+  u_fir_filter/u_coeff_memory/coeff_internal_reg[66][3]/CLK (DFF_E)
+                                                         0.000 #    0.500 r
+  u_fir_filter/u_coeff_memory/coeff_internal_reg[66][3]/Q (DFF_E)
+                                                         0.276      0.776 r
+  u_fir_filter/u_coeff_memory/U820/Z (BUFFER_L)          0.068      0.844 r
+  u_fir_filter/u_coeff_memory/coeff_out66[3] (coeff_memory)
+                                                         0.000      0.844 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/coeff_in[3] (dsp_slice_4)
+                                                         0.000      0.844 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/B[3] (dsp_slice_4_DW02_mult_0)
+                                                         0.000      0.844 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U79/Z (INVERT_I)
+                                                         0.038      0.882 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U101/Z (NOR2_C)
+                                                         0.086      0.969 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U62/Z (INVERT_E)
+                                                         0.065      1.034 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U63/Z (INVERT_H)
+                                                         0.054      1.088 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U40/Z (AND2_H)
+                                                         0.070      1.158 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U100/Z (BUFFER_H)
+                                                         0.054      1.212 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/S2_2_3/SUM (ADDF_B)
+                                                         0.471      1.683 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/S4_2/SUM (ADDF_F)
+                                                         0.341      2.024 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U49/Z (XOR2_B)
+                                                         0.149      2.173 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U47/Z (CLKI_K)
+                                                         0.135      2.308 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U48/Z (INVERT_H)
+                                                         0.049      2.358 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/A[3] (dsp_slice_4_DW01_add_1)
+                                                         0.000      2.358 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U12/Z (AND2_H)
+                                                         0.072      2.430 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U13/Z (INVERT_D)
+                                                         0.050      2.479 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U4/Z (INVERT_E)
+                                                         0.053      2.533 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U24/Z (INVERT_E)
+                                                         0.052      2.585 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U54/Z (INVERT_F)
+                                                         0.059      2.644 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U6/Z (AO21_F)
+                                                         0.170      2.814 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U40/Z (INVERT_H)
+                                                         0.047      2.861 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U49/Z (OA21_F)
+                                                         0.108      2.969 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U47/Z (INVERT_D)
+                                                         0.060      3.030 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U20/Z (INVERT_E)
+                                                         0.058      3.087 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U21/Z (INVERT_H)
+                                                         0.041      3.128 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U48/Z (INVERT_F)
+                                                         0.045      3.173 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U43/Z (OA21_F)
+                                                         0.109      3.282 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U44/Z (INVERT_D)
+                                                         0.060      3.342 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U17/Z (INVERT_E)
+                                                         0.056      3.398 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U42/Z (INVERT_F)
+                                                         0.056      3.454 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U5/Z (AO21_F)
+                                                         0.115      3.569 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U41/Z (INVERT_H)
+                                                         0.046      3.614 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U55/Z (OA21_F)
+                                                         0.108      3.722 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U56/Z (INVERT_D)
+                                                         0.060      3.783 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U2/Z (INVERT_E)
+                                                         0.060      3.843 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U39/Z (CLKI_O)
+                                                         0.101      3.944 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U10/Z (OA21_H)
+                                                         0.086      4.030 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U34/Z (AO21_E)
+                                                         0.167      4.197 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U32/Z (INVERT_D)
+                                                         0.059      4.256 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U33/Z (INVERT_E)
+                                                         0.053      4.309 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U35/Z (XOR2_C)
+                                                         0.066      4.376 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/SUM[9] (dsp_slice_4_DW01_add_1)
+                                                         0.000      4.376 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/PRODUCT[11] (dsp_slice_4_DW02_mult_0)
+                                                         0.000      4.376 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]/D (DFF_E)
+                                                         0.000      4.376 f
+  data arrival time                                                 4.376
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]/CLK (DFF_E)
+                                                         0.000     10.000 r
+  library setup time                                    -0.246      9.754
+  data required time                                                9.754
+  --------------------------------------------------------------------------
+  data required time                                                9.754
+  data arrival time                                                -4.376
+  --------------------------------------------------------------------------
+  slack (MET)                                                       5.378
+
+
+  Startpoint: u_fir_filter/u_coeff_memory/coeff_internal_reg[66][2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  TopModule          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  coeff_memory       500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  fir_filter         500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4        500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            0.500      0.500
+  u_fir_filter/u_coeff_memory/coeff_internal_reg[66][2]/CLK (DFF_E)
+                                                         0.000 #    0.500 r
+  u_fir_filter/u_coeff_memory/coeff_internal_reg[66][2]/QBAR (DFF_E)
+                                                         0.154      0.654 r
+  u_fir_filter/u_coeff_memory/U133/Z (INVERT_H)          0.054      0.708 f
+  u_fir_filter/u_coeff_memory/U42/Z (INVERT_H)           0.041      0.749 r
+  u_fir_filter/u_coeff_memory/U109/Z (INVERT_H)          0.044      0.793 f
+  u_fir_filter/u_coeff_memory/coeff_out66[2] (coeff_memory)
+                                                         0.000      0.793 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/coeff_in[2] (dsp_slice_4)
+                                                         0.000      0.793 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/B[2] (dsp_slice_4_DW02_mult_0)
+                                                         0.000      0.793 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U23/Z (INVERT_F)
+                                                         0.042      0.835 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U80/Z (INVERT_F)
+                                                         0.043      0.879 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U81/Z (INVERT_I)
+                                                         0.047      0.926 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U120/Z (NOR2_C)
+                                                         0.082      1.007 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U68/Z (INVERT_E)
+                                                         0.070      1.077 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U69/Z (INVERT_H)
+                                                         0.048      1.125 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U39/Z (AND2_H)
+                                                         0.074      1.199 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U119/Z (BUFFER_H)
+                                                         0.064      1.264 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/S2_2_2/COUT (ADDF_B)
+                                                         0.409      1.672 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/S4_2/SUM (ADDF_F)
+                                                         0.339      2.011 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U49/Z (XOR2_B)
+                                                         0.149      2.161 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U47/Z (CLKI_K)
+                                                         0.135      2.296 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U48/Z (INVERT_H)
+                                                         0.049      2.345 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/A[3] (dsp_slice_4_DW01_add_1)
+                                                         0.000      2.345 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U12/Z (AND2_H)
+                                                         0.072      2.417 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U13/Z (INVERT_D)
+                                                         0.050      2.467 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U4/Z (INVERT_E)
+                                                         0.053      2.520 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U24/Z (INVERT_E)
+                                                         0.052      2.573 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U54/Z (INVERT_F)
+                                                         0.059      2.632 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U6/Z (AO21_F)
+                                                         0.170      2.802 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U40/Z (INVERT_H)
+                                                         0.047      2.849 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U49/Z (OA21_F)
+                                                         0.108      2.957 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U47/Z (INVERT_D)
+                                                         0.060      3.017 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U20/Z (INVERT_E)
+                                                         0.058      3.075 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U21/Z (INVERT_H)
+                                                         0.041      3.116 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U48/Z (INVERT_F)
+                                                         0.045      3.161 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U43/Z (OA21_F)
+                                                         0.109      3.270 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U44/Z (INVERT_D)
+                                                         0.060      3.330 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U17/Z (INVERT_E)
+                                                         0.056      3.386 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U42/Z (INVERT_F)
+                                                         0.056      3.441 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U5/Z (AO21_F)
+                                                         0.115      3.556 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U41/Z (INVERT_H)
+                                                         0.046      3.602 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U55/Z (OA21_F)
+                                                         0.108      3.710 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U56/Z (INVERT_D)
+                                                         0.060      3.770 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U2/Z (INVERT_E)
+                                                         0.060      3.830 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U39/Z (CLKI_O)
+                                                         0.101      3.931 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U10/Z (OA21_H)
+                                                         0.086      4.017 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U34/Z (AO21_E)
+                                                         0.167      4.184 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U32/Z (INVERT_D)
+                                                         0.059      4.243 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U33/Z (INVERT_E)
+                                                         0.053      4.297 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U35/Z (XOR2_C)
+                                                         0.066      4.363 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/SUM[9] (dsp_slice_4_DW01_add_1)
+                                                         0.000      4.363 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/PRODUCT[11] (dsp_slice_4_DW02_mult_0)
+                                                         0.000      4.363 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]/D (DFF_E)
+                                                         0.000      4.363 f
+  data arrival time                                                 4.363
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]/CLK (DFF_E)
+                                                         0.000     10.000 r
+  library setup time                                    -0.246      9.754
+  data required time                                                9.754
+  --------------------------------------------------------------------------
+  data required time                                                9.754
+  data arrival time                                                -4.363
+  --------------------------------------------------------------------------
+  slack (MET)                                                       5.391
+
+
+  Startpoint: u_fir_filter/u_coeff_memory/coeff_internal_reg[66][2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  TopModule          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  coeff_memory       500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  fir_filter         500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4        500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            0.500      0.500
+  u_fir_filter/u_coeff_memory/coeff_internal_reg[66][2]/CLK (DFF_E)
+                                                         0.000 #    0.500 r
+  u_fir_filter/u_coeff_memory/coeff_internal_reg[66][2]/QBAR (DFF_E)
+                                                         0.194      0.694 f
+  u_fir_filter/u_coeff_memory/U133/Z (INVERT_H)          0.060      0.754 r
+  u_fir_filter/u_coeff_memory/U42/Z (INVERT_H)           0.036      0.790 f
+  u_fir_filter/u_coeff_memory/U109/Z (INVERT_H)          0.050      0.840 r
+  u_fir_filter/u_coeff_memory/coeff_out66[2] (coeff_memory)
+                                                         0.000      0.840 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/coeff_in[2] (dsp_slice_4)
+                                                         0.000      0.840 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/B[2] (dsp_slice_4_DW02_mult_0)
+                                                         0.000      0.840 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U23/Z (INVERT_F)
+                                                         0.040      0.880 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U80/Z (INVERT_F)
+                                                         0.048      0.928 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U81/Z (INVERT_I)
+                                                         0.043      0.971 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U120/Z (NOR2_C)
+                                                         0.087      1.057 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U68/Z (INVERT_E)
+                                                         0.065      1.122 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U69/Z (INVERT_H)
+                                                         0.054      1.177 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U39/Z (AND2_H)
+                                                         0.070      1.247 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U119/Z (BUFFER_H)
+                                                         0.054      1.301 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/S2_2_2/SUM (ADDF_B)
+                                                         0.449      1.750 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/S4_1/COUT (ADDF_E)
+                                                         0.251      2.001 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U49/Z (XOR2_B)
+                                                         0.158      2.159 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U47/Z (CLKI_K)
+                                                         0.135      2.293 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U48/Z (INVERT_H)
+                                                         0.049      2.343 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/A[3] (dsp_slice_4_DW01_add_1)
+                                                         0.000      2.343 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U12/Z (AND2_H)
+                                                         0.072      2.415 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U13/Z (INVERT_D)
+                                                         0.050      2.465 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U4/Z (INVERT_E)
+                                                         0.053      2.518 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U24/Z (INVERT_E)
+                                                         0.052      2.570 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U54/Z (INVERT_F)
+                                                         0.059      2.629 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U6/Z (AO21_F)
+                                                         0.170      2.799 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U40/Z (INVERT_H)
+                                                         0.047      2.846 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U49/Z (OA21_F)
+                                                         0.108      2.955 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U47/Z (INVERT_D)
+                                                         0.060      3.015 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U20/Z (INVERT_E)
+                                                         0.058      3.073 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U21/Z (INVERT_H)
+                                                         0.041      3.114 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U48/Z (INVERT_F)
+                                                         0.045      3.159 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U43/Z (OA21_F)
+                                                         0.109      3.267 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U44/Z (INVERT_D)
+                                                         0.060      3.328 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U17/Z (INVERT_E)
+                                                         0.056      3.383 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U42/Z (INVERT_F)
+                                                         0.056      3.439 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U5/Z (AO21_F)
+                                                         0.115      3.554 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U41/Z (INVERT_H)
+                                                         0.046      3.600 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U55/Z (OA21_F)
+                                                         0.108      3.708 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U56/Z (INVERT_D)
+                                                         0.060      3.768 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U2/Z (INVERT_E)
+                                                         0.060      3.828 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U39/Z (CLKI_O)
+                                                         0.101      3.929 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U10/Z (OA21_H)
+                                                         0.086      4.015 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U34/Z (AO21_E)
+                                                         0.167      4.182 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U32/Z (INVERT_D)
+                                                         0.059      4.241 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U33/Z (INVERT_E)
+                                                         0.053      4.294 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U35/Z (XOR2_C)
+                                                         0.066      4.361 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/SUM[9] (dsp_slice_4_DW01_add_1)
+                                                         0.000      4.361 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/PRODUCT[11] (dsp_slice_4_DW02_mult_0)
+                                                         0.000      4.361 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]/D (DFF_E)
+                                                         0.000      4.361 f
+  data arrival time                                                 4.361
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]/CLK (DFF_E)
+                                                         0.000     10.000 r
+  library setup time                                    -0.246      9.754
+  data required time                                                9.754
+  --------------------------------------------------------------------------
+  data required time                                                9.754
+  data arrival time                                                -4.361
+  --------------------------------------------------------------------------
+  slack (MET)                                                       5.393
+
+
+  Startpoint: u_fir_filter/u_coeff_memory/coeff_internal_reg[66][5]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  TopModule          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  coeff_memory       500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  fir_filter         500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_4        500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            0.500      0.500
+  u_fir_filter/u_coeff_memory/coeff_internal_reg[66][5]/CLK (DFF_E)
+                                                         0.000 #    0.500 r
+  u_fir_filter/u_coeff_memory/coeff_internal_reg[66][5]/QBAR (DFF_E)
+                                                         0.194      0.694 f
+  u_fir_filter/u_coeff_memory/U824/Z (INVERT_H)          0.061      0.755 r
+  u_fir_filter/u_coeff_memory/coeff_out66[5] (coeff_memory)
+                                                         0.000      0.755 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/coeff_in[5] (dsp_slice_4)
+                                                         0.000      0.755 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/B[5] (dsp_slice_4_DW02_mult_0)
+                                                         0.000      0.755 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U25/Z (INVERT_F)
+                                                         0.040      0.795 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U84/Z (INVERT_F)
+                                                         0.048      0.843 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U85/Z (INVERT_I)
+                                                         0.043      0.887 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U105/Z (NOR2_C)
+                                                         0.087      0.974 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U54/Z (INVERT_E)
+                                                         0.065      1.039 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U55/Z (INVERT_H)
+                                                         0.054      1.093 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U134/Z (XOR2_C)
+                                                         0.107      1.200 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/S2_2_3/SUM (ADDF_B)
+                                                         0.467      1.668 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/S4_2/SUM (ADDF_F)
+                                                         0.341      2.008 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U49/Z (XOR2_B)
+                                                         0.149      2.158 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U47/Z (CLKI_K)
+                                                         0.135      2.293 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/U48/Z (INVERT_H)
+                                                         0.049      2.342 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/A[3] (dsp_slice_4_DW01_add_1)
+                                                         0.000      2.342 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U12/Z (AND2_H)
+                                                         0.072      2.414 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U13/Z (INVERT_D)
+                                                         0.050      2.464 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U4/Z (INVERT_E)
+                                                         0.053      2.517 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U24/Z (INVERT_E)
+                                                         0.052      2.570 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U54/Z (INVERT_F)
+                                                         0.059      2.629 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U6/Z (AO21_F)
+                                                         0.170      2.799 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U40/Z (INVERT_H)
+                                                         0.047      2.846 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U49/Z (OA21_F)
+                                                         0.108      2.954 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U47/Z (INVERT_D)
+                                                         0.060      3.014 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U20/Z (INVERT_E)
+                                                         0.058      3.072 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U21/Z (INVERT_H)
+                                                         0.041      3.113 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U48/Z (INVERT_F)
+                                                         0.045      3.158 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U43/Z (OA21_F)
+                                                         0.109      3.267 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U44/Z (INVERT_D)
+                                                         0.060      3.327 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U17/Z (INVERT_E)
+                                                         0.056      3.383 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U42/Z (INVERT_F)
+                                                         0.056      3.438 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U5/Z (AO21_F)
+                                                         0.115      3.553 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U41/Z (INVERT_H)
+                                                         0.046      3.599 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U55/Z (OA21_F)
+                                                         0.108      3.707 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U56/Z (INVERT_D)
+                                                         0.060      3.767 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U2/Z (INVERT_E)
+                                                         0.060      3.827 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U39/Z (CLKI_O)
+                                                         0.101      3.929 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U10/Z (OA21_H)
+                                                         0.086      4.014 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U34/Z (AO21_E)
+                                                         0.167      4.181 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U32/Z (INVERT_D)
+                                                         0.059      4.240 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U33/Z (INVERT_E)
+                                                         0.053      4.294 r
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/U35/Z (XOR2_C)
+                                                         0.066      4.360 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/FS_1/SUM[9] (dsp_slice_4_DW01_add_1)
+                                                         0.000      4.360 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_391/PRODUCT[11] (dsp_slice_4_DW02_mult_0)
+                                                         0.000      4.360 f
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]/D (DFF_E)
+                                                         0.000      4.360 f
+  data arrival time                                                 4.360
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  u_fir_filter/GEN_SLICE[66].u_fir_slice/mult_out_reg[11]/CLK (DFF_E)
+                                                         0.000     10.000 r
+  library setup time                                    -0.246      9.754
+  data required time                                                9.754
+  --------------------------------------------------------------------------
+  data required time                                                9.754
+  data arrival time                                                -4.360
+  --------------------------------------------------------------------------
+  slack (MET)                                                       5.394
+
+
+  Startpoint: data_out_valid_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: data_out_valid
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  TopModule          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  data_out_valid_reg/CLK (DFFR_E)         0.000 #    0.500 r
+  data_out_valid_reg/Q (DFFR_E)           0.319      0.819 r
+  U47/Z (INVERT_J)                        0.054      0.874 f
+  U66/Z (INVERT_O)                        0.055      0.928 r
+  data_out_valid (out)                    0.002      0.931 r
+  data arrival time                                  0.931
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.931
+  -----------------------------------------------------------
+  slack (MET)                                        6.069
+
+
+  Startpoint: u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: data_out[3]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  TopModule          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_0        500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            0.500      0.500
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_reg[3]/CLK (DFF_E)
+                                                         0.000 #    0.500 r
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_reg[3]/QBAR (DFF_E)
+                                                         0.194      0.694 f
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/U13/Z (INVERT_H)
+                                                         0.055      0.749 r
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/U14/Z (INVERT_J)
+                                                         0.045      0.793 f
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/U36/Z (INVERT_O)
+                                                         0.052      0.845 r
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_out[3] (dsp_slice_0)
+                                                         0.000      0.845 r
+  u_fir_filter/fir_out[3] (fir_filter)                   0.000      0.845 r
+  data_out[3] (out)                                      0.002      0.847 r
+  data arrival time                                                 0.847
+
+  clock v_clk (rise edge)                               10.000     10.000
+  clock network delay (ideal)                            0.000     10.000
+  output external delay                                 -3.000      7.000
+  data required time                                                7.000
+  --------------------------------------------------------------------------
+  data required time                                                7.000
+  data arrival time                                                -0.847
+  --------------------------------------------------------------------------
+  slack (MET)                                                       6.153
+
+
+  Startpoint: u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: data_out[2]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  TopModule          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_0        500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            0.500      0.500
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_reg[2]/CLK (DFF_E)
+                                                         0.000 #    0.500 r
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_reg[2]/QBAR (DFF_E)
+                                                         0.194      0.694 f
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/U11/Z (INVERT_H)
+                                                         0.055      0.749 r
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/U12/Z (INVERT_J)
+                                                         0.045      0.793 f
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/U35/Z (INVERT_O)
+                                                         0.052      0.845 r
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_out[2] (dsp_slice_0)
+                                                         0.000      0.845 r
+  u_fir_filter/fir_out[2] (fir_filter)                   0.000      0.845 r
+  data_out[2] (out)                                      0.002      0.847 r
+  data arrival time                                                 0.847
+
+  clock v_clk (rise edge)                               10.000     10.000
+  clock network delay (ideal)                            0.000     10.000
+  output external delay                                 -3.000      7.000
+  data required time                                                7.000
+  --------------------------------------------------------------------------
+  data required time                                                7.000
+  data arrival time                                                -0.847
+  --------------------------------------------------------------------------
+  slack (MET)                                                       6.153
+
+
+  Startpoint: u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: data_out[1]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  TopModule          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_0        500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            0.500      0.500
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_reg[1]/CLK (DFF_E)
+                                                         0.000 #    0.500 r
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_reg[1]/QBAR (DFF_E)
+                                                         0.194      0.694 f
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/U9/Z (INVERT_H)
+                                                         0.055      0.749 r
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/U10/Z (INVERT_J)
+                                                         0.045      0.793 f
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/U34/Z (INVERT_O)
+                                                         0.052      0.845 r
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_out[1] (dsp_slice_0)
+                                                         0.000      0.845 r
+  u_fir_filter/fir_out[1] (fir_filter)                   0.000      0.845 r
+  data_out[1] (out)                                      0.002      0.847 r
+  data arrival time                                                 0.847
+
+  clock v_clk (rise edge)                               10.000     10.000
+  clock network delay (ideal)                            0.000     10.000
+  output external delay                                 -3.000      7.000
+  data required time                                                7.000
+  --------------------------------------------------------------------------
+  data required time                                                7.000
+  data arrival time                                                -0.847
+  --------------------------------------------------------------------------
+  slack (MET)                                                       6.153
+
+
+  Startpoint: u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: data_out[0]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  TopModule          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_0        500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                  0.000      0.000
+  clock network delay (ideal)                            0.500      0.500
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_reg[0]/CLK (DFF_E)
+                                                         0.000 #    0.500 r
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_reg[0]/QBAR (DFF_E)
+                                                         0.194      0.694 f
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/U7/Z (INVERT_H)
+                                                         0.055      0.749 r
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/U8/Z (INVERT_J)
+                                                         0.045      0.793 f
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/U33/Z (INVERT_O)
+                                                         0.052      0.845 r
+  u_fir_filter/GEN_SLICE[70].u_fir_slice/accum_out[0] (dsp_slice_0)
+                                                         0.000      0.845 r
+  u_fir_filter/fir_out[0] (fir_filter)                   0.000      0.845 r
+  data_out[0] (out)                                      0.002      0.847 r
+  data arrival time                                                 0.847
+
+  clock v_clk (rise edge)                               10.000     10.000
+  clock network delay (ideal)                            0.000     10.000
+  output external delay                                 -3.000      7.000
+  data required time                                                7.000
+  --------------------------------------------------------------------------
+  data required time                                                7.000
+  data arrival time                                                -0.847
+  --------------------------------------------------------------------------
+  slack (MET)                                                       6.153
+
+
+1

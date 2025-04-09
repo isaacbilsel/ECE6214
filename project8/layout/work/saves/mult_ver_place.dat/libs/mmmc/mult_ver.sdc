@@ -1,0 +1,1 @@
+/home/ead/G44895755/ece6214/project4/synthesis/netlist/mult_ver.sdc

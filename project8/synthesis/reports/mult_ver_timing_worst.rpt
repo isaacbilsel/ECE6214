@@ -1,0 +1,628 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -max_paths 5
+        -sort_by group
+Design : mult_ver
+Version: O-2018.06-SP1
+Date   : Wed Feb 19 20:19:02 2025
+****************************************
+
+Operating Conditions: slow   Library: IBM_CMOS8HP_SS125
+Wire Load Model Mode: enclosed
+
+  Startpoint: b[15] (input port clocked by v_clk)
+  Endpoint: c_reg[31] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mult_ver           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  mult_ver_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  mult_ver_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 f
+  b[15] (in)                                             0.000      3.000 f
+  U42/Z (INVERT_I)                                       0.084      3.084 r
+  U41/Z (INVERT_M)                                       0.053      3.137 f
+  mult_14/B[15] (mult_ver_DW02_mult_0)                   0.000      3.137 f
+  mult_14/U115/Z (INVERT_M)                              0.048      3.185 r
+  mult_14/U446/Z (NOR2_F)                                0.061      3.245 f
+  mult_14/U492/Z (XOR2_C)                                0.136      3.382 f
+  mult_14/S2_2_13/SUM (ADDF_F)                           0.296      3.678 r
+  mult_14/S2_3_12/COUT (ADDF_F)                          0.169      3.847 r
+  mult_14/S2_4_12/SUM (ADDF_F)                           0.264      4.111 f
+  mult_14/S2_5_11/SUM (ADDF_F)                           0.277      4.388 r
+  mult_14/S2_6_10/COUT (ADDF_F)                          0.165      4.553 r
+  mult_14/S2_7_10/SUM (ADDF_E)                           0.305      4.858 f
+  mult_14/S2_8_9/SUM (ADDF_F)                            0.281      5.138 r
+  mult_14/S2_9_8/COUT (ADDF_F)                           0.161      5.299 r
+  mult_14/S2_10_8/SUM (ADDF_C)                           0.373      5.673 f
+  mult_14/S2_11_7/SUM (ADDF_C)                           0.387      6.059 r
+  mult_14/S2_12_6/SUM (ADDF_C)                           0.381      6.440 f
+  mult_14/S2_13_5/SUM (ADDF_F)                           0.297      6.737 r
+  mult_14/S2_14_4/SUM (ADDF_F)                           0.247      6.984 f
+  mult_14/S4_3/SUM (ADDF_F)                              0.293      7.278 r
+  mult_14/U479/Z (XOR2_C)                                0.125      7.403 r
+  mult_14/U449/Z (INVERT_H)                              0.054      7.457 f
+  mult_14/U59/Z (INVERT_I)                               0.053      7.510 r
+  mult_14/FS_1/A[16] (mult_ver_DW01_add_1)               0.000      7.510 r
+  mult_14/FS_1/U101/Z (OR2_K)                            0.079      7.589 r
+  mult_14/FS_1/U77/Z (INVERTBAL_H)                       0.083      7.672 f
+  mult_14/FS_1/U138/Z (NOR2_C)                           0.088      7.760 r
+  mult_14/FS_1/U21/Z (BUFFER_H)                          0.068      7.828 r
+  mult_14/FS_1/U137/Z (NAND2_E)                          0.037      7.865 f
+  mult_14/FS_1/U177/Z (NAND3_D)                          0.080      7.946 r
+  mult_14/FS_1/U100/Z (INVERT_H)                         0.058      8.004 f
+  mult_14/FS_1/U176/Z (OAI21_D)                          0.105      8.108 r
+  mult_14/FS_1/U143/Z (INVERT_H)                         0.049      8.157 f
+  mult_14/FS_1/U142/Z (OAI21_D)                          0.080      8.237 r
+  mult_14/FS_1/U16/Z (INVERT_H)                          0.056      8.292 f
+  mult_14/FS_1/U171/Z (OAI21_C)                          0.102      8.395 r
+  mult_14/FS_1/U150/Z (INVERT_H)                         0.063      8.457 f
+  mult_14/FS_1/U167/Z (OAI21_C)                          0.104      8.561 r
+  mult_14/FS_1/U172/Z (INVERT_H)                         0.066      8.627 f
+  mult_14/FS_1/U175/Z (OAI21_D)                          0.107      8.734 r
+  mult_14/FS_1/U152/Z (INVERT_H)                         0.045      8.779 f
+  mult_14/FS_1/U87/Z (OR2_I)                             0.096      8.875 f
+  mult_14/FS_1/U86/Z (NAND2_E)                           0.052      8.927 r
+  mult_14/FS_1/U151/Z (INVERT_H)                         0.050      8.976 f
+  mult_14/FS_1/U174/Z (OAI21_D)                          0.103      9.079 r
+  mult_14/FS_1/U154/Z (INVERT_H)                         0.045      9.125 f
+  mult_14/FS_1/U141/Z (OAI21_C)                          0.102      9.226 r
+  mult_14/FS_1/U153/Z (INVERT_H)                         0.066      9.292 f
+  mult_14/FS_1/U170/Z (OAI21_D)                          0.107      9.399 r
+  mult_14/FS_1/U169/Z (INVERT_H)                         0.049      9.448 f
+  mult_14/FS_1/U2/Z (OAI21_D)                            0.103      9.550 r
+  mult_14/FS_1/U35/Z (NAND2_E)                           0.057      9.607 f
+  mult_14/FS_1/U34/Z (NAND2BAL_E)                        0.041      9.648 r
+  mult_14/FS_1/U144/Z (XOR2_B)                           0.090      9.738 f
+  mult_14/FS_1/SUM[29] (mult_ver_DW01_add_1)             0.000      9.738 f
+  mult_14/PRODUCT[31] (mult_ver_DW02_mult_0)             0.000      9.738 f
+  c_reg[31]/D (DFFR_E)                                   0.000      9.738 f
+  data arrival time                                                 9.738
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  c_reg[31]/CLK (DFFR_E)                                 0.000     10.000 r
+  library setup time                                    -0.253      9.747
+  data required time                                                9.747
+  --------------------------------------------------------------------------
+  data required time                                                9.747
+  data arrival time                                                -9.738
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.009
+
+
+  Startpoint: b[15] (input port clocked by v_clk)
+  Endpoint: c_reg[31] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mult_ver           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  mult_ver_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  mult_ver_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 f
+  b[15] (in)                                             0.000      3.000 f
+  U42/Z (INVERT_I)                                       0.084      3.084 r
+  U41/Z (INVERT_M)                                       0.053      3.137 f
+  mult_14/B[15] (mult_ver_DW02_mult_0)                   0.000      3.137 f
+  mult_14/U115/Z (INVERT_M)                              0.048      3.185 r
+  mult_14/U446/Z (NOR2_F)                                0.061      3.245 f
+  mult_14/U492/Z (XOR2_C)                                0.136      3.382 f
+  mult_14/S2_2_13/SUM (ADDF_F)                           0.296      3.678 r
+  mult_14/S2_3_12/SUM (ADDF_F)                           0.247      3.925 f
+  mult_14/S2_4_11/SUM (ADDF_F)                           0.277      4.202 r
+  mult_14/S2_5_10/COUT (ADDF_F)                          0.169      4.371 r
+  mult_14/S2_6_10/COUT (ADDF_F)                          0.181      4.552 r
+  mult_14/S2_7_10/SUM (ADDF_E)                           0.305      4.857 f
+  mult_14/S2_8_9/SUM (ADDF_F)                            0.281      5.138 r
+  mult_14/S2_9_8/COUT (ADDF_F)                           0.161      5.299 r
+  mult_14/S2_10_8/SUM (ADDF_C)                           0.373      5.672 f
+  mult_14/S2_11_7/SUM (ADDF_C)                           0.387      6.059 r
+  mult_14/S2_12_6/SUM (ADDF_C)                           0.381      6.439 f
+  mult_14/S2_13_5/SUM (ADDF_F)                           0.297      6.736 r
+  mult_14/S2_14_4/SUM (ADDF_F)                           0.247      6.984 f
+  mult_14/S4_3/SUM (ADDF_F)                              0.293      7.277 r
+  mult_14/U479/Z (XOR2_C)                                0.125      7.402 r
+  mult_14/U449/Z (INVERT_H)                              0.054      7.456 f
+  mult_14/U59/Z (INVERT_I)                               0.053      7.509 r
+  mult_14/FS_1/A[16] (mult_ver_DW01_add_1)               0.000      7.509 r
+  mult_14/FS_1/U101/Z (OR2_K)                            0.079      7.588 r
+  mult_14/FS_1/U77/Z (INVERTBAL_H)                       0.083      7.672 f
+  mult_14/FS_1/U138/Z (NOR2_C)                           0.088      7.760 r
+  mult_14/FS_1/U21/Z (BUFFER_H)                          0.068      7.827 r
+  mult_14/FS_1/U137/Z (NAND2_E)                          0.037      7.865 f
+  mult_14/FS_1/U177/Z (NAND3_D)                          0.080      7.945 r
+  mult_14/FS_1/U100/Z (INVERT_H)                         0.058      8.003 f
+  mult_14/FS_1/U176/Z (OAI21_D)                          0.105      8.107 r
+  mult_14/FS_1/U143/Z (INVERT_H)                         0.049      8.156 f
+  mult_14/FS_1/U142/Z (OAI21_D)                          0.080      8.236 r
+  mult_14/FS_1/U16/Z (INVERT_H)                          0.056      8.292 f
+  mult_14/FS_1/U171/Z (OAI21_C)                          0.102      8.394 r
+  mult_14/FS_1/U150/Z (INVERT_H)                         0.063      8.457 f
+  mult_14/FS_1/U167/Z (OAI21_C)                          0.104      8.561 r
+  mult_14/FS_1/U172/Z (INVERT_H)                         0.066      8.626 f
+  mult_14/FS_1/U175/Z (OAI21_D)                          0.107      8.733 r
+  mult_14/FS_1/U152/Z (INVERT_H)                         0.045      8.778 f
+  mult_14/FS_1/U87/Z (OR2_I)                             0.096      8.874 f
+  mult_14/FS_1/U86/Z (NAND2_E)                           0.052      8.926 r
+  mult_14/FS_1/U151/Z (INVERT_H)                         0.050      8.976 f
+  mult_14/FS_1/U174/Z (OAI21_D)                          0.103      9.079 r
+  mult_14/FS_1/U154/Z (INVERT_H)                         0.045      9.124 f
+  mult_14/FS_1/U141/Z (OAI21_C)                          0.102      9.226 r
+  mult_14/FS_1/U153/Z (INVERT_H)                         0.066      9.291 f
+  mult_14/FS_1/U170/Z (OAI21_D)                          0.107      9.398 r
+  mult_14/FS_1/U169/Z (INVERT_H)                         0.049      9.447 f
+  mult_14/FS_1/U2/Z (OAI21_D)                            0.103      9.549 r
+  mult_14/FS_1/U35/Z (NAND2_E)                           0.057      9.607 f
+  mult_14/FS_1/U34/Z (NAND2BAL_E)                        0.041      9.648 r
+  mult_14/FS_1/U144/Z (XOR2_B)                           0.090      9.737 f
+  mult_14/FS_1/SUM[29] (mult_ver_DW01_add_1)             0.000      9.737 f
+  mult_14/PRODUCT[31] (mult_ver_DW02_mult_0)             0.000      9.737 f
+  c_reg[31]/D (DFFR_E)                                   0.000      9.738 f
+  data arrival time                                                 9.738
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  c_reg[31]/CLK (DFFR_E)                                 0.000     10.000 r
+  library setup time                                    -0.253      9.747
+  data required time                                                9.747
+  --------------------------------------------------------------------------
+  data required time                                                9.747
+  data arrival time                                                -9.738
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.009
+
+
+  Startpoint: b[15] (input port clocked by v_clk)
+  Endpoint: c_reg[31] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mult_ver           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  mult_ver_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  mult_ver_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 f
+  b[15] (in)                                             0.000      3.000 f
+  U42/Z (INVERT_I)                                       0.084      3.084 r
+  U41/Z (INVERT_M)                                       0.053      3.137 f
+  mult_14/B[15] (mult_ver_DW02_mult_0)                   0.000      3.137 f
+  mult_14/U115/Z (INVERT_M)                              0.048      3.185 r
+  mult_14/U446/Z (NOR2_F)                                0.061      3.245 f
+  mult_14/U492/Z (XOR2_C)                                0.136      3.382 f
+  mult_14/S2_2_13/SUM (ADDF_F)                           0.296      3.678 r
+  mult_14/S2_3_12/COUT (ADDF_F)                          0.169      3.847 r
+  mult_14/S2_4_12/COUT (ADDF_F)                          0.185      4.032 r
+  mult_14/S2_5_12/SUM (ADDF_F)                           0.264      4.297 f
+  mult_14/S2_6_11/SUM (ADDF_F)                           0.273      4.570 r
+  mult_14/S2_7_10/SUM (ADDF_E)                           0.282      4.852 f
+  mult_14/S2_8_9/SUM (ADDF_F)                            0.281      5.133 r
+  mult_14/S2_9_8/COUT (ADDF_F)                           0.161      5.294 r
+  mult_14/S2_10_8/SUM (ADDF_C)                           0.373      5.667 f
+  mult_14/S2_11_7/SUM (ADDF_C)                           0.387      6.054 r
+  mult_14/S2_12_6/SUM (ADDF_C)                           0.381      6.435 f
+  mult_14/S2_13_5/SUM (ADDF_F)                           0.297      6.732 r
+  mult_14/S2_14_4/SUM (ADDF_F)                           0.247      6.979 f
+  mult_14/S4_3/SUM (ADDF_F)                              0.293      7.272 r
+  mult_14/U479/Z (XOR2_C)                                0.125      7.398 r
+  mult_14/U449/Z (INVERT_H)                              0.054      7.452 f
+  mult_14/U59/Z (INVERT_I)                               0.053      7.505 r
+  mult_14/FS_1/A[16] (mult_ver_DW01_add_1)               0.000      7.505 r
+  mult_14/FS_1/U101/Z (OR2_K)                            0.079      7.583 r
+  mult_14/FS_1/U77/Z (INVERTBAL_H)                       0.083      7.667 f
+  mult_14/FS_1/U138/Z (NOR2_C)                           0.088      7.755 r
+  mult_14/FS_1/U21/Z (BUFFER_H)                          0.068      7.823 r
+  mult_14/FS_1/U137/Z (NAND2_E)                          0.037      7.860 f
+  mult_14/FS_1/U177/Z (NAND3_D)                          0.080      7.941 r
+  mult_14/FS_1/U100/Z (INVERT_H)                         0.058      7.998 f
+  mult_14/FS_1/U176/Z (OAI21_D)                          0.105      8.103 r
+  mult_14/FS_1/U143/Z (INVERT_H)                         0.049      8.152 f
+  mult_14/FS_1/U142/Z (OAI21_D)                          0.080      8.231 r
+  mult_14/FS_1/U16/Z (INVERT_H)                          0.056      8.287 f
+  mult_14/FS_1/U171/Z (OAI21_C)                          0.102      8.389 r
+  mult_14/FS_1/U150/Z (INVERT_H)                         0.063      8.452 f
+  mult_14/FS_1/U167/Z (OAI21_C)                          0.104      8.556 r
+  mult_14/FS_1/U172/Z (INVERT_H)                         0.066      8.622 f
+  mult_14/FS_1/U175/Z (OAI21_D)                          0.107      8.729 r
+  mult_14/FS_1/U152/Z (INVERT_H)                         0.045      8.773 f
+  mult_14/FS_1/U87/Z (OR2_I)                             0.096      8.870 f
+  mult_14/FS_1/U86/Z (NAND2_E)                           0.052      8.921 r
+  mult_14/FS_1/U151/Z (INVERT_H)                         0.050      8.971 f
+  mult_14/FS_1/U174/Z (OAI21_D)                          0.103      9.074 r
+  mult_14/FS_1/U154/Z (INVERT_H)                         0.045      9.119 f
+  mult_14/FS_1/U141/Z (OAI21_C)                          0.102      9.221 r
+  mult_14/FS_1/U153/Z (INVERT_H)                         0.066      9.287 f
+  mult_14/FS_1/U170/Z (OAI21_D)                          0.107      9.394 r
+  mult_14/FS_1/U169/Z (INVERT_H)                         0.049      9.442 f
+  mult_14/FS_1/U2/Z (OAI21_D)                            0.103      9.545 r
+  mult_14/FS_1/U35/Z (NAND2_E)                           0.057      9.602 f
+  mult_14/FS_1/U34/Z (NAND2BAL_E)                        0.041      9.643 r
+  mult_14/FS_1/U144/Z (XOR2_B)                           0.090      9.733 f
+  mult_14/FS_1/SUM[29] (mult_ver_DW01_add_1)             0.000      9.733 f
+  mult_14/PRODUCT[31] (mult_ver_DW02_mult_0)             0.000      9.733 f
+  c_reg[31]/D (DFFR_E)                                   0.000      9.733 f
+  data arrival time                                                 9.733
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  c_reg[31]/CLK (DFFR_E)                                 0.000     10.000 r
+  library setup time                                    -0.253      9.747
+  data required time                                                9.747
+  --------------------------------------------------------------------------
+  data required time                                                9.747
+  data arrival time                                                -9.733
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.014
+
+
+  Startpoint: b[15] (input port clocked by v_clk)
+  Endpoint: c_reg[31] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mult_ver           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  mult_ver_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  mult_ver_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 f
+  b[15] (in)                                             0.000      3.000 f
+  U42/Z (INVERT_I)                                       0.084      3.084 r
+  U41/Z (INVERT_M)                                       0.053      3.137 f
+  mult_14/B[15] (mult_ver_DW02_mult_0)                   0.000      3.137 f
+  mult_14/U115/Z (INVERT_M)                              0.048      3.185 r
+  mult_14/U446/Z (NOR2_F)                                0.061      3.245 f
+  mult_14/U492/Z (XOR2_C)                                0.136      3.382 f
+  mult_14/S2_2_13/SUM (ADDF_F)                           0.296      3.678 r
+  mult_14/S2_3_12/COUT (ADDF_F)                          0.169      3.847 r
+  mult_14/S2_4_12/SUM (ADDF_F)                           0.264      4.111 f
+  mult_14/S2_5_11/SUM (ADDF_F)                           0.277      4.388 r
+  mult_14/S2_6_10/COUT (ADDF_F)                          0.165      4.553 r
+  mult_14/S2_7_10/COUT (ADDF_E)                          0.226      4.779 r
+  mult_14/S2_8_10/SUM (ADDF_F)                           0.269      5.047 f
+  mult_14/S2_9_9/SUM (ADDF_F)                            0.271      5.318 r
+  mult_14/S2_10_8/SUM (ADDF_C)                           0.348      5.666 f
+  mult_14/S2_11_7/SUM (ADDF_C)                           0.387      6.053 r
+  mult_14/S2_12_6/SUM (ADDF_C)                           0.381      6.434 f
+  mult_14/S2_13_5/SUM (ADDF_F)                           0.297      6.731 r
+  mult_14/S2_14_4/SUM (ADDF_F)                           0.247      6.978 f
+  mult_14/S4_3/SUM (ADDF_F)                              0.293      7.271 r
+  mult_14/U479/Z (XOR2_C)                                0.125      7.397 r
+  mult_14/U449/Z (INVERT_H)                              0.054      7.451 f
+  mult_14/U59/Z (INVERT_I)                               0.053      7.504 r
+  mult_14/FS_1/A[16] (mult_ver_DW01_add_1)               0.000      7.504 r
+  mult_14/FS_1/U101/Z (OR2_K)                            0.079      7.583 r
+  mult_14/FS_1/U77/Z (INVERTBAL_H)                       0.083      7.666 f
+  mult_14/FS_1/U138/Z (NOR2_C)                           0.088      7.754 r
+  mult_14/FS_1/U21/Z (BUFFER_H)                          0.068      7.822 r
+  mult_14/FS_1/U137/Z (NAND2_E)                          0.037      7.859 f
+  mult_14/FS_1/U177/Z (NAND3_D)                          0.080      7.940 r
+  mult_14/FS_1/U100/Z (INVERT_H)                         0.058      7.997 f
+  mult_14/FS_1/U176/Z (OAI21_D)                          0.105      8.102 r
+  mult_14/FS_1/U143/Z (INVERT_H)                         0.049      8.151 f
+  mult_14/FS_1/U142/Z (OAI21_D)                          0.080      8.230 r
+  mult_14/FS_1/U16/Z (INVERT_H)                          0.056      8.286 f
+  mult_14/FS_1/U171/Z (OAI21_C)                          0.102      8.388 r
+  mult_14/FS_1/U150/Z (INVERT_H)                         0.063      8.451 f
+  mult_14/FS_1/U167/Z (OAI21_C)                          0.104      8.555 r
+  mult_14/FS_1/U172/Z (INVERT_H)                         0.066      8.621 f
+  mult_14/FS_1/U175/Z (OAI21_D)                          0.107      8.728 r
+  mult_14/FS_1/U152/Z (INVERT_H)                         0.045      8.772 f
+  mult_14/FS_1/U87/Z (OR2_I)                             0.096      8.869 f
+  mult_14/FS_1/U86/Z (NAND2_E)                           0.052      8.920 r
+  mult_14/FS_1/U151/Z (INVERT_H)                         0.050      8.970 f
+  mult_14/FS_1/U174/Z (OAI21_D)                          0.103      9.073 r
+  mult_14/FS_1/U154/Z (INVERT_H)                         0.045      9.118 f
+  mult_14/FS_1/U141/Z (OAI21_C)                          0.102      9.220 r
+  mult_14/FS_1/U153/Z (INVERT_H)                         0.066      9.286 f
+  mult_14/FS_1/U170/Z (OAI21_D)                          0.107      9.393 r
+  mult_14/FS_1/U169/Z (INVERT_H)                         0.049      9.441 f
+  mult_14/FS_1/U2/Z (OAI21_D)                            0.103      9.544 r
+  mult_14/FS_1/U35/Z (NAND2_E)                           0.057      9.601 f
+  mult_14/FS_1/U34/Z (NAND2BAL_E)                        0.041      9.642 r
+  mult_14/FS_1/U144/Z (XOR2_B)                           0.090      9.732 f
+  mult_14/FS_1/SUM[29] (mult_ver_DW01_add_1)             0.000      9.732 f
+  mult_14/PRODUCT[31] (mult_ver_DW02_mult_0)             0.000      9.732 f
+  c_reg[31]/D (DFFR_E)                                   0.000      9.732 f
+  data arrival time                                                 9.732
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  c_reg[31]/CLK (DFFR_E)                                 0.000     10.000 r
+  library setup time                                    -0.253      9.747
+  data required time                                                9.747
+  --------------------------------------------------------------------------
+  data required time                                                9.747
+  data arrival time                                                -9.732
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.015
+
+
+  Startpoint: b[15] (input port clocked by v_clk)
+  Endpoint: c_reg[31] (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mult_ver           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  mult_ver_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  mult_ver_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 f
+  b[15] (in)                                             0.000      3.000 f
+  U42/Z (INVERT_I)                                       0.084      3.084 r
+  U41/Z (INVERT_M)                                       0.053      3.137 f
+  mult_14/B[15] (mult_ver_DW02_mult_0)                   0.000      3.137 f
+  mult_14/U115/Z (INVERT_M)                              0.048      3.185 r
+  mult_14/U446/Z (NOR2_F)                                0.061      3.245 f
+  mult_14/U492/Z (XOR2_C)                                0.136      3.382 f
+  mult_14/S2_2_13/SUM (ADDF_F)                           0.296      3.678 r
+  mult_14/S2_3_12/SUM (ADDF_F)                           0.247      3.925 f
+  mult_14/S2_4_11/SUM (ADDF_F)                           0.277      4.202 r
+  mult_14/S2_5_10/COUT (ADDF_F)                          0.169      4.371 r
+  mult_14/S2_6_10/COUT (ADDF_F)                          0.181      4.552 r
+  mult_14/S2_7_10/COUT (ADDF_E)                          0.226      4.778 r
+  mult_14/S2_8_10/SUM (ADDF_F)                           0.269      5.047 f
+  mult_14/S2_9_9/SUM (ADDF_F)                            0.271      5.317 r
+  mult_14/S2_10_8/SUM (ADDF_C)                           0.348      5.666 f
+  mult_14/S2_11_7/SUM (ADDF_C)                           0.387      6.053 r
+  mult_14/S2_12_6/SUM (ADDF_C)                           0.381      6.433 f
+  mult_14/S2_13_5/SUM (ADDF_F)                           0.297      6.730 r
+  mult_14/S2_14_4/SUM (ADDF_F)                           0.247      6.978 f
+  mult_14/S4_3/SUM (ADDF_F)                              0.293      7.271 r
+  mult_14/U479/Z (XOR2_C)                                0.125      7.396 r
+  mult_14/U449/Z (INVERT_H)                              0.054      7.450 f
+  mult_14/U59/Z (INVERT_I)                               0.053      7.503 r
+  mult_14/FS_1/A[16] (mult_ver_DW01_add_1)               0.000      7.503 r
+  mult_14/FS_1/U101/Z (OR2_K)                            0.079      7.582 r
+  mult_14/FS_1/U77/Z (INVERTBAL_H)                       0.083      7.665 f
+  mult_14/FS_1/U138/Z (NOR2_C)                           0.088      7.754 r
+  mult_14/FS_1/U21/Z (BUFFER_H)                          0.068      7.821 r
+  mult_14/FS_1/U137/Z (NAND2_E)                          0.037      7.859 f
+  mult_14/FS_1/U177/Z (NAND3_D)                          0.080      7.939 r
+  mult_14/FS_1/U100/Z (INVERT_H)                         0.058      7.997 f
+  mult_14/FS_1/U176/Z (OAI21_D)                          0.105      8.101 r
+  mult_14/FS_1/U143/Z (INVERT_H)                         0.049      8.150 f
+  mult_14/FS_1/U142/Z (OAI21_D)                          0.080      8.230 r
+  mult_14/FS_1/U16/Z (INVERT_H)                          0.056      8.286 f
+  mult_14/FS_1/U171/Z (OAI21_C)                          0.102      8.388 r
+  mult_14/FS_1/U150/Z (INVERT_H)                         0.063      8.451 f
+  mult_14/FS_1/U167/Z (OAI21_C)                          0.104      8.555 r
+  mult_14/FS_1/U172/Z (INVERT_H)                         0.066      8.620 f
+  mult_14/FS_1/U175/Z (OAI21_D)                          0.107      8.727 r
+  mult_14/FS_1/U152/Z (INVERT_H)                         0.045      8.772 f
+  mult_14/FS_1/U87/Z (OR2_I)                             0.096      8.868 f
+  mult_14/FS_1/U86/Z (NAND2_E)                           0.052      8.920 r
+  mult_14/FS_1/U151/Z (INVERT_H)                         0.050      8.970 f
+  mult_14/FS_1/U174/Z (OAI21_D)                          0.103      9.073 r
+  mult_14/FS_1/U154/Z (INVERT_H)                         0.045      9.118 f
+  mult_14/FS_1/U141/Z (OAI21_C)                          0.102      9.220 r
+  mult_14/FS_1/U153/Z (INVERT_H)                         0.066      9.285 f
+  mult_14/FS_1/U170/Z (OAI21_D)                          0.107      9.392 r
+  mult_14/FS_1/U169/Z (INVERT_H)                         0.049      9.441 f
+  mult_14/FS_1/U2/Z (OAI21_D)                            0.103      9.543 r
+  mult_14/FS_1/U35/Z (NAND2_E)                           0.057      9.600 f
+  mult_14/FS_1/U34/Z (NAND2BAL_E)                        0.041      9.642 r
+  mult_14/FS_1/U144/Z (XOR2_B)                           0.090      9.731 f
+  mult_14/FS_1/SUM[29] (mult_ver_DW01_add_1)             0.000      9.731 f
+  mult_14/PRODUCT[31] (mult_ver_DW02_mult_0)             0.000      9.731 f
+  c_reg[31]/D (DFFR_E)                                   0.000      9.731 f
+  data arrival time                                                 9.731
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  c_reg[31]/CLK (DFFR_E)                                 0.000     10.000 r
+  library setup time                                    -0.253      9.747
+  data required time                                                9.747
+  --------------------------------------------------------------------------
+  data required time                                                9.747
+  data arrival time                                                -9.731
+  --------------------------------------------------------------------------
+  slack (MET)                                                       0.016
+
+
+  Startpoint: c_reg[4] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: c[4] (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mult_ver           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  c_reg[4]/CLK (DFFR_E)                   0.000      0.500 r
+  c_reg[4]/Q (DFFR_E)                     0.319      0.819 r
+  U119/Z (INVERT_J)                       0.054      0.874 f
+  U120/Z (INVERT_O)                       0.055      0.928 r
+  c[4] (out)                              0.002      0.931 r
+  data arrival time                                  0.931
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.931
+  -----------------------------------------------------------
+  slack (MET)                                        6.069
+
+
+  Startpoint: c_reg[3] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: c[3] (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mult_ver           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  c_reg[3]/CLK (DFFR_E)                   0.000      0.500 r
+  c_reg[3]/Q (DFFR_E)                     0.319      0.819 r
+  U121/Z (INVERT_J)                       0.054      0.874 f
+  U122/Z (INVERT_O)                       0.055      0.928 r
+  c[3] (out)                              0.002      0.931 r
+  data arrival time                                  0.931
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.931
+  -----------------------------------------------------------
+  slack (MET)                                        6.069
+
+
+  Startpoint: c_reg[2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: c[2] (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mult_ver           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  c_reg[2]/CLK (DFFR_E)                   0.000      0.500 r
+  c_reg[2]/Q (DFFR_E)                     0.319      0.819 r
+  U123/Z (INVERT_J)                       0.054      0.874 f
+  U124/Z (INVERT_O)                       0.055      0.928 r
+  c[2] (out)                              0.002      0.931 r
+  data arrival time                                  0.931
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.931
+  -----------------------------------------------------------
+  slack (MET)                                        6.069
+
+
+  Startpoint: c_reg[1] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: c[1] (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mult_ver           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  c_reg[1]/CLK (DFFR_E)                   0.000      0.500 r
+  c_reg[1]/Q (DFFR_E)                     0.319      0.819 r
+  U125/Z (INVERT_J)                       0.054      0.874 f
+  U126/Z (INVERT_O)                       0.055      0.928 r
+  c[1] (out)                              0.002      0.931 r
+  data arrival time                                  0.931
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.931
+  -----------------------------------------------------------
+  slack (MET)                                        6.069
+
+
+  Startpoint: c_reg[0] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: c[0] (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mult_ver           500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  c_reg[0]/CLK (DFFR_E)                   0.000      0.500 r
+  c_reg[0]/Q (DFFR_E)                     0.319      0.819 r
+  U63/Z (INVERT_J)                        0.054      0.874 f
+  U64/Z (INVERT_O)                        0.055      0.928 r
+  c[0] (out)                              0.002      0.931 r
+  data arrival time                                  0.931
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.931
+  -----------------------------------------------------------
+  slack (MET)                                        6.069
+
+
+1
