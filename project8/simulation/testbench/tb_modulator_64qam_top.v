@@ -3,34 +3,22 @@ module modulator_64qam_top_tb(
  
 );
  //SPI interface_signals
- reg 
-SCLK = 1'b0;
- reg 
-MOSI = 1'b0;
- reg 
-CSN = 1'b1;
- reg 
-rst_n = 1'b0;
- wire 
-MISO;
- wire 
-MISO_enable;
+ reg SCLK = 1'b0;
+ reg MOSI = 1'b0;
+ reg CSN = 1'b1;
+ reg rst_n = 1'b0;
+ wire MISO;
+ wire MISO_enable;
  // signal for SPI data output
- reg [15:0] 
-SPI_data_out;
+ reg [7:0] SPI_data_out;
  //signals for simulation control
- reg 
-tb_clk = 1'b0;
- reg [7:0] 
-error_count;
- reg [8*39:0] 
-testcase;
+ reg tb_clk = 1'b0;
+ reg [7:0] error_count;
+ reg [8*39:0] testcase;
  // signal to save generated data in
- reg [15:0] 
-spi_data[0:255];
+ reg [7:0] spi_data[0:255];
  //loop variables
- integer 
-i;
+ integer i;
  //instantiate DUT
 
  modulator_64qam_top DUT(
@@ -53,10 +41,8 @@ repeat(10)
 rst_n = 1'b1;
  
 // generate spi data to write and read back
- 
 for(i = 0; i <= 255; i = i + 1)begin
  spi_data[i] = $random;
- 
 end
  
 repeat(10)
@@ -67,9 +53,7 @@ repeat(10)
 testcase = "SPI_WRITE";
  
 for(i = 0; i <= 255; i = i + 1)begin
-
  SPI_CMD(1'b1, i, spi_data[i], SPI_data_out);
- 
 end
  
 repeat(10)
@@ -92,14 +76,13 @@ repeat(20)
  task SPI_CMD(
 input 
 SPI_read_write,
-input [7:0] SPI_addr,
-input [15:0] SPI_data_in,
-output [15:0] SPI_data_out
+input [9:0] SPI_addr,
+input [7:0] SPI_data_in,
+output [7:0] SPI_data_out
 );
  
 integer 
 i;
- 
 
  
 begin
@@ -109,8 +92,8 @@ begin
  MOSI = SPI_read_write;
  @(posedge tb_clk)
  SCLK = 1'b1;
- // 8-bit address shifted on clock negedge, send SCLK aligned with tb_clk
- for(i = 7; i >= 0; i = i - 1)begin
+ // 10-bit address shifted on clock negedge, send SCLK aligned with tb_clk
+ for(i = 9; i >= 0; i = i - 1)begin
  @(negedge tb_clk)
  
 SCLK = 1'b0;
@@ -119,8 +102,8 @@ SCLK = 1'b0;
  
 SCLK = 1'b1;
  end
- // 5-bit dead time for data retrieval
- for(i = 4; i >= 0; i = i - 1)begin
+ // 9-bit dead time for data retrieval
+ for(i = 8; i >= 0; i = i - 1)begin
  @(negedge tb_clk)
  
 SCLK = 1'b0;
@@ -129,9 +112,9 @@ SCLK = 1'b0;
  
 SCLK = 1'b1;
  end
- // 16-bit data shifted on clock negedge, send SCLK aligned with tb_clk
+ // 8-bit data shifted on clock negedge, send SCLK aligned with tb_clk
 
- for(i = 15; i >= 0; i = i - 1) begin
+ for(i = 7; i >= 0; i = i - 1) begin
  @(negedge tb_clk)
  
 SCLK = 1'b0;
@@ -153,9 +136,9 @@ SPI_data_out[i] = MISO;
  
 SPI_data_out[i] = 1'bz;
  end
- end // for (i = 15; i >= 0; i = i - 1)
- // 4-bit dead time for data write
- for(i = 4; i >= 0; i = i - 1)begin
+ end // for (i = 7; i >= 0; i = i - 1)
+ // 6-bit dead time for data write
+ for(i = 5; i >= 0; i = i - 1)begin
  @(negedge tb_clk)
  
 SCLK = 1'b0;
@@ -174,12 +157,9 @@ end
  endtask // SPI_CMD
  function [7:0] compare_outputs(
  
-input [15:0] expected_value,
- 
-input [15:0] actual_value,
- 
-input [7:0] address,
- 
+input [7:0] expected_value,
+input [7:0] actual_value,
+input [9:0] address,
 input [7:0] error_count
  
 );
