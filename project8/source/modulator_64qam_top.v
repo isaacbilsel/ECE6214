@@ -7,37 +7,37 @@ module modulator_64qam_top(
 			   output wire MISO_enable
 			   );
 
-   //internal signals
-   wire [7:0]			       reg_read_data;
-   wire [9:0]			       reg_address;
-   wire [7:0]			       reg_write_data;
-   wire				       reg_write_enable;
-   wire				       reg_read_enable;
+	//internal signals
+	wire [7:0]			       reg_read_data;
+	wire [9:0]			       reg_address;
+	wire [7:0]			       reg_write_data;
+	wire				       reg_write_enable;
+	wire				       reg_read_enable;
 
-   //interfacing
-   SPI_Interface cmd_interface(
-			       .SCLK(SCLK),
-			       .MOSI(MOSI),
-			       .CSN(CSN),
-			       .rst_n(rst_n),
-			       .reg_read_data(reg_read_data),
-			       .MISO(MISO),
-			       .MISO_enable(MISO_enable),
-			       .reg_address(reg_address),
-			       .reg_write_data(reg_write_data),
-			       .reg_write_enable(reg_write_enable),
-			       .reg_read_enable(reg_read_enable)
-			       );
+	//interfacing
+	SPI_Interface cmd_interface(
+					.SCLK(SCLK),
+					.MOSI(MOSI),
+					.CSN(CSN),
+					.rst_n(rst_n),
+					.reg_read_data(reg_read_data),
+					.MISO(MISO),
+					.MISO_enable(MISO_enable),
+					.reg_address(reg_address),
+					.reg_write_data(reg_write_data),
+					.reg_write_enable(reg_write_enable),
+					.reg_read_enable(reg_read_enable)
+					);
 
-   register_array memory_array(
-			       .SCLK(SCLK),
-			       .rst_n(rst_n),
-			       .reg_address(reg_address),
-			       .reg_write_data(reg_write_data),
-			       .reg_write_enable(reg_write_enable),
-			       .reg_read_enable(reg_read_enable),
-			       .reg_read_data(reg_read_data)
-			       );
+	register_array memory_array(
+					.SCLK(SCLK),
+					.rst_n(rst_n),
+					.reg_address(reg_address),
+					.reg_write_data(reg_write_data),
+					.reg_write_enable(reg_write_enable),
+					.reg_read_enable(reg_read_enable),
+					.reg_read_data(reg_read_data)
+					);
 endmodule // 64QAM_Modulator_top
 
 
@@ -51,51 +51,49 @@ module register_array(
 		      output reg [7:0] reg_read_data
 		      );
 
-   //internal registers
-   reg [7:0]			 register_array_data_current[0:255];
+	//internal registers
+	reg [7:0]			 register_array_data_current[0:255];
 
-   //internal combinational variables
-   reg [7:0]			 register_array_data_next[0:255];
-   reg [7:0]			 reg_read_data_next;
+	//internal combinational variables
+	reg [7:0]			 register_array_data_next[0:255];
+	reg [7:0]			 reg_read_data_next;
 
-   //loop variables
-   integer			 i;
-   integer			 j;
+	//loop variables
+	integer			 i;
+	integer			 j;
 
-   //sequential logic
-   always @(posedge SCLK or negedge rst_n)
-     begin
-	if(rst_n == 1'b0)begin
-	   reg_read_data <= 8'd0;
-	   for(i = 0; i <= 255; i = i + 1)begin
-	      register_array_data_current[i] <= 8'd0;
-	   end
-	end else begin
-	   reg_read_data <= reg_read_data_next;
-	   for(i = 0; i <= 255; i = i + 1)begin
-	      register_array_data_current[i] <= register_array_data_next[i];
-	   end
-	end // else: !if(rst_n == 1'b0)
-     end // always @ (posedge SCLK or negedge rst_n)
+	//sequential logic
+	always @(posedge SCLK or negedge rst_n) begin
+		if(rst_n == 1'b0)begin
+		reg_read_data <= 8'd0;
+		for(i = 0; i <= 255; i = i + 1)begin
+			register_array_data_current[i] <= 8'd0;
+		end
+		end else begin
+		reg_read_data <= reg_read_data_next;
+		for(i = 0; i <= 255; i = i + 1)begin
+			register_array_data_current[i] <= register_array_data_next[i];
+		end
+		end // else: !if(rst_n == 1'b0)
+    end // always @ (posedge SCLK or negedge rst_n)
 
-   //combinational logic
-   always @(*)
-     begin
+   	//combinational logic
+   	always @(*) begin
+		reg_read_data_next = reg_read_data;
+		for(j = 0; j <= 255; j = j + 1)begin
+		register_array_data_next[j] = register_array_data_current[j];
+		end
 
-	reg_read_data_next = reg_read_data;
-	for(j = 0; j <= 255; j = j + 1)begin
-	   register_array_data_next[j] = register_array_data_current[j];
-	end
+		if(reg_write_enable == 1'b1)begin
+		register_array_data_next[reg_address] = reg_write_data;
+		end
 
-	if(reg_write_enable == 1'b1)begin
-	   register_array_data_next[reg_address] = reg_write_data;
-	end
-
-	if(reg_read_enable == 1'b1)begin
-	   reg_read_data_next = register_array_data_current[reg_address];
-	end
-     end // always @ (*)
+		if(reg_read_enable == 1'b1)begin
+		reg_read_data_next = register_array_data_current[reg_address];
+		end
+    end // always @ (*)
 endmodule // register_array
+
 
 module SPI_Interface(
 		     input wire	       SCLK,
@@ -171,103 +169,99 @@ module SPI_Interface(
 	end // else: !if(rst_n == 1'b0)
               end // always @ (posedge SCLK or negedge rst_n)
 
-   //falling edge logic for MISO
-   always @(negedge SCLK or negedge rst_n)
-     begin
-	if(rst_n == 1'b0)begin
-	   MISO <= 1'b0;
-	   MISO_enable <= 1'b0;
-	end else begin
-	   MISO <= MISO_positive_edge;
-	   MISO_enable <= MISO_enable_positive_edge;
+	//falling edge logic for MISO
+	always @(negedge SCLK or negedge rst_n) begin
+		if(rst_n == 1'b0)begin
+			MISO <= 1'b0;
+			MISO_enable <= 1'b0;
+		end else begin
+			MISO <= MISO_positive_edge;
+			MISO_enable <= MISO_enable_positive_edge;
+		end
 	end
-     end
 
    //combinational logic for MOSI shift register
-   always @(*)
-     begin
-	spi_shiftreg_next = {spi_shiftreg_current[6:0], MOSI};
-     end
+	always @(*) begin
+		spi_shiftreg_next = {spi_shiftreg_current[6:0], MOSI};
+	end
 
    //combinational logic for MISO shift register
-   always @(*)
-     begin
-	if(MISO_enable == 1'b1)begin
-	   MISO_next = MISO_buffer_current[7];
-	   MISO_buffer_next = {MISO_buffer_current[6:0], 1'b0};
-	end
-     end
-
-   //combinational logic for state machine
-   always @(*)
-     begin
-	state_next            = state_current;
-	bit_count_next        = bit_count_current;
-	reg_readwrite_next           = reg_readwrite_current;
-	reg_address_next         = reg_address;
-	reg_write_data_next   = reg_write_data;
-	reg_write_enable_next = reg_write_enable;
-	reg_read_enable_next  = reg_read_enable;
-	MISO_enable_next      = MISO_enable_positive_edge;
-	MISO_buffer_next      = MISO_buffer_current;
-	MISO_next             = MISO_positive_edge;
-	case(state_current)
-	  S0_IDLE: begin
-	     if(CSN == 1'b0)begin
-		state_next = S1_ReadWrite ;
-		bit_count_next = bit_count_current - 1'b1;
-	     end
-	  end
-
-	  S1_ReadWrite : begin
-	     state_next = S2_REG_ADDRESS;
-	     reg_readwrite_next = spi_shiftreg_current[0];
-	     bit_count_next = bit_count_current - 1'b1;
-	  end
-
-	  S2_REG_ADDRESS: begin
-	     bit_count_next = bit_count_current - 1'b1;
-	     if(bit_count_current == 6'd22)begin
-		if(reg_readwrite_current == 1'b0)begin
-		   state_next = S3_READ;
-		end else begin
-		   state_next = S4_WRITE;
+   	always @(*) begin
+		if(MISO_enable == 1'b1)begin
+		MISO_next = MISO_buffer_current[7];
+		MISO_buffer_next = {MISO_buffer_current[6:0], 1'b0};
 		end
-		reg_address_next = spi_shiftreg_current[8:0];
-	     end
-	  end // case: S2_REG_ADDRESS
+	end
 
-	  S3_READ: begin
-	     reg_read_enable_next = 1'b1;
-	     MISO_buffer_next = reg_read_data;
-	     bit_count_next = bit_count_current - 1'b1;
-	     if(bit_count_current == 6'd20)begin
-		MISO_enable_next = 1'b1;
-	     end else if(bit_count_current == 6'd0)begin
-	        state_next = S0_IDLE;
-	        bit_count_next = 6'd33;
-	        MISO_enable_next = 1'b0;
-	     end 
-	  end
+   	//combinational logic for state machine
+	always @(*) begin
+		state_next            = state_current;
+		bit_count_next        = bit_count_current;
+		reg_readwrite_next           = reg_readwrite_current;
+		reg_address_next         = reg_address;
+		reg_write_data_next   = reg_write_data;
+		reg_write_enable_next = reg_write_enable;
+		reg_read_enable_next  = reg_read_enable;
+		MISO_enable_next      = MISO_enable_positive_edge;
+		MISO_buffer_next      = MISO_buffer_current;
+		MISO_next             = MISO_positive_edge;
+		case(state_current)
+		S0_IDLE: begin
+			if(CSN == 1'b0)begin
+			state_next = S1_ReadWrite ;
+			bit_count_next = bit_count_current - 1'b1;
+			end
+		end
 
-	  S4_WRITE: begin
-	     reg_write_enable_next = 1'b1;
-	     bit_count_next = bit_count_current - 1'b1;
-	     if(bit_count_current == 6'd6)begin
-		reg_write_data_next = spi_shiftreg_current;
-	     end else if(bit_count_current == 6'd0)begin
-		state_next = S0_IDLE;
-		bit_count_next = 6'd33;
-		reg_write_enable_next = 1'b0;
-	     end
-	  end
+		S1_ReadWrite : begin
+			state_next = S2_REG_ADDRESS;
+			reg_readwrite_next = spi_shiftreg_current[0];
+			bit_count_next = bit_count_current - 1'b1;
+		end
 
-	  default: begin
-	     if(CSN == 1'b0)begin
-		state_next = S1_ReadWrite ;
-		bit_count_next = bit_count_current - 1'b1;
-	     end
-	  end
-	endcase // case (state_current)
-     end // always @ (*)
-   endmodule // SPI_Interface
+		S2_REG_ADDRESS: begin
+			bit_count_next = bit_count_current - 1'b1;
+			if(bit_count_current == 6'd22)begin
+			if(reg_readwrite_current == 1'b0)begin
+			state_next = S3_READ;
+			end else begin
+			state_next = S4_WRITE;
+			end
+			reg_address_next = spi_shiftreg_current[8:0];
+			end
+		end // case: S2_REG_ADDRESS
+
+		S3_READ: begin
+			reg_read_enable_next = 1'b1;
+			MISO_buffer_next = reg_read_data;
+			bit_count_next = bit_count_current - 1'b1;
+			if(bit_count_current == 6'd20)begin
+			MISO_enable_next = 1'b1;
+			end else if(bit_count_current == 6'd0)begin
+				state_next = S0_IDLE;
+				bit_count_next = 6'd33;
+				MISO_enable_next = 1'b0;
+			end 
+		end
+
+		S4_WRITE: begin
+			reg_write_enable_next = 1'b1;
+			bit_count_next = bit_count_current - 1'b1;
+			if(bit_count_current == 6'd6)begin
+			reg_write_data_next = spi_shiftreg_current;
+			end else if(bit_count_current == 6'd0)begin
+			state_next = S0_IDLE;
+			bit_count_next = 6'd33;
+			reg_write_enable_next = 1'b0;
+			end
+		end
+
+		default: begin
+			if(CSN == 1'b0)begin
+			state_next = S1_ReadWrite ;
+			bit_count_next = bit_count_current - 1'b1;
+			end
+		end
+		endcase // case (state_current)
+    end // always @ (*)
+endmodule // SPI_Interface
