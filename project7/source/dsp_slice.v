@@ -1,10 +1,4 @@
 `timescale 1ns /1ps
-///////////////////////////////
-// ECE 6214
-// Prof Matthew LaRue
-// DSP Slice for FIR Filter
-///////////////////////////////
-
 module dsp_slice(
 		 input wire clk,
 		 input wire signed [3:0] sample_in,

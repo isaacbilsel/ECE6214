@@ -1,7 +1,7 @@
 #@ # 
 #@ # Running dc_shell Version O-2018.06-SP1 for linux64 -- Jul 19, 2018
-#@ # Date:   Fri Apr  4 14:07:00 2025
-#@ # Run by: isaacbilsel@shell
+#@ # Date:   Fri Apr  4 18:54:36 2025
+#@ # Run by: G32127843@shell
 #@ 
 
 source /apps/vlsi_2018/synopsys/synthesis/O-2018.06-SP1/admin/setup/.synopsys_dc.setup
@@ -6624,14 +6624,14 @@ source /apps/vlsi_2018/synopsys/synthesis/O-2018.06-SP1/admin/setup/.synopsys_dc
 
 #@ # -- End source /apps/vlsi_2018/synopsys/synthesis/O-2018.06-SP1/admin/setup/.synopsys_dc.setup
 
-source /home/ead/isaacbilsel/.synopsys_dc.setup
-#@ # -- Starting source /home/ead/isaacbilsel/.synopsys_dc.setup
+source /home/ead/G32127843/.synopsys_dc.setup
+#@ # -- Starting source /home/ead/G32127843/.synopsys_dc.setup
 
 #@ set search_path [list . ${search_path} /apps/design_kits/osu_stdcells_v2p7/synopsys/lib/ami05 "./src" "./db"]
 #@ set target_library osu05_stdcells.db
 #@ set link_library { * osu05_stdcells.db }
 #@ set acs_work_dir "./work"
-#@ # -- End source /home/ead/isaacbilsel/.synopsys_dc.setup
+#@ # -- End source /home/ead/G32127843/.synopsys_dc.setup
 
 gui_start
 #@ # -- Starting source /apps/vlsi_2018/synopsys/synthesis/O-2018.06-SP1/auxx/tcllib/lib/itk4.0.1/itk.tcl
@@ -43009,6 +43009,7 @@ analyze -format verilog { ../../source/dsp_slice.v }
 analyze -format verilog { ../../source/coeff_memory.v }
 analyze -format verilog { ../../source/fir_filter.v }
 analyze -format verilog { ../../source/upsampler.v }
+analyze -format verilog { ../../source/reset_synchronization.v }
 # elaborate design
 elaborate  ${DESIGN} -architecture verilog -library DEFAULT
 uniquify
@@ -43079,4 +43080,3 @@ write -hierarchy -format verilog -output ../netlists/${DESIGN}_syn.v
 write_sdf -version 1.0 ../netlists/${DESIGN}_syn.sdf
 echo "Synthesis Complete"
 echo "   use command 'exit' on dc_shell to exit design_compiler"
-exit

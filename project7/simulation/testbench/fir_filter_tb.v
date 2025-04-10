@@ -99,6 +99,11 @@ module fir_filter_tb(
       $finish;
       
    end // initial begin
+// Display output values at each clock edge
+   always @(posedge clk) begin
+      $display("Time: %0t | Testcase: %s | Sample In: %0d | FIR Out: %0d",
+               $time, testcase, sample_in, fir_out);
+   end
 
 endmodule // fir_filter_tb
 

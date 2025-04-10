@@ -1,10 +1,4 @@
 `timescale 1ns /1ps
-///////////////////////////////
-// ECE 6214
-// Prof Matthew LaRue
-// Memory for filter coefficients
-///////////////////////////////
-
 module coeff_memory(
 		 input wire 		  clk,
 		 input wire signed [7:0]  coeff_in,

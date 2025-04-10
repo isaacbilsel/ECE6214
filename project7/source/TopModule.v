@@ -2,11 +2,7 @@
 module TopModule(
     input clk,
     input rst_n,				
-    /*
-    We need to synchronize reset. Reset module should take in asynchronous reset input and clock 
-    and output a syncrhonized reset. The output of the asyncrhonous reset should be fed everywhere 
-    that I use rst_n here. 
-    */
+    // We synchronized the reset. Reset module takes in asynchronous reset rst_n and clock as inputs and gives a syncrhonized reset rst_n_sync as output. The output of the asyncrhonous reset is fed to upsampler and fir filter  which containts resetdatapath.
     input wire [3:0] sample_rate,
     input [3:0] data_in,     	// 4-bit input data from the symbol generator.
     input coeff_write,
@@ -20,6 +16,7 @@ module TopModule(
     // Internal signals
     wire [3:0] upsampler_out;
 	wire [11:0] filter_out;
+    wire rst_n_sync_wire;
  
     // Time taken for filter to propagate output through and flush completely
 	// Each filter has 4 CC latency, filters are pipelined, so
@@ -30,11 +27,18 @@ module TopModule(
     reg [7:0] counter;
     reg [7:0] counter_next;
     reg data_out_valid_next;
+                            
 	
+    // Reset Synchronization Instantiation
+    reset_synchronization rst(.clk(clk),
+                            .rst_n(rst_n),
+                            .rst_n_sync(rst_n_sync_wire)
+    );
+                            
 	// Upsampler Instatiantion
 	upsampler u_upsampler(
 		.clk(clk),
-		.rst_n(rst_n),
+		.rst_n(rst_n_sync_wire),
 		.sample_rate(sample_rate),
 		.new_symbol(new_symbol),
 		.input_data(data_in),
@@ -52,16 +56,16 @@ module TopModule(
     );
 	
 	// Logic for Datapath reset
-	always @(posedge clk or posedge rst_n) begin
-		if (!rst_n) begin
-			counter <= 0;
-			data_out_valid <= 0;
-		end
-		else begin
-			counter <= counter_next;
-			data_out_valid <= data_out_valid_next;
-		end
-	end
+
+  always @(posedge clk or negedge rst_n_sync_wire) begin
+    if (!rst_n_sync_wire) begin
+        counter <= 0;
+        data_out_valid <= 0;
+    end else begin
+        counter <= counter_next;
+        data_out_valid <= data_out_valid_next;
+    end
+end
 	
 	always @(*) begin
 		data_out_valid_next = data_out_valid;

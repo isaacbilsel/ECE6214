@@ -15,6 +15,7 @@ analyze -format verilog { ../../source/dsp_slice.v }
 analyze -format verilog { ../../source/coeff_memory.v }
 analyze -format verilog { ../../source/fir_filter.v }
 analyze -format verilog { ../../source/upsampler.v }
+analyze -format verilog { ../../source/reset_synchronization.v }
 
 # elaborate design
 elaborate  ${DESIGN} -architecture verilog -library DEFAULT
