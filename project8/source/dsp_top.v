@@ -32,8 +32,8 @@ module dsp_top(
     reg [7:0] coeff_read_out_next;
 
     // Map global address to a local address in coefficient memory of Q or I filter
-    assign coeff_i_addr = (coeff_addr > 10'd127 & coeff_addr < 10'd199) ? (coeff_addr-127) : 10'd0;
-    assign coeff_q_addr = (coeff_addr > 10'd255 & coeff_addr < 10'd327) ? (coeff_addr-256) : 10'd0;
+    assign coeff_i_addr = (coeff_addr > 10'd127 & coeff_addr < 10'd199) ? (coeff_addr-128) : 10'd0;
+    assign coeff_q_addr = (coeff_addr > 10'd255 & coeff_addr < 10'd327) ? (coeff_addr-257) : 10'd0;
 
     assign coeff_read = msg_in ? ~coeff_rw : 0;
     assign coeff_write = msg_in ? coeff_rw: 0;

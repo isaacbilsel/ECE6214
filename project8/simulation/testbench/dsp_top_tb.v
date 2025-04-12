@@ -74,7 +74,7 @@ module dsp_top_tb;
 		msg_in = 1'b0;
 
 		// flush the pipeline
-		repeat(10) @(posedge clk);
+		repeat(5) @(posedge clk);
 
 		// Test reading coeff I memory
 		// coeff_read_out should set to 5
@@ -90,6 +90,8 @@ module dsp_top_tb;
 		coeff_addr  = 266; 
 		repeat(3) @(posedge clk);
 
+		// flush the pipeline
+		repeat(10) @(posedge clk);
 
 		// simulate impulse response  
 		testcase = "Impulse";

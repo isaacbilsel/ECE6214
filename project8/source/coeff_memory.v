@@ -87,7 +87,7 @@ module coeff_memory(
 
     // internal signals
     reg signed [7:0] coeff_internal[0:70];
-	reg signed [7:0] read_data_out_q;
+	reg signed [7:0] coeff_read_out_q;
 	always @(posedge clk)
 		begin
 			// Handle coefficient writes
@@ -97,14 +97,14 @@ module coeff_memory(
 
 			// Handle coefficient read requests
 			else if (coeff_read == 1'b1) begin
-				read_data_out_q <= coeff_internal[coeff_addr];
+				coeff_read_out_q <= coeff_internal[coeff_addr];
 			end
 			else if (coeff_read == 1'b0) begin
-				read_data_out_q <= 1'b0;
+				coeff_read_out_q <= 1'b0;
 			end
 		end
 
-	assign read_data_out = read_data_out_q;
+	assign coeff_read_out = coeff_read_out_q;
 
 	assign coeff_out0 = coeff_internal[0];
 	assign coeff_out1 = coeff_internal[1];

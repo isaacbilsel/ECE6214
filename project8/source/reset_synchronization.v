@@ -9,7 +9,6 @@ module reset_synchronization (
 reg upsample_data_in;
 reg upsample_data_mid;
 
-
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         rst_n_sync <= 0;
