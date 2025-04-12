@@ -98,14 +98,14 @@ module dsp_top(
         end else begin
             counter <= counter_next;
             data_out_valid <= data_out_valid_next;
-            coeff_read_out <= coeff_read_next;
+            coeff_read_out <= coeff_read_out_next;
         end
     end
 	
 	always @(*) begin
 		data_out_valid_next <= data_out_valid;
 		counter_next <= counter;
-        coeff_read_next <= coeff_read_out;
+        coeff_read_out_next <= coeff_read_out;
 		if(new_symbol) begin
 			counter_next = counter + 1'b1;
 		end
