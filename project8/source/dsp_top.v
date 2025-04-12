@@ -5,13 +5,14 @@ module dsp_top(
     input wire [3:0] sample_rate,
     input [3:0] data_in_i,     	// 4-bit input data from the symbol generator.
     input [3:0] data_in_q,
-    input coeff_write,
+    input coeff_rw,
+    input msg_in,
     input [7:0] coeff_in, 		// We may need to make this a two dimensional array
     input [9:0] coeff_addr,
     input wire new_symbol, 		
     output wire [9:0] I_out,  // Inphase 10 bit output to DAC
     output wire [9:0] Q_out,  // Quadrature 10 bit output to DAC
-    output reg data_out_valid    // Signal indicating when data_out contains valid data.
+    output reg [7:0] coeff_read_out;
 );
 
     // Internal signals
@@ -21,6 +22,22 @@ module dsp_top(
 	wire [11:0] filter_out_q;
     wire rst_n_sync_wire;
 
+    // SPI communication internal signals
+    wire coeff_write;
+    wire coeff_read;
+    wire [9:0] coeff_i_addr;
+    wire [9:0] coeff_q_addr;
+    wire [7:0] coeff_read_out_i;
+    wire [7:0] coeff_read_out_q;
+    reg [7:0] coeff_read_out_next;
+
+    // Map global address to a local address in coefficient memory of Q or I filter
+    assign coeff_i_addr = (coeff_addr > 10'd127 & coeff_addr < 10'd199) ? (coeff_addr-127) : 10'd0;
+    assign coeff_q_addr = (coeff_addr > 10'd255 & coeff_addr < 10'd327) ? (coeff_addr-256) : 10'd0;
+
+    assign coeff_read = msg_in ? ~coeff_rw : 0;
+    assign coeff_write = msg_in ? coeff_rw: 0;
+
     // Time taken for filter to propagate output through and flush completely
 	// Each filter has 4 CC latency, filters are pipelined, so
 	// latency = 2 * (num_taps-1) + 4 = 144
@@ -29,9 +46,9 @@ module dsp_top(
     // Datapath reset variables
     reg [7:0] counter;
     reg [7:0] counter_next;
+    reg data_out_valid;
     reg data_out_valid_next;
                             
-	
     // Reset Synchronization Instantiation
     reset_synchronization rst(.clk(clk),
                             .rst_n(rst_n),
@@ -57,9 +74,9 @@ module dsp_top(
         .coeff_read(coeff_read),
         .coeff_write(coeff_write),
         .coeff_in(coeff_in),
-        .coeff_addr(coeff_addr),
+        .coeff_addr(coeff_i_addr),
         .fir_out(filter_out_i),
-        .coeff_read_out(coeff_read_out)
+        .coeff_read_out(coeff_read_out_i)
     );
 
     fir_filter q_fir_filter(
@@ -68,9 +85,9 @@ module dsp_top(
         .coeff_read(coeff_read),
         .coeff_write(coeff_write),
         .coeff_in(coeff_in),
-        .coeff_addr(coeff_addr),
+        .coeff_addr(coeff_q_addr),
         .fir_out(filter_out_q),
-        .coeff_read_out(coeff_read_out)
+        .coeff_read_out(coeff_read_out_q)
     );
 
 	// Logic for Datapath reset
@@ -81,12 +98,14 @@ module dsp_top(
         end else begin
             counter <= counter_next;
             data_out_valid <= data_out_valid_next;
+            coeff_read_out <= coeff_read_next;
         end
     end
 	
 	always @(*) begin
-		data_out_valid_next = data_out_valid;
-		counter_next = counter;
+		data_out_valid_next <= data_out_valid;
+		counter_next <= counter;
+        coeff_read_next <= coeff_read_out;
 		if(new_symbol) begin
 			counter_next = counter + 1'b1;
 		end
@@ -96,6 +115,14 @@ module dsp_top(
 		else begin
 			data_out_valid_next = 1'b1;
 		end
+
+        // Set read output if address is valid and coeff_read flag is true
+        if (coeff_addr > 10'd127 & coeff_addr < 10'd199 & coeff_read)
+            coeff_read_out_next <= coeff_read_out_i;
+        else if (coeff_addr > 10'd255 & coeff_addr < 10'd327 & coeff_read)
+            coeff_read_out_next <= coeff_read_out_q;
+        else 
+            coeff_read_out_next <= 8'd0;
 	end
 
     // Mulyiply outputs by valid flag to flush to zero if invalid

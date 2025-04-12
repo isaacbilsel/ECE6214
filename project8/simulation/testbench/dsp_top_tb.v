@@ -6,28 +6,33 @@ module qam_top_tb;
     reg clk;
     // reg upsample_clk;
     reg rst_n;
-    reg [3:0] data_in;
-    reg coeff_write;
-    reg [6:0] coeff_addr;
+    reg [3:0] data_in_i;
+	reg [3:0] data_in_q;
+    reg coeff_rw;
+    reg [9:0] coeff_addr;
     reg [7:0] coeff_in;
 	reg [3:0] sample_rate;
 	reg new_symbol;
-    wire [11:0] data_out;
-    wire data_out_valid;
-
+	reg msg_in;
+    wire [9:0] I_out;
+	wire [9:0] Q_out;
+	wire [7:0] coeff_read_out;
      
     // Instantiate the DUT (Device Under Test)
     qam_top dut (
         .clk(clk),
         .rst_n(rst_n),
+		.msg_in(msg_in),
         .sample_rate(sample_rate),
-        .data_in(data_in),
+        .data_in_i(data_in_i),
+		.data_in_q(data_in_q),
         .new_symbol(new_symbol),
-        .coeff_write(coeff_write),
+        .coeff_rw(coeff_rw),
         .coeff_addr(coeff_addr),
         .coeff_in(coeff_in),
-        .data_out(data_out),
-        .data_out_valid(data_out_valid)
+        .I_out(I_out),
+		.Q_out(Q_out),
+		.coeff_read_out(coeff_read_out)
     );
     
     // Clock frequency: 40MhZ - 130MHz
@@ -49,26 +54,50 @@ module qam_top_tb;
 		rst_n = 1;
 		repeat(2) @(posedge clk);
 		
-		// generate data to write into coeff memory
+		// generate data to write into I coeff memory
 		for (i=0; i <=70; i = i+1) begin
-			coeff_write = 1'b1;
-			coeff_addr  = i;
+			msg_in = 1'b1;
+			coeff_rw = 1'b1;
+			coeff_addr  = i + 128;
 			coeff_in    = i;
 			@(negedge clk);	 
 		end
 
-		coeff_write = 1'b0;
+		// generate data to write into Q coeff memory
+		for (i=0; i <=70; i = i+1) begin
+			msg_in = 1'b1;
+			coeff_rw = 1'b1;
+			coeff_addr  = i + 256;
+			coeff_in    = i;
+			@(negedge clk);	 
+		end
+		msg_in = 1'b0;
 
 		// flush the pipeline
 		repeat(10) @(posedge clk);
 
+		// Test reading coeff I memory
+		// coeff_read_out should set to 5
+		msg_in = 1'b1;
+		coeff_rw = 1'b0;
+		coeff_addr  = 134;
+		repeat(3) @(posedge clk);
+
+		// Test reading coeff Q memory
+		// coeff_read_out should set to 10
+		msg_in = 1'b1;
+		coeff_rw = 1'b0;
+		coeff_addr  = 266; 
+		repeat(3) @(posedge clk);
+
+
 		// simulate impulse response  
 		testcase = "Impulse";
 		@(negedge clk);
-		data_in = 4'h1;
+		data_in_i = 4'h1;
 		new_symbol = 1'b1;
 		repeat (2)@(negedge clk);
-		data_in = 4'h0;
+		data_in_i = 4'h0;
 		new_symbol = 1'b0;
 		@(negedge clk);
 		repeat(150)
@@ -78,12 +107,12 @@ module qam_top_tb;
 		// simulate step response
 		testcase = "Step";
 		new_symbol = 1'b1;
-		data_in = 4'h1;
+		data_in_i = 4'h1;
 		repeat(150)
 		@(posedge clk);
 
 		// flush the pipeline
-		data_in = 4'h0;
+		data_in_i = 4'h0;
 		repeat(150)
 		@(posedge clk);
 		$finish;
