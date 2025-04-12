@@ -12,7 +12,7 @@ module dsp_top(
     input wire new_symbol, 		
     output wire [9:0] I_out,  // Inphase 10 bit output to DAC
     output wire [9:0] Q_out,  // Quadrature 10 bit output to DAC
-    output reg [7:0] coeff_read_out;
+    output reg [7:0] coeff_read_out
 );
 
     // Internal signals
