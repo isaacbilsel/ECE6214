@@ -2,14 +2,14 @@
 
 # list of design files to be compiled
 
-ver_files=("../../source/modulator_64qam_top.v"
+ver_files=("../../source/qam_top.v"
 		"../../source/coeff_memory.v"
 		"../../source/dsp_slice.v"
 		"../../source/fir_filter.v"
 		"../../source/reset_synchronization.v"
 		"../../source/SPI_Interface.v"
 		"../../source/upsampler.v"
-		"../../source/TopModule.v"
-	   	"../testbench/tb_modulator_64qam_top.v"
-		"../testbench/TopModule_tb.v"
+		"../../source/dsp_top.v"
+	   	"../testbench/qam_top.v"
+		"../testbench/dsp_top_tb.v"
 		)	
