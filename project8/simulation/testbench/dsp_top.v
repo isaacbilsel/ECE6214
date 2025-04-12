@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module TopModule_tb;
+module qam_top_tb;
     
     // Testbench Signals
     reg clk;
@@ -17,7 +17,7 @@ module TopModule_tb;
 
      
     // Instantiate the DUT (Device Under Test)
-    TopModule dut (
+    qam_top dut (
         .clk(clk),
         .rst_n(rst_n),
         .sample_rate(sample_rate),

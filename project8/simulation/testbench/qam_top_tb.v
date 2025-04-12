@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module 64QAM_Modulator_top_tb(
+module qam_top_tb(
 			      );
    //SPI interface_signals
    reg                        SCLK  = 1'b0;
@@ -24,7 +24,7 @@ module 64QAM_Modulator_top_tb(
    integer	    i;
 
    //instantiation
-   64QAM_Modulator_top DUT(
+   qam_top DUT(
 			   .SCLK(SCLK),
 			   .MOSI(MOSI),
 			   .CSN(CSN),
@@ -161,7 +161,7 @@ module 64QAM_Modulator_top_tb(
 	 compare_outputs = error_count + 1;
       end
    endfunction // compare_outputs
-   endmodule // 64QAM_Modulator_top_tb
+endmodule // 64QAM_Modulator_top_tb
 
 /*
 `timescale 1ns / 1ps

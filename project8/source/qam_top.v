@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module modulator_64qam_top(
+module qam_top(
 			   input wire SCLK,
 			   input wire MOSI,
 			   input wire CSN,
@@ -39,4 +39,4 @@ module modulator_64qam_top(
 			       .reg_read_enable(reg_read_enable),
 			       .reg_read_data(reg_read_data)
 			       );
-endmodule // 64QAM_Modulator_top
+endmodule // qam_top

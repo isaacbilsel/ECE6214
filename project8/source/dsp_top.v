@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module TopModule(
+module dsp_top(
     input clk,
     input rst_n,				
     input wire [3:0] sample_rate,
@@ -100,7 +100,7 @@ module TopModule(
 
     // Mulyiply outputs by valid flag to flush to zero if invalid
     // Truncate outputs to 10 bits (round-towards-zero rounding) 
-    assign data_out_i = (filter_out_i * data_out_valid)[11:2];
-    assign data_out_q = (filter_out_q * data_out_valid)[11:2];
+    assign data_out_i = (filter_out_i[11:2] * data_out_valid);
+    assign data_out_q = (filter_out_q[11:2] * data_out_valid);
 
 endmodule
