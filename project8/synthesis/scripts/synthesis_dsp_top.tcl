@@ -10,7 +10,7 @@ set DESIGN "dsp_top"
 ##########################
 # Analyze design
 # for designs with multiple verilog files, add addition "analyze" lines for each verilog file
-analyze -format verilog { /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/dsp_top.v }
+analyze -format verilog { ../../source/dsp_top.v }
 
 # elaborate design
 elaborate  ${DESIGN} -architecture verilog -library DEFAULT
@@ -34,13 +34,14 @@ redirect ../reports/${DESIGN}_timing_worst.rpt {report_timing -path full -delay 
 redirect ../reports/${DESIGN}_area.rpt {report_area -hierarchy }
 
 # write netlist and constraints out for layout
-write -hierarchy -format verilog -output ../netlist/${DESIGN}.v
-write_sdc ../netlist/${DESIGN}.sdc
+write -hierarchy -format verilog -output ../netlists/${DESIGN}.v
+write_sdc ../netlists/${DESIGN}.sdc
 
 # write netlist and sdf out for simulation
 rename_design ${DESIGN} ${DESIGN}_syn
-write -hierarchy -format verilog -output ../netlist/${DESIGN}_syn.v
-write_sdf -version 1.0 ../netlist/${DESIGN}_syn.sdf
+write -hierarchy -format verilog -output ../netlists/${DESIGN}_syn.v
+write_sdf -version 1.0 ../netlists/${DESIGN}_syn.sdf
 
 echo "Synthesis Complete"
 echo "   use command 'exit' on dc_shell to exit design_compiler"
+

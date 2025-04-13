@@ -2,7 +2,7 @@
 // File created by:  xmverilog
 // Do not modify this file
 //
-../testbench/tb_modulator_64qam_top.v
+../testbench/dsp_top_tb.v
 +gui
 +access+r
 -timescale
