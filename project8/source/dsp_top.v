@@ -160,6 +160,4 @@ module dsp_top(
     assign I_out = (filter_out_i < 0 && filter_out_i[1:0] != 2'b00) ? ((filter_out_i >> 2) * data_out_valid + 1) : ((filter_out_i >> 2) * data_out_valid);
     assign Q_out = (filter_out_q < 0 && filter_out_q[1:0] != 2'b00) ? ((filter_out_q >> 2) * data_out_valid + 1) : ((filter_out_q >> 2) * data_out_valid);
 
-    assign Q_out = ((filter_out_q >> 2) * data_out_valid);
-
 endmodule
