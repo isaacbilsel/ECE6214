@@ -50,10 +50,11 @@ module dsp_top(
     reg data_out_valid_next;
 
     // Simple FSM variables
-    parameter IDLE = 1'b0;
-    parameter COMPUTE = 1'b1;
-    reg state;
-    reg state_next;
+    parameter IDLE = 2'b00;
+    parameter COMPUTE = 2'b01;
+    parameter OUTPUT = 2'b10;
+    reg [1:0] state;
+    reg [1:0] state_next;
                             
     // Reset Synchronization Instantiation
     reset_synchronization rst(.clk(clk),
@@ -122,6 +123,10 @@ module dsp_top(
                     counter_next <= counter + 1'b1;
                     state_next <=  COMPUTE;
                 end
+                else begin
+                    counter_next <= 1'b0;
+                    state_next <= IDLE;
+                end
             end
             COMPUTE: begin
                 if (counter < LATENCY) begin
@@ -131,9 +136,13 @@ module dsp_top(
                 end
                 else begin
                     data_out_valid_next <= 1'b1;
-                    state_next <= IDLE; 
+                    state_next <= OUTPUT; 
                     counter_next <= 8'd0;
                 end
+            end
+            OUTPUT: begin
+                state_next <= IDLE; 
+                data_out_valid_next <= 1'b0;
             end
         endcase
 
