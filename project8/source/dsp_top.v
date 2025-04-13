@@ -116,7 +116,7 @@ module dsp_top(
 		counter_next <= counter;
         coeff_read_out_next <= coeff_read_out;
         state_next <= state;
-        case(state):
+        case(state)
             IDLE: begin
                 if(new_symbol) begin
                     counter_next <= counter + 1'b1;
