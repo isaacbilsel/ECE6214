@@ -80,7 +80,10 @@ module dsp_top_tb;
 		// coeff_read_out should set to 5
 		msg_in = 1'b1;
 		coeff_rw = 1'b0;
-		coeff_addr  = 134;
+		coeff_addr  = 133;
+		
+		repeat(2)@(posedge clk);
+		msg_in = 1'b0;
 		repeat(3) @(posedge clk);
 
 		// Test reading coeff Q memory

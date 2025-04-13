@@ -48,6 +48,12 @@ module dsp_top(
     reg [7:0] counter_next;
     reg data_out_valid;
     reg data_out_valid_next;
+
+    // Simple FSM variables
+    parameter IDLE = 1'b0;
+    parameter COMPUTE = 1'b1;
+    reg state;
+    reg state_next;
                             
     // Reset Synchronization Instantiation
     reset_synchronization rst(.clk(clk),
@@ -95,10 +101,13 @@ module dsp_top(
         if (!rst_n_sync_wire) begin
             counter <= 0;
             data_out_valid <= 0;
-        end else begin
+            state <= IDLE;
+        end 
+        else begin
             counter <= counter_next;
             data_out_valid <= data_out_valid_next;
             coeff_read_out <= coeff_read_out_next;
+            state <= state_next;
         end
     end
 	
@@ -106,15 +115,25 @@ module dsp_top(
 		data_out_valid_next <= data_out_valid;
 		counter_next <= counter;
         coeff_read_out_next <= coeff_read_out;
-		if(new_symbol) begin
-			counter_next = counter + 1'b1;
-		end
-		if (counter < LATENCY) begin
-			data_out_valid_next = 0;
-		end
-		else begin
-			data_out_valid_next = 1'b1;
-		end
+        state_next <= state;
+        case(state):
+            IDLE: begin
+                if(new_symbol) begin
+                    counter_next <= counter + 1'b1;
+                    state_next <=  COMPUTE;
+                end
+            end
+            COMPUTE: begin
+                if (counter < LATENCY) begin
+                    data_out_valid_next <= 0;
+                    state_next <= COMPUTE; 
+                end
+                else begin
+                    data_out_valid_next <= 1'b1;
+                    state_next <= IDLE; 
+                end
+            end
+        endcase
 
         // Set read output if address is valid and coeff_read flag is true
         if (coeff_addr > 10'd127 & coeff_addr < 10'd199 & coeff_read)
