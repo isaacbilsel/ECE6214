@@ -127,10 +127,12 @@ module dsp_top(
                 if (counter < LATENCY) begin
                     data_out_valid_next <= 0;
                     state_next <= COMPUTE; 
+                    counter_next <= counter + 1'b1;
                 end
                 else begin
                     data_out_valid_next <= 1'b1;
                     state_next <= IDLE; 
+                    counter_next <= 8'd0;
                 end
             end
         endcase
