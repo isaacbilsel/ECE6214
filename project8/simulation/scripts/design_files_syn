@@ -2,5 +2,5 @@
 
 # list of design files to be compiled
 
-ver_files=("../../synthesis/netlist/TopModule.v"
-	  "../testbench/tb_TopModule.v")
+ver_files=("../../synthesis/netlist/dsp_top.v"
+	  "../testbench/dsp_top_tb.v")
