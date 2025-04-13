@@ -148,7 +148,7 @@ module dsp_top(
 
     // Mulyiply outputs by valid flag to flush to zero if invalid
     // Truncate outputs to 10 bits (round-towards-zero rounding) 
-    assign data_out_i = (filter_out_i[11:2] * data_out_valid);
-    assign data_out_q = (filter_out_q[11:2] * data_out_valid);
+    assign I_out = (filter_out_i[11:2] * data_out_valid);
+    assign Q_out = (filter_out_q[11:2] * data_out_valid);
 
 endmodule
