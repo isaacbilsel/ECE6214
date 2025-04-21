@@ -12,7 +12,7 @@ module sample_storage(
 	input wire [9:0] 	    sample_addr,
 	// input wire 		  sample_write,
 	input wire 		  sample_read,
-    input wire         counter_begin,   // Signal to start writing to sample storage
+    input reg         counter_begin,   // Signal to start writing to sample storage
 	output wire signed [7:0] sample_read_out
 );
 

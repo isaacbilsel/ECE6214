@@ -6,31 +6,30 @@
 ///////////////////////////////
 
 module dsp_slice(
-		 input wire clk,
-		 input wire signed [3:0] sample_in,
-		 input wire signed [11:0] accum_in,
-		 input wire signed [7:0] coeff_in,
-		 output wire signed [3:0] sample_out,
-		 output wire signed [11:0] accum_out
-		 );
-    
-    // internal signals
-   reg signed [3:0] 			   sample_delay0;
-   reg signed [3:0] 			   sample_delay1;
-   reg signed [11:0] 			   mult_out;
-   reg signed [11:0]                       accum;
+  input wire clk,
+  input wire signed [3:0] sample_in,
+  input wire signed [11:0] accum_in,
+  input wire signed [7:0] coeff_in,
+  output wire signed [3:0] sample_out,
+  output wire signed [11:0] accum_out
+);
 
-   // assign outputs
-   assign sample_out = sample_delay1;
-   assign accum_out  = accum;
-          
-    // clock in registers   
-    always @(posedge clk)
-      begin
-	 sample_delay0 <= sample_in;
-	 sample_delay1 <= sample_delay0;
-	 mult_out      <= sample_delay1 * coeff_in;
-	 accum         <= accum_in + mult_out;         
-    end
-       
+  // internal signals
+  reg signed [3:0] 			   sample_delay0;
+  reg signed [3:0] 			   sample_delay1;
+  reg signed [11:0] 			 mult_out;
+  reg signed [11:0]        accum;
+
+  // assign outputs
+  assign sample_out = sample_delay1;
+  assign accum_out  = accum;
+        
+  // clock in registers   
+  always @(posedge clk)
+    begin
+      sample_delay0 <= sample_in;
+      sample_delay1 <= sample_delay0;
+      mult_out      <= sample_delay1 * coeff_in;
+      accum         <= accum_in + mult_out;         
+  end
 endmodule

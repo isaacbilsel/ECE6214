@@ -111,7 +111,7 @@ module dsp_top(
         .sample_in(filter_out_i),
         .sample_addr(sample_i_addr),
         .sample_read(read),    
-        .counter_begin(),               // Fix this 
+        .counter_begin(data_out_valid), 
         .sample_read_out(sample_read_out_i)
     );
 
@@ -121,7 +121,7 @@ module dsp_top(
         .sample_in(filter_out_q),
         .sample_addr(sample_q_addr),
         .sample_read(read),   
-        .counter_begin(),               // Fix this
+        .counter_begin(data_out_valid), 
         .sample_read_out(sample_read_out_q)
     );
 
@@ -140,6 +140,7 @@ module dsp_top(
         end
     end
 	
+    // May need to use a shift reg here instead
 	always @(*) begin
 		data_out_valid_next <= data_out_valid;
 		counter_next <= counter;
@@ -177,9 +178,13 @@ module dsp_top(
                 state_next <= IDLE; 
                 data_out_valid_next <= 1'b0;
             end
+            default: begin
+                state_next <= IDLE;
+                data_out_valid_next <= 1'b0;
+            end
         endcase
 
-        // Set read output if address is valid and read flag is true
+        // Set read output if address is valid and read flag is true // Rewrite this with case statements
         if (mem_addr > 10'd127 & mem_addr < 10'd199 & read)
             mem_read_out_next <= coeff_read_out_i;
         else if (mem_addr > 10'd255 & mem_addr < 10'd327 & read)
@@ -191,7 +196,6 @@ module dsp_top(
             mem_read_out_next <= sample_read_out_q;
         else 
             mem_read_out_next <= 8'd0;
-
 	end
 
     // Mulyiply outputs by valid flag to flush to zero if invalid
