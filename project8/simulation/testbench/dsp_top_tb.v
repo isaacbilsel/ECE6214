@@ -56,19 +56,19 @@ module dsp_top_tb;
 		
 		// generate data to write into I coeff memory
 		for (i=0; i <=70; i = i+1) begin
-			msg_in = 1'b1;
-			rw = 1'b1;
-			mem_addr  = i + 128;
-			coeff_in    = i;
+			msg_in <= 1'b1;
+			rw <= 1'b1;
+			mem_addr  <= i + 128;
+			coeff_in    <= i;
 			@(negedge clk);	 
 		end
 
 		// generate data to write into Q coeff memory
 		for (i=0; i <=70; i = i+1) begin
-			msg_in = 1'b1;
-			rw = 1'b1;
-			mem_addr  = i + 256;
-			coeff_in    = i;
+			msg_in <= 1'b1;
+			rw <= 1'b1;
+			mem_addr  <= i + 256;
+			coeff_in    <= i;
 			@(negedge clk);	 
 		end
 		msg_in = 1'b0;
@@ -78,9 +78,9 @@ module dsp_top_tb;
 
 		// Test reading coeff I memory
 		// coeff_read_out should set to 5
-		msg_in = 1'b1;
-		rw = 1'b0;
-		mem_addr  = 133;
+		msg_in <= 1'b1;
+		rw <= 1'b0;
+		mem_addr  <= 133;
 		
 		repeat(2) @(posedge clk);
 		msg_in = 1'b0;
@@ -88,9 +88,9 @@ module dsp_top_tb;
 
 		// Test reading coeff Q memory
 		// coeff_read_out should set to 10
-		msg_in = 1'b1;
-		rw = 1'b0;
-		mem_addr  = 266; 
+		msg_in <= 1'b1;
+		rw <= 1'b0;
+		mem_addr  <= 266; 
 		repeat(3) @(posedge clk);
 
 		// flush the pipeline
@@ -99,19 +99,19 @@ module dsp_top_tb;
 		// simulate impulse response  
 		testcase = "Impulse";
 		@(negedge clk);
-		data_in_i = 4'h1;
-		new_symbol = 1'b1;
+		data_in_i <= 4'h1;
+		new_symbol <= 1'b1;
 		repeat (2) @(negedge clk);
-		data_in_i = 4'h0;
-		new_symbol = 1'b0;
+		data_in_i <= 4'h0;
+		new_symbol <= 1'b0;
 		@(negedge clk);
 		repeat(150) @(posedge clk);
 		
 		// Test reading I output memory
 		// Should read 5th output 
-		msg_in = 1'b1;
-		rw = 1'b0;
-		mem_addr  = 516;
+		msg_in <= 1'b1;
+		rw <= 1'b0;
+		mem_addr  <= 516;
 		
 		repeat(2) @(posedge clk);
 		msg_in = 1'b0;
@@ -119,16 +119,16 @@ module dsp_top_tb;
 
 		// Test reading Q output memory
 		// Should read 10th output
-		msg_in = 1'b1;
-		rw = 1'b0;
-		mem_addr  = 778; 
+		msg_in <= 1'b1;
+		rw <= 1'b0;
+		mem_addr  <= 778; 
 		repeat(3) @(posedge clk);
 
 		@(negedge clk);	
 		// simulate step response
-		testcase = "Step";
-		new_symbol = 1'b1;
-		data_in_i = 4'h1;
+		testcase <= "Step";
+		new_symbol <= 1'b1;
+		data_in_i <= 4'h1;
 		repeat(150) @(posedge clk);
 
 		// flush the pipeline
