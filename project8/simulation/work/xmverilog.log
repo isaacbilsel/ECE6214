@@ -1,11 +1,41 @@
 xmverilog(64): 17.10-s001: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	xmverilog	17.10-s001: Started on Apr 12, 2025 at 22:15:30 EDT
+TOOL:	xmverilog	17.10-s001: Started on Apr 21, 2025 at 11:57:59 EDT
 xmverilog
 	../testbench/dsp_top_tb.v
 	+gui
 	+access+r
 	-timescale
 	1ns/1ps
+Recompiling... reason: file '/home/ead/isaacbilsel/ece6214/ECE6214/project8/source/dsp_top.v' is newer than expected.
+	expected: Mon Apr 21 11:44:37 2025
+	actual:   Mon Apr 21 11:57:27 2025
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+        .sample_addr(sample_i_addr),
+                                 |
+xmelab: *W,CUVMPW (/home/ead/isaacbilsel/ece6214/ECE6214/project8/source/dsp_top.v,112|33): port sizes differ in port connection (1/10).
+        .sample_addr(sample_q_addr),
+                                 |
+xmelab: *W,CUVMPW (/home/ead/isaacbilsel/ece6214/ECE6214/project8/source/dsp_top.v,122|33): port sizes differ in port connection (1/10).
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.dsp_top:v <0x7011e095>
+			streams:  13, words:  8367
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:               152       8
+		Registers:             618      45
+		Scalar wires:           13       -
+		Vectored wires:        450       -
+		Always blocks:         154      10
+		Initial blocks:          1       1
+		Cont. assignments:     154      87
+		Pseudo assignments:      2       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.dsp_top_tb:v
 
 -------------------------------------
 Relinquished control to SimVision...
@@ -13,11 +43,11 @@ xcelium>
 xcelium> source /apps/vlsi_2018/cadence/XCELIUM1710/tools/xcelium/files/xmsimrc
 xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
-xcelium> probe -create -shm dsp_top_tb.dut.I_out dsp_top_tb.dut.Q_out dsp_top_tb.dut.clk dsp_top_tb.dut.coeff_addr dsp_top_tb.dut.coeff_i_addr dsp_top_tb.dut.coeff_in dsp_top_tb.dut.coeff_q_addr dsp_top_tb.dut.coeff_read dsp_top_tb.dut.coeff_read_out dsp_top_tb.dut.coeff_read_out_i dsp_top_tb.dut.coeff_read_out_next dsp_top_tb.dut.coeff_read_out_q dsp_top_tb.dut.coeff_rw dsp_top_tb.dut.coeff_write dsp_top_tb.dut.counter dsp_top_tb.dut.counter_next dsp_top_tb.dut.data_in_i dsp_top_tb.dut.data_in_q dsp_top_tb.dut.data_out_valid dsp_top_tb.dut.data_out_valid_next dsp_top_tb.dut.filter_out_i dsp_top_tb.dut.filter_out_q dsp_top_tb.dut.msg_in dsp_top_tb.dut.new_symbol dsp_top_tb.dut.rst_n dsp_top_tb.dut.rst_n_sync_wire dsp_top_tb.dut.sample_rate dsp_top_tb.dut.state dsp_top_tb.dut.state_next dsp_top_tb.dut.upsampler_out_i dsp_top_tb.dut.upsampler_out_q
+xcelium> probe -create -shm dsp_top_tb.dut.I_out dsp_top_tb.dut.Q_out dsp_top_tb.dut.clk dsp_top_tb.dut.coeff_i_addr dsp_top_tb.dut.coeff_in dsp_top_tb.dut.coeff_q_addr dsp_top_tb.dut.coeff_read_out_i dsp_top_tb.dut.coeff_read_out_q dsp_top_tb.dut.counter dsp_top_tb.dut.counter_next dsp_top_tb.dut.data_in_i dsp_top_tb.dut.data_in_q dsp_top_tb.dut.data_out_valid dsp_top_tb.dut.data_out_valid_next dsp_top_tb.dut.filter_out_i dsp_top_tb.dut.filter_out_q dsp_top_tb.dut.mem_addr dsp_top_tb.dut.mem_read_out dsp_top_tb.dut.mem_read_out_next dsp_top_tb.dut.msg_in dsp_top_tb.dut.new_symbol dsp_top_tb.dut.read dsp_top_tb.dut.rst_n dsp_top_tb.dut.rst_n_sync_wire dsp_top_tb.dut.rw dsp_top_tb.dut.sample_i_addr dsp_top_tb.dut.sample_q_addr dsp_top_tb.dut.sample_rate dsp_top_tb.dut.sample_read_out_i dsp_top_tb.dut.sample_read_out_q dsp_top_tb.dut.state dsp_top_tb.dut.state_next dsp_top_tb.dut.upsampler_out_i dsp_top_tb.dut.upsampler_out_q dsp_top_tb.dut.write
 Created probe 1
 xcelium> run
-Simulation complete via $finish(1) at time 6205 NS + 0
-../testbench/dsp_top_tb.v:123 		$finish;
+Simulation complete via $finish(1) at time 6285 NS + 0
+../testbench/dsp_top_tb.v:137 		$finish;
 xcelium> ^C
 xcelium> exit
-TOOL:	xmverilog	17.10-s001: Exiting on Apr 12, 2025 at 22:20:32 EDT  (total: 00:05:02)
+TOOL:	xmverilog	17.10-s001: Exiting on Apr 21, 2025 at 12:01:33 EDT  (total: 00:03:34)

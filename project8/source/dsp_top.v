@@ -48,7 +48,7 @@ module dsp_top(
     // Time taken for filter to propagate output through and flush completely
 	// Each filter has 4 CC latency, filters are pipelined, so
 	// latency = 2 * (num_taps-1) + 4 = 144
-    parameter LATENCY = 144;
+    parameter LATENCY = 143;
     
     // Datapath reset variables
     reg [7:0] counter;
@@ -86,7 +86,7 @@ module dsp_top(
         .clk(clk),
 		.sample_in(upsampler_out_i),
         .coeff_read(read),
-        .coeff_write(coeff_write),
+        .coeff_write(write),
         .coeff_in(coeff_in),
         .coeff_addr(coeff_i_addr),
         .fir_out(filter_out_i),
@@ -97,7 +97,7 @@ module dsp_top(
         .clk(clk),
 		.sample_in(upsampler_out_q),
         .coeff_read(read),
-        .coeff_write(coeff_write),
+        .coeff_write(write),
         .coeff_in(coeff_in),
         .coeff_addr(coeff_q_addr),
         .fir_out(filter_out_q),
@@ -105,7 +105,7 @@ module dsp_top(
     );
 
     // Sample Storage Instatiation
-    sample_storate i_sample_storage (
+    sample_storage i_sample_storage (
         .clk(clk),
         .rst_n(rst_n_sync_wire),
         .sample_in(filter_out_i),

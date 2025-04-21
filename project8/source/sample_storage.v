@@ -12,7 +12,7 @@ module sample_storage(
 	input wire [9:0] 	    sample_addr,
 	// input wire 		  sample_write,
 	input wire 		  sample_read,
-    input reg         counter_begin,   // Signal to start writing to sample storage
+    input wire         counter_begin,   // Signal to start writing to sample storage
 	output wire signed [7:0] sample_read_out
 );
 
@@ -37,7 +37,7 @@ module sample_storage(
             state <= IDLE;
             counter <= 6'd0;
             // Flush internal memory
-            for (i=0; i<128; i++) begin
+            for (i=0; i<128; i=i+1) begin
                 sample_internal[i] <= 8'h00;
             end
         end
@@ -49,7 +49,7 @@ module sample_storage(
             // Handle filter output writes (only filter can write). Only write first 64 samples
             if (state == WRITE) begin
                 sample_internal[counter * 2] <= sample_in[11:4];            // 8 MSBs 
-                sample_internal[counter * 2 + 1] <= {8'h0, sample_in[3:0]}  // 4 LSBs in addr + 1
+                sample_internal[counter * 2 + 1] <= {8'h0, sample_in[3:0]}; // 4 LSBs in addr + 1
             end
 
             // Handle coefficient read requests. We can only read 8 bits at a time, so only half of a filter output

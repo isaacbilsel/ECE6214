@@ -10,6 +10,7 @@ ver_files=("../../source/qam_top.v"
 		"../../source/SPI_Interface.v"
 		"../../source/upsampler.v"
 		"../../source/dsp_top.v"
+		"../../source/sample_storage.v"
 	   	"../testbench/qam_top_tb.v"
 		"../testbench/dsp_top_tb.v"
 		)	

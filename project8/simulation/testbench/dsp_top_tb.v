@@ -8,15 +8,15 @@ module dsp_top_tb;
     reg rst_n;
     reg [3:0] data_in_i;
 	reg [3:0] data_in_q;
-    reg coeff_rw;
-    reg [9:0] coeff_addr;
+    reg rw;
+    reg [9:0] mem_addr;
     reg [7:0] coeff_in;
 	reg [3:0] sample_rate;
 	reg new_symbol;
 	reg msg_in;
     wire [9:0] I_out;
 	wire [9:0] Q_out;
-	wire [7:0] coeff_read_out;
+	wire [7:0] mem_read_out;
      
     // Instantiate the DUT (Device Under Test)
     dsp_top dut (
@@ -27,12 +27,12 @@ module dsp_top_tb;
         .data_in_i(data_in_i),
 		.data_in_q(data_in_q),
         .new_symbol(new_symbol),
-        .coeff_rw(coeff_rw),
-        .coeff_addr(coeff_addr),
+        .rw(rw),
+        .mem_addr(mem_addr),
         .coeff_in(coeff_in),
         .I_out(I_out),
 		.Q_out(Q_out),
-		.coeff_read_out(coeff_read_out)
+		.mem_read_out(mem_read_out)
     );
     
     // Clock frequency: 40MhZ - 130MHz
@@ -57,8 +57,8 @@ module dsp_top_tb;
 		// generate data to write into I coeff memory
 		for (i=0; i <=70; i = i+1) begin
 			msg_in = 1'b1;
-			coeff_rw = 1'b1;
-			coeff_addr  = i + 128;
+			rw = 1'b1;
+			mem_addr  = i + 128;
 			coeff_in    = i;
 			@(negedge clk);	 
 		end
@@ -66,8 +66,8 @@ module dsp_top_tb;
 		// generate data to write into Q coeff memory
 		for (i=0; i <=70; i = i+1) begin
 			msg_in = 1'b1;
-			coeff_rw = 1'b1;
-			coeff_addr  = i + 256;
+			rw = 1'b1;
+			mem_addr  = i + 256;
 			coeff_in    = i;
 			@(negedge clk);	 
 		end
@@ -79,18 +79,18 @@ module dsp_top_tb;
 		// Test reading coeff I memory
 		// coeff_read_out should set to 5
 		msg_in = 1'b1;
-		coeff_rw = 1'b0;
-		coeff_addr  = 133;
+		rw = 1'b0;
+		mem_addr  = 133;
 		
-		repeat(2)@(posedge clk);
+		repeat(2) @(posedge clk);
 		msg_in = 1'b0;
 		repeat(3) @(posedge clk);
 
 		// Test reading coeff Q memory
 		// coeff_read_out should set to 10
 		msg_in = 1'b1;
-		coeff_rw = 1'b0;
-		coeff_addr  = 266; 
+		rw = 1'b0;
+		mem_addr  = 266; 
 		repeat(3) @(posedge clk);
 
 		// flush the pipeline
@@ -101,25 +101,39 @@ module dsp_top_tb;
 		@(negedge clk);
 		data_in_i = 4'h1;
 		new_symbol = 1'b1;
-		repeat (2)@(negedge clk);
+		repeat (2) @(negedge clk);
 		data_in_i = 4'h0;
 		new_symbol = 1'b0;
 		@(negedge clk);
-		repeat(150)
-		@(posedge clk);
-		@(negedge clk);	
+		repeat(150) @(posedge clk);
 		
+		// Test reading I output memory
+		// Should read 5th output 
+		msg_in = 1'b1;
+		rw = 1'b0;
+		mem_addr  = 516;
+		
+		repeat(2) @(posedge clk);
+		msg_in = 1'b0;
+		repeat(3) @(posedge clk);
+
+		// Test reading Q output memory
+		// Should read 10th output
+		msg_in = 1'b1;
+		rw = 1'b0;
+		mem_addr  = 778; 
+		repeat(3) @(posedge clk);
+
+		@(negedge clk);	
 		// simulate step response
 		testcase = "Step";
 		new_symbol = 1'b1;
 		data_in_i = 4'h1;
-		repeat(150)
-		@(posedge clk);
+		repeat(150) @(posedge clk);
 
 		// flush the pipeline
 		data_in_i = 4'h0;
-		repeat(150)
-		@(posedge clk);
+		repeat(150) @(posedge clk);
 		$finish;
 		
 		// We need to write to the log file here
