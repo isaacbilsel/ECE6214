@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module sample_storage_tb
+module sample_storage_tb;
     reg  clk;
     reg  rst_n;   
 	reg signed [11:0]  sample_in;
@@ -24,6 +24,7 @@ module sample_storage_tb
     initial begin
         clk <= 0;
 		rst_n <= 0;
+		sample_read <= 1'b0;
 		repeat(2) @(posedge clk);
 		rst_n = 1;
 		repeat(2) @(posedge clk);
@@ -31,30 +32,27 @@ module sample_storage_tb
         counter_begin <= 1'b1;
         sample_in <= 1;
         
-        @negedge clk;
+        @(negedge clk);
         sample_in <= 2;
-        @negedge clk;
+        @(negedge clk);
         sample_in <= 3;
-        @negedge clk;
+        @(negedge clk);
         sample_in <= 4;
-        @negedge clk;
+        @(negedge clk);
         sample_in <= 5;
-        @negedge clk;
+        @(negedge clk);
         sample_in <= 6;
-        @negedge clk;
+        @(negedge clk);
         sample_in <= 7;
 
-        repeat(2) @negedge clk;
+        repeat(2) @(negedge clk);
 
         // Test reading output memory
 		// Should read 5th output 
-		msg_in = 1'b1;
-		sample_read <= 1'b0;
-		mem_addr  <= 5;
-		
+		sample_read <= 1'b1;
+		sample_addr  <= 5;
 		repeat(2) @(posedge clk);
-		msg_in = 1'b0;
-		repeat(3) @(posedge clk);
+		$finish;
     end
 
 endmodule

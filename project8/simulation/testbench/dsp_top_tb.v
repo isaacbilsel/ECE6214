@@ -96,16 +96,19 @@ module dsp_top_tb;
 		// flush the pipeline
 		repeat(10) @(posedge clk);
 
-		// simulate impulse response  
-		testcase = "Impulse";
-		@(negedge clk);
-		data_in_i <= 4'h1;
+		@(negedge clk);	
+		// simulate step response
+		testcase <= "Step";
 		new_symbol <= 1'b1;
-		repeat (2) @(negedge clk);
-		data_in_i <= 4'h0;
+		data_in_i <= 4'h1;
+		
+		@(negedge clk);	
 		new_symbol <= 1'b0;
-		@(negedge clk);
 		repeat(150) @(posedge clk);
+
+		// flush the pipeline
+		data_in_i <= 4'h0;
+		repeat(160) @(posedge clk);
 		
 		// Test reading I output memory
 		// Should read 5th output 
@@ -118,22 +121,23 @@ module dsp_top_tb;
 		repeat(3) @(posedge clk);
 
 		// Test reading Q output memory
-		// Should read 10th output
+		// Should read 10th output // doesnt exist right now
 		msg_in <= 1'b1;
 		rw <= 1'b0;
 		mem_addr  <= 778; 
 		repeat(3) @(posedge clk);
-
-		@(negedge clk);	
-		// simulate step response
-		testcase <= "Step";
-		new_symbol <= 1'b1;
+		
+		// simulate impulse response  
+		testcase = "Impulse";
+		@(negedge clk);
 		data_in_i <= 4'h1;
+		new_symbol <= 1'b1;
+		repeat (2) @(negedge clk);
+		data_in_i <= 4'h0;
+		new_symbol <= 1'b0;
+		@(negedge clk);
 		repeat(150) @(posedge clk);
-
-		// flush the pipeline
-		data_in_i = 4'h0;
-		repeat(150) @(posedge clk);
+		
 		$finish;
 		
 		// We need to write to the log file here
