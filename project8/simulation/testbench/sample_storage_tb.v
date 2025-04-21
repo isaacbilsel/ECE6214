@@ -1,13 +1,13 @@
 `timescale 1ns / 1ps
 
 module sample_storage_tb
-    reg  clk,
-    reg  rst_n,   
-	reg signed [11:0]  sample_in,
-	reg [9:0] 	    sample_addr,
-	reg 		  sample_read,
-    reg         counter_begin,   // Signal to start writing to sample storage
-	wire signed [7:0] sample_read_out
+    reg  clk;
+    reg  rst_n;   
+	reg signed [11:0]  sample_in;
+	reg [9:0] 	    sample_addr;
+	reg 		  sample_read;
+    reg         counter_begin;   // Signal to start writing to sample storage
+	wire signed [7:0] sample_read_out;
 
     sample_storage DUT(
         .clk(clk),
@@ -17,7 +17,7 @@ module sample_storage_tb
         .sample_read(sample_read),
         .counter_begin(counter_begin),
         .sample_read_out(sample_read_out)
-    )
+    );
 
     always #5 clk = ~clk; 	// 10 ns clock
 
