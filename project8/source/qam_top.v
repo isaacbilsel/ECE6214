@@ -53,6 +53,6 @@ module qam_top(
         .I_out(I_out),
 		.Q_out(Q_out),
 		.coeff_read_out(coeff_read_out) // CDC input
-	)
+	);
 
 endmodule // qam_top
