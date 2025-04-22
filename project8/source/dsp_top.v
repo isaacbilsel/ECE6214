@@ -27,6 +27,8 @@ module dsp_top(
     wire read;
     wire [9:0] coeff_i_addr;
     wire [9:0] coeff_q_addr;
+    wire [9:0] sample_i_addr;
+    wire [9:0] sample_q_addr;
     wire [7:0] coeff_read_out_i;
     wire [7:0] coeff_read_out_q;
     wire [7:0] sample_read_out_i;
