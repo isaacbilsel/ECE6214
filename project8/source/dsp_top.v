@@ -53,6 +53,8 @@ module dsp_top(
     parameter LATENCY = 143;
     
     // Datapath reset variables
+    reg [143:0] shift_reg;
+    /*
     reg [7:0] counter;
     reg [7:0] counter_next;
     reg data_out_valid;
@@ -64,6 +66,7 @@ module dsp_top(
     parameter OUTPUT = 2'b10;
     reg [1:0] state;
     reg [1:0] state_next;
+    */
                             
     // Reset Synchronization Instantiation
     reset_synchronization rst(.clk(clk),
@@ -130,61 +133,18 @@ module dsp_top(
 	// Logic for Datapath reset
     always @(posedge clk or negedge rst_n_sync_wire) begin
         if (!rst_n_sync_wire) begin
-            counter <= 0;
-            data_out_valid <= 0;
-            state <= IDLE;
+            data_out_valid <= 1'b0;
         end 
         else begin
-            counter <= counter_next;
-            data_out_valid <= data_out_valid_next;
+            shift_reg <= {shift_reg[142:0], new_symbol};
+            data_out_valid <= shift_reg[143];
             mem_read_out <= mem_read_out_next;
-            state <= state_next;
         end
     end
-	
+
     // May need to use a shift reg here instead
 	always @(*) begin
-		data_out_valid_next <= data_out_valid;
-		counter_next <= counter;
         mem_read_out_next <= mem_read_out;
-        state_next <= state;
-        case(state)
-            IDLE: begin
-                if(new_symbol) begin
-                    counter_next <= counter + 1'b1;
-                    state_next <=  COMPUTE;
-                end
-                else begin
-                    counter_next <= 1'b0;
-                    state_next <= IDLE;
-                end
-            end
-            COMPUTE: begin
-                if (new_symbol) begin
-                    counter_next <= 1'b1; 
-                    state_next <= COMPUTE;
-                    data_out_valid_next <= 0;
-                end
-                else if (counter < LATENCY) begin
-                    data_out_valid_next <= 0;
-                    state_next <= COMPUTE; 
-                    counter_next <= counter + 1'b1;
-                end
-                else begin
-                    data_out_valid_next <= 1'b1;
-                    state_next <= OUTPUT; 
-                    counter_next <= 8'd0;
-                end
-            end
-            OUTPUT: begin
-                state_next <= IDLE; 
-                data_out_valid_next <= 1'b0;
-            end
-            default: begin
-                state_next <= IDLE;
-                data_out_valid_next <= 1'b0;
-            end
-        endcase
 
         // Set read output if address is valid and read flag is true // Rewrite this with case statements
         if (mem_addr > 10'd127 & mem_addr < 10'd199 & read)
