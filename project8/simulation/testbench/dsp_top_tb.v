@@ -102,12 +102,11 @@ module dsp_top_tb;
 		new_symbol <= 1'b1;
 		data_in_i <= 4'h1;
 		
-		@(negedge clk);	
+		repeat(11) @(negedge clk);	
 		new_symbol <= 1'b0;
-		repeat(150) @(posedge clk);
+		data_in_i <= 4'h0;
 
 		// flush the pipeline
-		data_in_i <= 4'h0;
 		repeat(160) @(posedge clk);
 		
 		// Test reading I output memory
@@ -120,12 +119,14 @@ module dsp_top_tb;
 		msg_in = 1'b0;
 		repeat(3) @(posedge clk);
 
-		// Test reading Q output memory
-		// Should read 10th output // doesnt exist right now
+		// Test reading I output memory
+		// Should read 10th output 
 		msg_in <= 1'b1;
 		rw <= 1'b0;
-		mem_addr  <= 778; 
+		mem_addr  <= 521; 
 		repeat(3) @(posedge clk);
+
+		// TO DO: Test Q memory reads as well 
 		
 		// simulate impulse response  
 		testcase = "Impulse";
