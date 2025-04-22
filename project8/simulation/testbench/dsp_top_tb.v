@@ -102,7 +102,7 @@ module dsp_top_tb;
 		new_symbol <= 1'b1;
 		data_in_i <= 4'h1;
 		
-		repeat(11) @(negedge clk);	
+		repeat(150) @(negedge clk);	// This should feed in the equivalent of 11 samples to the filter
 		new_symbol <= 1'b0;
 		data_in_i <= 4'h0;
 
@@ -110,20 +110,31 @@ module dsp_top_tb;
 		repeat(160) @(posedge clk);
 		
 		// Test reading I output memory
-		// Should read 5th output 
+		// Should read 0th output 
 		msg_in <= 1'b1;
 		rw <= 1'b0;
-		mem_addr  <= 516;
+		// Read first 8 MSBs
+		mem_addr  <= 512;
+		
+		// Read last 4 LSBs
+		repeat(1) @(posedge clk);
+		mem_addr  <= 513;
 		
 		repeat(2) @(posedge clk);
 		msg_in = 1'b0;
+		
 		repeat(3) @(posedge clk);
 
 		// Test reading I output memory
 		// Should read 10th output 
 		msg_in <= 1'b1;
 		rw <= 1'b0;
-		mem_addr  <= 521; 
+		mem_addr  <= 532;
+		
+		// Read last 4 LSBs
+		repeat(1) @(posedge clk);
+		mem_addr  <= 533;
+		
 		repeat(3) @(posedge clk);
 
 		// TO DO: Test Q memory reads as well 
