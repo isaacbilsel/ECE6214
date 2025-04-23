@@ -20,7 +20,7 @@ module sample_storage_tb;
     );
 
     always #5 clk = ~clk; 	// 10 ns clock
-
+	integer i;
     initial begin
         clk <= 0;
 		rst_n <= 0;
@@ -28,30 +28,40 @@ module sample_storage_tb;
 		repeat(2) @(posedge clk);
 		rst_n = 1;
 		repeat(2) @(posedge clk);
-
+		@(negedge clk);
         counter_begin <= 1'b1;
-        sample_in <= 1;
         
-        @(negedge clk);
-        sample_in <= 2;
-        @(negedge clk);
-        sample_in <= 3;
-        @(negedge clk);
-        sample_in <= 4;
-        @(negedge clk);
-        sample_in <= 5;
-        @(negedge clk);
-        sample_in <= 6;
-        @(negedge clk);
-        sample_in <= 7;
-
-        repeat(2) @(negedge clk);
-
+        for (i=0; i <=19; i = i+1) begin
+        	sample_in <= i;
+			@(negedge clk);	 
+		end
+		
+		// Simulate invalid outputs. These should not be written to storage.
+        counter_begin <= 1'b0;
+        for (i=20; i <=25; i = i+1) begin
+        	sample_in <= i;
+			@(negedge clk);	 
+		end
+		
+		counter_begin <= 1'b1;
+		for (i=26; i <=63; i = i+1) begin
+        	sample_in <= i;
+			@(negedge clk);	 
+		end
+        
+        
+		repeat(2) @(posedge clk);
         // Test reading output memory
 		// Should read 5th output 
 		sample_read <= 1'b1;
 		sample_addr  <= 5;
 		repeat(2) @(posedge clk);
+		
+		// Should read 10th output 
+		sample_read <= 1'b1;
+		sample_addr  <= 10;
+		repeat(2) @(posedge clk);
+		
 		$finish;
     end
 
