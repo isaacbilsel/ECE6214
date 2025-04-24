@@ -54,24 +54,8 @@ module dsp_top(
     
     // Datapath reset variables
     reg [143:0] shift_reg;
-    
-
     reg data_out_valid;
-    // reg data_out_valid_next;
 
-    /*
-
-    // Simple FSM variables
-
-    reg [7:0] counter;
-    reg [7:0] counter_next;
-    parameter IDLE = 2'b00;
-    parameter COMPUTE = 2'b01;
-    parameter OUTPUT = 2'b10;
-    reg [1:0] state;
-    reg [1:0] state_next;
-    */
-                            
     // Reset Synchronization Instantiation
     reset_synchronization rst(.clk(clk),
                             .rst_n(rst_n),
