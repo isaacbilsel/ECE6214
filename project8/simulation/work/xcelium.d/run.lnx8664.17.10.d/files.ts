@@ -380,8 +380,8 @@
 1744491660 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/SPI_Interface.v
 1744491660 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/upsampler.v
 1745249102 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/qam_top.v
-1745354555 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/dsp_top.v
+1745440860 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/dsp_top.v
 1744492271 /home/ead/isaacbilsel/ece6214/ECE6214/project8/simulation/testbench/qam_top_tb.v
 1745357197 /home/ead/isaacbilsel/ece6214/ECE6214/project8/simulation/testbench/dsp_top_tb.v
-1745249383 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/sample_storage.v
-1745267281 /home/ead/isaacbilsel/ece6214/ECE6214/project8/simulation/testbench/sample_storage_tb.v
+1745443893 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/sample_storage.v
+1745442571 /home/ead/isaacbilsel/ece6214/ECE6214/project8/simulation/testbench/sample_storage_tb.v

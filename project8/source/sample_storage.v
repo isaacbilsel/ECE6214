@@ -7,18 +7,22 @@
 
 module sample_storage(
 	input wire  clk,
-    input wire  rst_n,        // ?
+    input wire  rst_n,     
 	input wire signed [11:0]  sample_in,
 	input wire [9:0] 	    sample_addr,
-	// input wire 		  sample_write,
 	input wire 		  sample_read,
-    input wire         counter_begin,   // Signal to start writing to sample storage
+    input wire         counter_begin,   // Signal to start writing to sample storage. Might need to register this?
 	output wire signed [7:0] sample_read_out
 );
 
     // Internal signals
     reg signed [7:0] sample_internal[0:127];
+    reg signed [7:0] sample_internal_next[0:127];
 	reg signed [7:0] sample_read_out_q;
+	reg signed [7:0] msb_next;
+    reg signed [7:0] lsb_next;
+    reg signed [11:0] sample_q;
+    reg [6:0] addr_next;
     
     // Simple FSM Variables
     parameter IDLE = 2'b00;
@@ -45,11 +49,15 @@ module sample_storage(
         else begin
             counter <= counter_next;
             state <= state_next;
+            sample_q <= sample_in;
 
             // Handle filter output writes (only filter can write). Only write first 64 samples
-            if (state == WRITE) begin
-                sample_internal[counter * 2] <= sample_in[11:4];            // 8 MSBs 
-                sample_internal[counter * 2 + 1] <= {8'h0, sample_in[3:0]}; // 4 LSBs in addr + 1
+            if (counter_begin && (state==WRITE || state==IDLE)) begin
+            	for (i=0; i<128; i=i+1) begin 		// Dont need to update whole array here. need to find lightweight solution
+            	    sample_internal[i] <= sample_internal_next[i];
+            	end
+                // sample_internal[(counter-1) * 2] <= msb_next;           // 8 MSBs 
+                // sample_internal[(counter-1) * 2 + 1] <= lsb_next; 		// 4 LSBs in addr + 1
             end
 
             // Handle coefficient read requests. We can only read 8 bits at a time, so only half of a filter output
@@ -64,32 +72,40 @@ module sample_storage(
 
     // Combinational Logic FSM
     always @(*) begin
-        counter_next <= counter;
-        state_next <= state;
+		for (i=0; i<128; i=i+1) sample_internal_next[i] = sample_internal[i];
+        counter_next = counter;   
+        state_next = state;
+        msb_next = sample_q[11:4];
+		lsb_next = {8'h0, sample_q[3:0]};
+		addr_next = (counter-2) * 2;
+
+		sample_internal_next[addr_next] = msb_next;
+		sample_internal_next[addr_next+1] = lsb_next;
+		
         case(state)
             IDLE: begin
                 if (counter_begin) begin
-                    state_next <= WRITE;
-                    counter_next <= 1'b0;
+                    state_next = WRITE;
+                    counter_next = 1'b1;
                 end
                 else begin
-                    state_next <= IDLE;
-                    counter_next <= 6'd0;
+                    state_next = IDLE;
+                    counter_next = 6'd0;
                 end
             end
             WRITE: begin
-                if (counter < 64) begin
-                    state_next <= WRITE;
-                    counter_next <= counter + 1'b1;
+                if (counter < 63) begin
+                    state_next = WRITE;
+                    counter_next = counter + 1'b1;
                 end
                 else begin      // Sample storage is full
-                    state_next <= DONE; 
-                    counter_next <= 6'd0;
+                    state_next = DONE; 
+                    // counter_next <= 6'd0;
                 end
             end
             DONE: begin         // Sample storage is full. Do nothing
-                state_next <= DONE; 
-                counter_next <= 6'd0;
+                state_next = DONE; 
+                // counter_next <= 6'd0;
             end
         endcase
     end
