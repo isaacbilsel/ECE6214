@@ -2,5 +2,13 @@
 
 # list of design files to be compiled
 
-ver_files=("../../synthesis/netlists/dsp_top.v"
-	  "../testbench/dsp_top_tb.v")
+ver_files=(
+    	"../../synthesis/netlists/coeff_memory.v"
+       	"../../synthesis/netlists/dsp_slice.v"
+       	"../../synthesis/netlists/fir_filter.v"
+       	"../../synthesis/netlists/upsampler.v"
+	"../../synthesis/netlists/sample_storage.v"
+       	"../../synthesis/netlists/dsp_top.v"
+	"../testbench/sample_storage_tb.v"
+	"../testbench/dsp_top_tb.v"
+)

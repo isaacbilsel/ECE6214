@@ -1,0 +1,554 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -max_paths 5
+        -sort_by group
+Design : dsp_slice
+Version: O-2018.06-SP1
+Date   : Thu Apr 24 19:43:30 2025
+****************************************
+
+Operating Conditions: slow   Library: IBM_CMOS8HP_SS125
+Wire Load Model Mode: enclosed
+
+  Startpoint: coeff_in[4]
+              (input port clocked by v_clk)
+  Endpoint: mult_out_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dsp_slice          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 f
+  coeff_in[4] (in)                                       0.000      3.000 f
+  U7/Z (INVERT_H)                                        0.080      3.080 r
+  U6/Z (INVERT_I)                                        0.047      3.126 f
+  mult_32/B[4] (dsp_slice_DW02_mult_0)                   0.000      3.126 f
+  mult_32/U56/Z (INVERT_I)                               0.053      3.179 r
+  mult_32/U55/Z (NOR2_E)                                 0.071      3.250 f
+  mult_32/U33/Z (AND2_H)                                 0.092      3.341 f
+  mult_32/U31/Z (INVERT_D)                               0.056      3.397 r
+  mult_32/U32/Z (INVERT_E)                               0.052      3.450 f
+  mult_32/S2_2_3/SUM (ADDF_B)                            0.481      3.931 r
+  mult_32/S4_2/SUM (ADDF_F)                              0.318      4.248 f
+  mult_32/U74/Z (XOR2_D)                                 0.187      4.436 f
+  mult_32/FS_1/A[3] (dsp_slice_DW01_add_1)               0.000      4.436 f
+  mult_32/FS_1/U51/Z (NOR2_E)                            0.101      4.537 r
+  mult_32/FS_1/U42/Z (INVERT_E)                          0.067      4.604 f
+  mult_32/FS_1/U47/Z (AOI21_D)                           0.092      4.696 r
+  mult_32/FS_1/U13/Z (OA21_H)                            0.100      4.796 r
+  mult_32/FS_1/U11/Z (INVERT_E)                          0.051      4.847 f
+  mult_32/FS_1/U12/Z (INVERT_H)                          0.054      4.902 r
+  mult_32/FS_1/U5/Z (INVERT_H)                           0.035      4.937 f
+  mult_32/FS_1/U37/Z (NAND2_E)                           0.048      4.985 r
+  mult_32/FS_1/U36/Z (NAND2_E)                           0.044      5.029 f
+  mult_32/FS_1/U23/Z (INVERT_F)                          0.042      5.071 r
+  mult_32/FS_1/U35/Z (INVERT_F)                          0.048      5.119 f
+  mult_32/FS_1/U4/Z (AO21_F)                             0.111      5.229 f
+  mult_32/FS_1/U34/Z (INVERT_H)                          0.051      5.281 r
+  mult_32/FS_1/U14/Z (OAI21_C)                           0.063      5.344 f
+  mult_32/FS_1/U3/Z (INVERT_H)                           0.047      5.390 r
+  mult_32/FS_1/U32/Z (CLKI_O)                            0.112      5.502 f
+  mult_32/FS_1/U31/Z (OA21_F)                            0.106      5.608 f
+  mult_32/FS_1/U17/Z (INVERT_D)                          0.060      5.668 r
+  mult_32/FS_1/U18/Z (INVERT_E)                          0.050      5.718 f
+  mult_32/FS_1/U28/Z (AO21_E)                            0.122      5.840 f
+  mult_32/FS_1/U27/Z (XOR2_B)                            0.136      5.976 f
+  mult_32/FS_1/SUM[9] (dsp_slice_DW01_add_1)             0.000      5.976 f
+  mult_32/PRODUCT[11] (dsp_slice_DW02_mult_0)            0.000      5.976 f
+  mult_out_reg[11]/D (DFF_E)                             0.000      5.976 f
+  data arrival time                                                 5.976
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  mult_out_reg[11]/CLK (DFF_E)                           0.000     10.000 r
+  library setup time                                    -0.246      9.754
+  data required time                                                9.754
+  --------------------------------------------------------------------------
+  data required time                                                9.754
+  data arrival time                                                -5.976
+  --------------------------------------------------------------------------
+  slack (MET)                                                       3.778
+
+
+  Startpoint: coeff_in[2]
+              (input port clocked by v_clk)
+  Endpoint: mult_out_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dsp_slice          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 f
+  coeff_in[2] (in)                                       0.000      3.000 f
+  U9/Z (INVERT_H)                                        0.080      3.080 r
+  U8/Z (INVERT_I)                                        0.047      3.126 f
+  mult_32/B[2] (dsp_slice_DW02_mult_0)                   0.000      3.126 f
+  mult_32/U59/Z (INVERT_I)                               0.054      3.180 r
+  mult_32/U58/Z (NOR2_E)                                 0.071      3.251 f
+  mult_32/U72/Z (AND2_H)                                 0.092      3.343 f
+  mult_32/U22/Z (INVERT_D)                               0.056      3.399 r
+  mult_32/U23/Z (INVERT_E)                               0.052      3.451 f
+  mult_32/S2_2_1/SUM (ADDF_B)                            0.461      3.912 r
+  mult_32/S4_0/SUM (ADDF_E)                              0.343      4.256 f
+  mult_32/U18/Z (AND2_H)                                 0.093      4.349 f
+  mult_32/FS_1/B[2] (dsp_slice_DW01_add_1)               0.000      4.349 f
+  mult_32/FS_1/U16/Z (INVERT_D)                          0.056      4.405 r
+  mult_32/FS_1/U39/Z (INVERT_E)                          0.058      4.462 f
+  mult_32/FS_1/U40/Z (INVERT_H)                          0.058      4.520 r
+  mult_32/FS_1/U56/Z (NOR2_F)                            0.068      4.588 f
+  mult_32/FS_1/U47/Z (AOI21_D)                           0.103      4.691 r
+  mult_32/FS_1/U13/Z (OA21_H)                            0.100      4.790 r
+  mult_32/FS_1/U11/Z (INVERT_E)                          0.051      4.842 f
+  mult_32/FS_1/U12/Z (INVERT_H)                          0.054      4.896 r
+  mult_32/FS_1/U5/Z (INVERT_H)                           0.035      4.931 f
+  mult_32/FS_1/U37/Z (NAND2_E)                           0.048      4.979 r
+  mult_32/FS_1/U36/Z (NAND2_E)                           0.044      5.023 f
+  mult_32/FS_1/U23/Z (INVERT_F)                          0.042      5.065 r
+  mult_32/FS_1/U35/Z (INVERT_F)                          0.048      5.113 f
+  mult_32/FS_1/U4/Z (AO21_F)                             0.111      5.224 f
+  mult_32/FS_1/U34/Z (INVERT_H)                          0.051      5.275 r
+  mult_32/FS_1/U14/Z (OAI21_C)                           0.063      5.338 f
+  mult_32/FS_1/U3/Z (INVERT_H)                           0.047      5.385 r
+  mult_32/FS_1/U32/Z (CLKI_O)                            0.112      5.497 f
+  mult_32/FS_1/U31/Z (OA21_F)                            0.106      5.602 f
+  mult_32/FS_1/U17/Z (INVERT_D)                          0.060      5.663 r
+  mult_32/FS_1/U18/Z (INVERT_E)                          0.050      5.712 f
+  mult_32/FS_1/U28/Z (AO21_E)                            0.122      5.834 f
+  mult_32/FS_1/U27/Z (XOR2_B)                            0.136      5.970 f
+  mult_32/FS_1/SUM[9] (dsp_slice_DW01_add_1)             0.000      5.970 f
+  mult_32/PRODUCT[11] (dsp_slice_DW02_mult_0)            0.000      5.970 f
+  mult_out_reg[11]/D (DFF_E)                             0.000      5.971 f
+  data arrival time                                                 5.971
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  mult_out_reg[11]/CLK (DFF_E)                           0.000     10.000 r
+  library setup time                                    -0.246      9.754
+  data required time                                                9.754
+  --------------------------------------------------------------------------
+  data required time                                                9.754
+  data arrival time                                                -5.971
+  --------------------------------------------------------------------------
+  slack (MET)                                                       3.784
+
+
+  Startpoint: coeff_in[3]
+              (input port clocked by v_clk)
+  Endpoint: mult_out_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dsp_slice          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 f
+  coeff_in[3] (in)                                       0.000      3.000 f
+  U5/Z (INVERT_H)                                        0.080      3.080 r
+  U4/Z (INVERT_I)                                        0.047      3.126 f
+  mult_32/B[3] (dsp_slice_DW02_mult_0)                   0.000      3.126 f
+  mult_32/U50/Z (INVERT_I)                               0.053      3.179 r
+  mult_32/U65/Z (NOR2_E)                                 0.071      3.250 f
+  mult_32/U33/Z (AND2_H)                                 0.085      3.335 f
+  mult_32/U31/Z (INVERT_D)                               0.056      3.391 r
+  mult_32/U32/Z (INVERT_E)                               0.052      3.443 f
+  mult_32/S2_2_3/SUM (ADDF_B)                            0.481      3.924 r
+  mult_32/S4_2/SUM (ADDF_F)                              0.318      4.242 f
+  mult_32/U74/Z (XOR2_D)                                 0.187      4.429 f
+  mult_32/FS_1/A[3] (dsp_slice_DW01_add_1)               0.000      4.429 f
+  mult_32/FS_1/U51/Z (NOR2_E)                            0.101      4.530 r
+  mult_32/FS_1/U42/Z (INVERT_E)                          0.067      4.597 f
+  mult_32/FS_1/U47/Z (AOI21_D)                           0.092      4.690 r
+  mult_32/FS_1/U13/Z (OA21_H)                            0.100      4.789 r
+  mult_32/FS_1/U11/Z (INVERT_E)                          0.051      4.841 f
+  mult_32/FS_1/U12/Z (INVERT_H)                          0.054      4.895 r
+  mult_32/FS_1/U5/Z (INVERT_H)                           0.035      4.930 f
+  mult_32/FS_1/U37/Z (NAND2_E)                           0.048      4.978 r
+  mult_32/FS_1/U36/Z (NAND2_E)                           0.044      5.022 f
+  mult_32/FS_1/U23/Z (INVERT_F)                          0.042      5.064 r
+  mult_32/FS_1/U35/Z (INVERT_F)                          0.048      5.112 f
+  mult_32/FS_1/U4/Z (AO21_F)                             0.111      5.223 f
+  mult_32/FS_1/U34/Z (INVERT_H)                          0.051      5.274 r
+  mult_32/FS_1/U14/Z (OAI21_C)                           0.063      5.337 f
+  mult_32/FS_1/U3/Z (INVERT_H)                           0.047      5.384 r
+  mult_32/FS_1/U32/Z (CLKI_O)                            0.112      5.496 f
+  mult_32/FS_1/U31/Z (OA21_F)                            0.106      5.601 f
+  mult_32/FS_1/U17/Z (INVERT_D)                          0.060      5.662 r
+  mult_32/FS_1/U18/Z (INVERT_E)                          0.050      5.711 f
+  mult_32/FS_1/U28/Z (AO21_E)                            0.122      5.833 f
+  mult_32/FS_1/U27/Z (XOR2_B)                            0.136      5.969 f
+  mult_32/FS_1/SUM[9] (dsp_slice_DW01_add_1)             0.000      5.969 f
+  mult_32/PRODUCT[11] (dsp_slice_DW02_mult_0)            0.000      5.969 f
+  mult_out_reg[11]/D (DFF_E)                             0.000      5.970 f
+  data arrival time                                                 5.970
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  mult_out_reg[11]/CLK (DFF_E)                           0.000     10.000 r
+  library setup time                                    -0.246      9.754
+  data required time                                                9.754
+  --------------------------------------------------------------------------
+  data required time                                                9.754
+  data arrival time                                                -5.970
+  --------------------------------------------------------------------------
+  slack (MET)                                                       3.785
+
+
+  Startpoint: coeff_in[1]
+              (input port clocked by v_clk)
+  Endpoint: mult_out_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dsp_slice          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 f
+  coeff_in[1] (in)                                       0.000      3.000 f
+  U11/Z (INVERT_H)                                       0.080      3.080 r
+  U10/Z (INVERT_I)                                       0.047      3.126 f
+  mult_32/B[1] (dsp_slice_DW02_mult_0)                   0.000      3.126 f
+  mult_32/U34/Z (INVERT_I)                               0.053      3.179 r
+  mult_32/U66/Z (NOR2_E)                                 0.071      3.250 f
+  mult_32/U72/Z (AND2_H)                                 0.085      3.335 f
+  mult_32/U22/Z (INVERT_D)                               0.056      3.391 r
+  mult_32/U23/Z (INVERT_E)                               0.052      3.443 f
+  mult_32/S2_2_1/SUM (ADDF_B)                            0.461      3.904 r
+  mult_32/S4_0/SUM (ADDF_E)                              0.343      4.248 f
+  mult_32/U18/Z (AND2_H)                                 0.093      4.340 f
+  mult_32/FS_1/B[2] (dsp_slice_DW01_add_1)               0.000      4.340 f
+  mult_32/FS_1/U16/Z (INVERT_D)                          0.056      4.397 r
+  mult_32/FS_1/U39/Z (INVERT_E)                          0.058      4.454 f
+  mult_32/FS_1/U40/Z (INVERT_H)                          0.058      4.512 r
+  mult_32/FS_1/U56/Z (NOR2_F)                            0.068      4.580 f
+  mult_32/FS_1/U47/Z (AOI21_D)                           0.103      4.682 r
+  mult_32/FS_1/U13/Z (OA21_H)                            0.100      4.782 r
+  mult_32/FS_1/U11/Z (INVERT_E)                          0.051      4.834 f
+  mult_32/FS_1/U12/Z (INVERT_H)                          0.054      4.888 r
+  mult_32/FS_1/U5/Z (INVERT_H)                           0.035      4.923 f
+  mult_32/FS_1/U37/Z (NAND2_E)                           0.048      4.971 r
+  mult_32/FS_1/U36/Z (NAND2_E)                           0.044      5.015 f
+  mult_32/FS_1/U23/Z (INVERT_F)                          0.042      5.057 r
+  mult_32/FS_1/U35/Z (INVERT_F)                          0.048      5.105 f
+  mult_32/FS_1/U4/Z (AO21_F)                             0.111      5.216 f
+  mult_32/FS_1/U34/Z (INVERT_H)                          0.051      5.267 r
+  mult_32/FS_1/U14/Z (OAI21_C)                           0.063      5.330 f
+  mult_32/FS_1/U3/Z (INVERT_H)                           0.047      5.377 r
+  mult_32/FS_1/U32/Z (CLKI_O)                            0.112      5.489 f
+  mult_32/FS_1/U31/Z (OA21_F)                            0.106      5.594 f
+  mult_32/FS_1/U17/Z (INVERT_D)                          0.060      5.655 r
+  mult_32/FS_1/U18/Z (INVERT_E)                          0.050      5.704 f
+  mult_32/FS_1/U28/Z (AO21_E)                            0.122      5.826 f
+  mult_32/FS_1/U27/Z (XOR2_B)                            0.136      5.962 f
+  mult_32/FS_1/SUM[9] (dsp_slice_DW01_add_1)             0.000      5.962 f
+  mult_32/PRODUCT[11] (dsp_slice_DW02_mult_0)            0.000      5.962 f
+  mult_out_reg[11]/D (DFF_E)                             0.000      5.962 f
+  data arrival time                                                 5.962
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  mult_out_reg[11]/CLK (DFF_E)                           0.000     10.000 r
+  library setup time                                    -0.246      9.754
+  data required time                                                9.754
+  --------------------------------------------------------------------------
+  data required time                                                9.754
+  data arrival time                                                -5.962
+  --------------------------------------------------------------------------
+  slack (MET)                                                       3.792
+
+
+  Startpoint: coeff_in[2]
+              (input port clocked by v_clk)
+  Endpoint: mult_out_reg[11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dsp_slice          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_DW02_mult_0
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  dsp_slice_DW01_add_1
+                     500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 r
+  coeff_in[2] (in)                                       0.000      3.000 r
+  U9/Z (INVERT_H)                                        0.057      3.057 f
+  U8/Z (INVERT_I)                                        0.052      3.109 r
+  mult_32/B[2] (dsp_slice_DW02_mult_0)                   0.000      3.109 r
+  mult_32/U59/Z (INVERT_I)                               0.047      3.156 f
+  mult_32/U58/Z (NOR2_E)                                 0.076      3.232 r
+  mult_32/U72/Z (AND2_H)                                 0.078      3.310 r
+  mult_32/U22/Z (INVERT_D)                               0.050      3.360 f
+  mult_32/U23/Z (INVERT_E)                               0.054      3.413 r
+  mult_32/S2_2_1/SUM (ADDF_B)                            0.453      3.866 f
+  mult_32/S4_0/SUM (ADDF_E)                              0.372      4.238 r
+  mult_32/U18/Z (AND2_H)                                 0.083      4.321 r
+  mult_32/FS_1/B[2] (dsp_slice_DW01_add_1)               0.000      4.321 r
+  mult_32/FS_1/U16/Z (INVERT_D)                          0.050      4.372 f
+  mult_32/FS_1/U39/Z (INVERT_E)                          0.060      4.431 r
+  mult_32/FS_1/U40/Z (INVERT_H)                          0.052      4.483 f
+  mult_32/FS_1/U56/Z (NOR2_F)                            0.077      4.561 r
+  mult_32/FS_1/U47/Z (AOI21_D)                           0.075      4.636 f
+  mult_32/FS_1/U13/Z (OA21_H)                            0.103      4.739 f
+  mult_32/FS_1/U11/Z (INVERT_E)                          0.057      4.796 r
+  mult_32/FS_1/U12/Z (INVERT_H)                          0.049      4.845 f
+  mult_32/FS_1/U5/Z (INVERT_H)                           0.038      4.883 r
+  mult_32/FS_1/U37/Z (NAND2_E)                           0.038      4.921 f
+  mult_32/FS_1/U36/Z (NAND2_E)                           0.051      4.972 r
+  mult_32/FS_1/U23/Z (INVERT_F)                          0.041      5.013 f
+  mult_32/FS_1/U35/Z (INVERT_F)                          0.053      5.067 r
+  mult_32/FS_1/U4/Z (AO21_F)                             0.115      5.182 r
+  mult_32/FS_1/U34/Z (INVERT_H)                          0.048      5.230 f
+  mult_32/FS_1/U14/Z (OAI21_C)                           0.100      5.330 r
+  mult_32/FS_1/U3/Z (INVERT_H)                           0.050      5.380 f
+  mult_32/FS_1/U32/Z (CLKI_O)                            0.101      5.482 r
+  mult_32/FS_1/U31/Z (OA21_F)                            0.098      5.579 r
+  mult_32/FS_1/U17/Z (INVERT_D)                          0.053      5.632 f
+  mult_32/FS_1/U18/Z (INVERT_E)                          0.051      5.683 r
+  mult_32/FS_1/U28/Z (AO21_E)                            0.168      5.851 r
+  mult_32/FS_1/U27/Z (XOR2_B)                            0.102      5.954 f
+  mult_32/FS_1/SUM[9] (dsp_slice_DW01_add_1)             0.000      5.954 f
+  mult_32/PRODUCT[11] (dsp_slice_DW02_mult_0)            0.000      5.954 f
+  mult_out_reg[11]/D (DFF_E)                             0.000      5.954 f
+  data arrival time                                                 5.954
+
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  mult_out_reg[11]/CLK (DFF_E)                           0.000     10.000 r
+  library setup time                                    -0.246      9.754
+  data required time                                                9.754
+  --------------------------------------------------------------------------
+  data required time                                                9.754
+  data arrival time                                                -5.954
+  --------------------------------------------------------------------------
+  slack (MET)                                                       3.800
+
+
+  Startpoint: sample_delay1_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sample_out[3]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dsp_slice          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  sample_delay1_reg[3]/CLK (DFF_E)        0.000      0.500 r
+  sample_delay1_reg[3]/QBAR (DFF_E)       0.194      0.694 f
+  U52/Z (INVERT_H)                        0.060      0.754 r
+  U49/Z (INVERT_K)                        0.047      0.802 f
+  U51/Z (INVERT_O)                        0.052      0.854 r
+  sample_out[3] (out)                     0.002      0.856 r
+  data arrival time                                  0.856
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.856
+  -----------------------------------------------------------
+  slack (MET)                                        6.144
+
+
+  Startpoint: sample_delay1_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sample_out[1]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dsp_slice          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  sample_delay1_reg[1]/CLK (DFF_E)        0.000      0.500 r
+  sample_delay1_reg[1]/QBAR (DFF_E)       0.194      0.694 f
+  U48/Z (INVERT_H)                        0.060      0.754 r
+  U45/Z (INVERT_K)                        0.047      0.802 f
+  U46/Z (INVERT_O)                        0.052      0.854 r
+  sample_out[1] (out)                     0.002      0.856 r
+  data arrival time                                  0.856
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.856
+  -----------------------------------------------------------
+  slack (MET)                                        6.144
+
+
+  Startpoint: sample_delay1_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sample_out[2]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dsp_slice          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  sample_delay1_reg[2]/CLK (DFF_E)        0.000      0.500 r
+  sample_delay1_reg[2]/QBAR (DFF_E)       0.194      0.694 f
+  U44/Z (INVERT_H)                        0.060      0.754 r
+  U41/Z (INVERT_K)                        0.046      0.800 f
+  U43/Z (INVERT_O)                        0.052      0.852 r
+  sample_out[2] (out)                     0.002      0.854 r
+  data arrival time                                  0.854
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.854
+  -----------------------------------------------------------
+  slack (MET)                                        6.146
+
+
+  Startpoint: sample_delay1_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sample_out[0]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dsp_slice          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  sample_delay1_reg[0]/CLK (DFF_E)        0.000      0.500 r
+  sample_delay1_reg[0]/QBAR (DFF_E)       0.194      0.694 f
+  U40/Z (INVERT_H)                        0.060      0.754 r
+  U37/Z (INVERT_K)                        0.045      0.799 f
+  U39/Z (INVERT_O)                        0.052      0.851 r
+  sample_out[0] (out)                     0.002      0.853 r
+  data arrival time                                  0.853
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.853
+  -----------------------------------------------------------
+  slack (MET)                                        6.147
+
+
+  Startpoint: accum_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: accum_out[0]
+            (output port clocked by v_clk)
+  Path Group: v_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  dsp_slice          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.500      0.500
+  accum_reg[0]/CLK (DFF_E)                0.000      0.500 r
+  accum_reg[0]/QBAR (DFF_E)               0.194      0.694 f
+  U36/Z (INVERT_H)                        0.055      0.749 r
+  U18/Z (INVERT_J)                        0.045      0.793 f
+  U35/Z (INVERT_O)                        0.052      0.845 r
+  accum_out[0] (out)                      0.002      0.847 r
+  data arrival time                                  0.847
+
+  clock v_clk (rise edge)                10.000     10.000
+  clock network delay (ideal)             0.000     10.000
+  output external delay                  -3.000      7.000
+  data required time                                 7.000
+  -----------------------------------------------------------
+  data required time                                 7.000
+  data arrival time                                 -0.847
+  -----------------------------------------------------------
+  slack (MET)                                        6.153
+
+
+1

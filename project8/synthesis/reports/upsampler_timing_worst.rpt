@@ -1,0 +1,123 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 5
+        -max_paths 5
+        -sort_by group
+Design : upsampler
+Version: O-2018.06-SP1
+Date   : Thu Apr 24 19:49:17 2025
+****************************************
+
+Operating Conditions: slow   Library: IBM_CMOS8HP_SS125
+Wire Load Model Mode: enclosed
+
+  Startpoint: output_data_1_reg[3]
+              (rising edge-triggered flip-flop)
+  Endpoint: output_data_1[3]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  upsampler          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  output_data_1_reg[3]/CLK (DFFR_H)       0.000      0.000 r
+  output_data_1_reg[3]/Q (DFFR_H)         0.301      0.301 r
+  output_data_1[3] (out)                  0.000      0.301 r
+  data arrival time                                  0.301
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: output_data_1_reg[2]
+              (rising edge-triggered flip-flop)
+  Endpoint: output_data_1[2]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  upsampler          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  output_data_1_reg[2]/CLK (DFFR_H)       0.000      0.000 r
+  output_data_1_reg[2]/Q (DFFR_H)         0.301      0.301 r
+  output_data_1[2] (out)                  0.000      0.301 r
+  data arrival time                                  0.301
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: output_data_1_reg[1]
+              (rising edge-triggered flip-flop)
+  Endpoint: output_data_1[1]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  upsampler          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  output_data_1_reg[1]/CLK (DFFR_H)       0.000      0.000 r
+  output_data_1_reg[1]/Q (DFFR_H)         0.301      0.301 r
+  output_data_1[1] (out)                  0.000      0.301 r
+  data arrival time                                  0.301
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: output_data_1_reg[0]
+              (rising edge-triggered flip-flop)
+  Endpoint: output_data_1[0]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  upsampler          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  output_data_1_reg[0]/CLK (DFFR_H)       0.000      0.000 r
+  output_data_1_reg[0]/Q (DFFR_H)         0.301      0.301 r
+  output_data_1[0] (out)                  0.000      0.301 r
+  data arrival time                                  0.301
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: output_data_2_reg[3]
+              (rising edge-triggered flip-flop)
+  Endpoint: output_data_2[3]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  upsampler          500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  output_data_2_reg[3]/CLK (DFFR_H)       0.000      0.000 r
+  output_data_2_reg[3]/Q (DFFR_H)         0.301      0.301 r
+  output_data_2[3] (out)                  0.000      0.301 r
+  data arrival time                                  0.301
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

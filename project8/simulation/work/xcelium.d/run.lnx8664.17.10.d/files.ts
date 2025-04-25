@@ -380,8 +380,13 @@
 1744491660 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/SPI_Interface.v
 1744491660 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/upsampler.v
 1745249102 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/qam_top.v
-1745440860 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/dsp_top.v
+1745533642 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/dsp_top.v
 1744492271 /home/ead/isaacbilsel/ece6214/ECE6214/project8/simulation/testbench/qam_top_tb.v
 1745357197 /home/ead/isaacbilsel/ece6214/ECE6214/project8/simulation/testbench/dsp_top_tb.v
-1745443893 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/sample_storage.v
+1745444441 /home/ead/isaacbilsel/ece6214/ECE6214/project8/source/sample_storage.v
 1745442571 /home/ead/isaacbilsel/ece6214/ECE6214/project8/simulation/testbench/sample_storage_tb.v
+1745538825 /home/ead/isaacbilsel/ece6214/ECE6214/project8/synthesis/netlists/dsp_top.v
+1745538210 /home/ead/isaacbilsel/ece6214/ECE6214/project8/synthesis/netlists/dsp_slice.v
+1745539037 /home/ead/isaacbilsel/ece6214/ECE6214/project8/synthesis/netlists/fir_filter.v
+1745538557 /home/ead/isaacbilsel/ece6214/ECE6214/project8/synthesis/netlists/upsampler.v
+1745538420 /home/ead/isaacbilsel/ece6214/ECE6214/project8/synthesis/netlists/sample_storage.v

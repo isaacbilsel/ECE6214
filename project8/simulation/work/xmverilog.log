@@ -1,46 +1,6 @@
 xmverilog(64): 17.10-s001: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	xmverilog	17.10-s001: Started on Apr 23, 2025 at 17:37:12 EDT
+TOOL:	xmverilog	17.10-s001: Started on Apr 24, 2025 at 20:06:33 EDT
 xmverilog
 	../testbench/dsp_top_tb.v
-	+gui
-	+access+r
-	-timescale
-	1ns/1ps
-		Caching library 'worklib' ....... Done
-	Elaborating the design hierarchy:
-		Caching library 'worklib' ....... Done
-	Building instance overlay tables: .................... Done
-	Generating native compiled code:
-		worklib.sample_storage:v <0x70d6020f>
-			streams:   7, words: 71414
-		worklib.dsp_top:v <0x58cc2770>
-			streams:  11, words:  5306
-	Building instance specific data structures.
-	Loading native compiled code:     .................... Done
-	Design hierarchy summary:
-		                 Instances  Unique
-		Modules:               152       8
-		Registers:             624      46
-		Scalar wires:           10       -
-		Vectored wires:        452       -
-		Always blocks:         154      10
-		Initial blocks:          1       1
-		Cont. assignments:     154      87
-		Pseudo assignments:      2       2
-		Simulation timescale:  1ps
-	Writing initial simulation snapshot: worklib.dsp_top_tb:v
-
--------------------------------------
-Relinquished control to SimVision...
-xcelium> 
-xcelium> source /apps/vlsi_2018/cadence/XCELIUM1710/tools/xcelium/files/xmsimrc
-xcelium> database -open waves -into waves.shm -default
-Created default SHM database waves
-xcelium> probe -create -shm dsp_top_tb.dut.I_out dsp_top_tb.dut.Q_out dsp_top_tb.dut.clk dsp_top_tb.dut.coeff_i_addr dsp_top_tb.dut.coeff_in dsp_top_tb.dut.coeff_q_addr dsp_top_tb.dut.coeff_read_out_i dsp_top_tb.dut.coeff_read_out_q dsp_top_tb.dut.data_in_i dsp_top_tb.dut.data_in_q dsp_top_tb.dut.data_out_valid dsp_top_tb.dut.filter_out_i dsp_top_tb.dut.filter_out_q dsp_top_tb.dut.mem_addr dsp_top_tb.dut.mem_read_out dsp_top_tb.dut.mem_read_out_next dsp_top_tb.dut.msg_in dsp_top_tb.dut.new_symbol dsp_top_tb.dut.read dsp_top_tb.dut.rst_n dsp_top_tb.dut.rst_n_sync_wire dsp_top_tb.dut.rw dsp_top_tb.dut.sample_i_addr dsp_top_tb.dut.sample_q_addr dsp_top_tb.dut.sample_rate dsp_top_tb.dut.sample_read_out_i dsp_top_tb.dut.sample_read_out_q dsp_top_tb.dut.shift_reg dsp_top_tb.dut.upsampler_out_i dsp_top_tb.dut.upsampler_out_q dsp_top_tb.dut.write
-Created probe 1
-xcelium> run
-Simulation complete via $finish(1) at time 6405 NS + 0
-../testbench/dsp_top_tb.v:153 		$finish;
-xcelium> ^C
-xcelium> exit
-TOOL:	xmverilog	17.10-s001: Exiting on Apr 23, 2025 at 17:40:50 EDT  (total: 00:03:38)
+	-compile
+TOOL:	xmverilog	17.10-s001: Exiting on Apr 24, 2025 at 20:06:33 EDT  (total: 00:00:00)
