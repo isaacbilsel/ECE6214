@@ -2,5 +2,5 @@
 // File created by:  xmverilog
 // Do not modify this file
 //
-../testbench/dsp_top_tb.v
+../testbench/sync_fifo_write_counter_tb.v
 -compile

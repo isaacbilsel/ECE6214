@@ -25,7 +25,7 @@ module pipe_div_tb;
 	// initial block for SDF back annotation
 	initial begin
 		$sdf_annotate("../../synthesis/netlists/pipe_div_syn.sdf" , pipe_div_tb.DUT, ,"back_annotate.log");
-   end
+   	end
 
     // Generate clock with 10ns period
     always #5 clk = ~clk;

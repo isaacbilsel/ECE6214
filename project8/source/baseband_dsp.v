@@ -8,9 +8,9 @@ module baseband_dsp(
     input wire rw,
     input wire [9:0] coeff_addr,
     input wire [7:0] coeff_in,
-    input wire enable;
-    input wire [3:0] sample_rate;
-    output wire mapping;
+    input wire enable,
+    input wire [3:0] sample_rate,
+    output wire mapping,
     output wire coeff_read_out,
     output wire [9:0] I_out,
 	output wire [9:0] Q_out

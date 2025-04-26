@@ -157,7 +157,7 @@ module sync_fifo_tb(
    end // initial begin
 
 
-   function reg [7:0] compare_outputs (
+   function [7:0] compare_outputs (
 		input [7:0]    expected_value, 
                 input [7:0]    actual_value,
 		input [8*19:0] signal_name,

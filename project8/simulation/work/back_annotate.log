@@ -1,9 +1,9 @@
 ======================================================================
 
 Annotating SDF timing data:
-  Compiled SDF file:     divider_syn.sdf.X
+  Compiled SDF file:     sample_storage_syn.sdf.X
   Log file:              back_annotate.log
-  Backannotation scope:  divider_syn_tb.DUT
+  Backannotation scope:  sample_storage_tb.DUT
   Configuration file:    
   MTM control:           
   Scale factors:         
@@ -11,27 +11,25 @@ Annotating SDF timing data:
 
 Time units: 1ns
 
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\quotient_reg[2]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 3992>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\quotient_reg[3]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4010>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\quotient_reg[6]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4028>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\quotient_reg[12]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4046>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\quotient_reg[13]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4064>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\quotient_reg[8]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4082>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\quotient_reg[11]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4100>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\quotient_reg[14]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4118>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\remainder_reg[4]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4136>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\remainder_reg[3]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4154>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\remainder_reg[2]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4172>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\quotient_reg[15]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4190>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\quotient_reg[10]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4208>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\quotient_reg[9]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4226>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\remainder_reg[7]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4244>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\remainder_reg[6]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4262>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\remainder_reg[5]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4280>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.053)) of instance divider_syn_tb.DUT.\remainder_reg[1]  of module DFFR_E </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 4298>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.047)) of instance divider_syn_tb.DUT.\remainder_reg[0]  of module DFFR_K </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 19885>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.047)) of instance divider_syn_tb.DUT.\quotient_reg[0]  of module DFFR_K </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 19903>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.047)) of instance divider_syn_tb.DUT.\quotient_reg[1]  of module DFFR_K </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 19921>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.047)) of instance divider_syn_tb.DUT.\quotient_reg[4]  of module DFFR_K </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 19939>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.047)) of instance divider_syn_tb.DUT.\quotient_reg[5]  of module DFFR_K </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 19957>.
-xmelab: *W,SDFNET: Unable to annotate to non-existent timing check (HOLD RN (posedge CLK) (0.047)) of instance divider_syn_tb.DUT.\quotient_reg[7]  of module DFFR_K </home/ead/G44895755/ece6214/project5/synthesis/netlist/divider_syn.sdf, line 19975>.
+xmelab: *W,SDFCTE: Module sample_storage of instance sample_storage_tb.DUT does not match SDF celltype of sample_storage_syn, skipping annotation </home/ead/isaacbilsel/ece6214/ECE6214/project8/synthesis/netlists/sample_storage_syn.sdf, line 15>.
+  assign N156 = sample_addr[4];
+       |
+xmelab: *W,SDFNCAP (/home/ead/isaacbilsel/ece6214/ECE6214/project8/synthesis/netlists/sample_storage.v,1076|7): The interconnect source sample_storage_tb.DUT.sample_addr[4] is separated by a unidirectional continuous assign from the destination sample_storage_tb.DUT.U1333.A.  The port annotation will still occur.
+  assign N155 = sample_addr[3];
+       |
+xmelab: *W,SDFNCAP (/home/ead/isaacbilsel/ece6214/ECE6214/project8/synthesis/netlists/sample_storage.v,1075|7): The interconnect source sample_storage_tb.DUT.sample_addr[3] is separated by a unidirectional continuous assign from the destination sample_storage_tb.DUT.U1676.A.  The port annotation will still occur.
+  assign N158 = sample_addr[6];
+       |
+xmelab: *W,SDFNCAP (/home/ead/isaacbilsel/ece6214/ECE6214/project8/synthesis/netlists/sample_storage.v,1078|7): The interconnect source sample_storage_tb.DUT.sample_addr[6] is separated by a unidirectional continuous assign from the destination sample_storage_tb.DUT.U1674.A.  The port annotation will still occur.
+  assign N157 = sample_addr[5];
+       |
+xmelab: *W,SDFNCAP (/home/ead/isaacbilsel/ece6214/ECE6214/project8/synthesis/netlists/sample_storage.v,1077|7): The interconnect source sample_storage_tb.DUT.sample_addr[5] is separated by a unidirectional continuous assign from the destination sample_storage_tb.DUT.U1672.A.  The port annotation will still occur.
+  assign N154 = sample_addr[2];
+       |
+xmelab: *W,SDFNCAP (/home/ead/isaacbilsel/ece6214/ECE6214/project8/synthesis/netlists/sample_storage.v,1074|7): The interconnect source sample_storage_tb.DUT.sample_addr[2] is separated by a unidirectional continuous assign from the destination sample_storage_tb.DUT.U1670.A.  The port annotation will still occur.
+  assign N153 = sample_addr[1];
+       |
+xmelab: *W,SDFNCAP (/home/ead/isaacbilsel/ece6214/ECE6214/project8/synthesis/netlists/sample_storage.v,1073|7): The interconnect source sample_storage_tb.DUT.sample_addr[1] is separated by a unidirectional continuous assign from the destination sample_storage_tb.DUT.U1668.A.  The port annotation will still occur.
+  assign N152 = sample_addr[0];
+       |
+xmelab: *W,SDFNCAP (/home/ead/isaacbilsel/ece6214/ECE6214/project8/synthesis/netlists/sample_storage.v,1072|7): The interconnect source sample_storage_tb.DUT.sample_addr[0] is separated by a unidirectional continuous assign from the destination sample_storage_tb.DUT.U1666.A.  The port annotation will still occur.

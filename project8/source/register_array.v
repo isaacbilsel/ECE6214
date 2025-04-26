@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module register_array(
 		      input wire	 SCLK,
 		      input wire	 rst_n,
@@ -53,3 +54,4 @@ module register_array(
 	end
      end // always @ (*)
 endmodule // register_array
+

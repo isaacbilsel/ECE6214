@@ -11,8 +11,8 @@ module baseband_dsp_tb;
     reg rw;
     reg [9:0] coeff_addr;
     reg [7:0] coeff_in;
-    output wire coeff_read_out;
-    output wire [9:0] I_out;
+    wire coeff_read_out;
+    wire [9:0] I_out;
     wire [9:0] Q_out; 
 
     baseband_dsp DUT(
