@@ -1,14 +1,6 @@
-Information: Building the design 'reset_synchronization'. (HDL-193)
-Warning: Cannot find the design 'reset_synchronization' in the library 'WORK'. (LBR-1)
-Information: Building the design 'upsampler'. (HDL-193)
-Warning: Cannot find the design 'upsampler' in the library 'WORK'. (LBR-1)
-Information: Building the design 'fir_filter'. (HDL-193)
-Warning: Cannot find the design 'fir_filter' in the library 'WORK'. (LBR-1)
-Warning: Unable to resolve reference 'reset_synchronization' in 'dsp_top'. (LINK-5)
-Warning: Unable to resolve reference 'upsampler' in 'dsp_top'. (LINK-5)
-Warning: Unable to resolve reference 'fir_filter' in 'dsp_top'. (LINK-5)
-Warning: Design 'dsp_top' has '3' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'dsp_top' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
 Information: Updating design information... (UID-85)
+Warning: Design 'dsp_top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
  
 ****************************************
 Report : timing
@@ -19,15 +11,17 @@ Report : timing
         -sort_by group
 Design : dsp_top
 Version: O-2018.06-SP1
-Date   : Sat Apr 12 23:02:05 2025
+Date   : Thu Apr 24 19:53:44 2025
 ****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
 
 Operating Conditions: slow   Library: IBM_CMOS8HP_SS125
 Wire Load Model Mode: enclosed
 
-  Startpoint: coeff_addr[1]
+  Startpoint: mem_addr[7]
               (input port clocked by v_clk)
-  Endpoint: coeff_read_out_reg[3]
+  Endpoint: i_sample_storage/sample_read_out_q_reg[2]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -35,50 +29,77 @@ Wire Load Model Mode: enclosed
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   dsp_top            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  sample_storage_1   500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
 
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock v_clk (rise edge)                 0.000      0.000
-  clock network delay (ideal)             0.000      0.000
-  input external delay                    3.000      3.000 r
-  coeff_addr[1] (in)                      0.000      3.000 r
-  U173/Z (INVERT_H)                       0.072      3.072 f
-  U174/Z (INVERT_H)                       0.047      3.118 r
-  U271/Z (NAND3_D)                        0.058      3.177 f
-  U260/Z (NAND2BAL_E)                     0.046      3.223 r
-  U261/Z (INVERT_F)                       0.037      3.259 f
-  U259/Z (NAND2_E)                        0.049      3.308 r
-  U351/Z (NAND2_E)                        0.051      3.359 f
-  U335/Z (BUFFER_L)                       0.065      3.424 f
-  U356/Z (NAND4_C)                        0.092      3.516 r
-  U334/Z (BUFFER_J)                       0.068      3.584 r
-  U333/Z (INVERT_J)                       0.040      3.624 f
-  U339/Z (INVERT_O)                       0.051      3.675 r
-  U340/Z (INVERT_N)                       0.046      3.720 f
-  U247/Z (AND3_I)                         0.097      3.817 f
-  U142/Z (INVERT_H)                       0.055      3.872 r
-  U211/Z (INVERT_L)                       0.049      3.921 f
-  U204/Z (AOI222_I)                       0.126      4.047 r
-  U143/Z (INVERT_D)                       0.046      4.092 f
-  coeff_read_out_reg[3]/D (DFF_E)         0.000      4.092 f
-  data arrival time                                  4.092
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 r
+  mem_addr[7] (in)                                       0.000      3.000 r
+  U325/Z (INVERT_J)                                      0.067      3.067 f
+  U349/Z (INVERT_N)                                      0.059      3.126 r
+  U395/Z (OAI21_E)                                       0.043      3.169 f
+  U394/Z (AND2_I)                                        0.071      3.240 f
+  U314/Z (BUFFER_I)                                      0.067      3.307 f
+  U441/Z (INVERT_I)                                      0.050      3.356 r
+  U442/Z (INVERT_N)                                      0.048      3.404 f
+  U422/Z (AND2_I)                                        0.081      3.485 f
+  U421/Z (INVERT_F)                                      0.047      3.532 r
+  U385/Z (INVERT_I)                                      0.047      3.579 f
+  i_sample_storage/sample_addr[2] (sample_storage_1)     0.000      3.579 f
+  i_sample_storage/U154/Z (INVERT_H)                     0.048      3.626 r
+  i_sample_storage/U3089/Z (OR2_H)                       0.078      3.704 r
+  i_sample_storage/U3088/Z (BUFFER_F)                    0.062      3.766 r
+  i_sample_storage/U3/Z (INVERT_D)                       0.050      3.817 f
+  i_sample_storage/U3087/Z (INVERT_E)                    0.060      3.877 r
+  i_sample_storage/U10/Z (INVERT_H)                      0.036      3.913 f
+  i_sample_storage/U3261/Z (INVERT_F)                    0.047      3.960 r
+  i_sample_storage/U3262/Z (INVERT_I)                    0.049      4.009 f
+  i_sample_storage/U3096/Z (AND2_H)                      0.075      4.084 f
+  i_sample_storage/U3924/Z (BUFFER_H)                    0.067      4.152 f
+  i_sample_storage/U3925/Z (INVERT_H)                    0.052      4.204 r
+  i_sample_storage/U4072/Z (INVERT_L)                    0.048      4.252 f
+  i_sample_storage/U4316/Z (INVERT_M)                    0.046      4.298 r
+  i_sample_storage/U4175/Z (INVERT_N)                    0.046      4.344 f
+  i_sample_storage/U5342/Z (AOI22_A)                     0.201      4.545 r
+  i_sample_storage/U255/Z (INVERT_B)                     0.203      4.748 f
+  i_sample_storage/U237/Z (BUFFER_F)                     0.106      4.854 f
+  i_sample_storage/U11/Z (INVERT_D)                      0.059      4.913 r
+  i_sample_storage/U241/Z (INVERT_E)                     0.051      4.964 f
+  i_sample_storage/U277/Z (NOR2_C)                       0.088      5.052 r
+  i_sample_storage/U278/Z (INVERT_E)                     0.057      5.109 f
+  i_sample_storage/U274/Z (NOR2_C)                       0.089      5.199 r
+  i_sample_storage/U271/Z (INVERT_E)                     0.054      5.253 f
+  i_sample_storage/U2554/Z (OAI21_B)                     0.118      5.370 r
+  i_sample_storage/U2544/Z (CLKI_I)                      0.131      5.502 f
+  i_sample_storage/U2548/Z (NOR2_C)                      0.087      5.588 r
+  i_sample_storage/U2549/Z (INVERT_E)                    0.057      5.646 f
+  i_sample_storage/U2547/Z (NOR2_C)                      0.079      5.725 r
+  i_sample_storage/U2985/Z (NOR2_C)                      0.092      5.817 f
+  i_sample_storage/U2986/Z (NOR2_C)                      0.088      5.905 r
+  i_sample_storage/U2981/Z (INVERT_C)                    0.077      5.981 f
+  i_sample_storage/U291/Z (AO22_E)                       0.156      6.137 f
+  i_sample_storage/sample_read_out_q_reg[2]/D (DFF_E)    0.000      6.137 f
+  data arrival time                                                 6.137
 
-  clock clk (rise edge)                  10.000     10.000
-  clock network delay (ideal)             0.500     10.500
-  clock uncertainty                      -0.500     10.000
-  coeff_read_out_reg[3]/CLK (DFF_E)       0.000     10.000 r
-  library setup time                     -0.224      9.776
-  data required time                                 9.776
-  -----------------------------------------------------------
-  data required time                                 9.776
-  data arrival time                                 -4.092
-  -----------------------------------------------------------
-  slack (MET)                                        5.684
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  i_sample_storage/sample_read_out_q_reg[2]/CLK (DFF_E)
+                                                         0.000     10.000 r
+  library setup time                                    -0.231      9.769
+  data required time                                                9.769
+  --------------------------------------------------------------------------
+  data required time                                                9.769
+  data arrival time                                                -6.137
+  --------------------------------------------------------------------------
+  slack (MET)                                                       3.632
 
 
-  Startpoint: coeff_addr[0]
+  Startpoint: mem_addr[8]
               (input port clocked by v_clk)
-  Endpoint: coeff_read_out_reg[3]
+  Endpoint: i_sample_storage/sample_read_out_q_reg[2]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -86,50 +107,77 @@ Wire Load Model Mode: enclosed
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   dsp_top            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  sample_storage_1   500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
 
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock v_clk (rise edge)                 0.000      0.000
-  clock network delay (ideal)             0.000      0.000
-  input external delay                    3.000      3.000 r
-  coeff_addr[0] (in)                      0.000      3.000 r
-  U124/Z (INVERT_H)                       0.049      3.049 f
-  U172/Z (INVERT_H)                       0.059      3.108 r
-  U271/Z (NAND3_D)                        0.064      3.172 f
-  U260/Z (NAND2BAL_E)                     0.046      3.218 r
-  U261/Z (INVERT_F)                       0.037      3.255 f
-  U259/Z (NAND2_E)                        0.049      3.304 r
-  U351/Z (NAND2_E)                        0.051      3.355 f
-  U335/Z (BUFFER_L)                       0.065      3.420 f
-  U356/Z (NAND4_C)                        0.092      3.511 r
-  U334/Z (BUFFER_J)                       0.068      3.580 r
-  U333/Z (INVERT_J)                       0.040      3.620 f
-  U339/Z (INVERT_O)                       0.051      3.670 r
-  U340/Z (INVERT_N)                       0.046      3.716 f
-  U247/Z (AND3_I)                         0.097      3.813 f
-  U142/Z (INVERT_H)                       0.055      3.867 r
-  U211/Z (INVERT_L)                       0.049      3.917 f
-  U204/Z (AOI222_I)                       0.126      4.042 r
-  U143/Z (INVERT_D)                       0.046      4.088 f
-  coeff_read_out_reg[3]/D (DFF_E)         0.000      4.088 f
-  data arrival time                                  4.088
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 r
+  mem_addr[8] (in)                                       0.000      3.000 r
+  U352/Z (INVERT_K)                                      0.068      3.068 f
+  U353/Z (INVERT_I)                                      0.061      3.130 r
+  U395/Z (OAI21_E)                                       0.038      3.168 f
+  U394/Z (AND2_I)                                        0.071      3.239 f
+  U314/Z (BUFFER_I)                                      0.067      3.305 f
+  U441/Z (INVERT_I)                                      0.050      3.355 r
+  U442/Z (INVERT_N)                                      0.048      3.403 f
+  U422/Z (AND2_I)                                        0.081      3.484 f
+  U421/Z (INVERT_F)                                      0.047      3.531 r
+  U385/Z (INVERT_I)                                      0.047      3.578 f
+  i_sample_storage/sample_addr[2] (sample_storage_1)     0.000      3.578 f
+  i_sample_storage/U154/Z (INVERT_H)                     0.048      3.625 r
+  i_sample_storage/U3089/Z (OR2_H)                       0.078      3.703 r
+  i_sample_storage/U3088/Z (BUFFER_F)                    0.062      3.765 r
+  i_sample_storage/U3/Z (INVERT_D)                       0.050      3.816 f
+  i_sample_storage/U3087/Z (INVERT_E)                    0.060      3.875 r
+  i_sample_storage/U10/Z (INVERT_H)                      0.036      3.912 f
+  i_sample_storage/U3261/Z (INVERT_F)                    0.047      3.959 r
+  i_sample_storage/U3262/Z (INVERT_I)                    0.049      4.008 f
+  i_sample_storage/U3096/Z (AND2_H)                      0.075      4.083 f
+  i_sample_storage/U3924/Z (BUFFER_H)                    0.067      4.151 f
+  i_sample_storage/U3925/Z (INVERT_H)                    0.052      4.203 r
+  i_sample_storage/U4072/Z (INVERT_L)                    0.048      4.251 f
+  i_sample_storage/U4316/Z (INVERT_M)                    0.046      4.297 r
+  i_sample_storage/U4175/Z (INVERT_N)                    0.046      4.343 f
+  i_sample_storage/U5342/Z (AOI22_A)                     0.201      4.544 r
+  i_sample_storage/U255/Z (INVERT_B)                     0.203      4.747 f
+  i_sample_storage/U237/Z (BUFFER_F)                     0.106      4.853 f
+  i_sample_storage/U11/Z (INVERT_D)                      0.059      4.912 r
+  i_sample_storage/U241/Z (INVERT_E)                     0.051      4.963 f
+  i_sample_storage/U277/Z (NOR2_C)                       0.088      5.051 r
+  i_sample_storage/U278/Z (INVERT_E)                     0.057      5.108 f
+  i_sample_storage/U274/Z (NOR2_C)                       0.089      5.198 r
+  i_sample_storage/U271/Z (INVERT_E)                     0.054      5.252 f
+  i_sample_storage/U2554/Z (OAI21_B)                     0.118      5.369 r
+  i_sample_storage/U2544/Z (CLKI_I)                      0.131      5.501 f
+  i_sample_storage/U2548/Z (NOR2_C)                      0.087      5.587 r
+  i_sample_storage/U2549/Z (INVERT_E)                    0.057      5.645 f
+  i_sample_storage/U2547/Z (NOR2_C)                      0.079      5.724 r
+  i_sample_storage/U2985/Z (NOR2_C)                      0.092      5.816 f
+  i_sample_storage/U2986/Z (NOR2_C)                      0.088      5.904 r
+  i_sample_storage/U2981/Z (INVERT_C)                    0.077      5.980 f
+  i_sample_storage/U291/Z (AO22_E)                       0.156      6.136 f
+  i_sample_storage/sample_read_out_q_reg[2]/D (DFF_E)    0.000      6.136 f
+  data arrival time                                                 6.136
 
-  clock clk (rise edge)                  10.000     10.000
-  clock network delay (ideal)             0.500     10.500
-  clock uncertainty                      -0.500     10.000
-  coeff_read_out_reg[3]/CLK (DFF_E)       0.000     10.000 r
-  library setup time                     -0.224      9.776
-  data required time                                 9.776
-  -----------------------------------------------------------
-  data required time                                 9.776
-  data arrival time                                 -4.088
-  -----------------------------------------------------------
-  slack (MET)                                        5.688
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  i_sample_storage/sample_read_out_q_reg[2]/CLK (DFF_E)
+                                                         0.000     10.000 r
+  library setup time                                    -0.231      9.769
+  data required time                                                9.769
+  --------------------------------------------------------------------------
+  data required time                                                9.769
+  data arrival time                                                -6.136
+  --------------------------------------------------------------------------
+  slack (MET)                                                       3.633
 
 
-  Startpoint: coeff_addr[2]
+  Startpoint: mem_addr[7]
               (input port clocked by v_clk)
-  Endpoint: coeff_read_out_reg[3]
+  Endpoint: i_sample_storage/sample_read_out_q_reg[2]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -137,50 +185,76 @@ Wire Load Model Mode: enclosed
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   dsp_top            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  sample_storage_1   500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
 
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock v_clk (rise edge)                 0.000      0.000
-  clock network delay (ideal)             0.000      0.000
-  input external delay                    3.000      3.000 r
-  coeff_addr[2] (in)                      0.000      3.000 r
-  U125/Z (INVERT_H)                       0.049      3.049 f
-  U176/Z (INVERT_H)                       0.059      3.109 r
-  U271/Z (NAND3_D)                        0.056      3.165 f
-  U260/Z (NAND2BAL_E)                     0.046      3.211 r
-  U261/Z (INVERT_F)                       0.037      3.247 f
-  U259/Z (NAND2_E)                        0.049      3.296 r
-  U351/Z (NAND2_E)                        0.051      3.347 f
-  U335/Z (BUFFER_L)                       0.065      3.412 f
-  U356/Z (NAND4_C)                        0.092      3.504 r
-  U334/Z (BUFFER_J)                       0.068      3.572 r
-  U333/Z (INVERT_J)                       0.040      3.612 f
-  U339/Z (INVERT_O)                       0.051      3.663 r
-  U340/Z (INVERT_N)                       0.046      3.709 f
-  U247/Z (AND3_I)                         0.097      3.805 f
-  U142/Z (INVERT_H)                       0.055      3.860 r
-  U211/Z (INVERT_L)                       0.049      3.909 f
-  U204/Z (AOI222_I)                       0.126      4.035 r
-  U143/Z (INVERT_D)                       0.046      4.080 f
-  coeff_read_out_reg[3]/D (DFF_E)         0.000      4.081 f
-  data arrival time                                  4.081
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 r
+  mem_addr[7] (in)                                       0.000      3.000 r
+  U325/Z (INVERT_J)                                      0.067      3.067 f
+  U349/Z (INVERT_N)                                      0.059      3.126 r
+  U395/Z (OAI21_E)                                       0.043      3.169 f
+  U394/Z (AND2_I)                                        0.071      3.240 f
+  U314/Z (BUFFER_I)                                      0.067      3.307 f
+  U441/Z (INVERT_I)                                      0.050      3.356 r
+  U442/Z (INVERT_N)                                      0.048      3.404 f
+  U426/Z (AND2_I)                                        0.081      3.486 f
+  U425/Z (INVERT_H)                                      0.041      3.527 r
+  U387/Z (INVERT_I)                                      0.046      3.573 f
+  i_sample_storage/sample_addr[1] (sample_storage_1)     0.000      3.573 f
+  i_sample_storage/U8/Z (INVERT_I)                       0.047      3.620 r
+  i_sample_storage/U3080/Z (OR2_H)                       0.078      3.698 r
+  i_sample_storage/U3081/Z (CLKI_I)                      0.116      3.814 f
+  i_sample_storage/U5/Z (INVERT_E)                       0.049      3.864 r
+  i_sample_storage/U4/Z (INVERT_E)                       0.052      3.916 f
+  i_sample_storage/U3269/Z (INVERT_F)                    0.052      3.969 r
+  i_sample_storage/U3270/Z (INVERT_I)                    0.050      4.019 f
+  i_sample_storage/U3065/Z (AND2_H)                      0.082      4.101 f
+  i_sample_storage/U3921/Z (BUFFER_H)                    0.067      4.168 f
+  i_sample_storage/U3922/Z (INVERT_H)                    0.052      4.221 r
+  i_sample_storage/U4073/Z (INVERT_L)                    0.048      4.268 f
+  i_sample_storage/U4317/Z (INVERT_M)                    0.046      4.314 r
+  i_sample_storage/U4188/Z (INVERT_N)                    0.046      4.360 f
+  i_sample_storage/U5342/Z (AOI22_A)                     0.177      4.537 r
+  i_sample_storage/U255/Z (INVERT_B)                     0.203      4.740 f
+  i_sample_storage/U237/Z (BUFFER_F)                     0.106      4.846 f
+  i_sample_storage/U11/Z (INVERT_D)                      0.059      4.905 r
+  i_sample_storage/U241/Z (INVERT_E)                     0.051      4.956 f
+  i_sample_storage/U277/Z (NOR2_C)                       0.088      5.044 r
+  i_sample_storage/U278/Z (INVERT_E)                     0.057      5.101 f
+  i_sample_storage/U274/Z (NOR2_C)                       0.089      5.190 r
+  i_sample_storage/U271/Z (INVERT_E)                     0.054      5.244 f
+  i_sample_storage/U2554/Z (OAI21_B)                     0.118      5.362 r
+  i_sample_storage/U2544/Z (CLKI_I)                      0.131      5.493 f
+  i_sample_storage/U2548/Z (NOR2_C)                      0.087      5.580 r
+  i_sample_storage/U2549/Z (INVERT_E)                    0.057      5.637 f
+  i_sample_storage/U2547/Z (NOR2_C)                      0.079      5.717 r
+  i_sample_storage/U2985/Z (NOR2_C)                      0.092      5.809 f
+  i_sample_storage/U2986/Z (NOR2_C)                      0.088      5.897 r
+  i_sample_storage/U2981/Z (INVERT_C)                    0.077      5.973 f
+  i_sample_storage/U291/Z (AO22_E)                       0.156      6.129 f
+  i_sample_storage/sample_read_out_q_reg[2]/D (DFF_E)    0.000      6.129 f
+  data arrival time                                                 6.129
 
-  clock clk (rise edge)                  10.000     10.000
-  clock network delay (ideal)             0.500     10.500
-  clock uncertainty                      -0.500     10.000
-  coeff_read_out_reg[3]/CLK (DFF_E)       0.000     10.000 r
-  library setup time                     -0.224      9.776
-  data required time                                 9.776
-  -----------------------------------------------------------
-  data required time                                 9.776
-  data arrival time                                 -4.081
-  -----------------------------------------------------------
-  slack (MET)                                        5.696
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  i_sample_storage/sample_read_out_q_reg[2]/CLK (DFF_E)
+                                                         0.000     10.000 r
+  library setup time                                    -0.231      9.769
+  data required time                                                9.769
+  --------------------------------------------------------------------------
+  data required time                                                9.769
+  data arrival time                                                -6.129
+  --------------------------------------------------------------------------
+  slack (MET)                                                       3.640
 
 
-  Startpoint: coeff_addr[1]
+  Startpoint: mem_addr[8]
               (input port clocked by v_clk)
-  Endpoint: coeff_read_out_reg[3]
+  Endpoint: i_sample_storage/sample_read_out_q_reg[2]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -188,50 +262,76 @@ Wire Load Model Mode: enclosed
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   dsp_top            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  sample_storage_1   500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
 
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock v_clk (rise edge)                 0.000      0.000
-  clock network delay (ideal)             0.000      0.000
-  input external delay                    3.000      3.000 r
-  coeff_addr[1] (in)                      0.000      3.000 r
-  U173/Z (INVERT_H)                       0.072      3.072 f
-  U174/Z (INVERT_H)                       0.047      3.118 r
-  U271/Z (NAND3_D)                        0.058      3.177 f
-  U260/Z (NAND2BAL_E)                     0.046      3.223 r
-  U261/Z (INVERT_F)                       0.037      3.259 f
-  U259/Z (NAND2_E)                        0.049      3.308 r
-  U351/Z (NAND2_E)                        0.051      3.359 f
-  U335/Z (BUFFER_L)                       0.065      3.424 f
-  U349/Z (NAND4_D)                        0.078      3.502 r
-  U347/Z (INVERT_J)                       0.061      3.563 f
-  U348/Z (INVERT_O)                       0.057      3.620 r
-  U352/Z (INVERT_N)                       0.046      3.665 f
-  U156/Z (NAND3_D)                        0.075      3.740 r
-  U208/Z (INVERT_H)                       0.048      3.789 f
-  U206/Z (INVERT_I)                       0.048      3.837 r
-  U207/Z (INVERT_M)                       0.042      3.878 f
-  U204/Z (AOI222_I)                       0.149      4.027 r
-  U143/Z (INVERT_D)                       0.046      4.073 f
-  coeff_read_out_reg[3]/D (DFF_E)         0.000      4.073 f
-  data arrival time                                  4.073
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 r
+  mem_addr[8] (in)                                       0.000      3.000 r
+  U352/Z (INVERT_K)                                      0.068      3.068 f
+  U353/Z (INVERT_I)                                      0.061      3.130 r
+  U395/Z (OAI21_E)                                       0.038      3.168 f
+  U394/Z (AND2_I)                                        0.071      3.239 f
+  U314/Z (BUFFER_I)                                      0.067      3.305 f
+  U441/Z (INVERT_I)                                      0.050      3.355 r
+  U442/Z (INVERT_N)                                      0.048      3.403 f
+  U426/Z (AND2_I)                                        0.081      3.485 f
+  U425/Z (INVERT_H)                                      0.041      3.526 r
+  U387/Z (INVERT_I)                                      0.046      3.572 f
+  i_sample_storage/sample_addr[1] (sample_storage_1)     0.000      3.572 f
+  i_sample_storage/U8/Z (INVERT_I)                       0.047      3.619 r
+  i_sample_storage/U3080/Z (OR2_H)                       0.078      3.697 r
+  i_sample_storage/U3081/Z (CLKI_I)                      0.116      3.813 f
+  i_sample_storage/U5/Z (INVERT_E)                       0.049      3.863 r
+  i_sample_storage/U4/Z (INVERT_E)                       0.052      3.915 f
+  i_sample_storage/U3269/Z (INVERT_F)                    0.052      3.967 r
+  i_sample_storage/U3270/Z (INVERT_I)                    0.050      4.018 f
+  i_sample_storage/U3065/Z (AND2_H)                      0.082      4.100 f
+  i_sample_storage/U3921/Z (BUFFER_H)                    0.067      4.167 f
+  i_sample_storage/U3922/Z (INVERT_H)                    0.052      4.220 r
+  i_sample_storage/U4073/Z (INVERT_L)                    0.048      4.267 f
+  i_sample_storage/U4317/Z (INVERT_M)                    0.046      4.313 r
+  i_sample_storage/U4188/Z (INVERT_N)                    0.046      4.359 f
+  i_sample_storage/U5342/Z (AOI22_A)                     0.177      4.536 r
+  i_sample_storage/U255/Z (INVERT_B)                     0.203      4.739 f
+  i_sample_storage/U237/Z (BUFFER_F)                     0.106      4.845 f
+  i_sample_storage/U11/Z (INVERT_D)                      0.059      4.904 r
+  i_sample_storage/U241/Z (INVERT_E)                     0.051      4.955 f
+  i_sample_storage/U277/Z (NOR2_C)                       0.088      5.043 r
+  i_sample_storage/U278/Z (INVERT_E)                     0.057      5.100 f
+  i_sample_storage/U274/Z (NOR2_C)                       0.089      5.189 r
+  i_sample_storage/U271/Z (INVERT_E)                     0.054      5.243 f
+  i_sample_storage/U2554/Z (OAI21_B)                     0.118      5.361 r
+  i_sample_storage/U2544/Z (CLKI_I)                      0.131      5.492 f
+  i_sample_storage/U2548/Z (NOR2_C)                      0.087      5.579 r
+  i_sample_storage/U2549/Z (INVERT_E)                    0.057      5.636 f
+  i_sample_storage/U2547/Z (NOR2_C)                      0.079      5.716 r
+  i_sample_storage/U2985/Z (NOR2_C)                      0.092      5.808 f
+  i_sample_storage/U2986/Z (NOR2_C)                      0.088      5.896 r
+  i_sample_storage/U2981/Z (INVERT_C)                    0.077      5.972 f
+  i_sample_storage/U291/Z (AO22_E)                       0.156      6.128 f
+  i_sample_storage/sample_read_out_q_reg[2]/D (DFF_E)    0.000      6.128 f
+  data arrival time                                                 6.128
 
-  clock clk (rise edge)                  10.000     10.000
-  clock network delay (ideal)             0.500     10.500
-  clock uncertainty                      -0.500     10.000
-  coeff_read_out_reg[3]/CLK (DFF_E)       0.000     10.000 r
-  library setup time                     -0.224      9.776
-  data required time                                 9.776
-  -----------------------------------------------------------
-  data required time                                 9.776
-  data arrival time                                 -4.073
-  -----------------------------------------------------------
-  slack (MET)                                        5.703
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  i_sample_storage/sample_read_out_q_reg[2]/CLK (DFF_E)
+                                                         0.000     10.000 r
+  library setup time                                    -0.231      9.769
+  data required time                                                9.769
+  --------------------------------------------------------------------------
+  data required time                                                9.769
+  data arrival time                                                -6.128
+  --------------------------------------------------------------------------
+  slack (MET)                                                       3.641
 
 
-  Startpoint: coeff_addr[0]
+  Startpoint: mem_addr[9]
               (input port clocked by v_clk)
-  Endpoint: coeff_read_out_reg[3]
+  Endpoint: i_sample_storage/sample_read_out_q_reg[2]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: max
@@ -239,50 +339,75 @@ Wire Load Model Mode: enclosed
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   dsp_top            500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
+  sample_storage_1   500K_CELLS_6LMC4A     IBM_CMOS8HP_SS125
 
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  clock v_clk (rise edge)                 0.000      0.000
-  clock network delay (ideal)             0.000      0.000
-  input external delay                    3.000      3.000 r
-  coeff_addr[0] (in)                      0.000      3.000 r
-  U124/Z (INVERT_H)                       0.049      3.049 f
-  U172/Z (INVERT_H)                       0.059      3.108 r
-  U271/Z (NAND3_D)                        0.064      3.172 f
-  U260/Z (NAND2BAL_E)                     0.046      3.218 r
-  U261/Z (INVERT_F)                       0.037      3.255 f
-  U259/Z (NAND2_E)                        0.049      3.304 r
-  U351/Z (NAND2_E)                        0.051      3.355 f
-  U335/Z (BUFFER_L)                       0.065      3.420 f
-  U349/Z (NAND4_D)                        0.078      3.498 r
-  U347/Z (INVERT_J)                       0.061      3.559 f
-  U348/Z (INVERT_O)                       0.057      3.616 r
-  U352/Z (INVERT_N)                       0.046      3.661 f
-  U156/Z (NAND3_D)                        0.075      3.736 r
-  U208/Z (INVERT_H)                       0.048      3.784 f
-  U206/Z (INVERT_I)                       0.048      3.832 r
-  U207/Z (INVERT_M)                       0.042      3.874 f
-  U204/Z (AOI222_I)                       0.149      4.023 r
-  U143/Z (INVERT_D)                       0.046      4.069 f
-  coeff_read_out_reg[3]/D (DFF_E)         0.000      4.069 f
-  data arrival time                                  4.069
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock v_clk (rise edge)                                0.000      0.000
+  clock network delay (ideal)                            0.000      0.000
+  input external delay                                   3.000      3.000 f
+  mem_addr[9] (in)                                       0.000      3.000 f
+  U350/Z (INVERT_K)                                      0.084      3.084 r
+  U351/Z (INVERT_O)                                      0.051      3.135 f
+  U395/Z (OAI21_E)                                       0.084      3.219 r
+  U394/Z (AND2_I)                                        0.075      3.294 r
+  U314/Z (BUFFER_I)                                      0.056      3.349 r
+  U441/Z (INVERT_I)                                      0.042      3.391 f
+  U442/Z (INVERT_N)                                      0.053      3.445 r
+  U431/Z (AND2_I)                                        0.073      3.517 r
+  U429/Z (INVERT_H)                                      0.035      3.552 f
+  U430/Z (INVERT_I)                                      0.051      3.603 r
+  i_sample_storage/sample_addr[0] (sample_storage_1)     0.000      3.603 r
+  i_sample_storage/U3080/Z (OR2_H)                       0.090      3.694 r
+  i_sample_storage/U3081/Z (CLKI_I)                      0.116      3.810 f
+  i_sample_storage/U5/Z (INVERT_E)                       0.049      3.859 r
+  i_sample_storage/U4/Z (INVERT_E)                       0.052      3.911 f
+  i_sample_storage/U3269/Z (INVERT_F)                    0.052      3.964 r
+  i_sample_storage/U3270/Z (INVERT_I)                    0.050      4.014 f
+  i_sample_storage/U3065/Z (AND2_H)                      0.082      4.096 f
+  i_sample_storage/U3921/Z (BUFFER_H)                    0.067      4.163 f
+  i_sample_storage/U3922/Z (INVERT_H)                    0.052      4.216 r
+  i_sample_storage/U4073/Z (INVERT_L)                    0.048      4.264 f
+  i_sample_storage/U4317/Z (INVERT_M)                    0.046      4.310 r
+  i_sample_storage/U4188/Z (INVERT_N)                    0.046      4.355 f
+  i_sample_storage/U5342/Z (AOI22_A)                     0.177      4.532 r
+  i_sample_storage/U255/Z (INVERT_B)                     0.203      4.735 f
+  i_sample_storage/U237/Z (BUFFER_F)                     0.106      4.841 f
+  i_sample_storage/U11/Z (INVERT_D)                      0.059      4.900 r
+  i_sample_storage/U241/Z (INVERT_E)                     0.051      4.951 f
+  i_sample_storage/U277/Z (NOR2_C)                       0.088      5.039 r
+  i_sample_storage/U278/Z (INVERT_E)                     0.057      5.096 f
+  i_sample_storage/U274/Z (NOR2_C)                       0.089      5.186 r
+  i_sample_storage/U271/Z (INVERT_E)                     0.054      5.240 f
+  i_sample_storage/U2554/Z (OAI21_B)                     0.118      5.357 r
+  i_sample_storage/U2544/Z (CLKI_I)                      0.131      5.489 f
+  i_sample_storage/U2548/Z (NOR2_C)                      0.087      5.575 r
+  i_sample_storage/U2549/Z (INVERT_E)                    0.057      5.632 f
+  i_sample_storage/U2547/Z (NOR2_C)                      0.079      5.712 r
+  i_sample_storage/U2985/Z (NOR2_C)                      0.092      5.804 f
+  i_sample_storage/U2986/Z (NOR2_C)                      0.088      5.892 r
+  i_sample_storage/U2981/Z (INVERT_C)                    0.077      5.968 f
+  i_sample_storage/U291/Z (AO22_E)                       0.156      6.124 f
+  i_sample_storage/sample_read_out_q_reg[2]/D (DFF_E)    0.000      6.124 f
+  data arrival time                                                 6.124
 
-  clock clk (rise edge)                  10.000     10.000
-  clock network delay (ideal)             0.500     10.500
-  clock uncertainty                      -0.500     10.000
-  coeff_read_out_reg[3]/CLK (DFF_E)       0.000     10.000 r
-  library setup time                     -0.224      9.776
-  data required time                                 9.776
-  -----------------------------------------------------------
-  data required time                                 9.776
-  data arrival time                                 -4.069
-  -----------------------------------------------------------
-  slack (MET)                                        5.708
+  clock clk (rise edge)                                 10.000     10.000
+  clock network delay (ideal)                            0.500     10.500
+  clock uncertainty                                     -0.500     10.000
+  i_sample_storage/sample_read_out_q_reg[2]/CLK (DFF_E)
+                                                         0.000     10.000 r
+  library setup time                                    -0.231      9.769
+  data required time                                                9.769
+  --------------------------------------------------------------------------
+  data required time                                                9.769
+  data arrival time                                                -6.124
+  --------------------------------------------------------------------------
+  slack (MET)                                                       3.645
 
 
   Startpoint: data_out_valid_reg
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: I_out[8] (output port clocked by v_clk)
+  Endpoint: I_out[6] (output port clocked by v_clk)
   Path Group: v_clk
   Path Type: max
 
@@ -294,22 +419,18 @@ Wire Load Model Mode: enclosed
   -----------------------------------------------------------
   clock clk (rise edge)                   0.000      0.000
   clock network delay (ideal)             0.500      0.500
-  data_out_valid_reg/CLK (DFFR_E)         0.000      0.500 r
+  data_out_valid_reg/CLK (DFFR_E)         0.000 #    0.500 r
   data_out_valid_reg/Q (DFFR_E)           0.305      0.805 r
-  U117/Z (BUFFER_J)                       0.063      0.868 r
-  U154/Z (INVERT_K)                       0.038      0.907 f
-  U155/Z (INVERT_M)                       0.047      0.953 r
-  U218/Z (INVERT_K)                       0.042      0.996 f
-  U219/Z (INVERT_K)                       0.053      1.049 r
-  U197/Z (AND2_H)                         0.073      1.122 r
-  U198/Z (INVERT_D)                       0.050      1.171 f
-  U122/Z (INVERT_E)                       0.053      1.225 r
-  U277/Z (INVERT_E)                       0.052      1.277 f
-  U291/Z (INVERT_F)                       0.055      1.332 r
-  U140/Z (INVERT_J)                       0.047      1.379 f
-  U290/Z (INVERT_O)                       0.052      1.431 r
-  I_out[8] (out)                          0.002      1.433 r
-  data arrival time                                  1.433
+  U631/Z (INVERT_H)                       0.053      0.858 f
+  U630/Z (INVERT_K)                       0.049      0.907 r
+  U321/Z (INVERT_J)                       0.044      0.951 f
+  U801/Z (INVERT_O)                       0.054      1.005 r
+  U567/Z (NAND2_D)                        0.066      1.070 f
+  U461/Z (INVERT_F)                       0.060      1.130 r
+  U459/Z (INVERT_J)                       0.047      1.177 f
+  U460/Z (INVERT_O)                       0.052      1.229 r
+  I_out[6] (out)                          0.002      1.231 r
+  data arrival time                                  1.231
 
   clock v_clk (rise edge)                10.000     10.000
   clock network delay (ideal)             0.000     10.000
@@ -317,14 +438,14 @@ Wire Load Model Mode: enclosed
   data required time                                 7.000
   -----------------------------------------------------------
   data required time                                 7.000
-  data arrival time                                 -1.433
+  data arrival time                                 -1.231
   -----------------------------------------------------------
-  slack (MET)                                        5.567
+  slack (MET)                                        5.769
 
 
   Startpoint: data_out_valid_reg
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: I_out[7] (output port clocked by v_clk)
+  Endpoint: I_out[5] (output port clocked by v_clk)
   Path Group: v_clk
   Path Type: max
 
@@ -336,22 +457,18 @@ Wire Load Model Mode: enclosed
   -----------------------------------------------------------
   clock clk (rise edge)                   0.000      0.000
   clock network delay (ideal)             0.500      0.500
-  data_out_valid_reg/CLK (DFFR_E)         0.000      0.500 r
+  data_out_valid_reg/CLK (DFFR_E)         0.000 #    0.500 r
   data_out_valid_reg/Q (DFFR_E)           0.305      0.805 r
-  U117/Z (BUFFER_J)                       0.063      0.868 r
-  U154/Z (INVERT_K)                       0.038      0.907 f
-  U155/Z (INVERT_M)                       0.047      0.953 r
-  U218/Z (INVERT_K)                       0.042      0.996 f
-  U219/Z (INVERT_K)                       0.053      1.049 r
-  U195/Z (AND2_H)                         0.073      1.122 r
-  U196/Z (INVERT_D)                       0.050      1.171 f
-  U121/Z (INVERT_E)                       0.053      1.225 r
-  U276/Z (INVERT_E)                       0.052      1.277 f
-  U293/Z (INVERT_F)                       0.055      1.332 r
-  U139/Z (INVERT_J)                       0.047      1.379 f
-  U292/Z (INVERT_O)                       0.052      1.431 r
-  I_out[7] (out)                          0.002      1.433 r
-  data arrival time                                  1.433
+  U631/Z (INVERT_H)                       0.053      0.858 f
+  U630/Z (INVERT_K)                       0.049      0.907 r
+  U321/Z (INVERT_J)                       0.044      0.951 f
+  U801/Z (INVERT_O)                       0.054      1.005 r
+  U566/Z (NAND2_D)                        0.066      1.070 f
+  U464/Z (INVERT_F)                       0.060      1.130 r
+  U462/Z (INVERT_J)                       0.047      1.177 f
+  U463/Z (INVERT_O)                       0.052      1.229 r
+  I_out[5] (out)                          0.002      1.231 r
+  data arrival time                                  1.231
 
   clock v_clk (rise edge)                10.000     10.000
   clock network delay (ideal)             0.000     10.000
@@ -359,14 +476,14 @@ Wire Load Model Mode: enclosed
   data required time                                 7.000
   -----------------------------------------------------------
   data required time                                 7.000
-  data arrival time                                 -1.433
+  data arrival time                                 -1.231
   -----------------------------------------------------------
-  slack (MET)                                        5.567
+  slack (MET)                                        5.769
 
 
   Startpoint: data_out_valid_reg
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: Q_out[4] (output port clocked by v_clk)
+  Endpoint: I_out[4] (output port clocked by v_clk)
   Path Group: v_clk
   Path Type: max
 
@@ -378,22 +495,18 @@ Wire Load Model Mode: enclosed
   -----------------------------------------------------------
   clock clk (rise edge)                   0.000      0.000
   clock network delay (ideal)             0.500      0.500
-  data_out_valid_reg/CLK (DFFR_E)         0.000      0.500 r
+  data_out_valid_reg/CLK (DFFR_E)         0.000 #    0.500 r
   data_out_valid_reg/Q (DFFR_E)           0.305      0.805 r
-  U117/Z (BUFFER_J)                       0.063      0.868 r
-  U154/Z (INVERT_K)                       0.038      0.907 f
-  U155/Z (INVERT_M)                       0.047      0.953 r
-  U218/Z (INVERT_K)                       0.042      0.996 f
-  U219/Z (INVERT_K)                       0.053      1.049 r
-  U199/Z (AND2_H)                         0.073      1.122 r
-  U200/Z (INVERT_D)                       0.050      1.171 f
-  U118/Z (INVERT_E)                       0.053      1.225 r
-  U279/Z (INVERT_E)                       0.052      1.277 f
-  U313/Z (INVERT_F)                       0.055      1.332 r
-  U130/Z (INVERT_J)                       0.047      1.379 f
-  U312/Z (INVERT_O)                       0.052      1.431 r
-  Q_out[4] (out)                          0.002      1.433 r
-  data arrival time                                  1.433
+  U631/Z (INVERT_H)                       0.053      0.858 f
+  U630/Z (INVERT_K)                       0.049      0.907 r
+  U321/Z (INVERT_J)                       0.044      0.951 f
+  U801/Z (INVERT_O)                       0.054      1.005 r
+  U565/Z (NAND2_D)                        0.066      1.070 f
+  U467/Z (INVERT_F)                       0.060      1.130 r
+  U465/Z (INVERT_J)                       0.047      1.177 f
+  U466/Z (INVERT_O)                       0.052      1.229 r
+  I_out[4] (out)                          0.002      1.231 r
+  data arrival time                                  1.231
 
   clock v_clk (rise edge)                10.000     10.000
   clock network delay (ideal)             0.000     10.000
@@ -401,14 +514,14 @@ Wire Load Model Mode: enclosed
   data required time                                 7.000
   -----------------------------------------------------------
   data required time                                 7.000
-  data arrival time                                 -1.433
+  data arrival time                                 -1.231
   -----------------------------------------------------------
-  slack (MET)                                        5.567
+  slack (MET)                                        5.769
 
 
   Startpoint: data_out_valid_reg
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: Q_out[8] (output port clocked by v_clk)
+  Endpoint: I_out[3] (output port clocked by v_clk)
   Path Group: v_clk
   Path Type: max
 
@@ -420,22 +533,18 @@ Wire Load Model Mode: enclosed
   -----------------------------------------------------------
   clock clk (rise edge)                   0.000      0.000
   clock network delay (ideal)             0.500      0.500
-  data_out_valid_reg/CLK (DFFR_E)         0.000      0.500 r
+  data_out_valid_reg/CLK (DFFR_E)         0.000 #    0.500 r
   data_out_valid_reg/Q (DFFR_E)           0.305      0.805 r
-  U117/Z (BUFFER_J)                       0.063      0.868 r
-  U154/Z (INVERT_K)                       0.038      0.907 f
-  U155/Z (INVERT_M)                       0.047      0.953 r
-  U218/Z (INVERT_K)                       0.042      0.996 f
-  U220/Z (INVERT_M)                       0.050      1.046 r
-  U282/Z (AND2_H)                         0.072      1.118 r
-  U283/Z (INVERT_D)                       0.049      1.167 f
-  U120/Z (INVERT_E)                       0.053      1.221 r
-  U281/Z (INVERT_E)                       0.052      1.273 f
-  U307/Z (INVERT_F)                       0.055      1.329 r
-  U134/Z (INVERT_J)                       0.047      1.375 f
-  U306/Z (INVERT_O)                       0.052      1.427 r
-  Q_out[8] (out)                          0.002      1.430 r
-  data arrival time                                  1.430
+  U631/Z (INVERT_H)                       0.053      0.858 f
+  U630/Z (INVERT_K)                       0.049      0.907 r
+  U321/Z (INVERT_J)                       0.044      0.951 f
+  U801/Z (INVERT_O)                       0.054      1.005 r
+  U564/Z (NAND2_D)                        0.066      1.070 f
+  U470/Z (INVERT_F)                       0.060      1.130 r
+  U468/Z (INVERT_J)                       0.047      1.177 f
+  U469/Z (INVERT_O)                       0.052      1.229 r
+  I_out[3] (out)                          0.002      1.231 r
+  data arrival time                                  1.231
 
   clock v_clk (rise edge)                10.000     10.000
   clock network delay (ideal)             0.000     10.000
@@ -443,14 +552,14 @@ Wire Load Model Mode: enclosed
   data required time                                 7.000
   -----------------------------------------------------------
   data required time                                 7.000
-  data arrival time                                 -1.430
+  data arrival time                                 -1.231
   -----------------------------------------------------------
-  slack (MET)                                        5.570
+  slack (MET)                                        5.769
 
 
   Startpoint: data_out_valid_reg
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: Q_out[7] (output port clocked by v_clk)
+  Endpoint: I_out[2] (output port clocked by v_clk)
   Path Group: v_clk
   Path Type: max
 
@@ -462,22 +571,18 @@ Wire Load Model Mode: enclosed
   -----------------------------------------------------------
   clock clk (rise edge)                   0.000      0.000
   clock network delay (ideal)             0.500      0.500
-  data_out_valid_reg/CLK (DFFR_E)         0.000      0.500 r
+  data_out_valid_reg/CLK (DFFR_E)         0.000 #    0.500 r
   data_out_valid_reg/Q (DFFR_E)           0.305      0.805 r
-  U117/Z (BUFFER_J)                       0.063      0.868 r
-  U154/Z (INVERT_K)                       0.038      0.907 f
-  U155/Z (INVERT_M)                       0.047      0.953 r
-  U218/Z (INVERT_K)                       0.042      0.996 f
-  U220/Z (INVERT_M)                       0.050      1.046 r
-  U223/Z (AND2_H)                         0.072      1.118 r
-  U224/Z (INVERT_D)                       0.049      1.167 f
-  U119/Z (INVERT_E)                       0.053      1.221 r
-  U280/Z (INVERT_E)                       0.052      1.273 f
-  U309/Z (INVERT_F)                       0.055      1.329 r
-  U133/Z (INVERT_J)                       0.047      1.375 f
-  U308/Z (INVERT_O)                       0.052      1.427 r
-  Q_out[7] (out)                          0.002      1.430 r
-  data arrival time                                  1.430
+  U631/Z (INVERT_H)                       0.053      0.858 f
+  U630/Z (INVERT_K)                       0.049      0.907 r
+  U321/Z (INVERT_J)                       0.044      0.951 f
+  U801/Z (INVERT_O)                       0.054      1.005 r
+  U563/Z (NAND2_D)                        0.066      1.070 f
+  U473/Z (INVERT_F)                       0.060      1.130 r
+  U471/Z (INVERT_J)                       0.047      1.177 f
+  U472/Z (INVERT_O)                       0.052      1.229 r
+  I_out[2] (out)                          0.002      1.231 r
+  data arrival time                                  1.231
 
   clock v_clk (rise edge)                10.000     10.000
   clock network delay (ideal)             0.000     10.000
@@ -485,9 +590,9 @@ Wire Load Model Mode: enclosed
   data required time                                 7.000
   -----------------------------------------------------------
   data required time                                 7.000
-  data arrival time                                 -1.430
+  data arrival time                                 -1.231
   -----------------------------------------------------------
-  slack (MET)                                        5.570
+  slack (MET)                                        5.769
 
 
 1

@@ -3,7 +3,4 @@
 // Do not modify this file
 //
 ../testbench/dsp_top_tb.v
-+gui
-+access+r
--timescale
-1ns/1ps
+-compile
