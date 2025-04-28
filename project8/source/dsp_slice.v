@@ -18,11 +18,13 @@ module dsp_slice(
   reg signed [3:0] 			   sample_delay0;
   reg signed [3:0] 			   sample_delay1;
   reg signed [11:0] 			 mult_out;
+  reg signed [11:0]        mult_out_q;
   reg signed [11:0]        accum;
+  reg signed [11:0]        accum_q;
 
   // assign outputs
   assign sample_out = sample_delay1;
-  assign accum_out  = accum;
+  assign accum_out  = accum_q;
         
   // clock in registers   
   always @(posedge clk)
@@ -30,6 +32,8 @@ module dsp_slice(
       sample_delay0 <= sample_in;
       sample_delay1 <= sample_delay0;
       mult_out      <= sample_delay1 * coeff_in;
-      accum         <= accum_in + mult_out;         
+      mult_out_q    <= mult_out;
+      accum         <= accum_in + mult_out_q;  
+      accum_q       <= accum       
   end
 endmodule
