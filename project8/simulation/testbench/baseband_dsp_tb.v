@@ -14,12 +14,15 @@ module baseband_dsp_tb;
     reg [7:0] coeff_in; 
     reg enable;
     reg [3:0] sample_rate;
-    reg mapping;
+    wire mapping;
     wire mem_read_out;
     wire [9:0] I_out;
     wire [9:0] Q_out;
 
     baseband_dsp DUT(
+    	.sample_rate(sample_rate),
+    	.enable(enable),
+    	.mapping(mapping),
         .data_in(data_in),
         .data_clk(data_clk),
         .dsp_clk(dsp_clk),

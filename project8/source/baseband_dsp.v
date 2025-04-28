@@ -12,7 +12,7 @@ module baseband_dsp(
     input wire enable,
     input wire [3:0] sample_rate,
     output wire mapping,
-    output wire mem_read_out,
+    output wire [7:0] mem_read_out,
     output wire [9:0] I_out,
 	output wire [9:0] Q_out
 );
@@ -54,11 +54,11 @@ module baseband_dsp(
     dsp_top dsp (
         .clk(dsp_clk),
         .rst_n(rst_n_dsp),
-        .msg_in(~CSN),		        // This might be wrong
+        .msg_in(msg_in),		        // This might be wrong
         .sample_rate(sample_rate),
         .data_in_i(cdc_fifo_out[7:4]),
         .data_in_q(cdc_fifo_out[3:0]),
-        .new_symbol(I || Q),        // This may also need to be set in tb
+        .new_symbol(cdc_fifo_out != 0),        // This may also need to be set in tb
         .rw(rw),		// SPI CDC output
         .mem_addr(mem_addr),	// SPI CDC output/output
         .coeff_in(coeff_in),		// SPI CDC output

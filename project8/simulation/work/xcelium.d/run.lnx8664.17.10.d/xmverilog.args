@@ -2,5 +2,8 @@
 // File created by:  xmverilog
 // Do not modify this file
 //
-../testbench/sync_fifo_write_counter_tb.v
--compile
+../testbench/baseband_dsp_tb.v
++gui
++access+r
+-timescale
+1ns/1ps

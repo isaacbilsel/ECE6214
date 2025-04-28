@@ -1,6 +1,75 @@
 xmverilog(64): 17.10-s001: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	xmverilog	17.10-s001: Started on Apr 27, 2025 at 22:27:06 EDT
+TOOL:	xmverilog	17.10-s001: Started on Apr 27, 2025 at 23:37:24 EDT
 xmverilog
-	../testbench/sync_fifo_write_counter_tb.v
-	-compile
-TOOL:	xmverilog	17.10-s001: Exiting on Apr 27, 2025 at 22:27:06 EDT  (total: 00:00:00)
+	../testbench/baseband_dsp_tb.v
+	+gui
+	+access+r
+	-timescale
+	1ns/1ps
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+        .mem_read_out(mem_read_out),
+                                 |
+xmelab: *W,CUVMPW (../testbench/baseband_dsp_tb.v,35|33): port sizes differ in port connection (1/8).
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.baseband_dsp:v <0x33ba4423>
+			streams:   5, words:   705
+		worklib.baseband_dsp_tb:v <0x52c90952>
+			streams:  18, words: 394881
+	Building instance specific data structures.
+        .msg_in(~CSN),		        // This might be wrong
+                   |
+xmelab: *W,CSINFI (/home/ead/isaacbilsel/ece6214/ECE6214/project8/source/baseband_dsp.v,57|19): implicit wire has no fanin (baseband_dsp_tb.DUT.CSN).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:               162      17
+		Registers:             690     110
+		Scalar wires:           23       -
+		Expanded wires:          8       1
+		Vectored wires:        461       -
+		Always blocks:         177      32
+		Initial blocks:          2       2
+		Cont. assignments:     154      87
+		Pseudo assignments:      8       8
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.baseband_dsp_tb:v
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /apps/vlsi_2018/cadence/XCELIUM1710/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm baseband_dsp_tb.DUT.CSN baseband_dsp_tb.DUT.I_out baseband_dsp_tb.DUT.Q_out baseband_dsp_tb.DUT.cdc_fifo_out baseband_dsp_tb.DUT.coeff_in baseband_dsp_tb.DUT.data_clk baseband_dsp_tb.DUT.data_in baseband_dsp_tb.DUT.dsp_clk baseband_dsp_tb.DUT.enable baseband_dsp_tb.DUT.i_data baseband_dsp_tb.DUT.i_q_data_fifo_empty baseband_dsp_tb.DUT.i_q_data_fifo_full baseband_dsp_tb.DUT.mapping baseband_dsp_tb.DUT.mem_addr baseband_dsp_tb.DUT.mem_read_out baseband_dsp_tb.DUT.msg_in baseband_dsp_tb.DUT.new_symbol baseband_dsp_tb.DUT.q_data baseband_dsp_tb.DUT.rst_n_data baseband_dsp_tb.DUT.rst_n_dsp baseband_dsp_tb.DUT.rw baseband_dsp_tb.DUT.sample_rate
+Created probe 1
+xcelium> run
+Simulation complete via $finish(1) at time 14349426 PS + 0
+../testbench/baseband_dsp_tb.v:148         $finish;
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> ^C
+xcelium> exit
+TOOL:	xmverilog	17.10-s001: Exiting on Apr 27, 2025 at 23:46:22 EDT  (total: 00:08:58)
