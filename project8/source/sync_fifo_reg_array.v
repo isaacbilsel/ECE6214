@@ -62,15 +62,16 @@ module sync_fifo_reg_array(
 	// read sequential logic
 	always @(posedge clk_read or negedge rst_n_read) begin
 		if (rst_n_read == 1'b0) begin
-		// reset all registers to default values
-		read_data <= 8'h00;
-		end else begin
-		read_data <= read_data_next;
+			// reset all registers to default values
+			read_data <= 8'h00;
+		end 
+		else begin
+			read_data <= read_data_next;
 		end // else: !if(rst_n == 1'b0)
 	end // always @ (posedge clk or negedge rst_n)
 
 	// read combinational logic
-		always @(*) begin
+	always @(*) begin
 		// default to hold read data value
 		read_data_next = read_data;
 
