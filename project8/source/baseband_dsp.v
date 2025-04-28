@@ -45,7 +45,7 @@ module baseband_dsp(
         .rst_n_read(rst_n_dsp),         //rename rst
         .write_data({i_data, q_data}),
         .write_enable(new_symbol),
-        .read_enable(dsp_clk),          // Not sure how to assign this signal
+        .read_enable(rst_n_dsp),          // Not sure how to assign this signal
         .read_data(cdc_fifo_out),
         .fifo_full(i_q_data_fifo_full),
         .fifo_empty(i_q_data_fifo_empty)
