@@ -11,14 +11,14 @@
 module sync_fifo_reg_array(
 	    input wire	     clk_write,
 	    input wire	     rst_n_write,
-	    input wire [7:0] write_data,
+	    input wire signed [7:0] write_data,
 	    input wire [2:0] write_addr,
 	    input wire	     write_enable,
 	    input wire	     clk_read,
 	    input wire	     rst_n_read,
 	    input wire [2:0] read_addr,
 	    input wire	     read_enable,
-	    output reg [7:0] read_data
+	    output reg signed [7:0] read_data
     );
 
 	// internal registers

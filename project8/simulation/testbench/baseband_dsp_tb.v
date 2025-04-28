@@ -149,7 +149,7 @@ module baseband_dsp_tb;
     end
 
 initial begin
-    // I filter coefficients
+// I filter coefficients
     Icoeff[0] <= 8'h00;
     Icoeff[1] <= 8'h00;
     Icoeff[2] <= 8'hFF;
@@ -223,7 +223,7 @@ initial begin
     Icoeff[70] <= 8'h00;
 
 
-// Q filter coefficients
+    // Q filter coefficients
     Qcoeff[0] <= 8'h00;
     Qcoeff[1] <= 8'h00;
     Qcoeff[2] <= 8'hFF;
@@ -296,7 +296,6 @@ initial begin
     Qcoeff[69] <= 8'h00;
     Qcoeff[70] <= 8'h00;
 
-
 // Transmit Datastream with header
     datastream[779:768] <= 12'hB38;
     datastream[767:752] <= 16'hD196;
@@ -347,7 +346,6 @@ initial begin
     datastream[47:32] <= 16'h386A;
     datastream[31:16] <= 16'hE179;
     datastream[15:0] <= 16'hAA26;
-
 
 // I Channel 10b Expected output
     I_filtered_10b[1733] <= 10'h000;
@@ -2085,7 +2083,6 @@ initial begin
     I_filtered_10b[1] <= 10'h000;
     I_filtered_10b[0] <= 10'h000;
 
-
 // Q Channel 10b Expected output
     Q_filtered_10b[1733] <= 10'h000;
     Q_filtered_10b[1732] <= 10'h000;
@@ -3822,9 +3819,8 @@ initial begin
     Q_filtered_10b[1] <= 10'h000;
     Q_filtered_10b[0] <= 10'h000;
 
-
 // I Channel 12b Expected output
-//     first 64 samples only
+    // first 64 samples only
     I_filtered_12b[63] <= 12'h000;
     I_filtered_12b[62] <= 12'h000;
     I_filtered_12b[61] <= 12'h005;
@@ -3890,9 +3886,8 @@ initial begin
     I_filtered_12b[1] <= 12'h050;
     I_filtered_12b[0] <= 12'h05F;
 
-
 // Q Channel 12b Expected output
-//     first 64 samples only
+    // first 64 samples only
     Q_filtered_12b[63] <= 12'h000;
     Q_filtered_12b[62] <= 12'h000;
     Q_filtered_12b[61] <= 12'h001;

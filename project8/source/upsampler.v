@@ -4,11 +4,11 @@ module upsampler(
     input wire        clk,
     input wire        rst_n,
     input wire        new_symbol,
-    input wire [3:0]  input_data_1,
-    input wire [3:0]  input_data_2,
+    input wire signed [3:0]  input_data_1,
+    input wire signed [3:0]  input_data_2,
     input wire [3:0]  sample_rate,
-    output reg [3:0]  output_data_1,
-    output reg [3:0]  output_data_2
+    output reg signed [3:0]  output_data_1,
+    output reg signed [3:0]  output_data_2
 );
 
     parameter S0_IDLE = 1'b0;

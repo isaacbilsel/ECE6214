@@ -3,16 +3,16 @@ module dsp_top(
     input clk,
     input rst_n,				
     input wire [3:0] sample_rate,
-    input [3:0] data_in_i,     	// 4-bit input data from the symbol generator.
-    input [3:0] data_in_q,
+    input signed [3:0] data_in_i,     	// 4-bit input data from the symbol generator.
+    input signed [3:0] data_in_q,
     input rw,
     input msg_in,
-    input [7:0] coeff_in, 		// We may need to make this a two dimensional array
+    input signed [7:0] coeff_in, 		// We may need to make this a two dimensional array
     input [9:0] mem_addr,
     input wire new_symbol, 		
-    output wire [9:0] I_out,  // Inphase 10 bit output to DAC
-    output wire [9:0] Q_out,  // Quadrature 10 bit output to DAC
-    output reg [7:0] mem_read_out
+    output wire signed [9:0] I_out,  // Inphase 10 bit output to DAC
+    output wire signed [9:0] Q_out,  // Quadrature 10 bit output to DAC
+    output reg signed [7:0] mem_read_out
 );
 
     // Internal signals
@@ -152,5 +152,9 @@ module dsp_top(
     // Round-towards-zero rounding. This should probably be done more cleanly
     assign I_out = (filter_out_i < 0 && filter_out_i[1:0] != 2'b00) ? ((filter_out_i >> 2) * data_out_valid + 1) : ((filter_out_i >> 2) * data_out_valid);
     assign Q_out = (filter_out_q < 0 && filter_out_q[1:0] != 2'b00) ? ((filter_out_q >> 2) * data_out_valid + 1) : ((filter_out_q >> 2) * data_out_valid);
+
+    /* i_data[(IWID-1):0] + { {(OWID){1'b0}}, i_data[(IWID-1)],
+			{(IWID-OWID-1){!i_data[(IWID-1)]}}};
+    */ 
 
 endmodule

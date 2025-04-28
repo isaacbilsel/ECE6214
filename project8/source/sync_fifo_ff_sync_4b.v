@@ -11,12 +11,12 @@
 module sync_fifo_ff_sync_4b(
 	    input wire	     clk,
 	    input wire	     rst_n,
-	    input wire [3:0] data_in,
-	    output reg [3:0] data_out
+	    input wire signed [3:0] data_in,
+	    output reg signed [3:0] data_out
     );
 
    // internal registers
-   reg [3:0]		     data_mid;
+   reg signed [3:0]		     data_mid;
 
    // write sequential logic, active-low asynch reset
    always @(posedge clk or negedge rst_n)

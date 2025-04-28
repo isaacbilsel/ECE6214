@@ -13,10 +13,10 @@ module sync_fifo(
 		 input wire	   clk_read,
 		 input wire	   rst_n_write,
 		 input wire	   rst_n_read,
-		 input wire [7:0]  write_data,
+		 input wire signed [7:0]  write_data,
 		 input wire	   write_enable,
 		 input wire	   read_enable,
-		 output wire [7:0] read_data,
+		 output wire signed [7:0] read_data,
 		 output wire	   fifo_full,
 		 output wire	   fifo_empty
     );
