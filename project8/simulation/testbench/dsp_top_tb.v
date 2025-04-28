@@ -6,17 +6,17 @@ module dsp_top_tb;
     reg clk;
     // reg upsample_clk;
     reg rst_n;
-    reg [3:0] data_in_i;
-	reg [3:0] data_in_q;
+    reg signed [3:0] data_in_i;
+	reg signed [3:0] data_in_q;
     reg rw;
     reg [9:0] mem_addr;
-    reg [7:0] coeff_in;
+    reg signed [7:0] coeff_in;
 	reg [3:0] sample_rate;
 	reg new_symbol;
 	reg msg_in;
-    wire [9:0] I_out;
-	wire [9:0] Q_out;
-	wire [7:0] mem_read_out;
+    wire signed [9:0] I_out;
+	wire signed [9:0] Q_out;
+	wire signed [7:0] mem_read_out;
      
     // Instantiate the DUT (Device Under Test)
     dsp_top dut (
@@ -159,11 +159,21 @@ module dsp_top_tb;
 		repeat(2) @(posedge clk);
 		// Send in datastream with 12 bit header
         testcase <= "Datastream";    
-        @(negedge data_clk);
-        for (i=779; i>=775; i=i-1) begin
-            data_in <= datastream[i]; 
-            @(negedge data_clk);
-        end
+        @(negedge clk);
+		data_in_i <= 4'd5; 
+		data_in_q <= 4'd1;
+		repeat(12) @(negedge clk);
+		data_in_i <= -4'd1; 
+		data_in_q <= -4'd5;
+		repeat(12) @(negedge clk);
+		data_in_i <= -4'd1; 
+		data_in_q <= -4'd5;
+		repeat(12) @(negedge clk);
+		data_in_i <= 4'd5; 
+		data_in_q <= 4'd3;
+		@(negedge clk);
+
+		repeat(150) @posedge clk;
 		$finish;
 		
 		// We need to write to the log file here
