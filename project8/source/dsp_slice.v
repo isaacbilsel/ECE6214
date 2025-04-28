@@ -34,6 +34,6 @@ module dsp_slice(
       mult_out      <= sample_delay1 * coeff_in;
       mult_out_q    <= mult_out;
       accum         <= accum_in + mult_out_q;  
-      accum_q       <= accum       
+      accum_q       <= accum;      
   end
 endmodule
