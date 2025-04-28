@@ -1,6 +1,6 @@
 xmverilog(64): 17.10-s001: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
-TOOL:	xmverilog	17.10-s001: Started on Apr 26, 2025 at 17:36:46 EDT
+TOOL:	xmverilog	17.10-s001: Started on Apr 27, 2025 at 22:27:06 EDT
 xmverilog
 	../testbench/sync_fifo_write_counter_tb.v
 	-compile
-TOOL:	xmverilog	17.10-s001: Exiting on Apr 26, 2025 at 17:36:46 EDT  (total: 00:00:00)
+TOOL:	xmverilog	17.10-s001: Exiting on Apr 27, 2025 at 22:27:06 EDT  (total: 00:00:00)

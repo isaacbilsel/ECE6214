@@ -33,13 +33,22 @@ module baseband_dsp_tb;
         .I_out(I_out),
 	    .Q_out(Q_out)
     );
-
+	
+	// Datastream variables
+	reg [7:0] Icoeff [0:70];
+	reg [7:0] Qcoeff [0:70];	
+	reg [779:0] datastream;
+	reg [9:0] I_filtered_10b[0:1733];
+	reg [9:0] Q_filtered_10b[0:1733];
+	reg [11:0] I_filtered_12b[0:63];
+	reg [11:0] Q_filtered_12b[0:63];
+	
     always #8.333 data_clk = ~data_clk;
     always #3.846 dsp_clk = ~dsp_clk;
     
     reg [8*39:0] testcase;
     integer i;
-
+	
     initial begin
         testcase = "Initializing";
         data_clk <= 1'b0;
@@ -136,7 +145,7 @@ module baseband_dsp_tb;
         $finish;
     end
 
-// initial begin
+initial begin
     // I filter coefficients
     reg [7:0] Icoeff[0] = 00;
     reg [7:0] Icoeff[1] = 00;
@@ -3945,7 +3954,7 @@ module baseband_dsp_tb;
     reg [11:0] Q_filtered_12b[2] = 20E;
     reg [11:0] Q_filtered_12b[1] = 1F8;
     reg [11:0] Q_filtered_12b[0] = 1D0;
-// end
+end
 
 endmodule
 
