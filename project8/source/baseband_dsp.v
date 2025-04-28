@@ -20,8 +20,8 @@ module baseband_dsp(
     // Internal signals
     wire [7:0] cdc_fifo_out;
     wire i_q_data_fifo_full;
-    wire [3:0] i_data;
-    wire [3:0] q_data;
+    wire signed [3:0] i_data;
+    wire signed [3:0] q_data;
     wire new_symbol;
 
     // baseband interface
