@@ -173,7 +173,7 @@ module dsp_top_tb;
 		data_in_q <= 4'd3;
 		@(negedge clk);
 
-		repeat(150) @posedge clk;
+		repeat(150) @(posedge clk);
 		$finish;
 		
 		// We need to write to the log file here
