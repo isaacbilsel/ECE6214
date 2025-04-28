@@ -108,17 +108,3 @@ module control_fsm(
      end // always @ (*)
      
 endmodule
-
-   
-	
-	     
-
-	       
-		   
-	    
-
-	
-
-	
-	
-   
