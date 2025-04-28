@@ -127,10 +127,10 @@ module baseband_dsp_tb;
         testcase <= "Output_read"; 
 		msg_in <= 1'b1;
 		rw <= 1'b0;
-		mem_addr <= 512;
+		mem_addr <= 10'd512;
 		// Read last 4 LSBs
 		repeat(1) @(posedge dsp_clk);
-		mem_addr  <= 513;
+		mem_addr  <= 10'd513;
 		repeat(3) @(posedge dsp_clk);
 
 		// Test reading I output memory
@@ -138,10 +138,10 @@ module baseband_dsp_tb;
         testcase <= "Output_read"; 
 		msg_in <= 1'b1;
 		rw <= 1'b0;
-		mem_addr <= 532;
+		mem_addr <= 10'd532;
 		// Read last 4 LSBs
 		repeat(1) @(posedge dsp_clk);
-		mem_addr  <= 533;
+		mem_addr  <= 10'd533;
 		repeat(3) @(posedge dsp_clk);
 
         // Write compare outputs function and log file

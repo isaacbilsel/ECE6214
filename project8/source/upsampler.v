@@ -62,7 +62,7 @@ module upsampler(
             S1_SAMPLING: begin
                 sample_count_next = sample_count_current + 1'b1;
 
-                if (sample_count_current == sample_rate_q - 1) begin
+                if (sample_count_current == sample_rate_q - 2) begin
                     state_next = S0_IDLE;
                     sample_count_next = 4'd0;
                     output_data_1_next = ZERO_PAD;
@@ -76,9 +76,3 @@ module upsampler(
     end
 
 endmodule
-	     
-
-   
-
-
-   
