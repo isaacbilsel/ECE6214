@@ -3,18 +3,18 @@ module register_array(
 		      input wire	 SCLK,
 		      input wire	 rst_n,
 		      input wire [9:0]	 reg_address,
-		      input wire [7:0]	 reg_write_data,
+		      input wire signed [7:0]	 reg_write_data,
 		      input wire	 reg_write_enable,
 		      input wire	 reg_read_enable,
-		      output reg [7:0] reg_read_data
+		      output reg signed [7:0] reg_read_data
 		      );
 
    //internal registers
-   reg [7:0]			 register_array_data_current[0:255];
+   reg signed [7:0]			 register_array_data_current[0:255];
 
    //internal combinational variables
-   reg [7:0]			 register_array_data_next[0:255];
-   reg [7:0]			 reg_read_data_next;
+   reg signed [7:0]			 register_array_data_next[0:255];
+   reg signed [7:0]			 reg_read_data_next;
 
    //loop variables
    integer			 i;
