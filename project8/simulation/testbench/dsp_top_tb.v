@@ -158,8 +158,9 @@ module dsp_top_tb;
 		rst_n = 1;
 		repeat(2) @(posedge clk);
 		// Send in datastream with 12 bit header
-        testcase <= "Datastream";    
+        testcase <= "Datastream"; 
         @(negedge clk);
+		new_symbol <= 1'b1;
 		data_in_i <= 4'd5; 
 		data_in_q <= 4'd1;
 		repeat(12) @(negedge clk);
@@ -172,8 +173,9 @@ module dsp_top_tb;
 		data_in_i <= 4'd5; 
 		data_in_q <= 4'd3;
 		@(negedge clk);
+		new_symbol <= 1'b0;
 
-		repeat(150) @(posedge clk);
+		repeat(160) @(posedge clk);
 		$finish;
 		
 		// We need to write to the log file here
