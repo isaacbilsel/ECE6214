@@ -6,6 +6,7 @@ module qam_top_tb;
 	reg		    MOSI;
 	reg		    CSN;
 	reg		    rst_n;
+	reg 	data_in;
 	wire		MISO;
 	wire		MISO_enable;
 	wire [9:0] 	I_out;
@@ -38,6 +39,7 @@ module qam_top_tb;
 		.rst_n(rst_n),
 		.MISO(MISO),
 		.MISO_enable(MISO_enable),
+		.data_in(data_in),
 		.I_out(I_out),
 		.Q_out(Q_out)
 	);
