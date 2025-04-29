@@ -6,8 +6,8 @@ module qam_top(
 	input wire data_clk,
 	// SPI interface
 	input wire MOSI,
-	input wire MISO,
-	input wire MISO_enable,
+	output wire MISO,
+	output wire MISO_enable,
 	input wire CSN,
 	// Data interface
 	input wire rst_n,

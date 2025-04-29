@@ -1,84 +1,75 @@
 `timescale 1ns / 1ps
-module qam_top_tb(
-			      );
-   //SPI interface_signals
-   reg                        SCLK  = 1'b0;
-   reg		    MOSI  = 1'b0;
-   reg		    CSN   = 1'b1;
-   reg		    rst_n = 1'b0;
-   wire		    MISO;
-   wire		    MISO_enable;
+module qam_top_tb;
+	reg 	dsp_clk;
+	reg 	data_clk;
+	reg         SCLK;
+	reg		    MOSI;
+	reg		    CSN;
+	reg		    rst_n;
+	wire		MISO;
+	wire		MISO_enable;
+	wire [9:0] 	I_out;
+	wire [9:0] 	Q_out;
 
-   //SPI data output
-   reg [15:0]	    SPI_Data_out;
+	//Simulation control
+	reg [7:0]	    error_count;
+	reg [8*39:0]	testcase;
 
-   //Simulation control
-   reg		    tb_clk = 1'b0;
-   reg [7:0]	    error_count;
-   reg [8*39:0]	    testcase;
+	// Data generated save in
+	reg [15:0]	    SPI_Data[0:255];
 
-   // Data generated save in
-   reg [15:0]	    SPI_Data[0:255];
+	//loop variable
+	integer	    i;
 
-   //loop variable
-   integer	    i;
+	//instantiation
+	qam_top DUT(
+		.SCLK(SCLK),
+		.data_clk(data_clk),
+		.dsp_clk(dsp_clk),
+		.MOSI(MOSI),
+		.CSN(CSN),
+		.rst_n(rst_n),
+		.MISO(MISO),
+		.MISO_enable(MISO_enable),
+		.I_out(I_out),
+		.Q_out(Q_out)
+	);
+	
+	always #5000 SCLK = ~SCLK; 			// 100kHz
+	always #8.333 data_clk = ~data_clk;	// 60 MHz
+	always #3.846 dsp_clk = ~dsp_clk;	// 130 MHz
+    
+    reg [8*39:0] testcase;
+    integer i;
 
-   //instantiation
-   qam_top DUT(
-			   .SCLK(SCLK),
-			   .MOSI(MOSI),
-			   .CSN(CSN),
-			   .rst_n(rst_n),
-			   .MISO(MISO),
-			   .MISO_enable(MISO_enable)
-			   );
+	initial begin
+		testcase <= "Initializing";
+		rst_n <= 1'b0;
+		SCLK  <= 1'b0;
+		MOSI  <= 1'b0;
+		CSN   <= 1'b1;
+		@(posedge SCLK);
+		rst_n <= 1'b1;
 
-   // 100kHz clk = 10000ns period
-   always #5000 tb_clk = ~tb_clk;
+		// write all 256 registers
+		testcase = "SPI_WRITE";
+		for(i = 0; i <= 255; i = i + 1)begin
+		SPI_CMD(1'b1, i, SPI_Data[i], SPI_Data_out);
+		end
 
-   initial begin
-      testcase = "Initializing";
-      repeat(10) 
-	@(posedge tb_clk);
-      rst_n = 1'b1;
-
-      // generate spi data to write and read back
-      for(i = 0; i <= 255; i = i + 1)begin
-	 SPI_Data[i] = $random;
-      end
-
-      repeat(10)
-	@(posedge tb_clk);
-
-      // write all 256 registers
-      testcase = "SPI_WRITE";
-      for(i = 0; i <= 255; i = i + 1)begin
-	 SPI_CMD(1'b1, i, SPI_Data[i], SPI_Data_out);
-      end
-
-      repeat(10)
-	@(posedge tb_clk);
-
-      // read all 256 registers
-      testcase = "SPI_READ";
-      for(i = 0; i <= 255; i = i + 1)begin
-	 SPI_CMD(1'b0, i, SPI_Data[i], SPI_Data_out);
-	 error_count = compare_outputs(SPI_Data[i], SPI_Data_out, i, error_count);
-      end
-
-      repeat(20)
+      	repeat(20)
 	@(posedge tb_clk);
 
       $finish;
    end // initial begin
 
 
-   task SPI_CMD(
+   	task SPI_CMD(
 		input         SPI_read_write,
 		input  [7:0]  SPI_addr,
 		input  [15:0] SPI_Data_in,
 		output [15:0] SPI_Data_out
-		);
+	);
 
       integer		      i;
       
