@@ -161,10 +161,10 @@ module qam_top_tb;
 
 		// 4-bit dead time for data write
 		for(i = 4; i >= 0; i = i - 1)begin
-			@(negedge tb_clk)
+			@(negedge SCLK)
 				SCLK = 1'b0;
 			MOSI = 1'b0;
-			@(posedge tb_clk)
+			@(posedge SCLK)
 				SCLK = 1'b1;
 		end
 
