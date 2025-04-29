@@ -6,7 +6,6 @@ module SPI_Interface(
     input wire        CSN,
     input wire        rst_n,
     input wire [7:0]  reg_read_data,
-    input wire        mapping,  // Added mapping signal
     output reg        MISO,
     output reg        MISO_enable,
     output reg [9:0]  reg_address,
@@ -43,7 +42,6 @@ module SPI_Interface(
     parameter [2:0]   S2_REG_ADDRESS = 3'b010;
     parameter [2:0]   S3_READ = 3'b011;
     parameter [2:0]   S4_WRITE = 3'b100;
-    parameter [2:0]   S5_ENABLED = 3'b101;  // Added state for handling mapping
 
     // Sequential logic
     always @(posedge SCLK or negedge rst_n) begin
@@ -156,12 +154,6 @@ module SPI_Interface(
                     bit_count_next = 6'd33;
                     reg_write_enable_next = 1'b0;
                 end
-            end
-
-            S5_ENABLED: begin
-                reg_write_enable_next = 1'b1;
-                reg_write_data_next = {6'b000000, mapping, reg_readwrite_current};
-                state_next = S0_IDLE;
             end
 
             default: begin
