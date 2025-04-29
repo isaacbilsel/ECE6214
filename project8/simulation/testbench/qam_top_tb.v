@@ -72,17 +72,17 @@ module qam_top_tb;
             SPI_CMD(SPI_WRITE, i+256, Qcoeff[i], spi_data_out);
 			@(posedge SCLK);	 
 		end
-		repeat(3) @posedge(SCLK);
+		repeat(3) @(posedge SCLK);
 
 		// Test Reading Coefficients
 		testcase = "COEFF_READ";
 		SPI_CMD(SPI_WRITE, 10'd133, 8'b0, spi_data_out); // This is 5th  addr of I coeff mem: oxFD
-		@posedge (SCLK);
+		@(posedge SCLK);
 		SPI_CMD(SPI_WRITE, 10'd266, 8'b0, spi_data_out); // This is 10th addr of Q coeff mem: 0x02
-		@posedge (SCLK);
+		@(posedge SCLK);
 
 		// Data is ready to be sent to filter
-		testcase = "DATASTREAM" 
+		testcase = "DATASTREAM";
         @(negedge data_clk);
         for (i=779; i>=0; i=i-1) begin
             data_in <= datastream[i]; 
@@ -91,10 +91,10 @@ module qam_top_tb;
 
 		// Test reading sample storage
 		testcase <= "OUTPUT_READ"; 
-		SPI_CMD(SPI_READ, 10'532, 8'b0, spi_data_out); // This is 10th addr of I output mem (8 MSBs)
-		@posedge (SCLK);
-		SPI_CMD(SPI_READ, 10'532, 8'b0, spi_data_out); // This is 10th addr of I output mem (4 LSBs)
-		@posedge (SCLK);
+		SPI_CMD(SPI_READ, 10'd532, 8'b0, spi_data_out); // This is 10th addr of I output mem (8 MSBs)
+		@(posedge SCLK);
+		SPI_CMD(SPI_READ, 10'd532, 8'b0, spi_data_out); // This is 10th addr of I output mem (4 LSBs)
+		@(posedge SCLK);
     	$finish;
    	end // initial begin
 
