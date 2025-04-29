@@ -79,9 +79,9 @@ module qam_top(
 		.aclk(SCLK),
 		.bclk(dsp_clk),
 		.rst_n(rst_n_spi),
-		.data_in({rw_enable}, {reg_address}, {reg_write_data}),
+		.data_in({rw_enable, reg_address, reg_write_data}),
 		.load_data(reg_address != 0),	// This needs to be fixed
-		.data_out({rw_dsp}, {mem_addr}, {coeff_in})
+		.data_out({rw_dsp, mem_addr, coeff_in})
 	);
 
 	multicycle_data_top #(.DATA_WIDTH(8)) spi_to_dsp (
