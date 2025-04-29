@@ -84,7 +84,7 @@ module qam_top(
 		.data_out({rw_dsp, mem_addr, coeff_in})
 	);
 
-	multicycle_data_top #(.DATA_WIDTH(8)) spi_to_dsp (
+	multicycle_data_top #(.DATA_WIDTH(8)) dsp_to_spi (
 		.aclk(dsp_clk),
 		.bclk(SCLK),
 		.rst_n(rst_n_dsp),
